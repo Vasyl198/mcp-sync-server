@@ -18,7 +18,7 @@ $initBodyObj = @{
 }
 
 $initBody = $initBodyObj | ConvertTo-Json -Depth 10
-$initResp = Invoke-WebRequest -Uri $uri -Method Post -Headers $headersBase -Body $initBody
+$initResp = Invoke-WebRequest -UseBasicParsing -Uri $uri -Method Post -Headers $headersBase -Body $initBody
 
 $sessionId = $initResp.Headers["mcp-session-id"]
 if (-not $sessionId) {

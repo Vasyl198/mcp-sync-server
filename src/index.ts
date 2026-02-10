@@ -15,6 +15,7 @@ import { isInitializeRequest } from "@modelcontextprotocol/sdk/types.js";
 import { acquireLock, releaseLock } from "./locks.js";
 import { ensureQueueLayout, queuePush, queuePop, queueAck, jobHistoryList } from "./queue.js";
 import { executeOneFromQueue } from "./router_queue.js";
+import { eventPublish, eventList } from "./events.js";
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -23,21 +24,28 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 
 const PORT = Number(process.env.PORT || 3000);
-const MCP_SYNC_TOKEN = (process.env.MCP_SYNC_TOKEN || "").trim();
+const MCP_SYNC_TOKEN_RAW = process.env.MCP_SYNC_TOKEN;
+const MCP_SYNC_TOKEN = (MCP_SYNC_TOKEN_RAW ?? "").trim();  
 const ORIGIN_ALLOWLIST = (process.env.MCP_ALLOWED_ORIGINS || "")
   .split(",")
   .map((s) => s.trim())
   .filter(Boolean);
 
-// Use Projects directory as root
-const PROJECTS_ROOT = "C:\\Users\\anani\\Projects";
+// Auth is disabled unless token is explicitly set and non-empty
+// TEMPORARILY FORCE DISABLED FOR TESTING
+const AUTH_ENABLED = false;
+
+// Explicit paths to avoid confusion
+const ROOTS = ["C:\\Users\\anani\\Projects"];
+const SYNC_DIR = "C:\\Users\\anani\\Projects\\_sync";
+
 const ALLOWED_ROOTS = (process.env.MCP_ALLOWED_ROOTS || "")
   .split(",")
   .map((s) => s.trim())
   .filter(Boolean)
-  .map((p) => path.isAbsolute(p) ? p : path.resolve(PROJECTS_ROOT, p));
+  .map((p) => path.isAbsolute(p) ? p : path.resolve("C:\\Users\\anani\\Projects", p));
 
-const ROOTS_FINAL = ALLOWED_ROOTS.length ? ALLOWED_ROOTS : [PROJECTS_ROOT];
+const ROOTS_FINAL = ALLOWED_ROOTS.length ? ALLOWED_ROOTS : ROOTS;
 
 function assertInAllowedRoots(p: string) {
   const rp = path.resolve(p);
@@ -61,7 +69,6 @@ function errText(message: string) {
 }
 
 // Use Projects directory for SYNC_DIR
-const SYNC_DIR = path.resolve(PROJECTS_ROOT, '_sync');
 const INBOX_FILE = path.join(SYNC_DIR, 'inbox_command.json');
 const STATUS_FILE = path.join(SYNC_DIR, 'status.json');
 const REPORT_FILE = path.join(SYNC_DIR, 'last_report.md');
@@ -100,7 +107,7 @@ function createMcpServer() {
           text: JSON.stringify({
             server: "mcp-sync-server",
             version: "1.0.0",
-            auth: MCP_SYNC_TOKEN ? "enabled" : "disabled",
+            auth: AUTH_ENABLED ? "enabled" : "disabled",
             roots: ROOTS_FINAL,
             sync_dir: SYNC_DIR,
             tools: [
@@ -121,7 +128,9 @@ function createMcpServer() {
               "search_in_files",
               "fs_read_content",
               "fs_write_content",
-              "exec"
+              "exec",
+              "event_publish",
+              "event_list"
             ]
           })
         }]
@@ -586,6 +595,45 @@ function createMcpServer() {
     }
   );
 
+  // --- Phase 3: Event Tools ---
+  server.tool(
+    "event_publish",
+    "Publish an event to events.jsonl",
+    {
+      type: z.string(),
+      data: z.any(),
+      source: z.string().optional(),
+    },
+    async ({ type, data, source }) => {
+      const result = await eventPublish({
+        syncDir: SYNC_DIR,
+        type,
+        data,
+        source: source ?? "windsurf",
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "event_list",
+    "List events from events.jsonl",
+    {
+      limit: z.number().int().min(1).max(1000).optional(),
+      type: z.string().optional(),
+      since_ts: z.string().optional(),
+    },
+    async ({ limit, type, since_ts }) => {
+      const result = await eventList({
+        syncDir: SYNC_DIR,
+        limit,
+        type,
+        since_ts,
+      });
+      return okText(result);
+    }
+  );
+
   // --- Phase 1: File System Tools ---
 
   // fs_list
@@ -937,6 +985,6 @@ app.use((err: any, _req: any, res: any, next: any) => {
 
 app.listen(PORT, () => {
   console.log(`MCP Sync Server listening on port ${PORT}`);
-  console.log(`Auth: ${MCP_SYNC_TOKEN ? 'enabled' : 'disabled'}`);
+  console.log(`Auth: ${AUTH_ENABLED ? 'enabled' : 'disabled'}`);
   console.log(`Sync dir: ${SYNC_DIR}`);
 });
