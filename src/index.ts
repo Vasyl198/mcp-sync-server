@@ -16,6 +16,8 @@ import { acquireLock, releaseLock } from "./locks.js";
 import { ensureQueueLayout, queuePush, queuePop, queueAck, jobHistoryList } from "./queue.js";
 import { executeOneFromQueue } from "./router_queue.js";
 import { eventPublish, eventList } from "./events.js";
+import { notesList, notesGet, notesUpsert, notesDelete } from "./notes.js";
+import { tasksList, tasksGet, tasksUpsert, tasksDelete } from "./tasks.js";
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -130,7 +132,15 @@ function createMcpServer() {
               "fs_write_content",
               "exec",
               "event_publish",
-              "event_list"
+              "event_list",
+              "notes_upsert",
+              "notes_get",
+              "notes_delete",
+              "notes_list",
+              "tasks_upsert",
+              "tasks_get",
+              "tasks_delete",
+              "tasks_list"
             ]
           })
         }]
@@ -634,6 +644,149 @@ function createMcpServer() {
     }
   );
 
+  // --- Phase 4: Notes Tools ---
+  server.tool(
+    "notes_upsert",
+    "Create or update a note",
+    {
+      id: z.string().optional(),
+      title: z.string(),
+      content: z.string().optional(),
+      body: z.string().optional(),
+      tags: z.array(z.string()).optional(),
+    },
+    async ({ id, title, content, tags, body }) => {
+      const result = await notesUpsert({
+        syncDir: SYNC_DIR,
+        id,
+        title,
+        content: content ?? body,
+        tags,
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "notes_get",
+    "Get a note by ID",
+    {
+      id: z.string(),
+    },
+    async ({ id }) => {
+      const result = await notesGet({
+        syncDir: SYNC_DIR,
+        id,
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "notes_delete",
+    "Delete a note by ID",
+    {
+      id: z.string(),
+    },
+    async ({ id }) => {
+      const result = await notesDelete({
+        syncDir: SYNC_DIR,
+        id,
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "notes_list",
+    "List notes with optional filtering",
+    {
+      limit: z.number().int().min(1).max(100).optional(),
+      query: z.string().optional(),
+    },
+    async ({ limit, query }) => {
+      const result = await notesList({
+        syncDir: SYNC_DIR,
+        limit,
+        query,
+      });
+      return okText(result);
+    }
+  );
+
+  // --- Phase 5: Tasks Tools ---
+  server.tool(
+    "tasks_upsert",
+    "Create or update a task",
+    {
+      id: z.string().optional(),
+      title: z.string(),
+      description: z.string().optional(),
+      status: z.enum(["todo", "doing", "done", "blocked"]).optional(),
+      labels: z.array(z.string()).optional(),
+    },
+    async ({ id, title, description, status, labels }) => {
+      const result = await tasksUpsert({
+        syncDir: SYNC_DIR,
+        id,
+        title,
+        description,
+        status,
+        labels,
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "tasks_get",
+    "Get a task by ID",
+    {
+      id: z.string(),
+    },
+    async ({ id }) => {
+      const result = await tasksGet({
+        syncDir: SYNC_DIR,
+        id,
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "tasks_delete",
+    "Delete a task by ID",
+    {
+      id: z.string(),
+    },
+    async ({ id }) => {
+      const result = await tasksDelete({
+        syncDir: SYNC_DIR,
+        id,
+      });
+      return okText(result);
+    }
+  );
+
+  server.tool(
+    "tasks_list",
+    "List tasks with optional filtering",
+    {
+      limit: z.number().int().min(1).max(100).optional(),
+      query: z.string().optional(),
+      status: z.enum(["todo", "doing", "done", "blocked"]).optional(),
+    },
+    async ({ limit, query, status }) => {
+      const result = await tasksList({
+        syncDir: SYNC_DIR,
+        limit,
+        query,
+        status,
+      });
+      return okText(result);
+    }
+  );
+
   // --- Phase 1: File System Tools ---
 
   // fs_list
@@ -933,21 +1086,132 @@ app.post("/mcp", async (req, res) => {
   await transport.handleRequest(req, res, body);
 });
 
+// GET /mcp - create or use SSE session
+app.get("/mcp", async (req, res) => {
+  console.log(`[GET /mcp] Request received. Headers:`, req.headers);
+  const sessionId = req.headers["mcp-session-id"] as string | undefined;
+
+  // 1) если есть активная сессия — используем её
+  if (sessionId && transports[sessionId]) {
+    console.log(`[GET /mcp] Using existing session: ${sessionId}`);
+    await (transports[sessionId] as any).handleRequest(req, res);
+    return;
+  }
+
+  // 2) если нет sessionId — СОЗДАЁМ SSE сессию
+  try {
+    console.log(`[GET /mcp] Creating new SSE session`);
+    // Disable socket timeout
+    req.socket.setTimeout(0);
+
+    const transport = new SSEServerTransport("/messages", res);
+    const sid = randomUUID();
+    sseTransports[sid] = transport;
+    console.log(`[GET /mcp] Created SSE session: ${sid}`);
+
+    (transport as any).onclose = () => {
+      console.log(`[GET /mcp] SSE session closed: ${sid}`);
+      delete sseTransports[sid];
+    };
+
+    // Add heartbeat every 25 seconds to prevent Cloudflare timeout
+    const heartbeat = setInterval(() => {
+      try {
+        const pingMsg = `: ping ${Date.now()}\n\n`;
+        res.write(pingMsg);
+        console.log(`[GET /mcp] Sent heartbeat for session ${sid}`);
+      } catch (error) {
+        console.log(`[GET /mcp] Heartbeat error for session ${sid}:`, error);
+        clearInterval(heartbeat);
+      }
+    }, 25000);
+
+    req.on("close", () => {
+      console.log(`[GET /mcp] Request closed for session ${sid}`);
+      clearInterval(heartbeat);
+    });
+
+    const server = createMcpServer();
+    await server.connect(transport);
+    console.log(`[GET /mcp] MCP server connected for session ${sid}`);
+  } catch (error: any) {
+    console.error('GET /mcp SSE error:', error);
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'SSE initialization failed' });
+    }
+  }
+});
+
+// DELETE /mcp - still requires sessionId
 const handleSessionRequest = async (req: any, res: any) => {
   const sessionId = req.headers["mcp-session-id"] as string | undefined;
   if (!sessionId || !transports[sessionId]) {
     res.status(400).send("Invalid or missing session ID");
     return;
   }
-  await transports[sessionId].handleRequest(req, res);
+  await (transports[sessionId] as any).handleRequest(req, res);
 };
 
-app.get("/mcp", handleSessionRequest);
 app.delete("/mcp", handleSessionRequest);
+
+// Simple SSE endpoint for testing
+app.get("/sse-simple", async (req, res) => {
+  console.log(`[GET /sse-simple] Request received. Headers:`, req.headers);
+  
+  try {
+    // Set SSE headers manually
+    res.writeHead(200, {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache, no-transform, no-store',
+      'Connection': 'keep-alive',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type, mcp-session-id',
+      'X-Accel-Buffering': 'no' // Disable nginx buffering
+    });
+
+    // Disable socket timeout
+    req.socket.setTimeout(0);
+    
+    const sessionId = randomUUID();
+    console.log(`[GET /sse-simple] Created simple SSE session: ${sessionId}`);
+    
+    // Send initial event
+    res.write(`event: endpoint\ndata: /messages?sessionId=${sessionId}\n\n`);
+    console.log(`[GET /sse-simple] Sent endpoint event for session ${sessionId}`);
+
+    // Add heartbeat every 25 seconds
+    let heartbeatCount = 0;
+    const heartbeat = setInterval(() => {
+      try {
+        heartbeatCount++;
+        const pingMsg = `: ping ${Date.now()}\n\n`;
+        res.write(pingMsg);
+        console.log(`[GET /sse-simple] Sent heartbeat #${heartbeatCount} for session ${sessionId}`);
+      } catch (error) {
+        console.log(`[GET /sse-simple] Heartbeat error for session ${sessionId}:`, error);
+        clearInterval(heartbeat);
+      }
+    }, 25000);
+
+    req.on("close", () => {
+      console.log(`[GET /sse-simple] Request closed for session ${sessionId}`);
+      clearInterval(heartbeat);
+    });
+
+  } catch (error: any) {
+    console.error('[GET /sse-simple] Error:', error);
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'SSE initialization failed' });
+    }
+  }
+});
 
 // SSE MCP endpoint
 app.get("/sse", async (req, res) => {
   try {
+    // Disable socket timeout
+    req.socket.setTimeout(0);
+
     const transport = new SSEServerTransport("/messages", res);
     const sid = randomUUID();
     sseTransports[sid] = transport;
@@ -956,11 +1220,26 @@ app.get("/sse", async (req, res) => {
       delete sseTransports[sid];
     };
 
+    // Add heartbeat every 25 seconds to prevent Cloudflare timeout
+    const heartbeat = setInterval(() => {
+      try {
+        res.write(`: ping ${Date.now()}\n\n`);
+      } catch (error) {
+        clearInterval(heartbeat);
+      }
+    }, 25000);
+
+    req.on("close", () => {
+      clearInterval(heartbeat);
+    });
+
     const server = createMcpServer();
     await server.connect(transport);
   } catch (error: any) {
     console.error('SSE endpoint error:', error);
-    res.status(500).json({ error: 'SSE initialization failed' });
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'SSE initialization failed' });
+    }
   }
 });
 

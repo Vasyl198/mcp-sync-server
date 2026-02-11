@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sync-core-local": {
+      "disabled": false,
+      "headers": {
+        "Authorization": "Bearer ${env:MCP_SYNC_TOKEN}"
+      },
+      "serverUrl": "https://mcp.pioneer-mcp.online/mcp"
+    }
+  }
+}
