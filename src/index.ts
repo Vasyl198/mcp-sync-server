@@ -1,14 +1,14 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "node:path";
-import { randomUUID, createHash } from "node:crypto";
+import { randomUUID, createHash, timingSafeEqual } from "node:crypto";
 import { promises as fs } from "node:fs";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 import { z } from "zod";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import { isInitializeRequest } from "@modelcontextprotocol/sdk/types.js";
 
@@ -18,42 +18,161 @@ import { executeOneFromQueue } from "./router_queue.js";
 import { eventPublish, eventList } from "./events.js";
 import { notesList, notesGet, notesUpsert, notesDelete } from "./notes.js";
 import { tasksList, tasksGet, tasksUpsert, tasksDelete } from "./tasks.js";
+import { protocolInit, protocolWriteCommand, protocolReadCommand, protocolUpdateStatus, protocolWriteReport, protocolWriteLogs } from "./protocol.js";
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config();
+dotenv.config({ path: '.env.local' });
 
 const PORT = Number(process.env.PORT || 3000);
 const MCP_SYNC_TOKEN_RAW = process.env.MCP_SYNC_TOKEN;
 const MCP_SYNC_TOKEN = (MCP_SYNC_TOKEN_RAW ?? "").trim();  
+const AUTH_ENABLED_RAW = (process.env.AUTH_ENABLED ?? "").trim().toLowerCase();
 const ORIGIN_ALLOWLIST = (process.env.MCP_ALLOWED_ORIGINS || "")
   .split(",")
   .map((s) => s.trim())
   .filter(Boolean);
 
-// Auth is disabled unless token is explicitly set and non-empty
-// TEMPORARILY FORCE DISABLED FOR TESTING
-const AUTH_ENABLED = false;
+function parseBooleanEnv(value: string): boolean | undefined {
+  if (!value) return undefined;
+  if (["1", "true", "yes", "on", "enabled"].includes(value)) return true;
+  if (["0", "false", "no", "off", "disabled"].includes(value)) return false;
+  return undefined;
+}
+
+const AUTH_ENABLED_FROM_ENV = parseBooleanEnv(AUTH_ENABLED_RAW);
+const AUTH_ENABLED = AUTH_ENABLED_FROM_ENV ?? MCP_SYNC_TOKEN.length > 0;
+const CORS_ALLOW_HEADERS =
+  "Content-Type, Accept, mcp-session-id, mcp-protocol-version, Last-Event-ID, Authorization";
+
+function normalizeRoutePath(routePath: string): string {
+  if (!routePath) return "/";
+  if (routePath === "/") return routePath;
+  return routePath.replace(/\/+$/, "");
+}
+
+function isAuthProtectedPath(routePath: string): boolean {
+  const normalized = normalizeRoutePath(routePath);
+  return (
+    normalized === "/mcp" ||
+    normalized.startsWith("/mcp/") ||
+    normalized === "/messages" ||
+    normalized.startsWith("/messages/") ||
+    normalized === "/sse" ||
+    normalized.startsWith("/sse/") ||
+    normalized === "/sse-simple" ||
+    normalized.startsWith("/sse-simple/")
+  );
+}
+
+function isValidBearerToken(candidate: string, expected: string): boolean {
+  const candidateBuffer = Buffer.from(candidate, "utf8");
+  const expectedBuffer = Buffer.from(expected, "utf8");
+  if (candidateBuffer.length !== expectedBuffer.length) return false;
+  return timingSafeEqual(candidateBuffer, expectedBuffer);
+}
 
 // Explicit paths to avoid confusion
-const ROOTS = ["C:\\Users\\anani\\Projects"];
+const ROOTS = ["C:\\Users\\anani\\Projects", "C:\\", "D:\\"];
 const SYNC_DIR = "C:\\Users\\anani\\Projects\\_sync";
 
 const ALLOWED_ROOTS = (process.env.MCP_ALLOWED_ROOTS || "")
   .split(",")
   .map((s) => s.trim())
   .filter(Boolean)
-  .map((p) => path.isAbsolute(p) ? p : path.resolve("C:\\Users\\anani\\Projects", p));
+  .map((p) => {
+    if (path.isAbsolute(p)) return p;
+    // Handle relative paths relative to each root
+    if (p.startsWith("C:") || p.startsWith("D:")) return path.resolve(p);
+    return path.resolve("C:\\Users\\anani\\Projects", p);
+  });
 
 const ROOTS_FINAL = ALLOWED_ROOTS.length ? ALLOWED_ROOTS : ROOTS;
+
+// Utility functions to convert Express <-> Fetch Request/Response
+function toFetchHeaders(h: any) {
+  const headers = new Headers();
+  for (const [k, v] of Object.entries(h)) {
+    if (v === undefined) continue;
+    if (Array.isArray(v)) headers.set(k, v.join(", "));
+    else headers.set(k, String(v));
+  }
+  return headers;
+}
+
+function toFetchRequest(req: any) {
+  const host = req.headers.host || "localhost";
+  const url = `http://${host}${req.originalUrl}`;
+
+  const headers = toFetchHeaders(req.headers);
+
+  const method = req.method.toUpperCase();
+  const body = (method === "GET" || method === "HEAD") ? undefined : JSON.stringify(req.body ?? {});
+
+  return new Request(url, {
+    method,
+    headers,
+    body,
+  });
+}
+
+async function sendFetchResponseToExpress(webRes: Response, res: any) {
+  res.status(webRes.status);
+
+  webRes.headers.forEach((value, key) => {
+    res.setHeader(key, value);
+  });
+
+  // Send headers immediately
+  (res as any).flushHeaders?.();
+
+  // Handle connection close for proper cleanup
+  let closed = false;
+  res.on("close", () => { closed = true; });
+  res.on("finish", () => { closed = true; });
+
+  if (!webRes.body) {
+    res.end();
+    return;
+  }
+
+  const reader = webRes.body.getReader();
+  try {
+    while (!closed) {
+      const { value, done } = await reader.read();
+      if (done || closed) break;
+      if (value) {
+        const ok = res.write(Buffer.from(value));
+        // Handle backpressure - wait for drain if buffer is full
+        if (!ok) {
+          await new Promise<void>((resolve) => res.once("drain", resolve));
+        }
+      }
+    }
+  } finally {
+    if (!closed) {
+      res.end();
+    }
+    try { reader.releaseLock(); } catch {}
+  }
+}
+
+function isInsideRoot(root: string, target: string) {
+  const r = path.resolve(root);
+  const t = path.resolve(target);
+
+  // Windows: case-insensitive comparison for drive letters
+  const rel = path.relative(r, t);
+
+  return rel === "" || (!rel.startsWith("..") && !path.isAbsolute(rel));
+}
 
 function assertInAllowedRoots(p: string) {
   const rp = path.resolve(p);
   for (const root of ROOTS_FINAL) {
-    const rr = path.resolve(root);
-    if (rp === rr || rp.startsWith(rr + path.sep)) return rp;
+    if (isInsideRoot(root, rp)) return rp;
   }
   throw new Error(`Path is outside allowed roots: ${rp}`);
 }
@@ -69,6 +188,8 @@ function okText(obj: unknown) {
 function errText(message: string) {
   return { isError: true, content: [{ type: "text", text: message }] as any[] };
 }
+
+export { okText, errText };
 
 // Use Projects directory for SYNC_DIR
 const INBOX_FILE = path.join(SYNC_DIR, 'inbox_command.json');
@@ -92,7 +213,7 @@ function createMcpServer() {
     },
     {
       capabilities: {
-        tools: {},
+        tools: { listChanged: true },
       },
     }
   );
@@ -140,7 +261,13 @@ function createMcpServer() {
               "tasks_upsert",
               "tasks_get",
               "tasks_delete",
-              "tasks_list"
+              "tasks_list",
+              "protocol_init",
+              "protocol_write_command",
+              "protocol_read_command",
+              "protocol_update_status",
+              "protocol_write_report",
+              "protocol_write_logs"
             ]
           })
         }]
@@ -462,14 +589,106 @@ function createMcpServer() {
     });
   }
 
-  // Mock project task handler for now
+  // Real project task handler
   async function handleProjectTask(payload: any) {
+    const { task, project_path, spec_path } = payload;
+    
+    if (task === "create_website") {
+      const websitePath = `${project_path}/website`;
+      
+      // Create website directory
+      await fs.mkdir(websitePath, { recursive: true });
+      
+      // Create index.html
+      const indexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .content { background: #f5f5f5; padding: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Generated Website</h1>
+            <p>Created by MCP Project Task</p>
+        </div>
+        <div class="content">
+            <h2>Welcome!</h2>
+            <p>This website was automatically generated for project: ${project_path}</p>
+            <p>Generated at: ${new Date().toISOString()}</p>
+        </div>
+    </div>
+</body>
+</html>`;
+      
+      await fs.writeFile(`${websitePath}/index.html`, indexHtml);
+      
+      // Create package.json
+      const packageJson = {
+        name: "generated-website",
+        version: "1.0.0",
+        description: "Website generated by MCP project task",
+        scripts: {
+          start: "npx serve ."
+        },
+        devDependencies: {
+          serve: "^14.2.0"
+        }
+      };
+      
+      await fs.writeFile(`${websitePath}/package.json`, JSON.stringify(packageJson, null, 2));
+      
+      // Create README.md
+      const readme = `# Generated Website
+
+This website was automatically generated by MCP project task.
+
+## Project Details
+- **Task:** ${task}
+- **Path:** ${project_path}
+- **Generated:** ${new Date().toISOString()}
+
+## How to Run
+\`\`\`bash
+cd website
+npm install
+npm start
+\`\`\`
+
+## Files Created
+- \`index.html\` - Main HTML page
+- \`package.json\` - Node.js project configuration
+- \`README.md\` - This file
+`;
+      
+      await fs.writeFile(`${websitePath}/README.md`, readme);
+      
+      return {
+        success: true,
+        task,
+        project_path,
+        website_path: websitePath,
+        files_created: ["index.html", "package.json", "README.md"],
+        report_md: `# Website Created Successfully\n\n**Task:** ${task}\n**Project Path:** ${project_path}\n**Website Path:** ${websitePath}\n\n## Files Created:\n- index.html\n- package.json\n- README.md\n\n## Next Steps:\n1. \`cd ${websitePath}\`\n2. \`npm install\`\n3. \`npm start\`\n`,
+        logs: `Created website at ${websitePath} with 3 files`
+      };
+    }
+    
+    // Default fallback for unknown tasks
     return {
-      success: true,
-      task: payload.task,
-      project_path: payload.project_path,
-      report_md: `# Project Task\n\nTask: ${payload.task}\nPath: ${payload.project_path}\n`,
-      logs: `Project task completed: ${payload.task}`
+      success: false,
+      task,
+      project_path,
+      error: `Unknown task: ${task}`,
+      report_md: `# Unknown Task\n\nTask: ${task}\nPath: ${project_path}\n\n**Error:** Unknown task type`,
+      logs: `Failed to execute unknown task: ${task}`
     };
   }
 
@@ -787,6 +1006,71 @@ function createMcpServer() {
     }
   );
 
+  // --- Phase 6: Protocol Tools ---
+  server.tool(
+    "protocol_init",
+    "Initialize protocol files for Windsurf automation.",
+    {},
+    async () => {
+      return await protocolInit();
+    }
+  );
+
+  server.tool(
+    "protocol_write_command",
+    "Write a command to inbox_command.json for Windsurf to execute.",
+    {
+      command: z.string(),
+    },
+    async ({ command }) => {
+      return await protocolWriteCommand(command);
+    }
+  );
+
+  server.tool(
+    "protocol_read_command",
+    "Read the current command from inbox_command.json.",
+    {},
+    async () => {
+      return await protocolReadCommand();
+    }
+  );
+
+  server.tool(
+    "protocol_update_status",
+    "Update the status.json file.",
+    {
+      status: z.enum(['idle', 'running', 'done', 'error']),
+      error: z.string().optional(),
+    },
+    async ({ status, error }) => {
+      return await protocolUpdateStatus(status, error);
+    }
+  );
+
+  server.tool(
+    "protocol_write_report",
+    "Write a report to last_report.md.",
+    {
+      title: z.string(),
+      content: z.string(),
+    },
+    async ({ title, content }) => {
+      return await protocolWriteReport(title, content);
+    }
+  );
+
+  server.tool(
+    "protocol_write_logs",
+    "Write logs to last_logs.txt.",
+    {
+      logs: z.string(),
+    },
+    async ({ logs }) => {
+      return await protocolWriteLogs(logs);
+    }
+  );
+
   // --- Phase 1: File System Tools ---
 
   // fs_list
@@ -1036,7 +1320,10 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Expose-Headers", "mcp-session-id");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, mcp-session-id");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    CORS_ALLOW_HEADERS
+  );
   if (req.method === "OPTIONS") {
     res.status(200).end();
     return;
@@ -1044,115 +1331,107 @@ app.use((req, res, next) => {
   next();
 });
 
-// Bearer auth middleware (disabled for now)
+// Bearer auth middleware for MCP endpoints.
 app.use((req, res, next) => {
+  if (!AUTH_ENABLED) {
+    next();
+    return;
+  }
+
+  if (!isAuthProtectedPath(req.path)) {
+    next();
+    return;
+  }
+
+  if (!MCP_SYNC_TOKEN) {
+    res.status(500).json({ error: "Server auth misconfigured: MCP_SYNC_TOKEN is empty" });
+    return;
+  }
+
+  const authHeader = req.headers.authorization;
+  const parts = typeof authHeader === "string" ? authHeader.trim().split(/\s+/) : [];
+  const isBearer = parts.length === 2 && parts[0].toLowerCase() === "bearer";
+  const token = isBearer ? parts[1].trim() : "";
+
+  if (!isBearer || !isValidBearerToken(token, MCP_SYNC_TOKEN)) {
+    res.setHeader("WWW-Authenticate", 'Bearer realm="mcp-sync-server"');
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+
   next();
 });
 
-const transports: Record<string, StreamableHTTPServerTransport> = {};
+const transports: Record<string, WebStandardStreamableHTTPServerTransport> = {};
 const sseTransports: Record<string, SSEServerTransport> = {};
 
-app.post("/mcp", async (req, res) => {
-  const sessionId = req.headers["mcp-session-id"] as string | undefined;
-  const body = req.body;
-
-  let transport: StreamableHTTPServerTransport;
-
-  if (sessionId && transports[sessionId]) {
-    transport = transports[sessionId];
-  } else if (!sessionId && isInitializeRequest(body)) {
-    transport = new StreamableHTTPServerTransport({
-      sessionIdGenerator: () => randomUUID(),
-      onsessioninitialized: (sid) => {
-        transports[sid] = transport;
-      },
-    });
-
-    transport.onclose = () => {
-      if (transport.sessionId) delete transports[transport.sessionId];
-    };
-
-    const server = createMcpServer();
-    await server.connect(transport);
-  } else {
-    res.status(400).json({
-      jsonrpc: "2.0",
-      error: { code: -32000, message: "Bad Request: No valid session ID provided" },
-      id: null,
-    });
-    return;
-  }
-
-  await transport.handleRequest(req, res, body);
-});
-
-// GET /mcp - create or use SSE session
-app.get("/mcp", async (req, res) => {
-  console.log(`[GET /mcp] Request received. Headers:`, req.headers);
-  const sessionId = req.headers["mcp-session-id"] as string | undefined;
-
-  // 1) если есть активная сессия — используем её
-  if (sessionId && transports[sessionId]) {
-    console.log(`[GET /mcp] Using existing session: ${sessionId}`);
-    await (transports[sessionId] as any).handleRequest(req, res);
-    return;
-  }
-
-  // 2) если нет sessionId — СОЗДАЁМ SSE сессию
+// Unified /mcp handler for all methods (GET, POST, DELETE)
+app.all("/mcp", async (req, res) => {
   try {
-    console.log(`[GET /mcp] Creating new SSE session`);
-    // Disable socket timeout
-    req.socket.setTimeout(0);
+    const sessionId = req.headers["mcp-session-id"] as string | undefined;
 
-    const transport = new SSEServerTransport("/messages", res);
-    const sid = randomUUID();
-    sseTransports[sid] = transport;
-    console.log(`[GET /mcp] Created SSE session: ${sid}`);
-
-    (transport as any).onclose = () => {
-      console.log(`[GET /mcp] SSE session closed: ${sid}`);
-      delete sseTransports[sid];
-    };
-
-    // Add heartbeat every 25 seconds to prevent Cloudflare timeout
-    const heartbeat = setInterval(() => {
-      try {
-        const pingMsg = `: ping ${Date.now()}\n\n`;
-        res.write(pingMsg);
-        console.log(`[GET /mcp] Sent heartbeat for session ${sid}`);
-      } catch (error) {
-        console.log(`[GET /mcp] Heartbeat error for session ${sid}:`, error);
-        clearInterval(heartbeat);
-      }
-    }, 25000);
-
-    req.on("close", () => {
-      console.log(`[GET /mcp] Request closed for session ${sid}`);
-      clearInterval(heartbeat);
+    console.log(`[${req.method}] /mcp Request received`, {
+      sessionId,
+      accept: req.headers["accept"],
+      ua: req.headers["user-agent"],
     });
 
-    const server = createMcpServer();
-    await server.connect(transport);
-    console.log(`[GET /mcp] MCP server connected for session ${sid}`);
-  } catch (error: any) {
-    console.error('GET /mcp SSE error:', error);
-    if (!res.headersSent) {
-      res.status(500).json({ error: 'SSE initialization failed' });
+    // Check if this is an initialize request
+    const isInitialize =
+      req.method === "POST" &&
+      req.body?.method === "initialize" &&
+      req.body?.jsonrpc === "2.0";
+
+    let transport = sessionId ? transports[sessionId] : undefined;
+
+    if (!transport && isInitialize) {
+      // Create new transport
+      transport = new WebStandardStreamableHTTPServerTransport({
+        sessionIdGenerator: () => randomUUID(),
+        onsessioninitialized: (sid) => {
+          transports[sid] = transport!;
+        },
+      });
+
+      transport.onclose = () => {
+        if (transport?.sessionId) delete transports[transport.sessionId];
+      };
+
+      const server = createMcpServer();
+      await server.connect(transport);
     }
+
+    if (!transport) {
+      console.log(`[${req.method}] /mcp Invalid session`, { sessionId, hasSession: !!transports[sessionId!] });
+      res.status(400).json({
+        jsonrpc: "2.0",
+        error: { code: -32000, message: "Bad Request: No valid session ID provided" },
+        id: null,
+      });
+      return;
+    }
+
+    // Convert Express request to Fetch request
+    const fetchReq = toFetchRequest(req);
+    const opts = req.method === "POST" ? { parsedBody: req.body } : undefined;
+
+    // Disable timeouts for SSE
+    if (req.method === "GET") {
+      req.socket.setTimeout(0);
+      (res as any).setTimeout?.(0);
+    }
+
+    const webRes = await transport.handleRequest(fetchReq, opts as any);
+    await sendFetchResponseToExpress(webRes, res);
+
+  } catch (e: any) {
+    console.error(`[${req.method}] /mcp handler error:`, e);
+    res.status(500).send("Internal Server Error");
   }
 });
 
-// DELETE /mcp - still requires sessionId
-const handleSessionRequest = async (req: any, res: any) => {
-  const sessionId = req.headers["mcp-session-id"] as string | undefined;
-  if (!sessionId || !transports[sessionId]) {
-    res.status(400).send("Invalid or missing session ID");
-    return;
-  }
-  await (transports[sessionId] as any).handleRequest(req, res);
-};
 
-app.delete("/mcp", handleSessionRequest);
+
 
 // Simple SSE endpoint for testing
 app.get("/sse-simple", async (req, res) => {
@@ -1165,7 +1444,7 @@ app.get("/sse-simple", async (req, res) => {
       'Cache-Control': 'no-cache, no-transform, no-store',
       'Connection': 'keep-alive',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type, mcp-session-id',
+      'Access-Control-Allow-Headers': CORS_ALLOW_HEADERS,
       'X-Accel-Buffering': 'no' // Disable nginx buffering
     });
 
@@ -1262,8 +1541,15 @@ app.use((err: any, _req: any, res: any, next: any) => {
   next(err);
 });
 
-app.listen(PORT, () => {
+const httpServer = app.listen(PORT, () => {
   console.log(`MCP Sync Server listening on port ${PORT}`);
   console.log(`Auth: ${AUTH_ENABLED ? 'enabled' : 'disabled'}`);
+  if (AUTH_ENABLED_FROM_ENV === undefined && AUTH_ENABLED_RAW) {
+    console.log(`AUTH_ENABLED value "${AUTH_ENABLED_RAW}" is invalid; fallback is token-based auto mode.`);
+  }
+  console.log(`Auth protected paths: /mcp, /messages, /sse, /sse-simple`);
   console.log(`Sync dir: ${SYNC_DIR}`);
 });
+
+httpServer.keepAliveTimeout = 75_000;
+httpServer.headersTimeout = 80_000;
