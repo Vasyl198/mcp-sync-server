@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "task_name": "intelligence_health_snapshot",
+  "snapshot": {
+    "generated_at": "2026-02-16T12:45:57.055Z",
+    "global_intelligence_health_index": 0.25,
+    "components": {
+      "normalized_global_fitness": 0,
+      "stability_index": 1,
+      "transfer_effectiveness": 0,
+      "mutation_effectiveness": 0,
+      "anomaly_rate": 0
+    },
+    "weights": {
+      "w1": 0.3,
+      "w2": 0.25,
+      "w3": 0.2,
+      "w4": 0.15,
+      "w5": 0.1
+    },
+    "fitness_trajectory": {
+      "global": [],
+      "research_impact": []
+    }
+  },
+  "report_md": "# Global Intelligence Health\n\n- GIHI: 0.25\n- Fitness: 0\n- Stability: 1\n- Transfer effectiveness: 0\n- Mutation effectiveness: 0\n- Anomaly rate: 0",
+  "logs": "intelligence_health_snapshot gihi 0.25"
+}

@@ -1,0 +1,76 @@
+{
+  "campaign_id": "cmp_00d7c9f0-7e4e-4f57-b51b-c6aad77a956a",
+  "goal": "Post-annealing safe cycle (4 ticks)",
+  "objective": {
+    "mode": "maximize",
+    "metric": "accuracy"
+  },
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "search_space": {
+      "lr": [
+        0.001,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "layers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exploration_bias": [
+        0.51,
+        0.71,
+        0.91,
+        1
+      ]
+    },
+    "transfer_threshold": 0
+  },
+  "max_experiments": 40,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 40,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 4,
+    "gihi_grace_ticks": 2
+  },
+  "status": "draft",
+  "created_at": "2026-02-17T10:28:26.812Z",
+  "updated_at": "2026-02-25T12:09:58.050Z",
+  "experiment_ids": [],
+  "tick_count": 0,
+  "experiments_run": 0,
+  "history": [
+    {
+      "ts": "2026-02-17T10:28:26.812Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 40,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 40,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 4,
+          "gihi_grace_ticks": 2
+        }
+      }
+    },
+    {
+      "ts": "2026-02-17T10:28:37.837Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_26570314-432c-4c98-86d8-bb7dd31573ba",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    }
+  ]
+}

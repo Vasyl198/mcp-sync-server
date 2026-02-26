@@ -1,0 +1,190 @@
+{
+  "campaign_id": "cmp_reg_C_invalid_domain_1771826881185",
+  "goal": "regression-C_invalid_domain",
+  "objective": "maximize score",
+  "constraints": {
+    "confidence_domains_targeted": [
+      "BAD_DOMAIN_FORMAT"
+    ],
+    "auto_advance": true,
+    "exec_command": "node -e \"const eb={exploration_bias};const nf={narrowing_factor};const s=1-Math.abs(eb-0.55)-Math.abs(nf-1)*0.35+(Math.random()*0.03);console.log('score='+s.toFixed(4));\""
+  },
+  "max_experiments": 24,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 24,
+    "stagnation_rate_gt": 0.92,
+    "max_ticks": 3,
+    "gihi_grace_ticks": 1
+  },
+  "status": "stopped",
+  "created_at": "2026-02-23T06:08:01.187Z",
+  "updated_at": "2026-02-25T12:09:55.316Z",
+  "started_at": "2026-02-23T06:08:01.323Z",
+  "completed_at": "2026-02-23T06:08:23.910Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_ffef9271-e8a6-4cac-983a-5408a7fd370e",
+  "experiment_ids": [
+    "exp_ffef9271-e8a6-4cac-983a-5408a7fd370e"
+  ],
+  "tick_count": 3,
+  "experiments_run": 0,
+  "last_metrics": {
+    "gihi": 0.231003,
+    "transfer_success_rate": 0.263963,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.723358
+  },
+  "history": [
+    {
+      "ts": "2026-02-23T06:08:01.187Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 24,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 24,
+          "stagnation_rate_gt": 0.92,
+          "max_ticks": 3,
+          "gihi_grace_ticks": 1
+        }
+      }
+    },
+    {
+      "ts": "2026-02-23T06:08:01.481Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_ffef9271-e8a6-4cac-983a-5408a7fd370e",
+        "exec_command_attached": true,
+        "exec_command_source": "inferred_from_experiment",
+        "exec_command_source_experiment_id": "exp_6fbcecac-211d-4ad7-8dc3-d647fe2967d8"
+      }
+    },
+    {
+      "ts": "2026-02-23T06:08:08.561Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "tick_index": 1,
+        "tick_id": "cmp_reg_C_invalid_domain_1771826881185:1",
+        "created_runs": 0,
+        "impacted_count": 0,
+        "pending_runs_scanned": 0,
+        "exec_tasks_created": 0,
+        "runs_linked_with_task_id": 0,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 1,
+        "orchestrated_activated": 0,
+        "recovered_activated": 0,
+        "arena_evaluated": 1,
+        "evolved_created": 0,
+        "gihi": 0.263958,
+        "transfer_success_rate": 0.263733,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.72332,
+        "confidence_domains_targeted": [
+          "BAD_DOMAIN_FORMAT"
+        ],
+        "confidence_domains_targeted_reasons": [
+          {
+            "domain_signature": "BAD_DOMAIN_FORMAT",
+            "reason": "campaign_constraint_forced"
+          }
+        ],
+        "confidence_domains_targeted_constraint_violations": [],
+        "confidence_quota_hits": [],
+        "confidence_quota_diagnostics": [],
+        "status": "running",
+        "stop_reason": null
+      }
+    },
+    {
+      "ts": "2026-02-23T06:08:15.998Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 2,
+        "tick_index": 2,
+        "tick_id": "cmp_reg_C_invalid_domain_1771826881185:2",
+        "created_runs": 0,
+        "impacted_count": 0,
+        "pending_runs_scanned": 0,
+        "exec_tasks_created": 0,
+        "runs_linked_with_task_id": 0,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 0,
+        "orchestrated_activated": 0,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.263998,
+        "transfer_success_rate": 0.263963,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.723358,
+        "confidence_domains_targeted": [
+          "BAD_DOMAIN_FORMAT"
+        ],
+        "confidence_domains_targeted_reasons": [
+          {
+            "domain_signature": "BAD_DOMAIN_FORMAT",
+            "reason": "campaign_constraint_forced"
+          }
+        ],
+        "confidence_domains_targeted_constraint_violations": [],
+        "confidence_quota_hits": [],
+        "confidence_quota_diagnostics": [],
+        "status": "running",
+        "stop_reason": null
+      }
+    },
+    {
+      "ts": "2026-02-23T06:08:23.371Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 3,
+        "tick_index": 3,
+        "tick_id": "cmp_reg_C_invalid_domain_1771826881185:3",
+        "created_runs": 0,
+        "impacted_count": 0,
+        "pending_runs_scanned": 0,
+        "exec_tasks_created": 0,
+        "runs_linked_with_task_id": 0,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 0,
+        "orchestrated_activated": 0,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.231003,
+        "transfer_success_rate": 0.263963,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.723358,
+        "confidence_domains_targeted": [
+          "BAD_DOMAIN_FORMAT"
+        ],
+        "confidence_domains_targeted_reasons": [
+          {
+            "domain_signature": "BAD_DOMAIN_FORMAT",
+            "reason": "campaign_constraint_forced"
+          }
+        ],
+        "confidence_domains_targeted_constraint_violations": [],
+        "confidence_quota_hits": [],
+        "confidence_quota_diagnostics": [],
+        "status": "stopped",
+        "stop_reason": "max_ticks_reached"
+      }
+    }
+  ]
+}

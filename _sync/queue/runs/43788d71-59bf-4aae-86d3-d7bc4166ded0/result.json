@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "task_name": "evolution_tick",
+  "shadow_mode": true,
+  "created": [],
+  "skipped": [
+    {
+      "role": "planner",
+      "reason": "insufficient_runs"
+    },
+    {
+      "role": "dev",
+      "reason": "shadow_already_exists_for_active_parent"
+    },
+    {
+      "role": "research",
+      "reason": "insufficient_runs"
+    },
+    {
+      "role": "critic",
+      "reason": "insufficient_runs"
+    }
+  ],
+  "governance": {
+    "max_versions_per_role": 5,
+    "max_shadow_per_role": 1,
+    "evolution_cooldown_ms": 60000,
+    "min_replay_runs": 4,
+    "promotion_margin_min": 0.07,
+    "discard_on_instability": true,
+    "max_evolution_attempts_per_day": 10,
+    "stability_success_variance_max": 0.04,
+    "stability_completion_time_variance_max": 0.35,
+    "rollback_eval_runs": 3,
+    "rollback_failure_delta": 0.2,
+    "rollback_critic_delta": 0.15
+  },
+  "thresholds": {
+    "min_runs": 4,
+    "failure_rate_gt": 0.4,
+    "critic_score_lt": 0.6,
+    "avg_completion_time_ms_gt": 3000,
+    "research_fitness_lt": 0.25,
+    "stagnation_rate_gt": 0.6,
+    "convergence_steps_gt": 20,
+    "meta_window": 8,
+    "meta_patience": 2,
+    "meta_cooldown_ms": 21600000
+  },
+  "report_md": "# Evolution Tick\n\n**created:** 0\n\n**skipped:** 4\n",
+  "logs": "evolution_tick created 0 versions"
+}

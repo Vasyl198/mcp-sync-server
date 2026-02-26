@@ -1,0 +1,28 @@
+﻿{
+    "role":  "dev",
+    "baseline":  "C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\swe_honesty_baseline_dev.json",
+    "before_ts":  "2026-02-24T22:16:32.9022660+02:00",
+    "after_ts":  "2026-02-25T08:32:46.7979239+02:00",
+    "changed":  true,
+    "changes_count":  3,
+    "changes":  [
+                    {
+                        "area":  "sync_file",
+                        "file":  "registry_json",
+                        "before":  "34615:639075553445167948",
+                        "after":  "26697:639075977580054676"
+                    },
+                    {
+                        "area":  "sync_file",
+                        "file":  "evolution_history_jsonl",
+                        "before":  "13222251:639075541153176490",
+                        "after":  "13225649:639075967857990593"
+                    },
+                    {
+                        "area":  "source_file",
+                        "file":  "src/index.ts",
+                        "before":  "7d702c1d57785c53898f92106b1f77e7fe81800e07f5e7bd44f313780c0d6953",
+                        "after":  "f8a8cc035cb35c5a01ace7cf005dee8dfe81ff9adf3b9c63385556c350a1b039"
+                    }
+                ]
+}

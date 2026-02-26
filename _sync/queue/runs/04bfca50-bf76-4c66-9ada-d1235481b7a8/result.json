@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "task_name": "orchestrator_tick",
+  "project_id": null,
+  "activated": [
+    {
+      "task_id": "38be07fc-1da8-4849-83c0-22c00bcebe1d",
+      "project_id": "default",
+      "title": "Layer2 Child A",
+      "description": "First dependent task",
+      "status": "in_progress",
+      "depends_on": [
+        "8ffada35-a8dc-41e2-a33f-ddae784b1050"
+      ],
+      "children": [],
+      "created_at": "2026-02-16T06:57:05.787Z",
+      "updated_at": "2026-02-16T07:11:08.220Z"
+    }
+  ],
+  "scanned_open": 1,
+  "remaining_open": 0,
+  "report_md": "# Orchestrator Tick\n\n**activated:** 1\n\n**remaining_open:** 0\n",
+  "logs": "orchestrator_tick activated 1 tasks"
+}

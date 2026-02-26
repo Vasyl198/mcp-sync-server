@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "task": "task_plan_generate",
+  "error": "task_plan_generate requires goal",
+  "report_md": "# Invalid Task Graph Payload\n\n`task_plan_generate` requires `goal`.",
+  "logs": "Missing goal for task_plan_generate payload: {\"command\":\"task_plan_generate\",\"args\":{}}"
+}

@@ -1,0 +1,52 @@
+{
+  "campaign_id": "cmp_82f8e91f-614e-4f88-bf92-01c7eddc3f80",
+  "goal": "Optimize model accuracy for medium search space (transfer test)",
+  "objective": {
+    "metric": "accuracy",
+    "mode": "maximize"
+  },
+  "max_experiments": 30,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 30,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 10,
+    "gihi_grace_ticks": 2
+  },
+  "status": "stopped",
+  "created_at": "2026-02-16T13:21:50.029Z",
+  "updated_at": "2026-02-25T12:09:55.468Z",
+  "started_at": "2026-02-16T13:22:02.997Z",
+  "completed_at": "2026-02-16T13:22:03.073Z",
+  "stop_reason": "gihi_below_threshold",
+  "primary_experiment_id": "exp_7575a1d3-30b9-44ca-af42-bbf22b533840",
+  "experiment_ids": [
+    "exp_7575a1d3-30b9-44ca-af42-bbf22b533840"
+  ],
+  "tick_count": 0,
+  "experiments_run": 10,
+  "last_metrics": {
+    "gihi": 0.116703,
+    "transfer_success_rate": 0,
+    "mutation_effectiveness_ratio": 0,
+    "arena_domains": 0,
+    "stagnation_rate": 0.700764
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T13:21:50.029Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 30,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 30,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 10
+        }
+      }
+    }
+  ]
+}

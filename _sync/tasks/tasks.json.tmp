@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "updated_at": "2026-02-16T12:06:53.255Z",
+  "tasks": {
+    "8ffada35-a8dc-41e2-a33f-ddae784b1050": {
+      "task_id": "8ffada35-a8dc-41e2-a33f-ddae784b1050",
+      "project_id": "default",
+      "title": "Layer2 Root v2",
+      "description": "Integration test root task after payload normalization",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T06:56:13.929Z",
+      "updated_at": "2026-02-16T07:06:10.907Z"
+    },
+    "38be07fc-1da8-4849-83c0-22c00bcebe1d": {
+      "task_id": "38be07fc-1da8-4849-83c0-22c00bcebe1d",
+      "project_id": "default",
+      "title": "Layer2 Child A",
+      "description": "First dependent task",
+      "status": "done",
+      "depends_on": [
+        "8ffada35-a8dc-41e2-a33f-ddae784b1050"
+      ],
+      "children": [],
+      "created_at": "2026-02-16T06:57:05.787Z",
+      "updated_at": "2026-02-16T07:12:34.356Z"
+    },
+    "996e078b-7c3d-4ec7-b02a-4488e9fbb877": {
+      "task_id": "996e078b-7c3d-4ec7-b02a-4488e9fbb877",
+      "project_id": "default",
+      "title": "1. Complete Layer 2 integration",
+      "description": "Auto-generated from goal: Complete Layer 2 integration",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T06:57:36.816Z",
+      "updated_at": "2026-02-16T07:05:18.080Z"
+    },
+    "76cb938b-7df7-4fef-898b-7f4a2a29c555": {
+      "task_id": "76cb938b-7df7-4fef-898b-7f4a2a29c555",
+      "project_id": "orch_test",
+      "title": "root done",
+      "description": "",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:09:35.969Z",
+      "updated_at": "2026-02-16T07:09:35.979Z"
+    },
+    "b479d321-d7c7-4280-9f0b-af25096f82ca": {
+      "task_id": "b479d321-d7c7-4280-9f0b-af25096f82ca",
+      "project_id": "orch_test",
+      "title": "child waits",
+      "description": "",
+      "status": "in_progress",
+      "depends_on": [
+        "76cb938b-7df7-4fef-898b-7f4a2a29c555"
+      ],
+      "children": [],
+      "created_at": "2026-02-16T07:09:35.974Z",
+      "updated_at": "2026-02-16T07:09:35.983Z"
+    },
+    "dad198fe-5f2c-4c15-8b11-bbf8ad1d31d5": {
+      "task_id": "dad198fe-5f2c-4c15-8b11-bbf8ad1d31d5",
+      "project_id": "default",
+      "title": "exec: echo Autonomous Layer4 Task",
+      "description": "Auto-exec binding test task",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:15:32.759Z",
+      "updated_at": "2026-02-16T07:22:47.831Z",
+      "execution": {
+        "mode": "exec",
+        "command": "echo Autonomous Layer4 Task",
+        "job_id": "exec-bind-dad198fe-5f2c-4c15-8b11-bbf8ad1d31d5",
+        "queued_at": "2026-02-16T07:22:45.831Z",
+        "started_at": "2026-02-16T07:22:45.831Z",
+        "finished_at": "2026-02-16T07:22:47.831Z",
+        "exit_code": 0
+      }
+    },
+    "843871cc-6c5b-4179-89e4-c02e68634579": {
+      "task_id": "843871cc-6c5b-4179-89e4-c02e68634579",
+      "project_id": "layer4_test",
+      "title": "exec: echo Autonomous Layer4 Task",
+      "description": "",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:20:31.438Z",
+      "updated_at": "2026-02-16T07:20:31.495Z",
+      "execution": {
+        "mode": "exec",
+        "command": "echo Autonomous Layer4 Task",
+        "job_id": "exec-bind-843871cc-6c5b-4179-89e4-c02e68634579",
+        "queued_at": "2026-02-16T07:20:31.451Z",
+        "started_at": "2026-02-16T07:20:31.451Z",
+        "finished_at": "2026-02-16T07:20:31.495Z",
+        "exit_code": 0
+      }
+    },
+    "4d94d361-401e-4797-bf3d-7356a7f0b887": {
+      "task_id": "4d94d361-401e-4797-bf3d-7356a7f0b887",
+      "project_id": "layer5_test",
+      "title": "exec: cmd /c exit 1",
+      "description": "",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "execution_policy": {
+        "max_attempts": 3,
+        "retry_delay_ms": 300,
+        "backoff_multiplier": 1
+      },
+      "created_at": "2026-02-16T07:28:32.537Z",
+      "updated_at": "2026-02-16T07:30:53.469Z",
+      "execution": {
+        "mode": "exec",
+        "command": "cmd /c exit 1",
+        "job_id": "exec-bind-4d94d361-401e-4797-bf3d-7356a7f0b887",
+        "attempts": 1,
+        "queued_at": "2026-02-16T07:30:53.469Z",
+        "started_at": "2026-02-16T07:28:32.550Z",
+        "finished_at": "2026-02-16T07:28:32.569Z",
+        "exit_code": 1,
+        "last_error": "simulated fail"
+      }
+    },
+    "7a3f44b3-8595-470d-8183-169b760fe1b4": {
+      "task_id": "7a3f44b3-8595-470d-8183-169b760fe1b4",
+      "project_id": "default",
+      "title": "exec: cmd /c exit 1",
+      "description": "Failure simulation task",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "execution_policy": {
+        "max_attempts": 2,
+        "retry_delay_ms": 1000,
+        "backoff_multiplier": 1
+      },
+      "created_at": "2026-02-16T07:30:37.644Z",
+      "updated_at": "2026-02-16T07:31:45.355Z",
+      "execution": {
+        "mode": "exec",
+        "command": "cmd /c exit 1",
+        "job_id": "exec-bind-7a3f44b3-8595-470d-8183-169b760fe1b4",
+        "attempts": 1,
+        "queued_at": "2026-02-16T07:31:45.355Z",
+        "started_at": "2026-02-16T07:30:53.458Z",
+        "finished_at": "2026-02-16T07:30:55.735Z",
+        "exit_code": 1,
+        "last_error": ""
+      }
+    },
+    "5190d39e-2ee4-4cd5-acf1-96dbb234c41b": {
+      "task_id": "5190d39e-2ee4-4cd5-acf1-96dbb234c41b",
+      "project_id": "agent_smoke",
+      "role": "planner",
+      "title": "Plan next iteration",
+      "description": "",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T08:34:05.354Z",
+      "updated_at": "2026-02-16T08:34:05.365Z",
+      "execution": {
+        "mode": "agent",
+        "command": "agent:planner:planner.default.v1",
+        "job_id": "agent-planner-5190d39e-2ee4-4cd5-acf1-96dbb234c41b",
+        "attempts": 0,
+        "queued_at": "2026-02-16T08:34:05.365Z"
+      }
+    },
+    "c575f94a-1113-4e52-861b-d9dd5d2b5991": {
+      "task_id": "c575f94a-1113-4e52-861b-d9dd5d2b5991",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Deep Experiment Engine",
+      "description": "Add experiment_run, experiment_compare, experiment_leaderboard, parameter search and integration with ResearchAgent.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T09:21:23.947Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "8ac47e7d-edcd-4f21-8961-dc46dd7fdc23": {
+      "task_id": "8ac47e7d-edcd-4f21-8961-dc46dd7fdc23",
+      "project_id": "default",
+      "role": "research",
+      "title": "exec: echo training lr=0.001 layers=2 && echo accuracy=0.2",
+      "description": "Experiment run for exp_9579201f-5cda-4e4c-96b3-89e304ccec4d",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T09:30:28.569Z",
+      "updated_at": "2026-02-16T11:59:53.585Z",
+      "execution": {
+        "mode": "exec",
+        "command": "",
+        "attempts": 1,
+        "started_at": "2026-02-16T11:59:53.585Z",
+        "finished_at": "2026-02-16T11:59:53.585Z",
+        "exit_code": 0
+      }
+    },
+    "c06c5aa3-bf6d-4114-a1b4-adacf9c2e775": {
+      "task_id": "c06c5aa3-bf6d-4114-a1b4-adacf9c2e775",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Integrate ResearchAgent evolution with adaptive experiment results",
+      "description": "Link experiment improvement_delta, convergence speed and exploration efficiency to ResearchAgent metrics and evolution scoring.",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T09:58:29.179Z",
+      "updated_at": "2026-02-16T10:05:01.453Z"
+    },
+    "27d21719-5ce9-4cfe-a5e7-ef538ded033d": {
+      "task_id": "27d21719-5ce9-4cfe-a5e7-ef538ded033d",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Meta-Adaptive Mutation Layer",
+      "description": "Allow ResearchAgent to mutate fitness weighting parameters and adaptive mutation weights based on long-term meta-performance.",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T10:34:51.343Z",
+      "updated_at": "2026-02-16T10:40:46.542Z"
+    },
+    "1aa51b0b-9204-4b15-8dce-05ff1ff21242": {
+      "task_id": "1aa51b0b-9204-4b15-8dce-05ff1ff21242",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Cross-Domain Adaptation Layer",
+      "description": "Add domain classification for experiments and domain-aware adaptive_profile selection and fitness weighting for ResearchAgent.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T10:47:25.456Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "bbf9fb48-fecc-4efa-b50e-8c9024d8239f": {
+      "task_id": "bbf9fb48-fecc-4efa-b50e-8c9024d8239f",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Transfer Learning Layer for ResearchAgent",
+      "description": "Add cross-domain memory bank, domain similarity metric, and strategy reuse mechanism for ResearchAgent.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T10:59:30.648Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "c07a2610-3bf0-4a9e-a4a9-5d1089d50d9c": {
+      "task_id": "c07a2610-3bf0-4a9e-a4a9-5d1089d50d9c",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Add MCP tools for Research Memory Diagnostics",
+      "description": "Implement research_memory_list and research_memory_explain_match MCP tools for inspecting memory bank and similarity scoring.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T11:07:03.699Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "34a58863-f2ba-4dc0-a8bc-d0ec62b3b36e": {
+      "task_id": "34a58863-f2ba-4dc0-a8bc-d0ec62b3b36e",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Global Intelligence Stabilization Layer",
+      "description": "Add memory pruning, strategy aging, transfer confidence scoring, catastrophic forgetting protection, and anomaly detection for ResearchAgent global intelligence stability.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T11:11:43.816Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "797aeade-6139-43a2-86b2-a4e8f49dec5e": {
+      "task_id": "797aeade-6139-43a2-86b2-a4e8f49dec5e",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Strategy Arena Layer (Per-Domain Competition)",
+      "description": "Enable multiple adaptive/meta strategy versions per domain with controlled competition and survival-of-the-fittest under governance constraints.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T11:20:14.882Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "00b39822-5615-4380-ac10-00cb7a96a65a": {
+      "task_id": "00b39822-5615-4380-ac10-00cb7a96a65a",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Design Arena Telemetry & Intelligence Dashboard",
+      "description": "Create telemetry layer for Strategy Arena including per-domain heatmap, strategy lineage tracking, fitness trajectory, transfer success rate, mutation effectiveness, and global intelligence health index.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T11:38:24.132Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    },
+    "4642515b-0ddb-4167-afb1-95c7a839a88d": {
+      "task_id": "4642515b-0ddb-4167-afb1-95c7a839a88d",
+      "project_id": "default",
+      "role": "planner",
+      "title": "Implement Autonomous Research Campaign Mode",
+      "description": "Enable fully autonomous long-running research campaigns: goal definition, experiment generation, adaptive search cycles, arena competition, transfer reuse, convergence detection, and final structured report generation.",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T11:51:06.222Z",
+      "updated_at": "2026-02-16T11:58:25.650Z"
+    }
+  }
+}

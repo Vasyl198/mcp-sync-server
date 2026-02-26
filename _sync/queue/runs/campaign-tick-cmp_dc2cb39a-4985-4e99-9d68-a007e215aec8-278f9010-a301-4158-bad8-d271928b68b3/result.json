@@ -1,0 +1,13 @@
+{
+  "success": false,
+  "task_name": "campaign_tick",
+  "retryable": true,
+  "retry_count": 13,
+  "requeued": {
+    "queued": true,
+    "job_id": "campaign-tick-cmp_dc2cb39a-4985-4e99-9d68-a007e215aec8-72ea8bf1-62bb-4404-8b2c-3b87be4f5047"
+  },
+  "error": "EPERM: operation not permitted, rename 'C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\experiments\\experiments.json.tmp' -> 'C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\experiments\\experiments.json'",
+  "report_md": "# Campaign Tick Retry\n\n**retry_count:** 13\n\n**reason:** EPERM: operation not permitted, rename 'C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\experiments\\experiments.json.tmp' -> 'C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\experiments\\experiments.json'\n",
+  "logs": "campaign_tick lock busy, requeued retry=13"
+}

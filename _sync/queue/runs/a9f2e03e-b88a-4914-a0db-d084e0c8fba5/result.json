@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "task_name": "task_create",
+  "task": {
+    "task_id": "34a58863-f2ba-4dc0-a8bc-d0ec62b3b36e",
+    "project_id": "default",
+    "role": "planner",
+    "title": "Implement Global Intelligence Stabilization Layer",
+    "description": "Add memory pruning, strategy aging, transfer confidence scoring, catastrophic forgetting protection, and anomaly detection for ResearchAgent global intelligence stability.",
+    "status": "open",
+    "depends_on": [],
+    "children": [],
+    "created_at": "2026-02-16T11:11:43.816Z",
+    "updated_at": "2026-02-16T11:11:43.816Z"
+  },
+  "report_md": "# Task Created\n\n**task:** task_create\n\n**task_id:** 34a58863-f2ba-4dc0-a8bc-d0ec62b3b36e\n",
+  "logs": "Created task graph node: 34a58863-f2ba-4dc0-a8bc-d0ec62b3b36e"
+}

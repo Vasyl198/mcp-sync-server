@@ -1,0 +1,435 @@
+[
+  {
+    "run_id": "run_6ee87f9f-2f69-4ba4-963e-d677412a9391",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:44.258Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "10734f4f-9ec0-4997-96e5-6ea5606eb6ff",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_fd0b3d7e-7f24-4238-9e50-413ee7e55f8e",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:33.953Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "d6368bc4-4ff8-4225-80b1-0518995540e4"
+  },
+  {
+    "run_id": "run_018607a4-abbf-4375-a06a-6966284b358c",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:45.143Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 48,
+    "score": null,
+    "task_id": "d04518fe-a9e9-42cf-b4b1-b581f02c34c7",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_f6869898-84e6-41c7-8b3a-d119160435e8",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:45.587Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "bdbd6d8e-9f4d-4a7c-8865-110081e3ccc9",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_b305367a-eb18-479f-8590-307056ac45ba",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:46.150Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 53,
+    "score": null,
+    "task_id": "2ed70193-69da-45cd-af47-f36bcf6e38f2",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_05b914aa-2291-49a9-8583-f551050c682d",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:46.966Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 61,
+    "score": null,
+    "task_id": "6f1d467e-03fa-4d5f-b1a7-ce6a5cbd57ed",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_6dce71e1-a2e3-4e8e-a9be-a8b4223a1a20",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:48.447Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 81,
+    "score": null,
+    "task_id": "b6d982e5-d1e8-4a40-8fda-66348b0fe1e5",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_5740f77f-fcdf-4ad5-8aa1-cc72b6e20d0d",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:48.961Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 59,
+    "score": null,
+    "task_id": "82c1c323-0f29-48d5-af53-95a702d2c187",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_dba21c5c-39c7-40f3-94e4-27eccd024166",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:34.269Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "102c4849-5bad-468f-8e19-98626859bb26"
+  },
+  {
+    "run_id": "run_5c6280da-1d4f-40bb-9a45-9e4df81ddc8e",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:33.851Z",
+    "updated_at": "2026-02-17T14:55:50.400Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 51,
+    "score": null,
+    "task_id": "af6b41ff-0504-478a-a873-4cfb89439740",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_c4012a82-fe78-4018-9f82-556a57695c2b",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:36.181Z",
+    "updated_at": "2026-02-17T14:55:51.612Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 55,
+    "score": null,
+    "task_id": "48f50888-3f24-4a7f-b6b5-a4a6d6697c14",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_96ed1395-228c-4a0b-b3b8-2ab82868e234",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:36.181Z",
+    "updated_at": "2026-02-17T14:55:51.712Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 72,
+    "score": null,
+    "task_id": "cd2a2002-a12d-4841-865c-a4400c43c8ab",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_153d90c8-cace-4ae8-a03e-a2780986a76d",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:36.181Z",
+    "updated_at": "2026-02-17T14:55:50.479Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "090b5730-981b-4f14-a260-cdde70ac3345",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_ea603987-c184-4c85-9d97-c1723a7c8be3",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:36.181Z",
+    "updated_at": "2026-02-17T14:55:51.107Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "94970b5f-5cdd-44e1-aaf6-f6c962d4e17b",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_4734df33-7917-4a2d-b2b8-e3253c03cd4d",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:39.596Z",
+    "updated_at": "2026-02-17T14:55:52.100Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 57,
+    "score": null,
+    "task_id": "59a2d7a9-831b-49fb-8a24-e504f28faf68",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_ccf05b9d-01b3-4c27-9a4e-caee31172d1f",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:39.596Z",
+    "updated_at": "2026-02-17T14:55:52.556Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 50,
+    "score": null,
+    "task_id": "733855b5-e9ac-486b-a314-4b5b93bf109b",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_6ba87697-4514-4966-bc52-db95accd8609",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:39.596Z",
+    "updated_at": "2026-02-17T14:55:53.097Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "49440a4b-8337-4580-b97e-5cf5eedbf628",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_2198d834-96e5-4654-8196-8fc4f0c68e8a",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:39.596Z",
+    "updated_at": "2026-02-17T14:55:53.681Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 55,
+    "score": null,
+    "task_id": "29e56897-743d-467d-a82a-097ff76857a2",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_3e7a41a1-c9e1-44f1-9c97-eb28bce2a979",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:42.649Z",
+    "updated_at": "2026-02-17T14:55:54.149Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "a5868ce2-37e2-4336-afbe-500850e4b832",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_20e98133-ba03-400e-a7bd-70db9dd91a67",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:42.649Z",
+    "updated_at": "2026-02-17T14:55:54.651Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 55,
+    "score": null,
+    "task_id": "aabe3dd8-bcb7-4a01-b168-a251509a1901",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_b2510455-b4d8-4a8f-abfa-4012214b066a",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:42.649Z",
+    "updated_at": "2026-02-17T14:55:55.167Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "0155b6d4-fe7a-4e71-b3a7-fb8c2d9e58b2",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_1dfdea9f-7dc6-43ea-a505-b3f213a3b9e0",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:42.649Z",
+    "updated_at": "2026-02-17T14:55:55.630Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "d7b9cb96-964d-42b1-a47a-4f3156c40fb4",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_ac3ad6a8-3ee2-4fcc-8747-4a4825ab3c4c",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:46.344Z",
+    "updated_at": "2026-02-17T14:55:56.243Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 51,
+    "score": null,
+    "task_id": "49854205-3755-4d5b-9a55-70de58a6cd78",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_1f8202bd-c85d-40c9-b6ca-0a28c0fe09db",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:46.344Z",
+    "updated_at": "2026-02-17T14:55:46.344Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null
+  },
+  {
+    "run_id": "run_e1e8be79-ebfe-4849-9bc5-2a32d793ec93",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:46.344Z",
+    "updated_at": "2026-02-17T14:55:56.761Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 50,
+    "score": null,
+    "task_id": "efc2add2-6d17-41b0-97cc-2f2884f5a001",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_86fd5653-bf77-4ddc-92c0-99e9ee3e97b6",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:46.399Z",
+    "updated_at": "2026-02-17T14:55:57.218Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 0.75,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 50,
+    "score": null,
+    "task_id": "b55ff61a-08d1-48d5-acdf-942351e4f3ce",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_fec55784-d66a-433d-b85d-6c7657551894",
+    "experiment_id": "exp_872fe43c-bd87-4b2d-8efd-7ea710f4fa5a",
+    "created_at": "2026-02-17T14:55:47.874Z",
+    "updated_at": "2026-02-17T14:56:08.380Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1,
+      "__transfer_eval": 1,
+      "__domain_signature": "medium|high|low|p5"
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 50,
+    "score": null,
+    "task_id": "4c8eab90-70c3-4bbe-918c-b86742c030dc",
+    "notes": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  }
+]

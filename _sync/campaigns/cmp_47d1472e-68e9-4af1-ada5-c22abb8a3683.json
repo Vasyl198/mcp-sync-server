@@ -1,0 +1,141 @@
+{
+  "campaign_id": "cmp_47d1472e-68e9-4af1-ada5-c22abb8a3683",
+  "goal": "quick evidence_gate verification",
+  "objective": "maximize score",
+  "constraints": {
+    "exec_command": "node -e \"const s=0.8+Math.random()*0.1;console.log('score='+s.toFixed(4));\""
+  },
+  "max_experiments": 6,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 6,
+    "stagnation_rate_gt": 0.92,
+    "max_ticks": 1,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-19T08:26:33.194Z",
+  "updated_at": "2026-02-25T12:09:59.010Z",
+  "started_at": "2026-02-19T08:26:38.250Z",
+  "completed_at": "2026-02-19T13:40:27.415Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_1e319e0d-bf75-458c-81aa-90b15d2416ad",
+  "experiment_ids": [
+    "exp_fda9127f-ec3b-497c-947c-87130239580c",
+    "exp_3801e8db-406c-4230-8b43-a21a67c8f093",
+    "exp_1e319e0d-bf75-458c-81aa-90b15d2416ad"
+  ],
+  "tick_count": 1,
+  "experiments_run": 10,
+  "last_metrics": {
+    "gihi": 0.241579,
+    "transfer_success_rate": 0.177087,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.732495
+  },
+  "history": [
+    {
+      "ts": "2026-02-19T08:26:33.194Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 6,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 6,
+          "stagnation_rate_gt": 0.92,
+          "max_ticks": 1,
+          "gihi_grace_ticks": 2
+        }
+      }
+    },
+    {
+      "ts": "2026-02-19T08:26:38.293Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_fda9127f-ec3b-497c-947c-87130239580c",
+        "exec_command_attached": true,
+        "exec_command_source": "inferred_from_experiment",
+        "exec_command_source_experiment_id": "exp_5ccb07c6-8d65-456f-80df-89fdaa1f70a5"
+      }
+    },
+    {
+      "ts": "2026-02-19T13:36:14.551Z",
+      "type": "campaign.watchdog.enqueued",
+      "data": {
+        "idle_ms": 1249877,
+        "backoff_ms": 60000,
+        "jitter_ms": 1172,
+        "not_before_ts": "2026-02-19T13:37:15.394Z",
+        "live_before": {
+          "has_live": false,
+          "pending": 0,
+          "running": 0
+        },
+        "job_id": "campaign-tick-cmp_47d1472e-68e9-4af1-ada5-c22abb8a3683-watchdog-1771508174222-be659cbf"
+      }
+    },
+    {
+      "ts": "2026-02-19T13:37:22.028Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_3801e8db-406c-4230-8b43-a21a67c8f093",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-19T13:38:39.874Z",
+      "type": "campaign.watchdog.enqueued",
+      "data": {
+        "idle_ms": 46946,
+        "backoff_ms": 11736,
+        "jitter_ms": 573,
+        "not_before_ts": "2026-02-19T13:38:51.777Z",
+        "live_before": {
+          "has_live": false,
+          "pending": 0,
+          "running": 0
+        },
+        "job_id": "campaign-tick-cmp_47d1472e-68e9-4af1-ada5-c22abb8a3683-watchdog-1771508319468-014509ef"
+      }
+    },
+    {
+      "ts": "2026-02-19T13:40:27.404Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "tick_index": 1,
+        "tick_id": "cmp_47d1472e-68e9-4af1-ada5-c22abb8a3683:1",
+        "created_runs": 10,
+        "impacted_count": 0,
+        "pending_runs_scanned": 10,
+        "exec_tasks_created": 10,
+        "runs_linked_with_task_id": 10,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 1,
+        "orchestrated_activated": 10,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.241579,
+        "transfer_success_rate": 0.177087,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.732495,
+        "confidence_domains_targeted": [
+          "small|low|low|p2"
+        ],
+        "confidence_quota_hits": [],
+        "confidence_quota_diagnostics": [],
+        "status": "completed",
+        "stop_reason": "max_experiments_reached"
+      }
+    }
+  ]
+}

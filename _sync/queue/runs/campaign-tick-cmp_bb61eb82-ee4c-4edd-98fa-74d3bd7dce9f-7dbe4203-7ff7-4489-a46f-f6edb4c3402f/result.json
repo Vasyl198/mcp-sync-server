@@ -1,0 +1,13 @@
+{
+  "success": false,
+  "task_name": "campaign_tick",
+  "retryable": true,
+  "retry_count": 5,
+  "requeued": {
+    "queued": true,
+    "job_id": "campaign-tick-cmp_bb61eb82-ee4c-4edd-98fa-74d3bd7dce9f-1fcb1e1f-a289-4e4c-92da-2ed456765713"
+  },
+  "error": "campaigns lock busy",
+  "report_md": "# Campaign Tick Retry\n\n**retry_count:** 5\n\n**reason:** campaigns lock busy\n",
+  "logs": "campaign_tick lock busy, requeued retry=5"
+}

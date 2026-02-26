@@ -1,0 +1,430 @@
+[
+  {
+    "run_id": "run_6286bf6c-0212-4f56-94a6-37b5d4fad635",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T13:02:06.120Z",
+    "params": {
+      "exploration_bias": 0.35,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.7928
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.7928,
+    "task_id": "c5d14ef3-6233-4c92-aa35-d20b39a82971",
+    "notes": "[eval]:1\r\nconst\r\n     \r\n\r\nSyntaxError: Unexpected end of input\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_656a8d6f-16a1-4d43-9f35-f9fea44fbd65",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T13:02:06.305Z",
+    "params": {
+      "exploration_bias": 0.35,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.8162
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.8162,
+    "task_id": "40a688d5-305e-4766-9022-f10911cc8d42",
+    "notes": "[eval]:1\r\nconst\r\n     \r\n\r\nSyntaxError: Unexpected end of input\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_bfd77798-f48b-4333-a1f7-92d3b0a319ee",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T13:02:06.483Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.6911
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.6911,
+    "task_id": "14784a5b-3a57-4546-abe0-5d9d689fd9a5",
+    "notes": "[eval]:1\r\nconst\r\n     \r\n\r\nSyntaxError: Unexpected end of input\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_2c625fdb-48cd-482c-a5b7-7f1c6a7bc80c",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:13.083Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.5653
+    },
+    "status": "completed",
+    "duration_ms": 58,
+    "score": 0.5653,
+    "task_id": "7c4941fb-c20d-48c9-a76e-b72d5cc7865d"
+  },
+  {
+    "run_id": "run_5bd3cf56-3c05-499a-bfc1-8dc9d8aca184",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:20.331Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.6819
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.6819,
+    "task_id": "dd42170c-37c2-482a-a393-f8659e368f2c"
+  },
+  {
+    "run_id": "run_316c2a37-a57a-4ea9-8cf7-2986f22f5a62",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:20.487Z",
+    "params": {
+      "exploration_bias": 0.65,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.911
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.911,
+    "task_id": "82710b1d-0a70-42f8-9d6c-2ab12166f5a9"
+  },
+  {
+    "run_id": "run_6f45bd6a-5578-4018-af77-63ab646f06ad",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:20.643Z",
+    "params": {
+      "exploration_bias": 0.35,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.7341
+    },
+    "status": "completed",
+    "duration_ms": 53,
+    "score": 0.7341,
+    "task_id": "0f53d258-c364-4d5a-babd-be1e628b56bd"
+  },
+  {
+    "run_id": "run_36d0eb92-5594-4887-8ff5-b3acfe06e2c1",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:20.804Z",
+    "params": {
+      "exploration_bias": 0.5,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.9395
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.9395,
+    "task_id": "9cd33c99-bb89-4a70-95dc-14a0dc854399"
+  },
+  {
+    "run_id": "run_171d276c-1b61-4cc5-a4fa-be3fc8a26265",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:20.966Z",
+    "params": {
+      "exploration_bias": 0.5,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.8659
+    },
+    "status": "completed",
+    "duration_ms": 60,
+    "score": 0.8659,
+    "task_id": "0d6ce72b-46e2-4b9b-8e0a-6b3a3da16b40"
+  },
+  {
+    "run_id": "run_c1f7598b-67ce-4d2a-8dd4-950de786c650",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.442Z",
+    "updated_at": "2026-02-16T12:45:31.059Z",
+    "params": {
+      "exploration_bias": 0.35,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.7133
+    },
+    "status": "completed",
+    "duration_ms": 51,
+    "score": 0.7133,
+    "task_id": "1e7708fa-e86a-430b-862b-5c8e2cee92fc"
+  },
+  {
+    "run_id": "run_398b200e-41e6-4ed8-b34f-ad7c5abaffaa",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.045Z",
+    "params": {
+      "exploration_bias": 0.65,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.8169
+    },
+    "status": "completed",
+    "duration_ms": 69,
+    "score": 0.8169,
+    "task_id": "9baaec3f-c6cd-4633-ad20-6722a577d072"
+  },
+  {
+    "run_id": "run_e0e1eff6-12b5-400e-8a19-79cf305ccd9f",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.201Z",
+    "params": {
+      "exploration_bias": 0.65,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.8892
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.8892,
+    "task_id": "88c10e6d-243f-44dc-ae53-78305ff39c7a"
+  },
+  {
+    "run_id": "run_e91adb55-689f-41ed-a0d1-75af8b24fe4f",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.357Z",
+    "params": {
+      "exploration_bias": 0.65,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.8275
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.8275,
+    "task_id": "efa7b669-c3e3-48cd-ad1d-d932d6abbc08"
+  },
+  {
+    "run_id": "run_1d87c9e7-23f9-4b20-84d1-a05e80dabada",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.518Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.7177
+    },
+    "status": "completed",
+    "duration_ms": 53,
+    "score": 0.7177,
+    "task_id": "3d754c25-2e9a-4610-846d-a6769c219e18"
+  },
+  {
+    "run_id": "run_1f5c938a-faca-4b1b-b05b-980a21f7ea12",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.672Z",
+    "params": {
+      "exploration_bias": 0.35,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.7949
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.7949,
+    "task_id": "116cd88e-0560-4dbd-9bfa-ce5f6d799894"
+  },
+  {
+    "run_id": "run_30ae98ac-5da3-4347-a82e-44db81186297",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.832Z",
+    "params": {
+      "exploration_bias": 0.65,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.8858
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.8858,
+    "task_id": "d3b105cf-6496-4969-b9bc-f22ecabfdcdb"
+  },
+  {
+    "run_id": "run_202f0079-af1b-4691-818f-2ff297827c81",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:37.990Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.7416
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.7416,
+    "task_id": "70412756-65f4-4880-b472-b54cc0d4bc03"
+  },
+  {
+    "run_id": "run_d0a0010d-da53-4979-87f8-74b658510b98",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:38.143Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.6744
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.6744,
+    "task_id": "4a57feff-c7f2-49d0-bd7f-3f28662a1ca5"
+  },
+  {
+    "run_id": "run_eb3a185b-ce81-4de8-ad21-013074235c84",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:45.358Z",
+    "params": {
+      "exploration_bias": 0.5,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.9363
+    },
+    "status": "completed",
+    "duration_ms": 55,
+    "score": 0.9363,
+    "task_id": "129a7452-51e4-4004-9063-2162b42f10e2"
+  },
+  {
+    "run_id": "run_7e1f6cc6-bbfd-422d-9438-aa97f99c4a90",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.624Z",
+    "updated_at": "2026-02-16T12:45:56.091Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.7649
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.7649,
+    "task_id": "1ce4530b-83b9-4c96-a6fa-b5e485d5c1d9"
+  },
+  {
+    "run_id": "run_b33d0155-29f8-4859-bde6-2ce7b55f33ce",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.862Z",
+    "updated_at": "2026-02-16T12:45:56.247Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.6162
+    },
+    "status": "completed",
+    "duration_ms": 52,
+    "score": 0.6162,
+    "task_id": "8ea16e13-e57e-41fc-93b5-d26ab02bb7a8"
+  },
+  {
+    "run_id": "run_37bad880-bc21-4245-87c2-8a3c32c755f5",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.862Z",
+    "updated_at": "2026-02-16T12:45:56.410Z",
+    "params": {
+      "exploration_bias": 0.5,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.9792
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.9792,
+    "task_id": "777f6764-6f16-4d0a-8fc5-cb437a2e3ded"
+  },
+  {
+    "run_id": "run_30ab0b56-b05f-4680-a4ca-92a398bc1709",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.862Z",
+    "updated_at": "2026-02-16T12:45:56.569Z",
+    "params": {
+      "exploration_bias": 0.5,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.8827
+    },
+    "status": "completed",
+    "duration_ms": 56,
+    "score": 0.8827,
+    "task_id": "9d30e7a2-aa03-41e7-a686-480851816ce8"
+  },
+  {
+    "run_id": "run_13225113-eb79-4311-b1b1-3143f8e6fce1",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.862Z",
+    "updated_at": "2026-02-16T12:45:56.731Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.5634
+    },
+    "status": "completed",
+    "duration_ms": 58,
+    "score": 0.5634,
+    "task_id": "a1abeb46-0ab3-47f1-90f0-d454110dedc4"
+  },
+  {
+    "run_id": "run_64281d11-b6ce-42ab-b838-e829bca03a5b",
+    "experiment_id": "exp_aca97d73-5055-4377-9dca-9ec7672107a0",
+    "created_at": "2026-02-16T12:38:15.862Z",
+    "updated_at": "2026-02-16T12:45:56.889Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.6449
+    },
+    "status": "completed",
+    "duration_ms": 57,
+    "score": 0.6449,
+    "task_id": "46478042-de71-4eee-9c0f-d8ad4d884d29"
+  }
+]

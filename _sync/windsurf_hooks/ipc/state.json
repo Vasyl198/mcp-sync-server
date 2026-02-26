@@ -1,0 +1,26 @@
+﻿{
+    "ts_utc":  "2026-02-25T07:58:16.7423053Z",
+    "last_ack":  {
+                     "ts_utc":  "2026-02-25T07:45:31.2611056Z",
+                     "agent":  "swe",
+                     "session_id":  "test-local-ipc",
+                     "id":  "msg-1772005482237-4b497c76"
+                 },
+    "totals":  {
+                   "messages":  9,
+                   "acks":  1
+               },
+    "files":  {
+                  "messages":  "C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\windsurf_hooks\\ipc\\messages.jsonl",
+                  "acks":  "C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\windsurf_hooks\\ipc\\acks.jsonl"
+              },
+    "last_message":  {
+                         "id":  "msg-1772006285709-c62f622c",
+                         "ts_utc":  "2026-02-25T07:58:05.7296928Z",
+                         "to":  "swe",
+                         "from":  "codex",
+                         "session_id":  "dual-bridge-local-20260225",
+                         "kind":  "task",
+                         "message":  "Dual bridge local check: дай ответ и evidence"
+                     }
+}

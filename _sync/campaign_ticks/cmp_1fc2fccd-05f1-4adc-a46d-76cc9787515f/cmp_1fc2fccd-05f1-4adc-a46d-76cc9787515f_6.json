@@ -1,0 +1,48 @@
+{
+  "tick_id": "cmp_1fc2fccd-05f1-4adc-a46d-76cc9787515f:6",
+  "tick_index": 6,
+  "ts": "2026-02-22T18:07:04.674Z",
+  "data": {
+    "step": 3,
+    "tick_index": 6,
+    "tick_id": "cmp_1fc2fccd-05f1-4adc-a46d-76cc9787515f:6",
+    "created_runs": 1,
+    "impacted_count": 0,
+    "pending_runs_scanned": 1,
+    "exec_tasks_created": 1,
+    "runs_linked_with_task_id": 1,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 0,
+    "exec_bind_queued": 1,
+    "orchestrated_activated": 1,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.254441,
+    "transfer_success_rate": 0.214644,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.721976,
+    "confidence_domains_targeted": [
+      "medium|low|low|p5"
+    ],
+    "confidence_domains_targeted_reasons": [
+      {
+        "domain_signature": "medium|low|low|p5",
+        "reason": "campaign_constraint_forced"
+      }
+    ],
+    "confidence_quota_hits": [
+      {
+        "experiment_id": "exp_beb0d49f-b0f4-43a9-bff5-ef72488ea309",
+        "domain_signature": "medium|low|low|p5",
+        "quota_min_runs": 1,
+        "created_runs": 1
+      }
+    ],
+    "confidence_quota_diagnostics": [],
+    "status": "stopped",
+    "stop_reason": "max_ticks_reached"
+  }
+}

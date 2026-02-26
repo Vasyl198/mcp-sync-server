@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "pre_mcp_tool_use": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/anani/Projects/mcp-sync-server/ops/windsurf_hooks/cascade_hook.ps1\"",
+        "show_output": true,
+        "working_directory": "C:/Users/anani/Projects/mcp-sync-server"
+      }
+    ],
+    "post_mcp_tool_use": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/anani/Projects/mcp-sync-server/ops/windsurf_hooks/cascade_hook.ps1\"",
+        "show_output": true,
+        "working_directory": "C:/Users/anani/Projects/mcp-sync-server"
+      }
+    ],
+    "post_cascade_response": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/anani/Projects/mcp-sync-server/ops/windsurf_hooks/cascade_hook.ps1\"",
+        "show_output": true,
+        "working_directory": "C:/Users/anani/Projects/mcp-sync-server"
+      }
+    ],
+    "pre_run_command": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/anani/Projects/mcp-sync-server/ops/windsurf_hooks/cascade_hook.ps1\"",
+        "show_output": true,
+        "working_directory": "C:/Users/anani/Projects/mcp-sync-server"
+      }
+    ],
+    "post_run_command": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/anani/Projects/mcp-sync-server/ops/windsurf_hooks/cascade_hook.ps1\"",
+        "show_output": true,
+        "working_directory": "C:/Users/anani/Projects/mcp-sync-server"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,64 @@
+{
+  "success": true,
+  "task_name": "shadow_evaluation_tick",
+  "evaluated": 3,
+  "promote_threshold": 0.02,
+  "sample_size": 20,
+  "governance": {
+    "max_versions_per_role": 6,
+    "max_shadow_per_role": 3,
+    "evolution_cooldown_ms": 45626,
+    "min_replay_runs": 4,
+    "promotion_margin_min": 0.03,
+    "discard_on_instability": true,
+    "max_evolution_attempts_per_day": 10,
+    "stability_success_variance_max": 0.04,
+    "stability_completion_time_variance_max": 0.35,
+    "rollback_eval_runs": 3,
+    "rollback_failure_delta": 0.2,
+    "rollback_critic_delta": 0.15
+  },
+  "decisions": [
+    {
+      "role": "dev",
+      "version": 2,
+      "parent_version": 1,
+      "decision": "pending_replay",
+      "reason": "insufficient_replay_runs",
+      "replay_runs": 2,
+      "required_replay_runs": 4,
+      "live_retry_exists": true,
+      "live_retry_pending": 4800,
+      "live_retry_running": 94,
+      "next_evaluation_not_before": "2026-02-24T20:34:30.334Z"
+    },
+    {
+      "role": "dev",
+      "version": 3,
+      "parent_version": 2,
+      "decision": "pending_replay",
+      "reason": "insufficient_replay_runs",
+      "replay_runs": 2,
+      "required_replay_runs": 4,
+      "live_retry_exists": true,
+      "live_retry_pending": 1263,
+      "live_retry_running": 0,
+      "next_evaluation_not_before": "2026-02-24T20:34:30.586Z"
+    },
+    {
+      "role": "dev",
+      "version": 4,
+      "parent_version": 3,
+      "decision": "pending_replay",
+      "reason": "insufficient_replay_runs",
+      "replay_runs": 2,
+      "required_replay_runs": 4,
+      "live_retry_exists": true,
+      "live_retry_pending": 944,
+      "live_retry_running": 0,
+      "next_evaluation_not_before": "2026-02-24T20:34:30.837Z"
+    }
+  ],
+  "report_md": "# Shadow Evaluation Tick\n\n**evaluated:** 3\n",
+  "logs": "shadow_evaluation_tick evaluated 3 shadow versions"
+}

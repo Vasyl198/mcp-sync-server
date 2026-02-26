@@ -1,0 +1,18 @@
+{
+  "success": false,
+  "task_name": "campaign_tick",
+  "retryable": true,
+  "retry_count": 1,
+  "requeued": {
+    "queued": false,
+    "coalesced": true,
+    "live_before": {
+      "has_live": true,
+      "pending": 0,
+      "running": 1
+    }
+  },
+  "error": "task_graph lock busy",
+  "report_md": "# Campaign Tick Retry\n\n**retry_count:** 1\n\n**reason:** task_graph lock busy\n",
+  "logs": "campaign_tick lock busy, requeued retry=1"
+}

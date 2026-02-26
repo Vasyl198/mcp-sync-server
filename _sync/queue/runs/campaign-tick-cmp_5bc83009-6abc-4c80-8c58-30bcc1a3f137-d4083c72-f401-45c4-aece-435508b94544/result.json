@@ -1,0 +1,13 @@
+{
+  "success": false,
+  "task_name": "campaign_tick",
+  "retryable": true,
+  "retry_count": 1,
+  "requeued": {
+    "queued": true,
+    "job_id": "campaign-tick-cmp_5bc83009-6abc-4c80-8c58-30bcc1a3f137-bc9561b3-4b7b-4f83-8c8a-4bf7da16198d"
+  },
+  "error": "campaign_tick lock busy: cmp_5bc83009-6abc-4c80-8c58-30bcc1a3f137",
+  "report_md": "# Campaign Tick Retry\n\n**retry_count:** 1\n\n**reason:** campaign_tick lock busy: cmp_5bc83009-6abc-4c80-8c58-30bcc1a3f137\n",
+  "logs": "campaign_tick lock busy, requeued retry=1"
+}

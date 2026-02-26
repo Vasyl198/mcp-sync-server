@@ -1,0 +1,23 @@
+diff --git a/src/index.ts b/src/index.ts
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -6591,16 +6591,19 @@
+-      const metricsKnown = selected
+-        ? Number((selected as any)?.metrics?.runs_count ?? 0) > 0
+-        : false;
++      const runsCount = selected
++        ? Number((selected as any)?.metrics?.runs_count ?? 0)
++        : 0;
++      const metricsKnown = runsCount > 0;
+       const evidenceStatus = {
+         metrics_known: metricsKnown,
++        runs_count: runsCount,
+         benchmark_tasks_done: grouped.done,
+         benchmark_tasks_total: grouped.todo + grouped.doing + grouped.done + grouped.blocked,
+       };
+       const verdict = (
+         evidenceStatus.metrics_known &&
++        evidenceStatus.runs_count >= 5 &&
+         evidenceStatus.benchmark_tasks_done >= 3 &&
+         metaDepth.pending < 2000
+       ) ? "validated" : "insufficient_evidence";

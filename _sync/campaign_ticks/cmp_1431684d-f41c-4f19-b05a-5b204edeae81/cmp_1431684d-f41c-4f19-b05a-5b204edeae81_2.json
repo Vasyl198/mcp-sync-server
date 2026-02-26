@@ -1,0 +1,41 @@
+{
+  "tick_id": "cmp_1431684d-f41c-4f19-b05a-5b204edeae81:2",
+  "tick_index": 2,
+  "ts": "2026-02-17T15:46:55.357Z",
+  "data": {
+    "step": 2,
+    "tick_index": 2,
+    "tick_id": "cmp_1431684d-f41c-4f19-b05a-5b204edeae81:2",
+    "created_runs": 4,
+    "impacted_count": 0,
+    "pending_runs_scanned": 4,
+    "exec_tasks_created": 4,
+    "runs_linked_with_task_id": 4,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 0,
+    "exec_bind_queued": 10,
+    "orchestrated_activated": 4,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.176508,
+    "transfer_success_rate": 0,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.816836,
+    "confidence_domains_targeted": [
+      "small|low|low|p2"
+    ],
+    "confidence_quota_hits": [
+      {
+        "experiment_id": "exp_161e5321-5129-4d65-b63f-4070a56bd8c5",
+        "domain_signature": "small|low|low|p2",
+        "quota_min_runs": 4,
+        "created_runs": 4
+      }
+    ],
+    "status": "running",
+    "stop_reason": null
+  }
+}

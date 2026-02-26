@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "task": "task_link",
+  "error": "task_link requires task_id",
+  "report_md": "# Invalid Task Graph Payload\n\n`task_link` requires `task_id`.",
+  "logs": "Missing task_id for task_link payload: {\"command\":\"task_link\",\"args\":{\"parent_id\":\"8ffada35-a8dc-41e2-a33f-ddae784b1050\",\"child_id\":\"38be07fc-1da8-4849-83c0-22c00bcebe1d\"}}"
+}

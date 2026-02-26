@@ -1,0 +1,138 @@
+[
+  {
+    "run_id": "run_ff4e1bea-1afe-4776-b9cc-1ce2f517ecfb",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:38:03.576Z",
+    "updated_at": "2026-02-19T13:38:03.576Z",
+    "params": {
+      "exploration_bias": 0.66,
+      "narrowing_factor": 1.2
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null
+  },
+  {
+    "run_id": "run_24e6b376-07c6-4298-a011-ca1b0bef5861",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:38:03.576Z",
+    "updated_at": "2026-02-19T13:38:03.576Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 0.8
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null
+  },
+  {
+    "run_id": "run_123e493a-3621-47f3-9f3b-311275fb080a",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:38:03.576Z",
+    "updated_at": "2026-02-19T13:38:03.576Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1.2
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null
+  },
+  {
+    "run_id": "run_592183ed-1eaf-427d-8346-ecc8ac4e2bf4",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:38:03.576Z",
+    "updated_at": "2026-02-19T13:38:03.576Z",
+    "params": {
+      "exploration_bias": 0.66,
+      "narrowing_factor": 0.8
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null
+  },
+  {
+    "run_id": "run_32c9ed99-6d7e-4685-b262-6fbe77b1b31a",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:42:45.042Z",
+    "updated_at": "2026-02-19T13:44:33.370Z",
+    "params": {
+      "exploration_bias": 0.66,
+      "narrowing_factor": 0.8,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {
+      "score": 0.8278
+    },
+    "status": "completed",
+    "duration_ms": 93,
+    "score": 0.8278,
+    "task_id": "6ceb81f6-f142-456c-bb23-b2eb593f36e8",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  },
+  {
+    "run_id": "run_6ad8825a-217c-4368-af28-c7c89b1f908c",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:42:45.112Z",
+    "updated_at": "2026-02-19T13:44:37.368Z",
+    "params": {
+      "exploration_bias": 0.66,
+      "narrowing_factor": 0.8,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {
+      "score": 0.8386
+    },
+    "status": "completed",
+    "duration_ms": 57,
+    "score": 0.8386,
+    "task_id": "0477e0ad-f5f6-4e4c-8d33-f4d007a3a60b",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  },
+  {
+    "run_id": "run_5480c7b3-fed3-4b40-b7f7-88eade8a5f6d",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:42:45.130Z",
+    "updated_at": "2026-02-19T13:42:45.382Z",
+    "params": {
+      "exploration_bias": 0.66,
+      "narrowing_factor": 0.8,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "584f46a9-900b-4e4d-89d2-455bf2300b68",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  },
+  {
+    "run_id": "run_678a9528-27d4-46eb-83e7-6c7df0f5d138",
+    "experiment_id": "exp_3dffe2f6-4fc2-42a0-ac79-718928609fc8",
+    "created_at": "2026-02-19T13:42:45.147Z",
+    "updated_at": "2026-02-19T13:42:45.620Z",
+    "params": {
+      "exploration_bias": 0.66,
+      "narrowing_factor": 0.8,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "4fce5652-555c-48eb-9784-281300ccd46f",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  }
+]

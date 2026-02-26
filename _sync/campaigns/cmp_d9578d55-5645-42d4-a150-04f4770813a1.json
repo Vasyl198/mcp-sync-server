@@ -1,0 +1,76 @@
+{
+  "campaign_id": "cmp_d9578d55-5645-42d4-a150-04f4770813a1",
+  "goal": "Post-D8 safe market shakeout for entropy recovery",
+  "objective": "maximize accuracy",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "search_space": {
+      "lr": [
+        0.001,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "layers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exploration_bias": [
+        0.42,
+        0.62,
+        0.82,
+        1
+      ]
+    },
+    "transfer_threshold": 0
+  },
+  "max_experiments": 40,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 40,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 4,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-17T08:52:45.740Z",
+  "updated_at": "2026-02-25T12:09:59.702Z",
+  "started_at": "2026-02-17T08:52:59.118Z",
+  "completed_at": "2026-02-17T08:56:13.327Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_e2cd27bc-9013-4af7-9044-e45827df32c6",
+  "experiment_ids": [
+    "exp_e2cd27bc-9013-4af7-9044-e45827df32c6"
+  ],
+  "tick_count": 0,
+  "experiments_run": 40,
+  "last_metrics": {
+    "gihi": 0.301015,
+    "transfer_success_rate": 0.766625,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.921795
+  },
+  "history": [
+    {
+      "ts": "2026-02-17T08:52:45.740Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 40,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 40,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 4,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "tick_id": "cmp_p5_15tick_1771583188912:3",
+  "tick_index": 3,
+  "ts": "2026-02-20T10:27:00.002Z",
+  "data": {
+    "step": 1,
+    "tick_index": 3,
+    "tick_id": "cmp_p5_15tick_1771583188912:3",
+    "created_runs": 4,
+    "impacted_count": 0,
+    "pending_runs_scanned": 4,
+    "exec_tasks_created": 4,
+    "runs_linked_with_task_id": 4,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 0,
+    "exec_bind_queued": 4,
+    "orchestrated_activated": 4,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.251661,
+    "transfer_success_rate": 0.204124,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.72264,
+    "confidence_domains_targeted": [
+      "medium|high|low|p5"
+    ],
+    "confidence_domains_targeted_reasons": [
+      {
+        "domain_signature": "medium|high|low|p5",
+        "reason": "campaign_constraint_forced"
+      }
+    ],
+    "confidence_quota_hits": [
+      {
+        "experiment_id": "exp_61f45c19-7f88-40cf-985c-6145aad7ee36",
+        "domain_signature": "medium|high|low|p5",
+        "quota_min_runs": 4,
+        "created_runs": 4
+      }
+    ],
+    "confidence_quota_diagnostics": [
+      {
+        "experiment_id": "exp_61f45c19-7f88-40cf-985c-6145aad7ee36",
+        "domain_signature": "medium|high|low|p5",
+        "quota_raw_runs": 4,
+        "quota_min_runs": 4,
+        "quota_requested_batch": 4,
+        "quota_created_after_search": 4,
+        "quota_available_before_materialize": 0,
+        "quota_materialized_runs": 0,
+        "quota_created_final": 4,
+        "quota_remaining": 0
+      }
+    ],
+    "status": "running",
+    "stop_reason": null
+  }
+}

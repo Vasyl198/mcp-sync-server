@@ -1,0 +1,86 @@
+{
+  "campaign_id": "cmp_08440db6-6b2f-4cc5-8311-44ba3c3c090a",
+  "goal": "Transfer conflict C1: low-lr/low-layer attractor",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_transfer_conflict_c1",
+    "search_space": {
+      "lr": [
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.03,
+        0.05,
+        0.08,
+        0.1
+      ],
+      "layers": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "noise": [
+        0.04,
+        0.08,
+        0.12
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node -e \"const lr={lr};const layers={layers};const nz={noise};const base=1-Math.abs(lr-0.012)*13-Math.abs(layers-2.2)*0.11;const noise=((Math.random()-0.5)*(nz||0.08));console.log('score='+(base+noise).toFixed(4));\"",
+    "transfer_threshold": 0.04
+  },
+  "max_experiments": 24,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 24,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 5,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-16T15:43:49.634Z",
+  "updated_at": "2026-02-25T12:09:59.871Z",
+  "started_at": "2026-02-16T15:43:55.641Z",
+  "completed_at": "2026-02-16T15:44:44.164Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_790d2f2b-0ae0-4525-b278-5c129f7b21b7",
+  "experiment_ids": [
+    "exp_790d2f2b-0ae0-4525-b278-5c129f7b21b7"
+  ],
+  "tick_count": 0,
+  "experiments_run": 30,
+  "last_metrics": {
+    "gihi": 0.545929,
+    "transfer_success_rate": 0.985437,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 1
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T15:43:49.634Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 24,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 24,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 5,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

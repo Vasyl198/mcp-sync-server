@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "Missing task/command/type in project_task payload",
+  "report_md": "# Invalid Project Task Payload\n\nExpected one of: `task`, `command`, `type`.",
+  "logs": "Invalid project_task payload: \"{\\\"command\\\":\\\"campaign_tick\\\",\\\"args\\\":{\\\"campaign_id\\\":\\\"cmp_840f0595-f382-4314-a19a-3ef241c47687\\\",\\\"max_steps\\\":8}}\""
+}

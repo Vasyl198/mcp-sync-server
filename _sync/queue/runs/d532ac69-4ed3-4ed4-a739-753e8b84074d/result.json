@@ -1,0 +1,84 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_098e2245-730f-441f-84a8-dac95117a6ab",
+    "goal": "D8 post-restart auto-primary rollover validation",
+    "objective": "maximize accuracy",
+    "constraints": {
+      "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+      "search_space": {
+        "lr": [
+          0.0005,
+          0.001,
+          0.003,
+          0.005,
+          0.01,
+          0.02,
+          0.04,
+          0.08,
+          0.12
+        ],
+        "layers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "transfer_threshold": 0.05
+    },
+    "max_experiments": 140,
+    "stop_conditions": {
+      "convergence_detected": true,
+      "min_gihi": 0.01,
+      "max_experiments": 140,
+      "stagnation_rate_gt": 1,
+      "max_ticks": 12,
+      "gihi_grace_ticks": 2
+    },
+    "status": "stopped",
+    "created_at": "2026-02-16T20:16:12.277Z",
+    "updated_at": "2026-02-17T05:09:34.831Z",
+    "started_at": "2026-02-16T20:16:19.684Z",
+    "completed_at": "2026-02-17T05:09:34.823Z",
+    "stop_reason": "max_ticks_reached",
+    "primary_experiment_id": "exp_81d798fc-823a-4aa1-8304-523548ec5f6f",
+    "experiment_ids": [
+      "exp_54a5361f-b994-4fbb-a979-468112027a06",
+      "exp_81d798fc-823a-4aa1-8304-523548ec5f6f"
+    ],
+    "tick_count": 12,
+    "experiments_run": 90,
+    "last_metrics": {
+      "gihi": 0.267274,
+      "transfer_success_rate": 0.707692,
+      "mutation_effectiveness_ratio": 0.666667,
+      "arena_domains": 0,
+      "stagnation_rate": 0.863143
+    },
+    "history": [
+      {
+        "ts": "2026-02-16T20:16:12.277Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 140,
+          "stop_conditions": {
+            "convergence_detected": true,
+            "min_gihi": 0.01,
+            "max_experiments": 140,
+            "stagnation_rate_gt": 1,
+            "max_ticks": 12,
+            "gihi_grace_ticks": 2
+          }
+        }
+      }
+    ]
+  },
+  "steps_requested": 4,
+  "steps_executed": 0,
+  "reason": "campaign_not_running",
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 0\n\n**status:** stopped\n",
+  "logs": "campaign_tick executed 0 steps"
+}

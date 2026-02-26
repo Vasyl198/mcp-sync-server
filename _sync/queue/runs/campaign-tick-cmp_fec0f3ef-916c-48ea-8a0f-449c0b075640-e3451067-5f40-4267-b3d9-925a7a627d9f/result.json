@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "task_name": "campaign_tick",
+  "retryable": false,
+  "retry_count": 8,
+  "error": "task_graph lock busy",
+  "report_md": "# Campaign Tick Failed\n\n**reason:** task_graph lock busy\n",
+  "logs": "campaign_tick lock busy, retries exhausted=8"
+}

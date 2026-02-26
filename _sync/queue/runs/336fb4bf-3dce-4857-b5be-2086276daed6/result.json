@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "task_name": "experiment_create",
+  "experiment": {
+    "experiment_id": "exp_c4e0c122-9d2b-4292-9d66-7b6bcb4cd902",
+    "name": "adaptive_search_test",
+    "objective": {
+      "metric": "accuracy",
+      "mode": "maximize"
+    },
+    "metric_schema": {
+      "accuracy": {
+        "type": "float",
+        "source": "stdout",
+        "pattern": "accuracy=([0-9\\.]+)"
+      }
+    },
+    "created_at": "2026-02-16T09:50:42.858Z",
+    "updated_at": "2026-02-16T09:50:42.858Z",
+    "status": "running",
+    "best_run_id": null,
+    "search_strategy": "grid",
+    "search_space": {
+      "learning_rate": [
+        0.0001,
+        0.001,
+        0.01,
+        0.1
+      ],
+      "layers": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "report_md": "# Experiment Created\n\n**experiment_id:** exp_c4e0c122-9d2b-4292-9d66-7b6bcb4cd902\n",
+  "logs": "experiment_create created exp_c4e0c122-9d2b-4292-9d66-7b6bcb4cd902"
+}

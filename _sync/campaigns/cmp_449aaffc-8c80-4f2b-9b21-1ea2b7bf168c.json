@@ -1,0 +1,82 @@
+{
+  "campaign_id": "cmp_449aaffc-8c80-4f2b-9b21-1ea2b7bf168c",
+  "goal": "D6 runtime wiring validation: impact-to-arena on exec finish",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_d6_runtime_wiring",
+    "search_space": {
+      "lr": [
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.03,
+        0.05,
+        0.08,
+        0.1
+      ],
+      "layers": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "transfer_threshold": 0,
+    "domain": "p2 anti_conflict"
+  },
+  "max_experiments": 50,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 50,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 6,
+    "gihi_grace_ticks": 2
+  },
+  "status": "stopped",
+  "created_at": "2026-02-16T17:29:20.672Z",
+  "updated_at": "2026-02-25T12:10:00.027Z",
+  "started_at": "2026-02-16T17:29:24.337Z",
+  "completed_at": "2026-02-16T17:29:27.497Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_eaa82926-39cc-41e2-b2d4-9839bb0fa9c4",
+  "experiment_ids": [
+    "exp_eaa82926-39cc-41e2-b2d4-9839bb0fa9c4"
+  ],
+  "tick_count": 0,
+  "experiments_run": 40,
+  "last_metrics": {
+    "gihi": 0.302152,
+    "transfer_success_rate": 0.775,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.866612
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T17:29:20.672Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 50,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 50,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 6,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

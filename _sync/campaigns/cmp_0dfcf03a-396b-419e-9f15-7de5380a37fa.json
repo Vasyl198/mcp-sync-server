@@ -1,0 +1,56 @@
+{
+  "campaign_id": "cmp_0dfcf03a-396b-419e-9f15-7de5380a37fa",
+  "goal": "D5 selection-layer stress under low arena cooldown",
+  "objective": "maximize score",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "transfer_threshold": 0,
+    "domain": "p2 anti_conflict",
+    "notes": "arena cooldown 10s"
+  },
+  "max_experiments": 80,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 80,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 12,
+    "gihi_grace_ticks": 2
+  },
+  "status": "stopped",
+  "created_at": "2026-02-16T17:13:47.698Z",
+  "updated_at": "2026-02-25T12:09:58.017Z",
+  "started_at": "2026-02-16T17:13:52.170Z",
+  "completed_at": "2026-02-16T17:13:55.134Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_b1b04cac-0b91-414e-bc0a-077e4ae73637",
+  "experiment_ids": [
+    "exp_b1b04cac-0b91-414e-bc0a-077e4ae73637"
+  ],
+  "tick_count": 0,
+  "experiments_run": 12,
+  "last_metrics": {
+    "gihi": 0.302152,
+    "transfer_success_rate": 0.775,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.866612
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T17:13:47.698Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 80,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 80,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 12,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

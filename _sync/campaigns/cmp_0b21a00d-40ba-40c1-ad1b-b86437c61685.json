@@ -1,0 +1,62 @@
+{
+  "campaign_id": "cmp_0b21a00d-40ba-40c1-ad1b-b86437c61685",
+  "goal": "Transfer bootstrap after threshold calibration",
+  "objective": "maximize score with transfer reuse",
+  "constraints": {
+    "experiment_name": "campaign_transfer_reuse_validation",
+    "search_space": {
+      "exploration_bias": [
+        0.15,
+        0.35,
+        0.55,
+        0.75
+      ],
+      "narrowing_factor": [
+        0.8,
+        1,
+        1.2
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node -e \"const eb={exploration_bias};const nf={narrowing_factor};const s=1-Math.abs(eb-0.55)-Math.abs(nf-1)*0.35+(Math.random()*0.03);console.log('score='+s.toFixed(4));\"",
+    "transfer_threshold": 0.1
+  },
+  "max_experiments": 40,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 40,
+    "stagnation_rate_gt": 0.98,
+    "max_ticks": 20,
+    "gihi_grace_ticks": 2
+  },
+  "status": "draft",
+  "created_at": "2026-02-16T13:39:29.986Z",
+  "updated_at": "2026-02-25T12:09:55.720Z",
+  "experiment_ids": [],
+  "tick_count": 0,
+  "experiments_run": 0,
+  "history": [
+    {
+      "ts": "2026-02-16T13:39:29.986Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 40,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 40,
+          "stagnation_rate_gt": 0.98,
+          "max_ticks": 20,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

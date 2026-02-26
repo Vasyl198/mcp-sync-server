@@ -1,0 +1,153 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_34cc54c9-4e3e-4a45-934c-473bfad66d75",
+    "goal": "GIHI series freshness diagnostic run",
+    "objective": "maximize accuracy",
+    "constraints": {
+      "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+      "search_space": {
+        "lr": [
+          0.001,
+          0.005,
+          0.01,
+          0.02,
+          0.05,
+          0.1
+        ],
+        "layers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "exploration_bias": [
+          0.51,
+          0.71,
+          0.91,
+          1
+        ]
+      },
+      "transfer_threshold": 0
+    },
+    "max_experiments": 40,
+    "stop_conditions": {
+      "convergence_detected": false,
+      "min_gihi": 0.01,
+      "max_experiments": 40,
+      "stagnation_rate_gt": 1,
+      "max_ticks": 4,
+      "gihi_grace_ticks": 2
+    },
+    "status": "stopped",
+    "created_at": "2026-02-17T09:59:30.890Z",
+    "updated_at": "2026-02-17T10:18:15.706Z",
+    "started_at": "2026-02-17T10:11:37.680Z",
+    "completed_at": "2026-02-17T10:16:03.359Z",
+    "stop_reason": "max_ticks_reached",
+    "primary_experiment_id": "exp_c170c015-28aa-49c6-8277-d045bbff0e79",
+    "experiment_ids": [
+      "exp_c170c015-28aa-49c6-8277-d045bbff0e79"
+    ],
+    "tick_count": 2,
+    "experiments_run": 27,
+    "last_metrics": {
+      "gihi": 0.309065,
+      "transfer_success_rate": 0.769231,
+      "mutation_effectiveness_ratio": 0.666667,
+      "arena_domains": 1,
+      "stagnation_rate": 0.885333
+    },
+    "history": [
+      {
+        "ts": "2026-02-17T09:59:30.890Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 40,
+          "stop_conditions": {
+            "convergence_detected": false,
+            "min_gihi": 0.01,
+            "max_experiments": 40,
+            "stagnation_rate_gt": 1,
+            "max_ticks": 4,
+            "gihi_grace_ticks": 2
+          }
+        }
+      },
+      {
+        "ts": "2026-02-17T09:59:41.366Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_c170c015-28aa-49c6-8277-d045bbff0e79",
+          "exec_command_attached": true,
+          "exec_command_source": "campaign_constraints",
+          "exec_command_source_experiment_id": null
+        }
+      },
+      {
+        "ts": "2026-02-17T09:59:42.810Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.305801,
+          "transfer_success_rate": 0.77027,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.898774,
+          "status": "running",
+          "stop_reason": null,
+          "tick_index": 1,
+          "tick_id": "cmp_34cc54c9-4e3e-4a45-934c-473bfad66d75:1"
+        }
+      },
+      {
+        "ts": "2026-02-17T10:14:41.776Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 20,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.307401,
+          "transfer_success_rate": 0.763596,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.888203,
+          "status": "running",
+          "stop_reason": null,
+          "tick_index": 2,
+          "tick_id": "cmp_34cc54c9-4e3e-4a45-934c-473bfad66d75:2"
+        }
+      }
+    ]
+  },
+  "steps_requested": 1,
+  "steps_executed": 0,
+  "reason": "campaign_not_running",
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 0\n\n**status:** stopped\n",
+  "logs": "campaign_tick executed 0 steps"
+}

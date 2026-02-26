@@ -1,0 +1,446 @@
+{
+  "version": 1,
+  "updated_at": "2026-02-16T16:28:48.488Z",
+  "items": [
+    {
+      "domain_signature": "small|high|low|p2",
+      "domain_profile": {
+        "size_category": "small",
+        "metric_noise": "low",
+        "search_complexity": "high",
+        "param_count": 2
+      },
+      "best_adaptive_profile": {
+        "bootstrap_min": 5,
+        "narrowing_factor": 0.97,
+        "patience": 2,
+        "improvement_threshold": 0.0005,
+        "exploration_bias": 0.36,
+        "variance_sensitivity": 0.5
+      },
+      "fitness_snapshot": 0.141832,
+      "experiment_count": 125,
+      "strategy_age": 0,
+      "success_streak": 0,
+      "failure_streak": 52,
+      "last_used_at": "2026-02-16T13:02:06.148Z",
+      "last_updated_at": "2026-02-16T16:24:23.117Z",
+      "created_at": "2026-02-16T13:02:06.148Z",
+      "strategy_pool": [
+        {
+          "strategy_id": "stg_21187072-63f4-432a-8558-09d3b261e873",
+          "version_id": "v_1771246926149",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.158321,
+          "experiments_count": 125,
+          "avg_convergence_steps": 13.967998,
+          "avg_variance_stability": 0.999793,
+          "transfer_effectiveness": 0.215887,
+          "status": "shadow",
+          "created_at": "2026-02-16T13:02:06.149Z",
+          "updated_at": "2026-02-16T16:14:52.819Z",
+          "last_used_at": "2026-02-16T16:14:52.819Z"
+        },
+        {
+          "strategy_id": "stg_seed_1771253469490_aaa650_1",
+          "version_id": "v_seed_1771253469490_1",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.88,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.5,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.13357,
+          "experiments_count": 0,
+          "avg_convergence_steps": 14.055555,
+          "avg_variance_stability": 0.999829,
+          "transfer_effectiveness": 0.415606,
+          "status": "shadow",
+          "created_at": "2026-02-16T14:51:09.490Z",
+          "updated_at": "2026-02-16T14:51:09.490Z",
+          "last_used_at": "2026-02-16T14:51:09.490Z"
+        },
+        {
+          "strategy_id": "stg_seed_1771253469491_4783f8_2",
+          "version_id": "v_seed_1771253469491_2",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.97,
+            "patience": 2,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.36,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.141832,
+          "experiments_count": 0,
+          "avg_convergence_steps": 14.055555,
+          "avg_variance_stability": 0.999829,
+          "transfer_effectiveness": 0.415606,
+          "status": "active",
+          "created_at": "2026-02-16T14:51:09.491Z",
+          "updated_at": "2026-02-16T14:51:09.491Z",
+          "last_used_at": "2026-02-16T14:51:09.491Z"
+        }
+      ],
+      "active_strategy_id": "stg_seed_1771253469491_4783f8_2",
+      "arena_state": {
+        "governance": {
+          "max_strategies_per_domain": 4,
+          "arena_evaluation_window": 6,
+          "promotion_margin": 0.08,
+          "arena_cooldown_ms": 900000
+        },
+        "last_evaluated_at": "2026-02-16T15:43:56.022Z",
+        "last_selected_cursor": 0,
+        "experiments_since_last_eval": 5
+      },
+      "last_success_at": "2026-02-16T16:14:52.819Z",
+      "last_transfer_confidence": 0.137338,
+      "last_experiment_id": "exp_5c67b439-99db-4ffc-bf45-5c9ff9f1185d"
+    },
+    {
+      "domain_signature": "small|low|low|p2",
+      "domain_profile": {
+        "size_category": "small",
+        "metric_noise": "low",
+        "search_complexity": "low",
+        "param_count": 2
+      },
+      "best_adaptive_profile": {
+        "bootstrap_min": 5,
+        "narrowing_factor": 0.97,
+        "patience": 2,
+        "improvement_threshold": 0.0005,
+        "exploration_bias": 0.36,
+        "variance_sensitivity": 0.5
+      },
+      "fitness_snapshot": 0.137481,
+      "experiment_count": 108,
+      "strategy_age": 0,
+      "success_streak": 0,
+      "failure_streak": 8,
+      "last_used_at": "2026-02-16T15:03:16.474Z",
+      "last_updated_at": "2026-02-16T16:23:31.841Z",
+      "created_at": "2026-02-16T13:19:35.308Z",
+      "strategy_pool": [
+        {
+          "strategy_id": "stg_e6e1f794-59cb-46b8-aea4-2fbfee418bb2",
+          "version_id": "v_1771247975308",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.152593,
+          "experiments_count": 108,
+          "avg_convergence_steps": 4.611113,
+          "avg_variance_stability": 0.99849,
+          "transfer_effectiveness": 0.217465,
+          "status": "shadow",
+          "created_at": "2026-02-16T13:19:35.308Z",
+          "updated_at": "2026-02-16T16:14:51.814Z",
+          "last_used_at": "2026-02-16T16:14:51.814Z"
+        },
+        {
+          "strategy_id": "stg_seed_1771253469491_4239e3_1",
+          "version_id": "v_seed_1771253469491_1",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.88,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.5,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.129473,
+          "experiments_count": 0,
+          "avg_convergence_steps": 4.463415,
+          "avg_variance_stability": 0.998544,
+          "transfer_effectiveness": 0.351795,
+          "status": "shadow",
+          "created_at": "2026-02-16T14:51:09.491Z",
+          "updated_at": "2026-02-16T14:51:09.491Z",
+          "last_used_at": "2026-02-16T14:51:09.491Z"
+        },
+        {
+          "strategy_id": "stg_seed_1771253469491_fbd431_2",
+          "version_id": "v_seed_1771253469491_2",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.97,
+            "patience": 2,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.36,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.137481,
+          "experiments_count": 0,
+          "avg_convergence_steps": 4.463415,
+          "avg_variance_stability": 0.998544,
+          "transfer_effectiveness": 0.351795,
+          "status": "active",
+          "created_at": "2026-02-16T14:51:09.491Z",
+          "updated_at": "2026-02-16T14:51:09.491Z",
+          "last_used_at": "2026-02-16T15:03:16.474Z"
+        }
+      ],
+      "active_strategy_id": "stg_seed_1771253469491_fbd431_2",
+      "arena_state": {
+        "governance": {
+          "max_strategies_per_domain": 4,
+          "arena_evaluation_window": 6,
+          "promotion_margin": 0.08,
+          "arena_cooldown_ms": 900000
+        },
+        "last_evaluated_at": "2026-02-16T16:14:51.814Z",
+        "last_selected_cursor": 0,
+        "experiments_since_last_eval": 0
+      },
+      "last_success_at": "2026-02-16T16:14:51.814Z",
+      "last_transfer_confidence": 0.137338,
+      "last_experiment_id": "exp_5c67b439-99db-4ffc-bf45-5c9ff9f1185d"
+    },
+    {
+      "domain_signature": "small|high|low|p5",
+      "domain_profile": {
+        "size_category": "small",
+        "metric_noise": "low",
+        "search_complexity": "high",
+        "param_count": 3
+      },
+      "best_adaptive_profile": {
+        "bootstrap_min": 5,
+        "narrowing_factor": 0.97,
+        "patience": 2,
+        "improvement_threshold": 0.0005,
+        "exploration_bias": 0.36,
+        "variance_sensitivity": 0.5
+      },
+      "fitness_snapshot": 0.124264,
+      "experiment_count": 25,
+      "strategy_age": 0,
+      "success_streak": 25,
+      "failure_streak": 0,
+      "last_used_at": "2026-02-16T14:36:14.322Z",
+      "last_updated_at": "2026-02-16T15:30:09.517Z",
+      "created_at": "2026-02-16T14:36:14.322Z",
+      "strategy_pool": [
+        {
+          "strategy_id": "stg_fdba095f-b345-468b-9a49-249584801901",
+          "version_id": "v_1771252574322",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.152484,
+          "experiments_count": 25,
+          "avg_convergence_steps": 20.800001,
+          "avg_variance_stability": 0.999908,
+          "transfer_effectiveness": 0.122241,
+          "status": "inactive",
+          "created_at": "2026-02-16T14:36:14.322Z",
+          "updated_at": "2026-02-16T15:30:09.517Z",
+          "last_used_at": "2026-02-16T15:30:09.517Z"
+        },
+        {
+          "strategy_id": "stg_seed_1771253469491_621b87_1",
+          "version_id": "v_seed_1771253469491_1",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.88,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.5,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.117026,
+          "experiments_count": 0,
+          "avg_convergence_steps": 0,
+          "avg_variance_stability": 1,
+          "transfer_effectiveness": 0.5,
+          "status": "shadow",
+          "created_at": "2026-02-16T14:51:09.491Z",
+          "updated_at": "2026-02-16T14:51:09.491Z",
+          "last_used_at": "2026-02-16T14:51:09.491Z"
+        },
+        {
+          "strategy_id": "stg_seed_1771253469491_968a46_2",
+          "version_id": "v_seed_1771253469491_2",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.97,
+            "patience": 2,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.36,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.124264,
+          "experiments_count": 0,
+          "avg_convergence_steps": 0,
+          "avg_variance_stability": 1,
+          "transfer_effectiveness": 0.5,
+          "status": "active",
+          "created_at": "2026-02-16T14:51:09.491Z",
+          "updated_at": "2026-02-16T14:51:09.491Z",
+          "last_used_at": "2026-02-16T14:51:09.491Z"
+        }
+      ],
+      "active_strategy_id": "stg_seed_1771253469491_968a46_2",
+      "arena_state": {
+        "governance": {
+          "max_strategies_per_domain": 4,
+          "arena_evaluation_window": 6,
+          "promotion_margin": 0.08,
+          "arena_cooldown_ms": 900000
+        },
+        "last_evaluated_at": "2026-02-16T15:26:03.792Z",
+        "last_selected_cursor": 0,
+        "experiments_since_last_eval": 1
+      },
+      "last_success_at": "2026-02-16T15:30:09.517Z",
+      "last_transfer_confidence": 0.158586,
+      "last_experiment_id": "exp_78e0ebc8-50d8-417a-8fc3-4867df92a847"
+    },
+    {
+      "domain_signature": "small|low|low|p5",
+      "domain_profile": {
+        "size_category": "small",
+        "metric_noise": "low",
+        "search_complexity": "low",
+        "param_count": 3
+      },
+      "best_adaptive_profile": {
+        "bootstrap_min": 5,
+        "narrowing_factor": 0.92,
+        "patience": 3,
+        "improvement_threshold": 0.0005,
+        "exploration_bias": 0.42,
+        "variance_sensitivity": 0.5
+      },
+      "fitness_snapshot": 0.181265,
+      "experiment_count": 9,
+      "strategy_age": 0,
+      "success_streak": 9,
+      "failure_streak": 0,
+      "last_used_at": "2026-02-16T16:28:47.622Z",
+      "last_updated_at": "2026-02-16T15:04:10.900Z",
+      "created_at": "2026-02-16T15:04:08.323Z",
+      "strategy_pool": [
+        {
+          "strategy_id": "stg_bd63d4f3-f87a-4262-b9eb-844987f210f9",
+          "version_id": "v_1771254248323",
+          "adaptive_profile": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.181265,
+          "experiments_count": 9,
+          "avg_convergence_steps": 4.888889,
+          "avg_variance_stability": 0.999671,
+          "transfer_effectiveness": 0.14821,
+          "status": "active",
+          "created_at": "2026-02-16T15:04:08.323Z",
+          "updated_at": "2026-02-16T15:04:10.900Z",
+          "last_used_at": "2026-02-16T16:28:47.622Z"
+        }
+      ],
+      "active_strategy_id": "stg_bd63d4f3-f87a-4262-b9eb-844987f210f9",
+      "arena_state": {
+        "governance": {
+          "max_strategies_per_domain": 3,
+          "arena_evaluation_window": 6,
+          "promotion_margin": 0.08,
+          "arena_cooldown_ms": 900000
+        },
+        "last_evaluated_at": "2026-02-16T15:04:10.089Z",
+        "last_selected_cursor": 2,
+        "experiments_since_last_eval": 2
+      },
+      "last_success_at": "2026-02-16T15:04:10.900Z",
+      "last_transfer_confidence": 0.137337,
+      "last_experiment_id": "exp_520993ae-e78f-42cf-a496-32a65b630eb9"
+    },
+    {
+      "domain_signature": "medium|high|low|p5",
+      "domain_profile": {
+        "size_category": "medium",
+        "metric_noise": "low",
+        "search_complexity": "high",
+        "param_count": 3
+      },
+      "best_adaptive_profile": {
+        "bootstrap_min": 4,
+        "narrowing_factor": 0.7162,
+        "patience": 4,
+        "improvement_threshold": 0.0005,
+        "exploration_bias": 0.6054,
+        "variance_sensitivity": 0.5
+      },
+      "fitness_snapshot": 0.316753,
+      "experiment_count": 3,
+      "strategy_age": 0,
+      "success_streak": 3,
+      "failure_streak": 0,
+      "last_used_at": "2026-02-16T15:45:10.427Z",
+      "last_updated_at": "2026-02-16T15:54:12.601Z",
+      "created_at": "2026-02-16T15:45:10.427Z",
+      "strategy_pool": [
+        {
+          "strategy_id": "stg_8d55394f-75bd-460d-8e63-dfc7b6aed17b",
+          "version_id": "v_1771256710428",
+          "adaptive_profile": {
+            "bootstrap_min": 4,
+            "narrowing_factor": 0.7162,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.6054,
+            "variance_sensitivity": 0.5
+          },
+          "fitness": 0.316753,
+          "experiments_count": 3,
+          "avg_convergence_steps": 11.666667,
+          "avg_variance_stability": 0.999957,
+          "transfer_effectiveness": 0.248193,
+          "status": "active",
+          "created_at": "2026-02-16T15:45:10.428Z",
+          "updated_at": "2026-02-16T15:54:12.601Z",
+          "last_used_at": "2026-02-16T15:54:12.601Z"
+        }
+      ],
+      "active_strategy_id": "stg_8d55394f-75bd-460d-8e63-dfc7b6aed17b",
+      "arena_state": {
+        "governance": {
+          "max_strategies_per_domain": 3,
+          "arena_evaluation_window": 6,
+          "promotion_margin": 0.08,
+          "arena_cooldown_ms": 900000
+        },
+        "last_selected_cursor": 0,
+        "experiments_since_last_eval": 2
+      },
+      "last_success_at": "2026-02-16T15:54:12.601Z",
+      "last_transfer_confidence": 0.122303,
+      "last_experiment_id": "exp_7698d98d-1cc7-4782-8a6a-203f4a909594"
+    }
+  ]
+}

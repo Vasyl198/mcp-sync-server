@@ -1,0 +1,76 @@
+{
+  "campaign_id": "cmp_33a74ac3-0d59-4683-87e0-062acf293f05",
+  "goal": "Post-restart safe cycle with portfolio floor seeding validation",
+  "objective": "maximize accuracy",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "search_space": {
+      "lr": [
+        0.001,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "layers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exploration_bias": [
+        0.51,
+        0.71,
+        0.91,
+        1
+      ]
+    },
+    "transfer_threshold": 0
+  },
+  "max_experiments": 40,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 40,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 4,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-17T09:49:08.453Z",
+  "updated_at": "2026-02-25T12:09:58.887Z",
+  "started_at": "2026-02-17T09:49:14.519Z",
+  "completed_at": "2026-02-17T09:50:00.029Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_d6c8f7b8-6f9b-4f03-ad2c-8cfac12d216a",
+  "experiment_ids": [
+    "exp_d6c8f7b8-6f9b-4f03-ad2c-8cfac12d216a"
+  ],
+  "tick_count": 0,
+  "experiments_run": 40,
+  "last_metrics": {
+    "gihi": 0.304158,
+    "transfer_success_rate": 0.764977,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.902054
+  },
+  "history": [
+    {
+      "ts": "2026-02-17T09:49:08.453Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 40,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 40,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 4,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

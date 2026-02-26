@@ -1,0 +1,79 @@
+{
+  "campaign_id": "cmp_8a81ef19-fc27-4024-baf4-bd3c1051d06e",
+  "goal": "Optimize model accuracy for medium search space (autonomous run, relaxed stagnation)",
+  "objective": {
+    "metric": "accuracy",
+    "mode": "maximize"
+  },
+  "constraints": {
+    "experiment_name": "campaign_autonomous_relaxed_stagnation",
+    "search_space": {
+      "learning_rate": [
+        0.0001,
+        0.0005,
+        0.001,
+        0.005,
+        0.01
+      ],
+      "layers": [
+        2,
+        3,
+        4
+      ],
+      "dropout": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "batch_size": [
+        16,
+        32,
+        64
+      ]
+    }
+  },
+  "max_experiments": 40,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 40,
+    "stagnation_rate_gt": 0.98,
+    "max_ticks": 25,
+    "gihi_grace_ticks": 2
+  },
+  "status": "stopped",
+  "created_at": "2026-02-16T12:26:35.101Z",
+  "updated_at": "2026-02-25T12:09:58.914Z",
+  "started_at": "2026-02-16T12:26:39.957Z",
+  "completed_at": "2026-02-16T12:26:40.018Z",
+  "stop_reason": "stagnation_too_high",
+  "primary_experiment_id": "exp_9ce2c2c1-4214-4359-97a1-44c0b47d6f0d",
+  "experiment_ids": [
+    "exp_9ce2c2c1-4214-4359-97a1-44c0b47d6f0d"
+  ],
+  "tick_count": 0,
+  "experiments_run": 10,
+  "last_metrics": {
+    "gihi": 0.25,
+    "transfer_success_rate": 0,
+    "mutation_effectiveness_ratio": 0,
+    "arena_domains": 0,
+    "stagnation_rate": 1
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T12:26:35.101Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 40,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 40,
+          "stagnation_rate_gt": 0.98,
+          "max_ticks": 25
+        }
+      }
+    }
+  ]
+}

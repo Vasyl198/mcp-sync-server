@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "task_name": "experiment_search_tick",
+  "experiment_id": "exp_9579201f-5cda-4e4c-96b3-89e304ccec4d",
+  "created_count": 4,
+  "created": [
+    {
+      "run_id": "run_f0edebb0-78ee-4b10-8452-7fa0e50cbe35",
+      "experiment_id": "exp_9579201f-5cda-4e4c-96b3-89e304ccec4d",
+      "created_at": "2026-02-16T09:28:57.082Z",
+      "updated_at": "2026-02-16T09:28:57.082Z",
+      "params": {
+        "learning_rate": 0.001,
+        "layers": 2
+      },
+      "metrics": {},
+      "status": "pending",
+      "duration_ms": null,
+      "score": null,
+      "task_id": null
+    },
+    {
+      "run_id": "run_f0ba3f7b-808a-4f77-8992-4bfa9797274a",
+      "experiment_id": "exp_9579201f-5cda-4e4c-96b3-89e304ccec4d",
+      "created_at": "2026-02-16T09:28:57.082Z",
+      "updated_at": "2026-02-16T09:28:57.082Z",
+      "params": {
+        "learning_rate": 0.001,
+        "layers": 3
+      },
+      "metrics": {},
+      "status": "pending",
+      "duration_ms": null,
+      "score": null,
+      "task_id": null
+    },
+    {
+      "run_id": "run_39c9fad3-6dfc-4b7f-bff2-3d6484193ca4",
+      "experiment_id": "exp_9579201f-5cda-4e4c-96b3-89e304ccec4d",
+      "created_at": "2026-02-16T09:28:57.082Z",
+      "updated_at": "2026-02-16T09:28:57.082Z",
+      "params": {
+        "learning_rate": 0.01,
+        "layers": 2
+      },
+      "metrics": {},
+      "status": "pending",
+      "duration_ms": null,
+      "score": null,
+      "task_id": null
+    },
+    {
+      "run_id": "run_4c1c2cbb-7b77-4bda-9c6b-810888a5f40a",
+      "experiment_id": "exp_9579201f-5cda-4e4c-96b3-89e304ccec4d",
+      "created_at": "2026-02-16T09:28:57.082Z",
+      "updated_at": "2026-02-16T09:28:57.082Z",
+      "params": {
+        "learning_rate": 0.01,
+        "layers": 3
+      },
+      "metrics": {},
+      "status": "pending",
+      "duration_ms": null,
+      "score": null,
+      "task_id": null
+    }
+  ],
+  "report_md": "# Experiment Search Tick\n\n**created_count:** 4\n",
+  "logs": "experiment_search_tick created 4 runs"
+}

@@ -1,0 +1,9 @@
+cmd=echo args=["training","lr=0.001","layers=2","&&","echo","accuracy=0.2"]
+cwd=
+exit=0
+stdout:
+training lr=0.001 layers=2 
+accuracy=0.2
+
+stderr:
+

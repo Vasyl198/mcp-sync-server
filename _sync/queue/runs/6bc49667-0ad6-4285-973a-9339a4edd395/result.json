@@ -1,0 +1,89 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_f6fd79b1-2b19-45b9-a1c5-524d79a8df59",
+    "goal": "Parallel Campaign B - noisy medium domain",
+    "objective": {
+      "metric": "accuracy",
+      "mode": "maximize"
+    },
+    "constraints": {
+      "exec_command": "node train.js --lr={lr} --layers={layers} --noise={noise}"
+    },
+    "max_experiments": 35,
+    "stop_conditions": {
+      "convergence_detected": true,
+      "min_gihi": 0.01,
+      "max_experiments": 35,
+      "stagnation_rate_gt": 1,
+      "max_ticks": 6,
+      "gihi_grace_ticks": 2
+    },
+    "status": "stopped",
+    "created_at": "2026-02-16T14:24:07.254Z",
+    "updated_at": "2026-02-16T14:32:48.514Z",
+    "started_at": "2026-02-16T14:32:02.773Z",
+    "completed_at": "2026-02-16T14:32:48.507Z",
+    "stop_reason": "max_ticks_reached",
+    "primary_experiment_id": "exp_d587da1c-9020-4475-9a11-cec9706c4581",
+    "experiment_ids": [
+      "exp_d587da1c-9020-4475-9a11-cec9706c4581"
+    ],
+    "tick_count": 6,
+    "experiments_run": 12,
+    "last_metrics": {
+      "gihi": 0.274609,
+      "transfer_success_rate": 1,
+      "mutation_effectiveness_ratio": 0,
+      "arena_domains": 0,
+      "stagnation_rate": 0.764987
+    },
+    "history": [
+      {
+        "ts": "2026-02-16T14:24:07.254Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 35,
+          "stop_conditions": {
+            "convergence_detected": true,
+            "min_gihi": 0.01,
+            "max_experiments": 35,
+            "stagnation_rate_gt": 1,
+            "max_ticks": 6,
+            "gihi_grace_ticks": 2
+          }
+        }
+      }
+    ]
+  },
+  "steps_requested": 4,
+  "steps_executed": 1,
+  "ticks": [
+    {
+      "step": 1,
+      "created_runs": 0,
+      "impacted_count": 0,
+      "pending_runs_scanned": 0,
+      "exec_tasks_created": 0,
+      "runs_linked_with_task_id": 0,
+      "autobind_skipped_no_template": 0,
+      "autobind_skipped_has_task_id": 0,
+      "autobind_skipped_empty_command": 0,
+      "autobind_errors": 0,
+      "exec_bind_queued": 0,
+      "orchestrated_activated": 22,
+      "recovered_activated": 0,
+      "arena_evaluated": 0,
+      "evolved_created": 0,
+      "gihi": 0.274609,
+      "transfer_success_rate": 1,
+      "mutation_effectiveness_ratio": 0,
+      "stagnation_rate": 0.764987,
+      "status": "stopped",
+      "stop_reason": "max_ticks_reached"
+    }
+  ],
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 1\n\n**status:** stopped\n",
+  "logs": "campaign_tick executed 1 steps"
+}

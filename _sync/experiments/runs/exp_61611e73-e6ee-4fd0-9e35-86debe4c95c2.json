@@ -1,0 +1,22 @@
+[
+  {
+    "run_id": "run_e5e55135-aa1c-469d-9d8f-15126bc410cd",
+    "experiment_id": "exp_61611e73-e6ee-4fd0-9e35-86debe4c95c2",
+    "created_at": "2026-02-17T08:21:12.665Z",
+    "updated_at": "2026-02-17T08:22:21.514Z",
+    "params": {
+      "lr": 0.02,
+      "layers": 2
+    },
+    "metrics": {
+      "score": 0.8339,
+      "loss": 0.1661,
+      "accuracy": 0.8339
+    },
+    "status": "completed",
+    "duration_ms": 62,
+    "score": 0.8339,
+    "task_id": "dcb63f27-c42c-498d-8941-aa3d9ffe520b",
+    "notes": "metric_extraction_warnings: metric_extraction_fallback: METRICS JSON; metric_extraction_fallback: key=value"
+  }
+]

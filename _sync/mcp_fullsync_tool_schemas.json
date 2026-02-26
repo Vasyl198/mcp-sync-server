@@ -1,0 +1,978 @@
+{
+  "whoami": {
+    "description": "Get server info and available roots.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    }
+  },
+  "experiment_create": {
+    "description": "Create or update an experiment.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "objective": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "metric": {
+                  "type": "string"
+                },
+                "mode": {
+                  "type": "string",
+                  "enum": [
+                    "maximize",
+                    "minimize"
+                  ]
+                }
+              },
+              "required": [
+                "metric",
+                "mode"
+              ]
+            }
+          ]
+        },
+        "metric_schema": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "search_space": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "search_strategy": {
+          "type": "string",
+          "enum": [
+            "grid",
+            "random",
+            "adaptive"
+          ]
+        },
+        "metadata": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "objective"
+      ]
+    }
+  },
+  "experiment_run": {
+    "description": "Create/update experiment run; optionally create linked exec task.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "running",
+            "completed",
+            "failed"
+          ]
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "exec_command": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "experiment_id",
+        "params"
+      ]
+    }
+  },
+  "experiment_list": {
+    "description": "List experiments.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "running",
+            "completed",
+            "archived"
+          ]
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": []
+    }
+  },
+  "experiment_compare": {
+    "description": "Compare runs and return best/second delta.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "experiment_id"
+      ]
+    }
+  },
+  "experiment_leaderboard": {
+    "description": "Get sorted leaderboard for experiment.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [
+        "experiment_id"
+      ]
+    }
+  },
+  "experiment_best": {
+    "description": "Get best run for experiment.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "experiment_id"
+      ]
+    }
+  },
+  "experiment_search_tick": {
+    "description": "Generate pending runs from search space.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        },
+        "batch_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        }
+      },
+      "required": [
+        "experiment_id"
+      ]
+    }
+  },
+  "tasks_upsert": {
+    "description": "Create or update a task.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "todo",
+            "doing",
+            "done",
+            "blocked"
+          ]
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title"
+      ]
+    }
+  },
+  "tasks_list": {
+    "description": "List tasks with optional filtering.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "query": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "todo",
+            "doing",
+            "done",
+            "blocked"
+          ]
+        }
+      },
+      "required": []
+    }
+  },
+  "task_create": {
+    "description": "Create a task graph node.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "open",
+            "in_progress",
+            "blocked",
+            "done",
+            "canceled"
+          ]
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "execution_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "max_attempts": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "retry_delay_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 86400000
+            },
+            "backoff_multiplier": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            }
+          },
+          "required": []
+        }
+      },
+      "required": [
+        "title"
+      ]
+    }
+  },
+  "task_link": {
+    "description": "Link dependencies/children for a task.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "task_id"
+      ]
+    }
+  },
+  "task_graph": {
+    "description": "Get task dependency graph.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        }
+      },
+      "required": []
+    }
+  },
+  "task_plan_generate": {
+    "description": "Generate a task plan from a goal.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "goal": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "max_tasks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        }
+      },
+      "required": [
+        "goal"
+      ]
+    }
+  },
+  "task_status_update": {
+    "description": "Update status of a task graph node.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "open",
+            "in_progress",
+            "blocked",
+            "done",
+            "canceled"
+          ]
+        }
+      },
+      "required": [
+        "task_id",
+        "status"
+      ]
+    }
+  },
+  "orchestrator_tick": {
+    "description": "Promote eligible open tasks to in_progress (all dependencies done).",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": []
+    }
+  },
+  "execution_bind_tick": {
+    "description": "Bind in_progress exec:* tasks to queue exec jobs.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": []
+    }
+  },
+  "recovery_tick": {
+    "description": "Re-activate retry-eligible open tasks (next_retry_at <= now) via orchestrator.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": []
+    }
+  },
+  "governance_get": {
+    "description": "Get evolution governance constraints.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    }
+  },
+  "governance_set": {
+    "description": "Update evolution governance constraints.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_versions_per_role": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "max_shadow_per_role": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "evolution_cooldown_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 604800000
+        },
+        "min_replay_runs": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "promotion_margin_min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "discard_on_instability": {
+          "type": "boolean"
+        },
+        "max_evolution_attempts_per_day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "stability_success_variance_max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stability_completion_time_variance_max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "rollback_eval_runs": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "rollback_failure_delta": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rollback_critic_delta": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": []
+    }
+  },
+  "agent_registry": {
+    "description": "List available agent roles and LLM profiles.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        }
+      },
+      "required": []
+    }
+  },
+  "agent_metrics_snapshot": {
+    "description": "Get agent metrics snapshot by role/version.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        }
+      },
+      "required": []
+    }
+  },
+  "agent_version_create": {
+    "description": "Create a new agent version for role.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "system_prompt": {
+          "type": "string"
+        },
+        "activate": {
+          "type": "boolean"
+        },
+        "parent_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "role"
+      ]
+    }
+  },
+  "agent_version_activate": {
+    "description": "Activate specific agent version for role.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "role",
+        "version"
+      ]
+    }
+  },
+  "evolution_tick": {
+    "description": "Run evolution trigger rules and create mutated agent versions.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        },
+        "min_runs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "failure_rate_gt": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "critic_score_lt": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "avg_completion_time_ms_gt": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_new_versions": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "shadow_mode": {
+          "type": "boolean"
+        }
+      },
+      "required": []
+    }
+  },
+  "shadow_evaluation_tick": {
+    "description": "Evaluate shadow versions on replay data and auto promote/discard.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "planner",
+            "dev",
+            "research",
+            "critic"
+          ]
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "promote_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "max_evaluations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "discard_on_fail": {
+          "type": "boolean"
+        }
+      },
+      "required": []
+    }
+  },
+  "agent_dispatch_tick": {
+    "description": "Dispatch in_progress role-based tasks to agent queue handlers.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": []
+    }
+  },
+  "project_create": {
+    "description": "Create or update a project context root.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "project_id"
+      ]
+    }
+  },
+  "project_list": {
+    "description": "List known projects and active project.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    }
+  },
+  "project_switch": {
+    "description": "Switch active project.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id"
+      ]
+    }
+  },
+  "project_context_set": {
+    "description": "Set project context/roadmap/constraints.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "context": {
+          "type": "object"
+        },
+        "roadmap": {
+          "type": "object"
+        },
+        "constraints": {
+          "type": "object"
+        }
+      },
+      "required": []
+    }
+  },
+  "project_context_get": {
+    "description": "Get full project context package.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        }
+      },
+      "required": []
+    }
+  },
+  "memory_store": {
+    "description": "Store a persistent memory record.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "type",
+        "content"
+      ]
+    }
+  },
+  "memory_query": {
+    "description": "Query persistent memory records.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "query": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        }
+      },
+      "required": []
+    }
+  },
+  "memory_update": {
+    "description": "Update an existing memory record.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "memory_id": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "memory_id"
+      ]
+    }
+  },
+  "memory_prune": {
+    "description": "Delete memory records by age/project.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "older_than_ts": {
+          "type": "integer"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        }
+      },
+      "required": []
+    }
+  }
+}

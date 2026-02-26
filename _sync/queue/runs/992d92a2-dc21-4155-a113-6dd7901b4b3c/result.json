@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "task_name": "patch_proposal_tick",
+  "ok": true,
+  "dry_run": false,
+  "published": {
+    "ok": true
+  },
+  "sync_outbound": {
+    "processed": 1,
+    "skipped": 0,
+    "errors": [],
+    "last_cursor": "aaace3ab-e36c-4043-b13f-4ba4ad71e8f8"
+  },
+  "proposals_recent": [],
+  "summary": {
+    "meta_state": "stressed",
+    "arena_entropy": 0.91795,
+    "top_transfer_variance_domains": [
+      {
+        "domain_signature": "small|low|low|p2",
+        "transfer_variance": 0.244659,
+        "evidence_drop_reason_recent_last": null,
+        "evidence_observations_recent_ewma": 1733.455139
+      },
+      {
+        "domain_signature": "small|high|low|p2",
+        "transfer_variance": 0.227986,
+        "evidence_drop_reason_recent_last": null,
+        "evidence_observations_recent_ewma": 817.157577
+      }
+    ]
+  },
+  "report_md": "# Patch Proposal Tick\n\n- meta_state: stressed\n- published: true\n- proposals_recent: 0\n",
+  "logs": "patch_proposal_tick published true sync_processed 1"
+}

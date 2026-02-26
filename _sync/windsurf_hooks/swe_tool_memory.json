@@ -1,0 +1,291 @@
+{
+    "ts_utc":  "2026-02-25T17:11:12.4484220Z",
+    "ts_unix":  1772039471,
+    "count":  71,
+    "tools":  [
+                  {
+                      "name":  "whoami",
+                      "description":  "Get server info and available roots"
+                  },
+                  {
+                      "name":  "debug_sleep_sync",
+                      "description":  "Diagnostic: sleep for ms then return. Use to reproduce client timeouts/ABORT on long tool calls."
+                  },
+                  {
+                      "name":  "debug_sleep_auto",
+                      "description":  "Diagnostic: automatically choose sync vs async by latency budget. Returns job_id + status tool for long calls."
+                  },
+                  {
+                      "name":  "debug_sleep_async_start",
+                      "description":  "Diagnostic: start an async sleep job and return job_id immediately (pattern for avoiding client timeouts)."
+                  },
+                  {
+                      "name":  "debug_sleep_async_get",
+                      "description":  "Diagnostic: get status/result of async sleep job by job_id."
+                  },
+                  {
+                      "name":  "router_execute_command",
+                      "description":  "Execute command from inbox"
+                  },
+                  {
+                      "name":  "fs_lock_acquire",
+                      "description":  "Acquire a lock with optional TTL"
+                  },
+                  {
+                      "name":  "fs_lock_release",
+                      "description":  "Release a lock with token"
+                  },
+                  {
+                      "name":  "queue_push",
+                      "description":  "Push a job to queue"
+                  },
+                  {
+                      "name":  "queue_pop",
+                      "description":  "Pop/claim a job from queue with lease"
+                  },
+                  {
+                      "name":  "queue_ack",
+                      "description":  "Acknowledge job completion with status and artifacts"
+                  },
+                  {
+                      "name":  "job_history_list",
+                      "description":  "List job history with status and artifacts"
+                  },
+                  {
+                      "name":  "router_execute_from_queue",
+                      "description":  "Execute one job from queue"
+                  },
+                  {
+                      "name":  "router_execute_exec_queue",
+                      "description":  "Execute one job from exec logical queue"
+                  },
+                  {
+                      "name":  "router_execute_research_queue",
+                      "description":  "Execute one job from research logical queue"
+                  },
+                  {
+                      "name":  "router_execute_campaign_queue",
+                      "description":  "Execute one job from campaign logical queue"
+                  },
+                  {
+                      "name":  "router_execute_meta_queue",
+                      "description":  "Execute one job from meta logical queue"
+                  },
+                  {
+                      "name":  "worker_metrics_snapshot",
+                      "description":  "Worker manager telemetry snapshot"
+                  },
+                  {
+                      "name":  "exec",
+                      "description":  "Execute command with security restrictions."
+                  },
+                  {
+                      "name":  "event_publish",
+                      "description":  "Publish an event to events.jsonl"
+                  },
+                  {
+                      "name":  "event_list",
+                      "description":  "List events from events.jsonl"
+                  },
+                  {
+                      "name":  "notes",
+                      "description":  "Notes multiplexer: list/get/upsert/delete"
+                  },
+                  {
+                      "name":  "tasks",
+                      "description":  "Tasks multiplexer: CRUD + task graph operations"
+                  },
+                  {
+                      "name":  "swe_guard",
+                      "description":  "SWE truth gate: verify claims via lab tools and block unproven completion"
+                  },
+                  {
+                      "name":  "swe_bridge",
+                      "description":  "Realtime bridge between controller and SWE via queue/events with ACK loop"
+                  },
+                  {
+                      "name":  "fs",
+                      "description":  "Filesystem multiplexer: list/read/write/mkdir/exists/read_content/write_content"
+                  },
+                  {
+                      "name":  "protocol",
+                      "description":  "Protocol multiplexer: init/read/write/status/report/logs"
+                  },
+                  {
+                      "name":  "sync",
+                      "description":  "Sync multiplexer: outbound/inbound/status/reconcile/enqueue_inbound"
+                  },
+                  {
+                      "name":  "terminal_swe",
+                      "description":  "Terminal SWE compatibility multiplexer (IDE-like ops mapped to MCP)."
+                  },
+                  {
+                      "name":  "web",
+                      "description":  "Web multiplexer: search/read/chunk (internet helper for SWE and agents)"
+                  },
+                  {
+                      "name":  "search_web",
+                      "description":  "Search web by query (compat alias)."
+                  },
+                  {
+                      "name":  "read_url_content",
+                      "description":  "Read web page content by URL (compat alias)."
+                  },
+                  {
+                      "name":  "view_content_chunk",
+                      "description":  "View a chunk from content or URL (compat alias)."
+                  },
+                  {
+                      "name":  "fs_projects",
+                      "description":  "List files/dirs under C:\\Users\\anani\\Projects (compat helper)."
+                  },
+                  {
+                      "name":  "llm_agent_chat",
+                      "description":  "LLM agent wrapper with tool-loop: model emits JSON tool calls, server executes allowlisted tools, returns final answer + trace."
+                  },
+                  {
+                      "name":  "experiment",
+                      "description":  "Experiment multiplexer: create/run/list/compare/leaderboard/best/search_tick"
+                  },
+                  {
+                      "name":  "campaign",
+                      "description":  "Campaign multiplexer: create/tick/watchdog/report/list"
+                  },
+                  {
+                      "name":  "governance_get",
+                      "description":  "Get evolution governance constraints"
+                  },
+                  {
+                      "name":  "governance_set",
+                      "description":  "Update evolution governance constraints"
+                  },
+                  {
+                      "name":  "arena_governance_get",
+                      "description":  "Get per-domain arena governance from research memory"
+                  },
+                  {
+                      "name":  "arena_governance_set",
+                      "description":  "Update per-domain arena governance in research memory"
+                  },
+                  {
+                      "name":  "agent_registry",
+                      "description":  "List available agent roles, versions, and active profiles"
+                  },
+                  {
+                      "name":  "agent_metrics_snapshot",
+                      "description":  "Get agent metrics snapshot by role/version"
+                  },
+                  {
+                      "name":  "agent_version_create",
+                      "description":  "Create a new agent version for role (v2/v3...)"
+                  },
+                  {
+                      "name":  "agent_version_activate",
+                      "description":  "Activate specific agent version for role (rollback/promotion control)"
+                  },
+                  {
+                      "name":  "evolution_tick",
+                      "description":  "Run evolution trigger rules and create mutated agent versions"
+                  },
+                  {
+                      "name":  "shadow_evaluation_tick",
+                      "description":  "Evaluate shadow versions on replay data and auto promote/discard"
+                  },
+                  {
+                      "name":  "agent_dispatch_tick",
+                      "description":  "Dispatch in_progress role-based tasks to agent queue handlers"
+                  },
+                  {
+                      "name":  "arena_telemetry_snapshot",
+                      "description":  "Per-domain strategy heatmap with arena status and strategy metrics"
+                  },
+                  {
+                      "name":  "mutation_effectiveness_snapshot",
+                      "description":  "Mutation effectiveness index for adaptive and meta mutation paths"
+                  },
+                  {
+                      "name":  "transfer_diagnostics",
+                      "description":  "Transfer effectiveness monitor with confidence, block, and anomaly rates"
+                  },
+                  {
+                      "name":  "intelligence_health_snapshot",
+                      "description":  "Global Intelligence Health Index and fitness trajectory snapshot"
+                  },
+                  {
+                      "name":  "intelligence_meta_snapshot",
+                      "description":  "Meta-intelligence diagnostics (entropy, specialization, mutation/transfer trends, GIHI slope)"
+                  },
+                  {
+                      "name":  "meta_governance_tick",
+                      "description":  "Auto-tune governance based on meta-intelligence snapshot"
+                  },
+                  {
+                      "name":  "governance_tuner_tick",
+                      "description":  "Preview/apply small governance knob adjustments from recent metrics (safe allowlist)."
+                  },
+                  {
+                      "name":  "governance_threshold_tuner_tick",
+                      "description":  "Preview/apply small global threshold tuning changes with validation and rollback guards."
+                  },
+                  {
+                      "name":  "research_agenda_tick",
+                      "description":  "Build compact diagnostics brief and send one LLM agenda request (journal/tasks helper mode)."
+                  },
+                  {
+                      "name":  "patch_proposal_tick",
+                      "description":  "Generate patch proposals (PatchEnvelope) via LLM and store proposal notes (proposal-only)."
+                  },
+                  {
+                      "name":  "patch_test_tick",
+                      "description":  "Run smoke/tests for fresh patch proposals and write patch_test_report notes."
+                  },
+                  {
+                      "name":  "patch_governance_tick",
+                      "description":  "Apply tested patches: prompt patches create shadow versions; repo patches can be auto-applied with tests+rollback guards."
+                  },
+                  {
+                      "name":  "lineage_snapshot",
+                      "description":  "Strategy lineage graph from mutation history"
+                  },
+                  {
+                      "name":  "project_create",
+                      "description":  "Create or update a project context root"
+                  },
+                  {
+                      "name":  "project_list",
+                      "description":  "List known projects and active project"
+                  },
+                  {
+                      "name":  "project_switch",
+                      "description":  "Switch active project"
+                  },
+                  {
+                      "name":  "project_context_set",
+                      "description":  "Set project context/roadmap/constraints"
+                  },
+                  {
+                      "name":  "project_context_get",
+                      "description":  "Get full project context package"
+                  },
+                  {
+                      "name":  "memory_store",
+                      "description":  "Store a persistent memory record"
+                  },
+                  {
+                      "name":  "memory_query",
+                      "description":  "Query persistent memory records"
+                  },
+                  {
+                      "name":  "memory_update",
+                      "description":  "Update an existing memory record"
+                  },
+                  {
+                      "name":  "memory_prune",
+                      "description":  "Delete memory records by age/project"
+                  },
+                  {
+                      "name":  "search_in_files",
+                      "description":  "Search for text/regex in files within allowed roots."
+                  }
+              ]
+}

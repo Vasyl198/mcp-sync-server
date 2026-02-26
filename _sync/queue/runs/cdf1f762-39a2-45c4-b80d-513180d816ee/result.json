@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "Missing task/command/type in project_task payload",
+  "report_md": "# Invalid Project Task Payload\n\nExpected one of: `task`, `command`, `type`.",
+  "logs": "Invalid project_task payload: \"{\\\"command\\\":\\\"meta_governance_tick\\\",\\\"dry_run\\\":false}\""
+}

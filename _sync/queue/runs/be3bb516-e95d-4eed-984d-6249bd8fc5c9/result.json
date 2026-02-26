@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "task_name": "evolution_tick",
+  "shadow_mode": true,
+  "created": [],
+  "skipped": [
+    {
+      "role": "planner",
+      "reason": "insufficient_runs"
+    },
+    {
+      "role": "dev",
+      "reason": "shadow_already_exists_for_active_parent"
+    },
+    {
+      "role": "research",
+      "reason": "insufficient_runs"
+    },
+    {
+      "role": "critic",
+      "reason": "insufficient_runs"
+    }
+  ],
+  "thresholds": {
+    "min_runs": 3,
+    "failure_rate_gt": 0.4,
+    "critic_score_lt": 0.6,
+    "avg_completion_time_ms_gt": 3000
+  },
+  "report_md": "# Evolution Tick\n\n**created:** 0\n\n**skipped:** 4\n",
+  "logs": "evolution_tick created 0 versions"
+}

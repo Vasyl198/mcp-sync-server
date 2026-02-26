@@ -1,0 +1,84 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_a09f2722-18d8-42a7-b7a3-2bef856382c0",
+    "goal": "Optimize model accuracy for medium search space (extended campaign)",
+    "objective": {
+      "metric": "accuracy",
+      "mode": "maximize"
+    },
+    "max_experiments": 40,
+    "stop_conditions": {
+      "convergence_detected": true,
+      "min_gihi": 0.15,
+      "max_experiments": 40,
+      "stagnation_rate_gt": 0.92,
+      "max_ticks": 15
+    },
+    "status": "stopped",
+    "created_at": "2026-02-16T12:05:31.793Z",
+    "updated_at": "2026-02-16T12:20:08.230Z",
+    "started_at": "2026-02-16T12:20:08.133Z",
+    "completed_at": "2026-02-16T12:20:08.221Z",
+    "stop_reason": "stagnation_too_high",
+    "primary_experiment_id": "exp_3e56c1e5-af08-4042-aac4-4a16fa8e16a9",
+    "experiment_ids": [
+      "exp_3e56c1e5-af08-4042-aac4-4a16fa8e16a9"
+    ],
+    "tick_count": 1,
+    "experiments_run": 12,
+    "last_metrics": {
+      "gihi": 0.25,
+      "transfer_success_rate": 0,
+      "mutation_effectiveness_ratio": 0,
+      "arena_domains": 0,
+      "stagnation_rate": 1
+    },
+    "history": [
+      {
+        "ts": "2026-02-16T12:05:31.793Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 40,
+          "stop_conditions": {
+            "convergence_detected": true,
+            "min_gihi": 0.15,
+            "max_experiments": 40,
+            "stagnation_rate_gt": 0.92,
+            "max_ticks": 15
+          }
+        }
+      },
+      {
+        "ts": "2026-02-16T12:06:53.233Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_5299bc48-93c3-4ff6-9086-e933fc96b70d"
+        }
+      }
+    ]
+  },
+  "steps_requested": 1,
+  "steps_executed": 1,
+  "ticks": [
+    {
+      "step": 1,
+      "created_runs": 12,
+      "impacted_count": 0,
+      "exec_bind_queued": 0,
+      "orchestrated_activated": 0,
+      "recovered_activated": 0,
+      "arena_evaluated": 0,
+      "evolved_created": 0,
+      "gihi": 0.25,
+      "transfer_success_rate": 0,
+      "mutation_effectiveness_ratio": 0,
+      "stagnation_rate": 1,
+      "status": "stopped",
+      "stop_reason": "stagnation_too_high"
+    }
+  ],
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 1\n\n**status:** stopped\n",
+  "logs": "campaign_tick executed 1 steps"
+}

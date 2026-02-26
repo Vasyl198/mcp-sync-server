@@ -1,0 +1,8 @@
+cmd=node args=["-e","console.log('mq-worker-smoke')"]
+cwd=
+exit=0
+stdout:
+mq-worker-smoke
+
+stderr:
+

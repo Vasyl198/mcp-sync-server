@@ -1,0 +1,18 @@
+﻿{
+    "ts":  "2026-02-24T22:16:32.9022660+02:00",
+    "role":  "dev",
+    "sync_dir":  "C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync",
+    "repo_root":  "C:\\Users\\anani\\Projects\\mcp-sync-server",
+    "sync_hashes":  {
+                        "registry_json":  "34615:639075553445167948",
+                        "metrics_json":  null,
+                        "evolution_history_jsonl":  "13222251:639075541153176490"
+                    },
+    "source_hashes":  {
+                          "src/index.ts":  "7d702c1d57785c53898f92106b1f77e7fe81800e07f5e7bd44f313780c0d6953",
+                          "src/agent/store.ts":  "f0138b26ca61763dd35a343fec599b8ba9367e2c2c03ebd3895207c10d1434d1",
+                          "src/agent/telemetry.ts":  "587eed1f580f61e7faeb8ca0c021e08b0b34b814469b29533677ebf171fd817b",
+                          "src/sync/llm_actions.ts":  "b31be16df1a1e3e51b7442b0f677826fbc2d9445789c1b8bb32aa53135eadaac",
+                          "src/queue.ts":  "7574a5eeaf8d7c1eef8f5bfbf511f192e54856fb44bc613c611887884a2771ae"
+                      }
+}

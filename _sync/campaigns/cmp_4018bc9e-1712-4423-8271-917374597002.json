@@ -1,0 +1,128 @@
+{
+  "campaign_id": "cmp_4018bc9e-1712-4423-8271-917374597002",
+  "goal": "Post-restart one-shot gate payload verification",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_one_shot_gate_payload_verify",
+    "search_space": {
+      "exploration_bias": [
+        0.56
+      ],
+      "narrowing_factor": [
+        1
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node -e \\\"const eb={exploration_bias};const nf={narrowing_factor};const s=1-Math.abs(eb-0.55)-Math.abs(nf-1)*0.35+(Math.random()*0.03);console.log('score='+s.toFixed(4));\\\"",
+    "transfer_threshold": 0.04
+  },
+  "max_experiments": 1,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 1,
+    "stagnation_rate_gt": 0.999,
+    "max_ticks": 1,
+    "gihi_grace_ticks": 0
+  },
+  "status": "completed",
+  "created_at": "2026-02-17T17:36:26.112Z",
+  "updated_at": "2026-02-25T12:09:59.001Z",
+  "started_at": "2026-02-17T17:36:35.660Z",
+  "completed_at": "2026-02-17T17:37:03.458Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_cb6e9997-6c53-4c0f-ab8a-4c6ef65d6b54",
+  "experiment_ids": [
+    "exp_1f7c94f2-0414-4630-ac48-ae2c256fee24",
+    "exp_cb6e9997-6c53-4c0f-ab8a-4c6ef65d6b54"
+  ],
+  "tick_count": 1,
+  "experiments_run": 4,
+  "history": [
+    {
+      "ts": "2026-02-17T17:36:26.112Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 1,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 1,
+          "stagnation_rate_gt": 0.999,
+          "max_ticks": 1,
+          "gihi_grace_ticks": 0
+        }
+      }
+    },
+    {
+      "ts": "2026-02-17T17:36:35.702Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_1f7c94f2-0414-4630-ac48-ae2c256fee24",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-17T17:36:41.432Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "tick_index": 1,
+        "tick_id": "cmp_4018bc9e-1712-4423-8271-917374597002:1",
+        "created_runs": 4,
+        "impacted_count": 0,
+        "pending_runs_scanned": 4,
+        "exec_tasks_created": 4,
+        "runs_linked_with_task_id": 3,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 1,
+        "exec_bind_queued": 1,
+        "orchestrated_activated": 4,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.18211,
+        "transfer_success_rate": 0,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.803121,
+        "confidence_domains_targeted": [
+          "small|low|low|p2"
+        ],
+        "confidence_quota_hits": [
+          {
+            "experiment_id": "exp_1f7c94f2-0414-4630-ac48-ae2c256fee24",
+            "domain_signature": "small|low|low|p2",
+            "quota_min_runs": 4,
+            "created_runs": 4
+          }
+        ],
+        "confidence_quota_diagnostics": [
+          {
+            "experiment_id": "exp_1f7c94f2-0414-4630-ac48-ae2c256fee24",
+            "domain_signature": "small|low|low|p2",
+            "quota_raw_runs": 4,
+            "quota_min_runs": 4,
+            "quota_requested_batch": 4,
+            "quota_created_after_search": 0,
+            "quota_available_before_materialize": 4,
+            "quota_materialized_runs": 4,
+            "quota_created_final": 4,
+            "quota_remaining": 0
+          }
+        ],
+        "status": "completed",
+        "stop_reason": "max_experiments_reached"
+      }
+    }
+  ]
+}

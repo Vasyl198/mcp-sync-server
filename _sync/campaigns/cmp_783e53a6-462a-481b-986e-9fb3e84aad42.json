@@ -1,0 +1,56 @@
+{
+  "campaign_id": "cmp_783e53a6-462a-481b-986e-9fb3e84aad42",
+  "goal": "D3-retest after I/O hardening",
+  "objective": "maximize score",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "transfer_threshold": 0,
+    "domain": "p2 anti_conflict",
+    "notes": "Post-restart retest"
+  },
+  "max_experiments": 60,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 60,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 8,
+    "gihi_grace_ticks": 2
+  },
+  "status": "stopped",
+  "created_at": "2026-02-16T16:44:17.910Z",
+  "updated_at": "2026-02-25T12:09:58.026Z",
+  "started_at": "2026-02-16T16:44:21.895Z",
+  "completed_at": "2026-02-16T16:44:24.141Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_839d3cbc-358a-4732-bc35-933173467b79",
+  "experiment_ids": [
+    "exp_839d3cbc-358a-4732-bc35-933173467b79"
+  ],
+  "tick_count": 0,
+  "experiments_run": 12,
+  "last_metrics": {
+    "gihi": 0.302152,
+    "transfer_success_rate": 0.775,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.866612
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T16:44:17.910Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 60,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 60,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 8,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

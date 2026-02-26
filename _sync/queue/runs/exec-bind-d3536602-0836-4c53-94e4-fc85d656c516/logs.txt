@@ -1,0 +1,9 @@
+cmd=node args=["train.js","--lr=0.02","--layers=3","--mode=anti_conflict"]
+cwd=
+exit=0
+stdout:
+score=0.8451 loss=0.1549 accuracy=0.8451
+METRICS {"score":0.845142,"loss":0.154858,"accuracy":0.845142}
+
+stderr:
+

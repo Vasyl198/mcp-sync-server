@@ -1,0 +1,42 @@
+{
+  "tick_id": "cmp_96667416-a6fc-482d-bcc4-bcdee7bbc6f9:6",
+  "tick_index": 6,
+  "ts": "2026-02-18T05:58:27.828Z",
+  "data": {
+    "step": 3,
+    "tick_index": 6,
+    "tick_id": "cmp_96667416-a6fc-482d-bcc4-bcdee7bbc6f9:6",
+    "created_runs": 1,
+    "impacted_count": 0,
+    "pending_runs_scanned": 1,
+    "exec_tasks_created": 1,
+    "runs_linked_with_task_id": 1,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 0,
+    "exec_bind_queued": 4,
+    "orchestrated_activated": 1,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.197796,
+    "transfer_success_rate": 0.05029,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.785837,
+    "confidence_domains_targeted": [
+      "small|low|low|p2"
+    ],
+    "confidence_quota_hits": [
+      {
+        "experiment_id": "exp_e88cb445-630d-4d36-b0cb-aa4d3cfcf0fe",
+        "domain_signature": "small|low|low|p2",
+        "quota_min_runs": 1,
+        "created_runs": 1
+      }
+    ],
+    "confidence_quota_diagnostics": [],
+    "status": "running",
+    "stop_reason": null
+  }
+}

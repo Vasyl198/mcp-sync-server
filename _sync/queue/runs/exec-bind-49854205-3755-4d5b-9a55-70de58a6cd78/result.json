@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "exit_code": 1,
+  "duration_ms": 51,
+  "stdout": "",
+  "stderr": "[eval]:1\r\n\"const\r\n^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at makeContextifyScript (node:internal/vm:185:14)\r\n    at compileScript (node:internal/process/execution:386:10)\r\n    at node:internal/process/execution:450:25\r\n    at [eval]-wrapper:6:24\r\n    at runScriptInContext (node:internal/process/execution:447:60)\r\n    at evalFunction (node:internal/process/execution:87:30)\r\n    at evalScript (node:internal/process/execution:99:3)\r\n    at node:internal/main/eval_string:74:3\r\n\r\nNode.js v22.16.0\r\n"
+}

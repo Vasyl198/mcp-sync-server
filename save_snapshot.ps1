@@ -1,36 +1,99 @@
-# Simple tools snapshot based on current whoami response
-$toolsSnapshot = @{
-  timestamp = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssZ")
-  auth = "disabled"
-  roots = @("C:\Users\anani\Projects")
-  sync_dir = "C:\Users\anani\Projects\_sync"
-  tools_count = 20
-  tools = @(
-    "whoami",
-    "router_execute_command", 
-    "fs_lock_acquire",
-    "fs_lock_release", 
-    "queue_push",
-    "queue_pop",
-    "queue_ack",
-    "job_history_list",
-    "router_execute_from_queue",
-    "fs_list",
-    "fs_read", 
-    "fs_write",
-    "fs_mkdir",
-    "fs_exists",
-    "search_in_files",
-    "fs_read_content",
-    "fs_write_content",
-    "exec",
-    "event_publish",
-    "event_list"
-  )
+$uri = if ($env:MCP_SERVER_URL) { $env:MCP_SERVER_URL } else { "http://localhost:3000/mcp" }
+$snapshotPath = if ($env:TOOLS_SNAPSHOT_PATH) { $env:TOOLS_SNAPSHOT_PATH } else { ".\_sync\tools_snapshot.json" }
+
+$headersBase = @{
+  "Content-Type" = "application/json"
+  "Accept" = "application/json, text/event-stream"
 }
 
-# Write snapshot to file
-$snapshotPath = "C:\Users\anani\Projects\_sync\tools_snapshot.json"
+if ($env:MCP_SYNC_TOKEN) {
+  $headersBase["Authorization"] = "Bearer $($env:MCP_SYNC_TOKEN)"
+}
+
+function Convert-McpResponseToObject {
+  param(
+    [Parameter(Mandatory = $true)]
+    $Response
+  )
+
+  if ($Response -is [string]) {
+    $raw = [string]$Response
+    $dataLine = ($raw -split "`r?`n") | Where-Object { $_ -like "data: *" } | Select-Object -Last 1
+    if (-not $dataLine) {
+      throw "Failed to parse MCP SSE response: no data line found."
+    }
+    $json = $dataLine.Substring(6).Trim()
+    return ($json | ConvertFrom-Json)
+  }
+
+  return $Response
+}
+
+# Initialize session
+$initBodyObj = @{
+  jsonrpc = "2.0"
+  id      = 1
+  method  = "initialize"
+  params  = @{
+    protocolVersion = "2024-11-05"
+    clientInfo      = @{ name = "snapshot"; version = "1.0" }
+    capabilities    = @{ }
+  }
+}
+
+$initBody = $initBodyObj | ConvertTo-Json -Depth 10
+$initResp = Invoke-WebRequest -UseBasicParsing -Uri $uri -Method Post -Headers $headersBase -Body $initBody
+$sessionId = $initResp.Headers["mcp-session-id"]
+
+if (-not $sessionId) {
+  throw "Failed to initialize MCP session. No mcp-session-id header."
+}
+
+$headers = $headersBase.Clone()
+$headers["mcp-session-id"] = $sessionId
+
+$whoBodyObj = @{
+  jsonrpc = "2.0"
+  id      = 2
+  method  = "tools/call"
+  params  = @{
+    name      = "whoami"
+    arguments = @{ }
+  }
+}
+
+$whoBody = $whoBodyObj | ConvertTo-Json -Depth 10
+$whoResp = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $whoBody
+$whoObj = Convert-McpResponseToObject -Response $whoResp
+
+if ($whoObj.error) {
+  throw "MCP tools/call whoami failed: $($whoObj.error | ConvertTo-Json -Compress)"
+}
+
+if (-not $whoObj.result -or -not $whoObj.result.content -or $whoObj.result.content.Count -lt 1) {
+  throw "MCP whoami response has no result.content payload."
+}
+
+$whoamiText = $whoObj.result.content[0].text
+if (-not $whoamiText) {
+  throw "MCP whoami content[0].text is empty."
+}
+
+$whoamiObj = $whoamiText | ConvertFrom-Json
+if (-not $whoamiObj.tools) {
+  throw "Parsed whoami payload has no tools list."
+}
+
+$toolsSnapshot = @{
+  timestamp   = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+  auth        = $whoamiObj.auth
+  roots       = $whoamiObj.roots
+  sync_dir    = $whoamiObj.sync_dir
+  sync        = $whoamiObj.sync
+  tools_count = $whoamiObj.tools.Count
+  tools       = $whoamiObj.tools
+}
+
 $snapshotJson = $toolsSnapshot | ConvertTo-Json -Depth 10
 $snapshotJson | Out-File -FilePath $snapshotPath -Encoding UTF8
 

@@ -1,0 +1,3 @@
+# Campaign Created
+
+**campaign_id:** cmp_f6fd79b1-2b19-45b9-a1c5-524d79a8df59

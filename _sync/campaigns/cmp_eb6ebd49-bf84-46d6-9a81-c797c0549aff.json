@@ -1,0 +1,45 @@
+{
+  "campaign_id": "cmp_eb6ebd49-bf84-46d6-9a81-c797c0549aff",
+  "goal": "mixed-validity",
+  "objective": "maximize score",
+  "constraints": {
+    "confidence_domains_targeted": [
+      "small|low|low|p2"
+    ],
+    "confidence_domains_targeted_invalid": [
+      "BAD_DOMAIN_FORMAT"
+    ]
+  },
+  "max_experiments": 4,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 4,
+    "stagnation_rate_gt": 0.92,
+    "max_ticks": 1,
+    "gihi_grace_ticks": 2
+  },
+  "status": "draft",
+  "created_at": "2026-02-23T06:18:59.588Z",
+  "updated_at": "2026-02-25T12:10:00.971Z",
+  "experiment_ids": [],
+  "tick_count": 0,
+  "experiments_run": 0,
+  "history": [
+    {
+      "ts": "2026-02-23T06:18:59.588Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 4,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 4,
+          "stagnation_rate_gt": 0.92,
+          "max_ticks": 1,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "run_id": "run_680737c3-6a8a-417d-a038-e4f7a57f9e21",
+    "experiment_id": "exp_e7783b67-cc9e-413e-9c26-6e22ec1b0f4c",
+    "created_at": "2026-02-17T08:24:51.022Z",
+    "updated_at": "2026-02-17T08:24:55.781Z",
+    "params": {
+      "lr": 0.05,
+      "layers": 2
+    },
+    "metrics": {
+      "score": 0.8495,
+      "loss": 0.1505,
+      "accuracy": 0.8495
+    },
+    "status": "completed",
+    "duration_ms": 60,
+    "score": 0.8495,
+    "task_id": "a5bdc394-2885-48ec-8dce-5c4cde03b0a0",
+    "notes": "metric_extraction_warnings: metric_extraction_fallback: METRICS JSON; metric_extraction_fallback: key=value"
+  },
+  {
+    "run_id": "run_3d35e544-afbc-4e01-afb0-a8b8f630184c",
+    "experiment_id": "exp_e7783b67-cc9e-413e-9c26-6e22ec1b0f4c",
+    "created_at": "2026-02-17T08:24:51.161Z",
+    "updated_at": "2026-02-17T08:24:56.173Z",
+    "params": {
+      "lr": 0.02,
+      "layers": 2
+    },
+    "metrics": {
+      "score": 0.8328,
+      "loss": 0.1672,
+      "accuracy": 0.8328
+    },
+    "status": "completed",
+    "duration_ms": 63,
+    "score": 0.8328,
+    "task_id": "012f828c-f4e4-4744-a4de-0ebfc7dedfcb",
+    "notes": "metric_extraction_warnings: metric_extraction_fallback: METRICS JSON; metric_extraction_fallback: key=value"
+  }
+]

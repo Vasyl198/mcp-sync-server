@@ -1,0 +1,40 @@
+{
+  "campaign_id": "cmp_221ef3ab-3ac9-42e9-9498-3f21525837c7",
+  "goal": "Stability burn-in 12 ticks (post micro-domain tick cooldown)",
+  "objective": "maximize score",
+  "constraints": {
+    "auto_advance": true
+  },
+  "max_experiments": 90,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0,
+    "max_experiments": 90,
+    "stagnation_rate_gt": 0.92,
+    "max_ticks": 12,
+    "gihi_grace_ticks": 0
+  },
+  "status": "draft",
+  "created_at": "2026-02-18T15:53:19.340Z",
+  "updated_at": "2026-02-25T12:09:57.961Z",
+  "experiment_ids": [],
+  "tick_count": 0,
+  "experiments_run": 0,
+  "history": [
+    {
+      "ts": "2026-02-18T15:53:19.340Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 90,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0,
+          "max_experiments": 90,
+          "stagnation_rate_gt": 0.92,
+          "max_ticks": 12,
+          "gihi_grace_ticks": 0
+        }
+      }
+    }
+  ]
+}

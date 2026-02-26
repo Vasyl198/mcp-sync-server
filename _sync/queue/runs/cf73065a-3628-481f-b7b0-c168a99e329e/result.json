@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "task_name": "task_create",
+  "task": {
+    "task_id": "c575f94a-1113-4e52-861b-d9dd5d2b5991",
+    "project_id": "default",
+    "role": "planner",
+    "title": "Implement Deep Experiment Engine",
+    "description": "Add experiment_run, experiment_compare, experiment_leaderboard, parameter search and integration with ResearchAgent.",
+    "status": "open",
+    "depends_on": [],
+    "children": [],
+    "created_at": "2026-02-16T09:21:23.947Z",
+    "updated_at": "2026-02-16T09:21:23.947Z"
+  },
+  "report_md": "# Task Created\n\n**task:** task_create\n\n**task_id:** c575f94a-1113-4e52-861b-d9dd5d2b5991\n",
+  "logs": "Created task graph node: c575f94a-1113-4e52-861b-d9dd5d2b5991"
+}

@@ -1,0 +1,8 @@
+cmd=node args=["-e","const lr=0.05;const layers=3;const nz=0.08;const base=1-Math.abs(lr-0.092)*13-Math.abs(layers-5.8)*0.11;const noise=((Math.random()-0.5)*(nz||0.08));console.log('score='+(base+noise).toFixed(4));"]
+cwd=
+exit=0
+stdout:
+score=0.1496
+
+stderr:
+

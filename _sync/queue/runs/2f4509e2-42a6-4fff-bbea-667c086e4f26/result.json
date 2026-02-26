@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "task_name": "experiment_create",
+  "experiment": {
+    "experiment_id": "exp_9f6cc011-7bd4-4c17-b71a-995f6f96e91a",
+    "name": "schema_metric_test",
+    "objective": "[object Object]",
+    "created_at": "2026-02-16T09:33:46.200Z",
+    "updated_at": "2026-02-16T09:33:46.200Z",
+    "status": "running",
+    "best_run_id": null,
+    "search_strategy": "grid",
+    "search_space": {
+      "learning_rate": [
+        0.001,
+        0.01
+      ],
+      "layers": [
+        2,
+        3
+      ]
+    }
+  },
+  "report_md": "# Experiment Created\n\n**experiment_id:** exp_9f6cc011-7bd4-4c17-b71a-995f6f96e91a\n",
+  "logs": "experiment_create created exp_9f6cc011-7bd4-4c17-b71a-995f6f96e91a"
+}

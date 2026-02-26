@@ -1,0 +1,811 @@
+{
+  "version": 1,
+  "updated_at": "2026-02-25T12:11:26.482Z",
+  "agents": [
+    {
+      "agent_id": "6e88b6ce-a5a1-46c5-b707-01e01dd22461",
+      "role": "planner",
+      "version": 1,
+      "active": false,
+      "created_at": "2026-02-16T08:40:00.841Z",
+      "updated_at": "2026-02-16T08:40:00.841Z",
+      "profile": {
+        "role": "planner",
+        "profile_id": "planner.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.2,
+        "system_prompt": "You are PlannerAgent. Break goals into concrete, dependency-aware tasks."
+      },
+      "metrics": {
+        "success_count": 0,
+        "failure_count": 0,
+        "avg_completion_time_ms": 0,
+        "total_completion_time_ms": 0,
+        "iterations_per_task": 0,
+        "critic_score": 0,
+        "runs_count": 0,
+        "research_stats": {
+          "experiments_count": 0,
+          "avg_improvement_delta": 0,
+          "avg_convergence_steps": 0,
+          "exploration_efficiency": 0,
+          "best_score_trend": 0,
+          "stagnation_rate": 1,
+          "variance_stability": 1,
+          "meta_stability_index": 1,
+          "long_term_improvement_trend": 0,
+          "strategy_volatility": 0,
+          "mutation_effectiveness_ratio": 0,
+          "avg_domain_complexity_factor": 1,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          }
+        },
+        "research_fitness": 0
+      }
+    },
+    {
+      "agent_id": "eefb12b4-cdc5-486f-8de8-d48385049ae8",
+      "role": "dev",
+      "version": 1,
+      "active": false,
+      "created_at": "2026-02-16T08:40:00.841Z",
+      "updated_at": "2026-02-16T08:45:44.510Z",
+      "profile": {
+        "role": "dev",
+        "profile_id": "dev.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.1,
+        "system_prompt": "You are DevAgent. Implement reliable code changes and validate with tests/build."
+      },
+      "metrics": {
+        "success_count": 0,
+        "failure_count": 4,
+        "avg_completion_time_ms": 4500,
+        "total_completion_time_ms": 18000,
+        "iterations_per_task": 1,
+        "critic_score": 0.4,
+        "runs_count": 4,
+        "last_run_at": "2026-02-16T08:45:44.510Z",
+        "research_stats": {
+          "experiments_count": 0,
+          "avg_improvement_delta": 0,
+          "avg_convergence_steps": 0,
+          "exploration_efficiency": 0,
+          "best_score_trend": 0,
+          "stagnation_rate": 1,
+          "variance_stability": 1,
+          "meta_stability_index": 1,
+          "long_term_improvement_trend": 0,
+          "strategy_volatility": 0,
+          "mutation_effectiveness_ratio": 0,
+          "avg_domain_complexity_factor": 1,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          }
+        },
+        "research_fitness": 0
+      }
+    },
+    {
+      "agent_id": "8275c1d3-8392-4ad7-aef5-840f9f3e256d",
+      "role": "research",
+      "version": 1,
+      "active": false,
+      "created_at": "2026-02-16T08:40:00.841Z",
+      "updated_at": "2026-02-16T14:53:08.735Z",
+      "profile": {
+        "role": "research",
+        "profile_id": "research.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.5,
+        "system_prompt": "You are ResearchAgent. Propose options, compare trade-offs, and summarize evidence.",
+        "adaptive_profile": {
+          "bootstrap_min": 5,
+          "narrowing_factor": 1,
+          "patience": 4,
+          "improvement_threshold": 0.0005,
+          "exploration_bias": 0.5,
+          "variance_sensitivity": 0.5
+        },
+        "meta_profile": {
+          "fitness_weights": {
+            "improvement_weight": 0.45,
+            "convergence_weight": 0.2,
+            "exploration_weight": 0.2,
+            "stability_weight": 0.15,
+            "stagnation_penalty": 0.1
+          },
+          "mutation_intensity": 1.25,
+          "mutation_sensitivity": 0.85,
+          "exploration_vs_exploitation_bias": 0.5
+        },
+        "adaptive_profiles_by_domain": {
+          "small": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "medium": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 1,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.5,
+            "variance_sensitivity": 0.5
+          },
+          "large": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 1.06,
+            "patience": 5,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.6,
+            "variance_sensitivity": 0.5
+          }
+        }
+      },
+      "metrics": {
+        "success_count": 0,
+        "failure_count": 0,
+        "avg_completion_time_ms": 0,
+        "total_completion_time_ms": 0,
+        "iterations_per_task": 0,
+        "critic_score": 0,
+        "runs_count": 0,
+        "last_run_at": "2026-02-16T14:53:08.735Z",
+        "research_stats": {
+          "experiments_count": 97,
+          "avg_improvement_delta": 0.105927,
+          "avg_convergence_steps": 10.041236,
+          "exploration_efficiency": 0.011921,
+          "best_score_trend": 0.014715,
+          "stagnation_rate": 0.739643,
+          "variance_stability": 0.999073,
+          "meta_stability_index": 0.13785,
+          "long_term_improvement_trend": 0.014105,
+          "strategy_volatility": 0.172435,
+          "mutation_effectiveness_ratio": 0.000166,
+          "avg_domain_complexity_factor": 0.911129,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 97,
+              "avg_improvement_delta": 0.105927,
+              "avg_convergence_steps": 10.041236,
+              "exploration_efficiency": 0.011921,
+              "best_score_trend": 0.014715,
+              "stagnation_rate": 0.739643,
+              "variance_stability": 0.999073,
+              "avg_domain_complexity_factor": 0.911129,
+              "last_experiment_id": "exp_c39eb5f2-5cba-4e19-94b9-d99a22f51937",
+              "last_updated_at": "2026-02-16T14:53:08.735Z"
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          },
+          "last_experiment_id": "exp_c39eb5f2-5cba-4e19-94b9-d99a22f51937",
+          "last_updated_at": "2026-02-16T14:53:08.735Z"
+        },
+        "research_fitness": 0.132903
+      }
+    },
+    {
+      "agent_id": "453e2504-2ee1-4cf3-aec5-5155abe56a9d",
+      "role": "critic",
+      "version": 1,
+      "active": true,
+      "created_at": "2026-02-16T08:40:00.841Z",
+      "updated_at": "2026-02-16T08:40:00.841Z",
+      "profile": {
+        "role": "critic",
+        "profile_id": "critic.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.2,
+        "system_prompt": "You are CriticAgent. Evaluate outcomes against criteria and identify gaps/risks."
+      },
+      "metrics": {
+        "success_count": 0,
+        "failure_count": 0,
+        "avg_completion_time_ms": 0,
+        "total_completion_time_ms": 0,
+        "iterations_per_task": 0,
+        "critic_score": 0,
+        "runs_count": 0,
+        "research_stats": {
+          "experiments_count": 0,
+          "avg_improvement_delta": 0,
+          "avg_convergence_steps": 0,
+          "exploration_efficiency": 0,
+          "best_score_trend": 0,
+          "stagnation_rate": 1,
+          "variance_stability": 1,
+          "meta_stability_index": 1,
+          "long_term_improvement_trend": 0,
+          "strategy_volatility": 0,
+          "mutation_effectiveness_ratio": 0,
+          "avg_domain_complexity_factor": 1,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          }
+        },
+        "research_fitness": 0
+      }
+    },
+    {
+      "agent_id": "1506a768-8e44-440c-b1b9-931ae1a34b4c",
+      "role": "planner",
+      "version": 2,
+      "active": true,
+      "parent_version": 1,
+      "created_at": "2026-02-16T08:40:00.849Z",
+      "updated_at": "2026-02-18T08:09:07.225Z",
+      "profile": {
+        "role": "planner",
+        "profile_id": "planner.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.2,
+        "system_prompt": "You are PlannerAgent. Break goals into concrete, dependency-aware tasks."
+      },
+      "metrics": {
+        "success_count": 10,
+        "failure_count": 0,
+        "avg_completion_time_ms": 189,
+        "total_completion_time_ms": 1890,
+        "iterations_per_task": 1,
+        "critic_score": 0.8280000000000001,
+        "runs_count": 10,
+        "last_run_at": "2026-02-18T08:09:07.225Z",
+        "research_stats": {
+          "experiments_count": 0,
+          "avg_improvement_delta": 0,
+          "avg_convergence_steps": 0,
+          "exploration_efficiency": 0,
+          "best_score_trend": 0,
+          "stagnation_rate": 1,
+          "variance_stability": 1,
+          "meta_stability_index": 1,
+          "long_term_improvement_trend": 0,
+          "strategy_volatility": 0,
+          "mutation_effectiveness_ratio": 0,
+          "avg_domain_complexity_factor": 1,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          }
+        },
+        "research_fitness": 0
+      }
+    },
+    {
+      "agent_id": "72e04a51-b2b5-45bd-a3ce-550721379087",
+      "role": "research",
+      "version": 3,
+      "active": false,
+      "parent_version": 2,
+      "created_at": "2026-02-16T15:25:47.219Z",
+      "updated_at": "2026-02-16T15:32:49.116Z",
+      "profile": {
+        "role": "research",
+        "profile_id": "research.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.67,
+        "system_prompt": "You are ResearchAgent. Propose options, compare trade-offs, and summarize evidence.\n[EVOLUTION_NOTE]\nStrengthen quality checks and explain key trade-offs succinctly. Prioritize faster convergence in adaptive search while preserving stability.\n[EVOLUTION_NOTE]\nStrengthen quality checks and explain key trade-offs succinctly. Optimize search-space quality using stronger signal from adaptive experiment feedback. Reduce unproductive trials; bias toward diverse, high-information exploration steps. Prioritize faster convergence in adaptive search while preserving stability.",
+        "adaptive_profile": {
+          "bootstrap_min": 4,
+          "narrowing_factor": 0.8005,
+          "patience": 4,
+          "improvement_threshold": 0.0005,
+          "exploration_bias": 0.5527,
+          "variance_sensitivity": 0.5
+        },
+        "meta_profile": {
+          "fitness_weights": {
+            "improvement_weight": 0.495,
+            "convergence_weight": 0.2,
+            "exploration_weight": 0.21,
+            "stability_weight": 0.165,
+            "stagnation_penalty": 0.105
+          },
+          "mutation_intensity": 0.88,
+          "mutation_sensitivity": 0.5985,
+          "exploration_vs_exploitation_bias": 0.5
+        },
+        "adaptive_profiles_by_domain": {
+          "small": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "medium": {
+            "bootstrap_min": 4,
+            "narrowing_factor": 0.8005,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.5527,
+            "variance_sensitivity": 0.5
+          },
+          "large": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 1.06,
+            "patience": 5,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.6,
+            "variance_sensitivity": 0.5
+          }
+        }
+      },
+      "metrics": {
+        "success_count": 0,
+        "failure_count": 0,
+        "avg_completion_time_ms": 0,
+        "total_completion_time_ms": 0,
+        "iterations_per_task": 0,
+        "critic_score": 0,
+        "runs_count": 0,
+        "last_run_at": "2026-02-16T15:32:49.116Z",
+        "research_stats": {
+          "experiments_count": 59,
+          "avg_improvement_delta": 0.142047,
+          "avg_convergence_steps": 10.525426,
+          "exploration_efficiency": 0.017379,
+          "best_score_trend": 0.022659,
+          "stagnation_rate": 0.652157,
+          "variance_stability": 0.999081,
+          "meta_stability_index": 0.165544,
+          "long_term_improvement_trend": 0.012405,
+          "strategy_volatility": 0.166972,
+          "mutation_effectiveness_ratio": 0.000121,
+          "avg_domain_complexity_factor": 0.924182,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 59,
+              "avg_improvement_delta": 0.142047,
+              "avg_convergence_steps": 10.525426,
+              "exploration_efficiency": 0.017379,
+              "best_score_trend": 0.022659,
+              "stagnation_rate": 0.652157,
+              "variance_stability": 0.999081,
+              "avg_domain_complexity_factor": 0.924182,
+              "last_experiment_id": "exp_9b4cf96b-5d67-4723-a970-4549998267a1",
+              "last_updated_at": "2026-02-16T15:32:49.116Z"
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          },
+          "last_experiment_id": "exp_9b4cf96b-5d67-4723-a970-4549998267a1",
+          "last_updated_at": "2026-02-16T15:32:49.116Z"
+        },
+        "research_fitness": 0.174981
+      }
+    },
+    {
+      "agent_id": "d94c04fa-3349-4a4a-80c7-1fbf44e718e8",
+      "role": "research",
+      "version": 6,
+      "active": true,
+      "parent_version": 5,
+      "created_at": "2026-02-23T15:56:59.977Z",
+      "updated_at": "2026-02-25T12:11:26.424Z",
+      "profile": {
+        "role": "research",
+        "profile_id": "research.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.5,
+        "system_prompt": "You are ResearchAgent. Keep outputs JSON-only.",
+        "adaptive_profile": {
+          "bootstrap_min": 4,
+          "narrowing_factor": 0.7162,
+          "patience": 4,
+          "improvement_threshold": 0.0005,
+          "exploration_bias": 0.7254,
+          "variance_sensitivity": 0.5
+        },
+        "meta_profile": {
+          "fitness_weights": {
+            "improvement_weight": 0.495,
+            "convergence_weight": 0.2,
+            "exploration_weight": 0.21,
+            "stability_weight": 0.165,
+            "stagnation_penalty": 0.105
+          },
+          "mutation_intensity": 0.6415,
+          "mutation_sensitivity": 0.5985,
+          "exploration_vs_exploitation_bias": 0.6
+        },
+        "adaptive_profiles_by_domain": {
+          "small": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 0.92,
+            "patience": 3,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.42,
+            "variance_sensitivity": 0.5
+          },
+          "medium": {
+            "bootstrap_min": 4,
+            "narrowing_factor": 0.7162,
+            "patience": 4,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.6054,
+            "variance_sensitivity": 0.5
+          },
+          "large": {
+            "bootstrap_min": 5,
+            "narrowing_factor": 1.06,
+            "patience": 5,
+            "improvement_threshold": 0.0005,
+            "exploration_bias": 0.6,
+            "variance_sensitivity": 0.5
+          }
+        }
+      },
+      "metrics": {
+        "success_count": 4,
+        "failure_count": 2,
+        "avg_completion_time_ms": 1030,
+        "total_completion_time_ms": 6180,
+        "iterations_per_task": 1,
+        "critic_score": 0.6629999999999999,
+        "runs_count": 6,
+        "last_run_at": "2026-02-25T12:11:26.424Z",
+        "research_stats": {
+          "experiments_count": 30,
+          "avg_improvement_delta": 0.204417,
+          "avg_convergence_steps": 6.033333,
+          "exploration_efficiency": 0.03174,
+          "best_score_trend": 0.042706,
+          "stagnation_rate": 0.491088,
+          "variance_stability": 0.997217,
+          "meta_stability_index": 0.507496,
+          "long_term_improvement_trend": 0.064354,
+          "strategy_volatility": 0.125555,
+          "mutation_effectiveness_ratio": 0.001075,
+          "avg_domain_complexity_factor": 0.84474,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 30,
+              "avg_improvement_delta": 0.204417,
+              "avg_convergence_steps": 6.033333,
+              "exploration_efficiency": 0.03174,
+              "best_score_trend": 0.042706,
+              "stagnation_rate": 0.491088,
+              "variance_stability": 0.997217,
+              "avg_domain_complexity_factor": 0.84474,
+              "last_experiment_id": "exp_6831504b-1828-4776-9566-b7d3841cf0a4",
+              "last_updated_at": "2026-02-25T12:11:26.424Z"
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          },
+          "last_experiment_id": "exp_6831504b-1828-4776-9566-b7d3841cf0a4",
+          "last_updated_at": "2026-02-25T12:11:26.424Z"
+        },
+        "research_fitness": 0.214545
+      },
+      "promoted_from_version": 5,
+      "promotion_reason": "shadow_eval_delta=0.541",
+      "rollback_flag": false
+    },
+    {
+      "agent_id": "4d3a24a2-5db3-4633-b237-11bcdf4461ae",
+      "role": "dev",
+      "version": 6,
+      "active": false,
+      "parent_version": 5,
+      "created_at": "2026-02-25T05:11:28.594Z",
+      "updated_at": "2026-02-25T08:58:03.898Z",
+      "profile": {
+        "role": "dev",
+        "profile_id": "dev.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.05,
+        "system_prompt": "You are DevAgent. Implement reliable code changes and validate with tests/build.\n\n[ADAPTIVE DEPTH SYSTEM - OPTIMIZED]\nDefault: FAST mode for quick, low-risk changes\nTrigger DEEP mode for: uncertainty, architecture, security, strategy selection\nTrigger ULTRA mode for: metrics degradation, complex bugs, experiments\n\n[PERFORMANCE OPTIMIZATION]\n- Target completion time: <1000ms for FAST tasks\n- Success rate target: >90%\n- Minimize iterations_per_task: aim for 1\n\n[REASONING NOTES FORMAT - max 4 bullets for FAST, max 6 for DEEP]\n- Goal\n- Key hypothesis\n- Chosen path (why)\n- Verification/proof\n- [DEEP only] Alternatives\n- [DEEP only] Next risk/monitor\n\n[SWE WORKFLOW - STREAMLINED]\nA. Intake: goal + constraints + success criteria (1-2 lines)\nB. Plan: hypothesis → action → verification (FAST: 2 steps, DEEP: 3-5 steps)\nC. Execute: make changes efficiently\nD. Verify: run 1 strongest check or create minimal test\nE. Report: what changed + how verified + remaining risks\n\n[CORE PRINCIPLES - REFINED]\n\"Prove minimally first, then expand\"\n\"Verify before claim, implement before report\"\n\"Higher risk = deeper reasoning; lower risk = faster execution\"\n\"Speed matters: optimize for completion time while maintaining quality\""
+      },
+      "metrics": {
+        "success_count": 8,
+        "failure_count": 0,
+        "avg_completion_time_ms": 495,
+        "total_completion_time_ms": 3958,
+        "iterations_per_task": 1,
+        "critic_score": 0.8499999999999999,
+        "runs_count": 8,
+        "last_run_at": "2026-02-25T08:58:03.898Z",
+        "research_stats": {
+          "experiments_count": 0,
+          "avg_improvement_delta": 0,
+          "avg_convergence_steps": 0,
+          "exploration_efficiency": 0,
+          "best_score_trend": 0,
+          "stagnation_rate": 1,
+          "variance_stability": 1,
+          "meta_stability_index": 1,
+          "long_term_improvement_trend": 0,
+          "strategy_volatility": 0,
+          "mutation_effectiveness_ratio": 0,
+          "avg_domain_complexity_factor": 1,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          }
+        },
+        "research_fitness": 0
+      },
+      "promoted_from_version": 5,
+      "rollback_flag": false
+    },
+    {
+      "agent_id": "eb6d9335-a5d6-4717-8893-04b2c9eefef4",
+      "role": "dev",
+      "version": 7,
+      "active": true,
+      "parent_version": 6,
+      "created_at": "2026-02-25T09:00:10.624Z",
+      "updated_at": "2026-02-25T09:00:10.624Z",
+      "profile": {
+        "role": "dev",
+        "profile_id": "dev.default.v1",
+        "model": "gpt-5",
+        "temperature": 0.03,
+        "system_prompt": "You are DevAgent. Implement reliable code changes and validate with tests/build.\n\n[ADAPTIVE DEPTH SYSTEM - OPTIMIZED]\nDefault: FAST mode for quick, low-risk changes\nTrigger DEEP mode for: uncertainty, architecture, security, strategy selection\nTrigger ULTRA mode for: metrics degradation, complex bugs, experiments\n\n[PERFORMANCE OPTIMIZATION]\n- Target completion time: <800ms for FAST tasks\n- Success rate target: >95%\n- Minimize iterations_per_task: aim for 1\n- Enable proactive mutation testing\n\n[REASONING NOTES FORMAT - max 4 bullets for FAST, max 6 for DEEP]\n- Goal\n- Key hypothesis\n- Chosen path (why)\n- Verification/proof\n- [DEEP only] Alternatives\n- [DEEP only] Next risk/monitor\n\n[SWE WORKFLOW - STREAMLINED]\nA. Intake: goal + constraints + success criteria (1-2 lines)\nB. Plan: hypothesis → action → verification (FAST: 2 steps, DEEP: 3-5 steps)\nC. Execute: make changes efficiently\nD. Verify: run 1 strongest check or create minimal test\nE. Report: what changed + how verified + remaining risks\n\n[CORE PRINCIPLES - REFINED]\n\"Prove minimally first, then expand\"\n\"Verify before claim, implement before report\"\n\"Higher risk = deeper reasoning; lower risk = faster execution\"\n\"Speed matters: optimize for completion time while maintaining quality\"\n\"Enable continuous learning through mutation experiments\""
+      },
+      "metrics": {
+        "success_count": 0,
+        "failure_count": 0,
+        "avg_completion_time_ms": 0,
+        "total_completion_time_ms": 0,
+        "iterations_per_task": 0,
+        "critic_score": 0,
+        "runs_count": 0,
+        "research_stats": {
+          "experiments_count": 0,
+          "avg_improvement_delta": 0,
+          "avg_convergence_steps": 0,
+          "exploration_efficiency": 0,
+          "best_score_trend": 0,
+          "stagnation_rate": 1,
+          "variance_stability": 1,
+          "meta_stability_index": 1,
+          "long_term_improvement_trend": 0,
+          "strategy_volatility": 0,
+          "mutation_effectiveness_ratio": 0,
+          "avg_domain_complexity_factor": 1,
+          "domain_stats": {
+            "small": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "medium": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            },
+            "large": {
+              "experiments_count": 0,
+              "avg_improvement_delta": 0,
+              "avg_convergence_steps": 0,
+              "exploration_efficiency": 0,
+              "best_score_trend": 0,
+              "stagnation_rate": 1,
+              "variance_stability": 1,
+              "avg_domain_complexity_factor": 1
+            }
+          }
+        },
+        "research_fitness": 0
+      }
+    }
+  ]
+}

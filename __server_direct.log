@@ -1,0 +1,151 @@
+MCP Sync Server listening on port 3000
+Auth: disabled
+Auth protected paths: /mcp, /messages, /sse, /sse-simple
+Sync dir: C:\Users\anani\Projects\mcp-sync-server\_sync
+FINISH #2e47aa GET /health -> 200 (6ms) ua=Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7705
+[POST] /mcp Request received {
+  sessionId: undefined,
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #6026f0 POST /mcp -> 200 (64ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '94beeefd-049f-46da-ba5a-1b47e924cdc7',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #f72aa3 POST /mcp -> 200 (390ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '94beeefd-049f-46da-ba5a-1b47e924cdc7',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #58c117 POST /mcp -> 200 (220ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '94beeefd-049f-46da-ba5a-1b47e924cdc7',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #349593 POST /mcp -> 200 (152ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '94beeefd-049f-46da-ba5a-1b47e924cdc7',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #09cfdc POST /mcp -> 200 (114ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '94beeefd-049f-46da-ba5a-1b47e924cdc7',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #3403a0 POST /mcp -> 200 (2591ms) ua=node
+[POST] /mcp Request received {
+  sessionId: undefined,
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #f1a385 POST /mcp -> 200 (26ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '001bc3cd-52a1-4f05-9661-92113a492bc8',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #9ef538 POST /mcp -> 200 (94ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '001bc3cd-52a1-4f05-9661-92113a492bc8',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #d9ac1d POST /mcp -> 200 (11ms) ua=node
+[POST] /mcp Request received {
+  sessionId: '001bc3cd-52a1-4f05-9661-92113a492bc8',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #8859bd POST /mcp -> 200 (1015ms) ua=node
+[POST] /mcp Request received {
+  sessionId: undefined,
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #f12599 POST /mcp -> 200 (24ms) ua=node
+[POST] /mcp Request received {
+  sessionId: 'ece2e457-7b1a-43ff-bdc2-3de364f2e4ae',
+  accept: 'application/json, text/event-stream',
+  ua: 'node'
+}
+FINISH #258fd6 POST /mcp -> 200 (308ms) ua=node
+[POST] /mcp Request received {
+  sessionId: undefined,
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #2cbee9 POST /mcp -> 200 (25ms) ip=38.137.249.236 ray=9d2813235800357c-WAW
+[POST] /mcp Request received {
+  sessionId: '0e15a547-66e7-4876-8625-acc62668cb1e',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #6c8992 POST /mcp -> 202 (2ms) ip=38.137.249.236 ray=9d28132438db357c-WAW
+[GET] /mcp Request received {
+  sessionId: '0e15a547-66e7-4876-8625-acc62668cb1e',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+[POST] /mcp Request received {
+  sessionId: '0e15a547-66e7-4876-8625-acc62668cb1e',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #c7c7a7 POST /mcp -> 200 (16ms) ip=38.137.249.236 ray=9d2813253aee0202-WAW
+[POST] /mcp Request received {
+  sessionId: '0e15a547-66e7-4876-8625-acc62668cb1e',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #14eccb POST /mcp -> 200 (2ms) ip=38.137.249.236 ray=9d28132829690202-WAW
+[POST] /mcp Request received {
+  sessionId: '0e15a547-66e7-4876-8625-acc62668cb1e',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #83f308 POST /mcp -> 200 (2ms) ip=38.137.249.236 ray=9d281328db1d0202-WAW
+FINISH #6306c3 DELETE /mcp -> 406 (1ms) ip=38.137.249.236 ray=9d2813299cc80202-WAW
+ABORT #290482 GET /mcp -> 200 (23934ms) ip=38.137.249.236 ray=9d281324b965357c-WAW
+[POST] /mcp Request received {
+  sessionId: undefined,
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #51ffaf POST /mcp -> 200 (25ms) ip=38.137.249.236 ray=9d2854016bbeef99-WAW
+[POST] /mcp Request received {
+  sessionId: '5cae8ab2-2860-4f29-9c48-1b2837231c25',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #c46aa7 POST /mcp -> 202 (2ms) ip=38.137.249.236 ray=9d285401fd66ef99-WAW
+[GET] /mcp Request received {
+  sessionId: '5cae8ab2-2860-4f29-9c48-1b2837231c25',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+[POST] /mcp Request received {
+  sessionId: '5cae8ab2-2860-4f29-9c48-1b2837231c25',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #ab74ba POST /mcp -> 200 (8ms) ip=38.137.249.236 ray=9d2854034c7eecbc-WAW
+[POST] /mcp Request received {
+  sessionId: '5cae8ab2-2860-4f29-9c48-1b2837231c25',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #416835 POST /mcp -> 200 (2ms) ip=38.137.249.236 ray=9d285405c9c8ecbc-WAW
+[POST] /mcp Request received {
+  sessionId: '5cae8ab2-2860-4f29-9c48-1b2837231c25',
+  accept: 'text/event-stream, application/json',
+  ua: undefined
+}
+FINISH #944b5c POST /mcp -> 200 (2ms) ip=38.137.249.236 ray=9d2854063aadecbc-WAW
+FINISH #f8df7e DELETE /mcp -> 406 (1ms) ip=38.137.249.236 ray=9d285406cbd9ecbc-WAW
+ABORT #63278d GET /mcp -> 200 (120597ms) ip=38.137.249.236 ray=9d285402dfdcef99-WAW

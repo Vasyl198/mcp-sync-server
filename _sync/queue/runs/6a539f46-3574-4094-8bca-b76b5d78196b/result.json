@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "task": "task_graph",
+  "project_id": null,
+  "items": [
+    {
+      "task_id": "8ffada35-a8dc-41e2-a33f-ddae784b1050",
+      "project_id": "default",
+      "title": "Layer2 Root v2",
+      "description": "Integration test root task after payload normalization",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T06:56:13.929Z",
+      "updated_at": "2026-02-16T07:06:10.907Z"
+    },
+    {
+      "task_id": "996e078b-7c3d-4ec7-b02a-4488e9fbb877",
+      "project_id": "default",
+      "title": "1. Complete Layer 2 integration",
+      "description": "Auto-generated from goal: Complete Layer 2 integration",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T06:57:36.816Z",
+      "updated_at": "2026-02-16T07:05:18.080Z"
+    },
+    {
+      "task_id": "38be07fc-1da8-4849-83c0-22c00bcebe1d",
+      "project_id": "default",
+      "title": "Layer2 Child A",
+      "description": "First dependent task",
+      "status": "open",
+      "depends_on": [
+        "8ffada35-a8dc-41e2-a33f-ddae784b1050"
+      ],
+      "children": [],
+      "created_at": "2026-02-16T06:57:05.787Z",
+      "updated_at": "2026-02-16T06:57:20.371Z"
+    }
+  ],
+  "counts": {
+    "open": 1,
+    "in_progress": 1,
+    "blocked": 0,
+    "done": 1,
+    "canceled": 0
+  },
+  "report_md": "# Task Graph\n\n**items:** 3\n",
+  "logs": "Fetched task graph (3 items)"
+}

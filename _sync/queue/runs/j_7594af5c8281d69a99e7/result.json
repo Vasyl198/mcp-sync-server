@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "task_name": "swe_truth_check",
+  "role": "dev",
+  "requested_version": null,
+  "selected_agent": {
+    "role": "dev",
+    "version": 5,
+    "active": true,
+    "runs_count": 2,
+    "success_count": 2,
+    "failure_count": 0,
+    "avg_completion_time_ms": 1320,
+    "critic_score": 0.85
+  },
+  "benchmark_tasks": {
+    "todo": 3,
+    "doing": 0,
+    "done": 0,
+    "blocked": 0
+  },
+  "meta_queue": {
+    "depth": {
+      "pending": 6188,
+      "running": 23,
+      "done": 6218,
+      "error": 1,
+      "canceled": 0,
+      "total": 12430
+    },
+    "shadow_eval_retry_pending": 6188,
+    "shadow_eval_retry_running": 23
+  },
+  "verdict": "insufficient_evidence",
+  "report_md": "# SWE Truth Check\n\n- role: dev\n- requested_version: n/a\n- selected_version: 5\n- runs_count: 2\n- success_count: 2\n- failure_count: 0\n- benchmark_done: 0/3\n- meta_pending: 6188\n- shadow_eval_retry_pending: 6188\n- verdict: insufficient_evidence\n",
+  "logs": "swe_truth_check verdict=insufficient_evidence role=dev version=auto"
+}

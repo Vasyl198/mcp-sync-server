@@ -1,0 +1,3761 @@
+{
+  "version": 1,
+  "updated_at": "2026-02-24T18:40:51.215Z",
+  "tasks": {
+    "a1a8e67c-9635-43b6-81d1-292a8e08b874": {
+      "id": "a1a8e67c-9635-43b6-81d1-292a8e08b874",
+      "title": "Implement Task Graph v1 - task_create",
+      "description": "Add initial task_create capability as part of Task Graph Protocol Layer 2 rollout.",
+      "status": "todo",
+      "labels": [
+        "task-graph",
+        "layer-2",
+        "mcp"
+      ],
+      "created_at": "2026-02-16T06:25:17.738Z",
+      "updated_at": "2026-02-16T06:25:17.738Z"
+    },
+    "813b15cd-907f-4035-8d3e-078dae8ad2f7": {
+      "id": "813b15cd-907f-4035-8d3e-078dae8ad2f7",
+      "title": "Layer2: Design Task Graph Schema",
+      "description": "Define and validate task schema structure for Task Graph v1.",
+      "status": "todo",
+      "labels": [
+        "layer2",
+        "schema"
+      ],
+      "created_at": "2026-02-16T06:36:23.293Z",
+      "updated_at": "2026-02-16T06:36:23.293Z"
+    },
+    "c4ea30c4-520a-4da5-a74e-4be0ca413696": {
+      "id": "c4ea30c4-520a-4da5-a74e-4be0ca413696",
+      "title": "Layer2: Implement Dependency Linking",
+      "description": "Implement depends_on and children linkage logic.",
+      "status": "todo",
+      "labels": [
+        "layer2",
+        "graph"
+      ],
+      "created_at": "2026-02-16T06:36:28.488Z",
+      "updated_at": "2026-02-16T06:36:28.488Z"
+    },
+    "819bed11-1624-4801-86b2-54b5ff5d4c40": {
+      "id": "819bed11-1624-4801-86b2-54b5ff5d4c40",
+      "title": "Layer2: Generate Execution Plan",
+      "description": "Validate task_plan_generate over linked tasks.",
+      "status": "todo",
+      "labels": [
+        "layer2",
+        "planner"
+      ],
+      "created_at": "2026-02-16T06:36:32.714Z",
+      "updated_at": "2026-02-16T06:36:32.714Z"
+    },
+    "3bbab457-f6e8-4399-b991-2fc256bc8c4f": {
+      "id": "3bbab457-f6e8-4399-b991-2fc256bc8c4f",
+      "title": "Phase 3 — Self-Tuning Infrastructure v1",
+      "description": "Implement meta_governance_cooldown_ms, meta_state hysteresis, worker concurrency auto-tuning based on GIHI slope, transfer_variance and queue_depth. Scope meta tuning to per-campaign. Add worker health guards and metrics integration.",
+      "status": "doing",
+      "labels": [
+        "phase3",
+        "self-tuning",
+        "infrastructure"
+      ],
+      "created_at": "2026-02-17T05:53:05.592Z",
+      "updated_at": "2026-02-17T05:53:05.592Z"
+    },
+    "0f820970-8beb-4fc1-bb46-0b7f8a1e946c": {
+      "id": "0f820970-8beb-4fc1-bb46-0b7f8a1e946c",
+      "title": "Route campaign_tick through campaign queue (enqueue-only API)",
+      "description": "Implemented: router_execute_command routes campaign_tick to enqueueCampaignTickJob (enqueue-only), removing direct runCampaignTick. Verified after restart: campaign_tick returns queued/job_id; campaign queue drains cleanly.",
+      "status": "done",
+      "labels": [
+        "campaign",
+        "queue",
+        "locking",
+        "api"
+      ],
+      "created_at": "2026-02-17T10:06:06.636Z",
+      "updated_at": "2026-02-17T10:46:14.598Z"
+    },
+    "a1a5840e-f41d-4d0c-a315-7052b94b6ddf": {
+      "id": "a1a5840e-f41d-4d0c-a315-7052b94b6ddf",
+      "title": "Make campaign tick state update atomic under lock",
+      "description": "Implemented two-phase campaign tick with prepared tick-records and atomic commit under per-campaign lock with idempotency. Reconcile ingests prepared ticks; smoke campaign shows correct status/tick_count/history.",
+      "status": "done",
+      "labels": [
+        "campaign",
+        "consistency",
+        "locking",
+        "atomicity"
+      ],
+      "created_at": "2026-02-17T10:06:19.699Z",
+      "updated_at": "2026-02-17T10:46:25.252Z"
+    },
+    "130cede5-0b9a-4773-8c8f-426859d2197e": {
+      "id": "130cede5-0b9a-4773-8c8f-426859d2197e",
+      "title": "Add campaign_reconcile to heal partial writes after lock conflicts",
+      "description": "Implemented campaignReconcileAll and wired into recovery_tick; reconcile now ingests prepared tick-records. recovery_tick reports campaigns_reconciled; partial-write cases no longer reproduce in smoke tests.",
+      "status": "done",
+      "labels": [
+        "campaign",
+        "recovery",
+        "consistency",
+        "telemetry"
+      ],
+      "created_at": "2026-02-17T10:06:29.479Z",
+      "updated_at": "2026-02-17T10:46:35.957Z"
+    },
+    "db3e56d4-87b0-4e4b-9056-b621ee57dbbf": {
+      "id": "db3e56d4-87b0-4e4b-9056-b621ee57dbbf",
+      "title": "Reduce transfer variance with variance-penalized allocation",
+      "description": "Implemented variance-penalized allocation in selectArenaStrategy with VARIANCE_PENALTY_LAMBDA and per-domain transfer variance. Observed transfer_variance trend down and meta_state stable.",
+      "status": "done",
+      "labels": [
+        "market-layer",
+        "transfer",
+        "variance",
+        "stability"
+      ],
+      "created_at": "2026-02-17T10:22:04.691Z",
+      "updated_at": "2026-02-17T10:46:50.660Z"
+    },
+    "8743c43f-bfc6-4ef4-bbb7-09b70d756543": {
+      "id": "8743c43f-bfc6-4ef4-bbb7-09b70d756543",
+      "title": "Add annealing rule when entropy is above target_high",
+      "description": "Implemented annealing when arena_entropy exceeds ENTROPY_TARGET_HIGH: reduce shadow sampling and exploration with hysteresis/cooldown. Observed stable meta_state with high entropy and positive GIHI deltas.",
+      "status": "done",
+      "labels": [
+        "market-layer",
+        "diversity",
+        "governance",
+        "annealing"
+      ],
+      "created_at": "2026-02-17T10:22:11.935Z",
+      "updated_at": "2026-02-17T10:46:54.899Z"
+    },
+    "d905f837-2b21-4258-9af3-4a36912473fb": {
+      "id": "d905f837-2b21-4258-9af3-4a36912473fb",
+      "title": "Relax meta_state to stable under sustained positive GIHI deltas",
+      "description": "Implemented stableByPositiveDeltas rule using gihi_delta_short/ultra, entropy health, variance trend and anomaly_rate; meta_state now reaches stable under sustained positive deltas.",
+      "status": "done",
+      "labels": [
+        "telemetry",
+        "meta-state",
+        "hysteresis",
+        "stability"
+      ],
+      "created_at": "2026-02-17T10:22:21.339Z",
+      "updated_at": "2026-02-17T10:47:01.798Z"
+    },
+    "4f947356-e446-49fd-aff5-7606bd5e8b06": {
+      "id": "4f947356-e446-49fd-aff5-7606bd5e8b06",
+      "title": "Add per-domain variance and stressed-driver breakdown to telemetry",
+      "description": "Implemented per-domain transfer variance/success/confidence plus stressed_driver_breakdown and transfer_variance_trend in telemetry. Fields now present in transfer_diagnostics and intelligence_meta_snapshot.",
+      "status": "done",
+      "labels": [
+        "telemetry",
+        "diagnostics",
+        "transfer",
+        "domains",
+        "meta-state"
+      ],
+      "created_at": "2026-02-17T10:22:51.219Z",
+      "updated_at": "2026-02-17T10:47:08.078Z"
+    },
+    "6957751e-84a4-4840-91ce-228e0f8c768a": {
+      "id": "6957751e-84a4-4840-91ce-228e0f8c768a",
+      "title": "Fix campaign draft/tick_count=0 after runs (atomic commit + idempotency)",
+      "description": "Bug: campaign cmp_99821151... produced runs but remained draft with tick_count=0. Implement strict atomic commit for campaign tick: commit history, tick_count, status, stop_reason in one critical section under per-campaign lock. Add idempotency key campaign_id:tick_index and prevent partial writes. Ensure campaign status transitions out of draft as soon as first tick commits. Add unit/integration test for LOCK_BUSY retry path producing consistent state.",
+      "status": "todo",
+      "labels": [
+        "campaign",
+        "consistency",
+        "atomicity",
+        "locking",
+        "idempotency",
+        "bug"
+      ],
+      "created_at": "2026-02-17T10:33:08.367Z",
+      "updated_at": "2026-02-17T10:33:08.367Z"
+    },
+    "5a4aaa57-5cbc-414a-b119-9bb38abf4cff": {
+      "id": "5a4aaa57-5cbc-414a-b119-9bb38abf4cff",
+      "title": "Cleanup expired running jobs and enforce lease heartbeats",
+      "description": "Implemented queueLeaseRenew heartbeat and queueCleanupExpiredRunning; wired into router_queue. recovery_tick reports queue_lease_cleanup and queues show pending/running=0 after restart.",
+      "status": "done",
+      "labels": [
+        "queue",
+        "jobs",
+        "lease",
+        "recovery",
+        "bug"
+      ],
+      "created_at": "2026-02-17T10:33:15.406Z",
+      "updated_at": "2026-02-17T10:46:41.538Z"
+    },
+    "ddbc246e-9752-440e-ab8f-c8cc5182a743": {
+      "id": "ddbc246e-9752-440e-ab8f-c8cc5182a743",
+      "title": "Add degenerating circuit-breaker: temporary active-only mode per-domain",
+      "description": "When meta_state=degenerating or (gihi_delta_ultra<0 && gihi_slope_short< -0.001), enable a short-lived stabilization mode (2–3 ticks): sample only active strategies in high-variance domains, freeze seeding/mutations, cap shadow allocation <=0.2. Exit when variance_trend<=0 and gihi_delta_ultra>=0 for 2 ticks.",
+      "status": "todo",
+      "labels": [
+        "stability",
+        "governance",
+        "market-layer",
+        "circuit-breaker",
+        "domains"
+      ],
+      "created_at": "2026-02-17T11:16:33.116Z",
+      "updated_at": "2026-02-17T11:16:33.116Z"
+    },
+    "0b81e9c0-7dc8-4bd1-8666-5082d0a63a22": {
+      "id": "0b81e9c0-7dc8-4bd1-8666-5082d0a63a22",
+      "title": "Per-domain annealing + shadow cap for high-variance domains",
+      "description": "Add per-domain annealing controls: if domain_variance>threshold or domain_confidence<target, apply stronger shadow reduction and enforce shadow allocation_weight sum <=0.25 for that domain. Start by hard-coding multipliers for medium|high|low|p5 and small|low|low|p5; later generalize from per_domain_transfer stats.",
+      "status": "todo",
+      "labels": [
+        "market-layer",
+        "annealing",
+        "variance",
+        "domains",
+        "stability"
+      ],
+      "created_at": "2026-02-17T11:17:10.198Z",
+      "updated_at": "2026-02-17T11:17:10.198Z"
+    },
+    "db07ff79-99af-4fcd-a599-7d6b60b51ca0": {
+      "id": "db07ff79-99af-4fcd-a599-7d6b60b51ca0",
+      "title": "Stabilize GIHI windows: ensure at least 1 GIHI point per tick",
+      "description": "Reduce racy GIHI deltas by guaranteeing at least one evaluation/run point per campaign tick (or compute deltas over tick-index windows). Add a lightweight eval-run when a tick would otherwise create no runs. Verify gihi_delta_ultra becomes more interpretable and meta_state less jumpy.",
+      "status": "todo",
+      "labels": [
+        "telemetry",
+        "gihi",
+        "campaign",
+        "stability"
+      ],
+      "created_at": "2026-02-17T11:47:34.910Z",
+      "updated_at": "2026-02-17T11:47:34.910Z"
+    },
+    "4d2394ea-d459-4231-a908-7c1fb6e03e93": {
+      "id": "4d2394ea-d459-4231-a908-7c1fb6e03e93",
+      "title": "Fix anneal-down effectiveness: entropy computed on allocation_weight but selection uses tickets",
+      "description": "Observed arena_entropy stuck at ~0.9128 despite annealMode + shadow caps. In selectArenaStrategy: entropy uses allocation_weight, but selection is ticket-based and tickets ignore allocation_weight; baseWeight is status-based. Update ticket computation to incorporate allocation_weight (and/or use allocation_weight directly for sampling) so annealing changes effective entropy. Consider recalculating candidateEntropy using logits shares rather than stale allocation_weight. Add telemetry: shadow_total_share_after_caps and effective_selection_entropy.",
+      "status": "todo",
+      "labels": [
+        "annealing",
+        "entropy",
+        "sampling",
+        "bug",
+        "market-layer"
+      ],
+      "created_at": "2026-02-17T12:02:19.872Z",
+      "updated_at": "2026-02-17T12:02:19.872Z"
+    },
+    "049bf91f-7ec5-4559-a5e5-f7f367ca4927": {
+      "id": "049bf91f-7ec5-4559-a5e5-f7f367ca4927",
+      "title": "Make gihi_slope_short robust to single-tick spikes (winsorized/trimmed + consecutive rule)",
+      "description": "Implemented winsorize + robust short slope, spike flag, trim info, and degenerating gating (requires negative gihi_delta_ultra OR consecutive confirmation). Verified: degenerating_allowed_by_delta=false and degenerating_allowed_by_consecutive=false while meta_state stays stable on spiky windows.",
+      "status": "done",
+      "labels": [
+        "telemetry",
+        "meta-state",
+        "stability",
+        "gihi",
+        "robustness"
+      ],
+      "created_at": "2026-02-17T12:28:06.783Z",
+      "updated_at": "2026-02-17T12:36:49.675Z"
+    },
+    "2730bbd5-3e12-4483-96c7-190d41cf18e3": {
+      "id": "2730bbd5-3e12-4483-96c7-190d41cf18e3",
+      "title": "Normalize/validate campaign objective strings (fallback to maximize score)",
+      "description": "Implemented objective normalization: accepts score/max score/maximize score (+min variants), defaults to \"maximize score\" when omitted/empty, and provides clearer error messages with examples. Wired into campaigns.ts and index.ts callsites.",
+      "status": "done",
+      "labels": [
+        "campaign",
+        "ux",
+        "validation",
+        "objectives"
+      ],
+      "created_at": "2026-02-17T12:28:14.552Z",
+      "updated_at": "2026-02-17T12:36:55.118Z"
+    },
+    "4830527b-0389-44ee-8291-1f4ba2edaf24": {
+      "id": "4830527b-0389-44ee-8291-1f4ba2edaf24",
+      "title": "Increase average_transfer_confidence via confidence-aware selection and evidence gating",
+      "description": "Goal: raise average_transfer_confidence ~0.13 -> >=0.16 while keeping arena_entropy in 0.75–0.88 band and transfer_variance <=0.12.\n\nPlan:\n1) Confidence-aware utility: add penalty for low confidence in per-domain transfer stats: utility -= lambda_conf * max(0, conf_target - conf_d). conf_target=0.18.\n2) Evidence gating: do not apply transfer impact (or apply scaled impact) until evidence is sufficient: n_obs>=N_MIN (e.g., 5) OR conf_d>=CONF_MIN (e.g., 0.14). Below threshold, schedule extra evals.\n3) Confidence build budget: per tick, guarantee >=1–2 transfer-eval runs for low-confidence/high-variance domains (medium|high|low|p5, small|low|low|p5) to increase evidence.\n4) Telemetry: add low_conf_share, confidence_trend (global+per-domain), and applied_transfer_impact_share.",
+      "status": "doing",
+      "labels": [
+        "transfer",
+        "confidence",
+        "market-layer",
+        "stability",
+        "domains"
+      ],
+      "created_at": "2026-02-17T12:37:31.466Z",
+      "updated_at": "2026-02-17T12:40:07.213Z"
+    },
+    "70fdad9d-dcc6-4a6f-a662-0136b55b4c70": {
+      "id": "70fdad9d-dcc6-4a6f-a662-0136b55b4c70",
+      "title": "Add per-domain confidence quotas for transfer evaluation (min evals per tick)",
+      "description": "Implement a small per-tick evaluation quota that targets domains with low confidence/high variance (from per_domain_transfer). Each campaign tick, before main experiment allocation, schedule at least 1 eval-run for top K low-confidence domains (K=2) and optionally 1 extra for the worst domain if conf<0.12. Integrate with campaign planning so ticks always create at least one run and evidence accumulates deterministically.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "confidence",
+        "campaign",
+        "domains",
+        "planning"
+      ],
+      "created_at": "2026-02-17T12:40:18.841Z",
+      "updated_at": "2026-02-17T12:40:18.841Z"
+    },
+    "4319190a-9efa-4bd3-a83d-8b4f73f66cfa": {
+      "id": "4319190a-9efa-4bd3-a83d-8b4f73f66cfa",
+      "title": "Add confidence telemetry: low_conf_share, confidence_trend, impact_applied_share",
+      "description": "Extend transfer_diagnostics/intelligence_meta_snapshot with:\n- low_conf_share (fraction of transfer applications where conf<CONF_MIN)\n- confidence_trend (delta over short/ultra windows)\n- impact_applied_share (fraction of runs where transfer impact was applied vs gated)\n- per-domain: conf_delta_ultra, n_obs\nThis will make it easy to confirm that confidence-building quota and gating work.",
+      "status": "todo",
+      "labels": [
+        "telemetry",
+        "transfer",
+        "confidence",
+        "observability"
+      ],
+      "created_at": "2026-02-17T12:40:29.727Z",
+      "updated_at": "2026-02-17T12:40:29.727Z"
+    },
+    "a9626805-67ac-41e1-a4f5-240f073025ce": {
+      "id": "a9626805-67ac-41e1-a4f5-240f073025ce",
+      "title": "Make transfer evidence buildable: track obs/succ/fail per domain and define success for evidence updates",
+      "description": "Hard gate now blocks all impact (impact_applied_share=0). Implement per-domain transfer_evidence telemetry (obs/succ/fail/evidence_strength) and redefine evidence success so it can rise with observations (e.g., score >= rolling median - margin, no anomaly, score present). Ensure evidence updates happen even when impact_scale=0 and are driven by transfer_eval_quota runs.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "evidence",
+        "confidence",
+        "domains",
+        "telemetry"
+      ],
+      "created_at": "2026-02-17T14:03:00.489Z",
+      "updated_at": "2026-02-17T14:03:00.489Z"
+    },
+    "9d1921b8-1455-4432-ad05-e4f77887865a": {
+      "id": "9d1921b8-1455-4432-ad05-e4f77887865a",
+      "title": "Bootstrap transfer gate: staged thresholds for impact vs replication",
+      "description": "After splitting match/evidence gates, impact_applied_share remains 0 because evidence_strength stays below 0.55. Add staged gating:\n- Keep strict gate for replication/migration: obs>=N_MIN && evidence_strength>=0.55 && match_conf>=0.11.\n- Introduce 'micro-impact' gate for applying small capped impact: obs>=N_MIN && evidence_strength>=0.35 && match_conf>=0.11, with impact_scale capped (e.g., <=0.05) and no replication.\n- Optionally ramp EVID_MIN from 0.35->0.55 as obs grows (e.g., 0.35 at obs=5, 0.45 at obs=8, 0.55 at obs>=10).\nGoal: open the loop safely, let evidence improve, while preventing noise explosion.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "gating",
+        "confidence",
+        "stability",
+        "bootstrap"
+      ],
+      "created_at": "2026-02-17T14:05:39.390Z",
+      "updated_at": "2026-02-17T14:05:39.390Z"
+    },
+    "218c40f6-4716-4002-830e-b2258bc2f400": {
+      "id": "218c40f6-4716-4002-830e-b2258bc2f400",
+      "title": "Open micro-impact loop: replace strict success gating with 'not-worse-than-baseline' predicate + diagnostics",
+      "description": "Current micro gate passes often but impact_applied_share stays 0 because transfer_success_signal_micro_share ~0.04 and micro-impact requires successSignal==true. Patch research_memory.ts: introduce transferImpactAllowedMicro = fitness >= (domainBaseline - microImpactMarginUsed) && !anomaly; use this predicate for micro-impact application (cap 0.05) instead of transferSuccessSignal. Keep full gate unchanged. Add evidence_gate fields: micro_impact_margin, impact_allowed_micro. Add telemetry aggregate micro_success_block_share (micro gate passed but impact_allowed_micro false).",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "micro-impact",
+        "gating",
+        "telemetry",
+        "stability"
+      ],
+      "created_at": "2026-02-17T15:52:34.668Z",
+      "updated_at": "2026-02-17T15:52:34.668Z"
+    },
+    "9329b58c-4ee2-488d-90cd-2520dcda4d70": {
+      "id": "9329b58c-4ee2-488d-90cd-2520dcda4d70",
+      "title": "Open micro-impact loop: decouple from rare successSignal; use not-worse-than-baseline predicate + diagnostics",
+      "description": "Problem: micro_gate_block_share ~0.24 (often passes) but impact_applied_share=0 because micro-impact currently requires transferSuccessSignal==true; transfer_success_signal_micro_share ~0.04.\n\nPatch (research_memory.ts):\n- Introduce `impact_allowed_micro` predicate, independent from evidence success update:\n  `impact_allowed_micro = Number.isFinite(fitness) && fitness >= (domainBaseline - microImpactMarginUsed) && !anomaly_flag`.\n  Use a margin similar to dynamic margin but slightly more permissive, e.g. `microImpactMarginUsed = max(TRANSFER_SUCCESS_MARGIN, 1.0*baselineMad, 0.03*max(0.1,domainBaseline))`.\n- In micro-impact branch (evidence_strength between microMin and fullMin): allow impact if `impact_allowed_micro` instead of `transferSuccessSignal`.\n- Keep full gate unchanged; replication/migration still requires fullMin (0.55).\n- Add evidence_gate fields: `micro_impact_margin`, `impact_allowed_micro`.\n\nTelemetry (telemetry.ts): add `micro_success_block_share` = share where micro gate passed but `impact_allowed_micro` false; add `impact_level_share.micro` and `avg_impact_scale_micro` already present, ensure they’re computed from impact_level/impact_scale fields.\n\nGoal: get first non-zero `impact_applied_share` (micro) safely (cap=0.05) without noise explosion.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "micro-impact",
+        "gating",
+        "telemetry",
+        "stability"
+      ],
+      "created_at": "2026-02-17T15:54:45.225Z",
+      "updated_at": "2026-02-17T15:54:45.225Z"
+    },
+    "f67c7537-8e73-40e3-a5d2-4048ab94d3ac": {
+      "id": "f67c7537-8e73-40e3-a5d2-4048ab94d3ac",
+      "title": "Transfer burn-in: validate micro-impact stability and lift to measurable effect",
+      "description": "Run a 12-tick burn-in campaign via queue with current transfer settings. Collect snapshots each tick (transfer_diagnostics, intelligence_meta_snapshot, arena_telemetry_snapshot). Success criteria: impact_applied_share(micro) rising >0.02 without entropy collapse; no spike in anomaly_rate; transfer_variance trend non-increasing; GIHI delta_ultra >=0. Track per-domain: match_conf distribution, evidence_strength, micro_gate_pass_share_strict, micro_success_block_share, avg_impact_scale_micro.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "burn-in",
+        "stability",
+        "telemetry"
+      ],
+      "created_at": "2026-02-18T05:41:22.427Z",
+      "updated_at": "2026-02-18T05:41:22.427Z"
+    },
+    "114e6976-8a59-49ec-8d98-4f617ac462e1": {
+      "id": "114e6976-8a59-49ec-8d98-4f617ac462e1",
+      "title": "Calibrate transfer_confidence to reach FULL match threshold safely",
+      "description": "Add telemetry distribution for transfer_confidence and its factors (similarity, fitness_factor, recency, domain_stability, aging) per domain. Goal: raise median match_conf from ~0.09–0.10 to >=0.11 for a meaningful share without increasing false positives. Consider per-domain normalization (z-score/quantile), and a monotonic calibration map (e.g., isotonic-like piecewise) learned from evidence outcomes.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "match",
+        "calibration",
+        "telemetry"
+      ],
+      "created_at": "2026-02-18T05:41:30.803Z",
+      "updated_at": "2026-02-18T05:41:30.803Z"
+    },
+    "752ddca9-65bc-4fd3-8bad-7aed42805814": {
+      "id": "752ddca9-65bc-4fd3-8bad-7aed42805814",
+      "title": "Quota diagnostics completeness: log per-tick for all ticks including fallback paths",
+      "description": "confidence_quota_diagnostics currently appears only when quota block executes. Extend campaign.tick payload to always include diagnostics entries per tick (even if quota disabled or no targets), with explicit reason codes: no_low_conf_domains, cooldown_blocked, lock_busy, search_satisfied_quota, forced_eval_used. This prevents silent failures and speeds tuning.",
+      "status": "todo",
+      "labels": [
+        "campaign",
+        "quota",
+        "telemetry",
+        "reliability"
+      ],
+      "created_at": "2026-02-18T05:41:37.983Z",
+      "updated_at": "2026-02-18T05:41:37.983Z"
+    },
+    "5966cc29-0c0f-4f34-8616-4ef8f6b137f5": {
+      "id": "5966cc29-0c0f-4f34-8616-4ef8f6b137f5",
+      "title": "Campaign auto-advance: self-scheduling tick jobs until stop",
+      "description": "Problem: campaigns only progress when an external campaign_tick job is enqueued; when queue drains, workers go idle and campaign stalls. Implement auto-advance:\n- Add campaign flag `auto_advance` (default true for campaign_create, optional).\n- In runCampaignTick (after successful commit), if campaign not stopped/completed and auto_advance=true, enqueue next campaign_tick job automatically with not_before_ts (e.g., now+250ms+jitter) and idempotent job_id (campaign_id + next_tick_index) to avoid duplicates.\n- Gate auto-advance on exec queue health: if exec queue_depth>0 or running>0, set not_before_ts further out (e.g., +2s) to prevent contention.\n- Ensure lock-busy path keeps auto-advance semantics (requeue keeps next job alive).\nTelemetry: add campaign_tick_autoscheduled=true, next_job_id, not_before_ts in campaign.tick record.",
+      "status": "todo",
+      "labels": [
+        "campaign",
+        "queue",
+        "reliability",
+        "locks"
+      ],
+      "created_at": "2026-02-18T06:51:03.959Z",
+      "updated_at": "2026-02-18T06:51:03.959Z"
+    },
+    "4faedb82-fbb4-4a36-9f5e-536f71817fcc": {
+      "id": "4faedb82-fbb4-4a36-9f5e-536f71817fcc",
+      "title": "Variance governor v2: micro budget + rolling variance + cap shrink on stress",
+      "description": "Burn-in #2 shows micro-impact persists but variance remains ~0.23 and micro share ~0.19. Improve governor:\n1) Rolling per-domain variance windows (short/ultra): compute variance over last N applied (or last N transfer events) rather than lifetime to allow recovery; persist `domain_variance_short/ultra`.\n2) Micro budget per tick: limit number of micro impacts per tick (global + per-domain). Example: global budget = ceil(0.08 * created_runs) or min(4), per-domain budget = 1. When exhausted, impact_scale=0 but evidence updates continue.\n3) Stress cap shrink: if gihi_delta_ultra<0 or meta_state!=stable, set global cap multiplier (e.g., 0.5) for next 3 ticks; combine with per-domain cap.\n4) Throttle escalation: if variance_short>VAR_HARD, cooldown=5 (not 3) and also shadow_cap↓ / lambda_d↑ via stabilization_mode.\nTelemetry: micro_budget_total, micro_budget_used, micro_budget_exhausted_share, cap_global_multiplier, variance_short/ultra, top variance driver domains with applied share.",
+      "status": "todo",
+      "labels": [
+        "transfer",
+        "micro-impact",
+        "variance",
+        "governance",
+        "telemetry"
+      ],
+      "created_at": "2026-02-18T06:51:16.442Z",
+      "updated_at": "2026-02-18T06:51:16.442Z"
+    },
+    "4204ce65-0b07-4e43-bd52-84f07a9d8d15": {
+      "id": "4204ce65-0b07-4e43-bd52-84f07a9d8d15",
+      "title": "Analyze and mitigate entropy drift in high-entropy domains",
+      "description": "This task aims to address the high arena_entropy by investigating its causes and proposing mitigation strategies.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant"
+      ],
+      "created_at": "2026-02-20T08:06:34.828Z",
+      "updated_at": "2026-02-20T08:06:34.828Z"
+    },
+    "1d37156e-23b5-4055-a87b-b0ae20a2757c": {
+      "id": "1d37156e-23b5-4055-a87b-b0ae20a2757c",
+      "title": "Monitor and report on the ingest phase performance",
+      "description": "Track progress, identify bottlenecks, and adjust strategies if necessary.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant"
+      ],
+      "created_at": "2026-02-20T12:22:07.306Z",
+      "updated_at": "2026-02-20T12:22:07.306Z"
+    },
+    "f8c06397-7b47-488a-b644-6a36f3aea4dd": {
+      "id": "f8c06397-7b47-488a-b644-6a36f3aea4dd",
+      "title": "metric_analysis_task",
+      "description": "Analyze extracted metrics for training performance optimization.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant"
+      ],
+      "created_at": "2026-02-20T12:46:41.017Z",
+      "updated_at": "2026-02-20T12:46:41.017Z"
+    },
+    "llm-task-0c6da11cb0f56e5f8fc3a6a22978d8326b0936b3": {
+      "id": "llm-task-0c6da11cb0f56e5f8fc3a6a22978d8326b0936b3",
+      "title": "next_experiment_task",
+      "description": "Create task to start the next experiment iteration after this successful run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-20T12:57:02.151Z",
+      "updated_at": "2026-02-20T12:57:02.151Z"
+    },
+    "llm-task-70f78aacb28255fc5c921e58b83be2f88f2559e8": {
+      "id": "llm-task-70f78aacb28255fc5c921e58b83be2f88f2559e8",
+      "title": "Define winner strategy for exp_55d9a1e7-f089-4b30-bfce-c1f0debec682",
+      "description": "Decide on the strategy that will lead to optimal results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-20T12:57:10.392Z",
+      "updated_at": "2026-02-20T12:57:10.392Z"
+    },
+    "llm-task-dd8542c4c1c31f7bf0ab78855670254bbe36024e": {
+      "id": "llm-task-dd8542c4c1c31f7bf0ab78855670254bbe36024e",
+      "title": "Review experiment performance",
+      "description": "Evaluate the impact of the experiment on research and update metrics accordingly.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-20T13:04:21.364Z",
+      "updated_at": "2026-02-20T13:04:21.364Z"
+    },
+    "needs-attention:transfer-init:small|high|low|p2": {
+      "id": "needs-attention:transfer-init:small|high|low|p2",
+      "title": "Investigate transfer init failure small|high|low|p2",
+      "description": "Resolved: bootstrap campaign cleared transfer_not_initialized for small|high|low|p2.",
+      "status": "done",
+      "labels": [
+        "needs_attention",
+        "transfer_init",
+        "small|high|low|p2",
+        "resolved"
+      ],
+      "created_at": "2026-02-23T09:41:47.617Z",
+      "updated_at": "2026-02-23T10:29:26.592Z"
+    },
+    "llm-task-8353fec09685378a29e28a491f91a3f82707d8ec": {
+      "id": "llm-task-8353fec09685378a29e28a491f91a3f82707d8ec",
+      "title": "Monitor next experiment's performance",
+      "description": "Start monitoring the next experiments to ensure similar success rates and impacts.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:34:08.785Z",
+      "updated_at": "2026-02-23T11:34:08.785Z"
+    },
+    "llm-task-2f8f2f7d03f08093cc07cb3ffc72a2c289d3895f": {
+      "id": "llm-task-2f8f2f7d03f08093cc07cb3ffc72a2c289d3895f",
+      "title": "Evaluate next experiment setup",
+      "description": "Plan and execute the next training iteration with improved configurations based on this run's results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:34:18.242Z",
+      "updated_at": "2026-02-23T11:34:18.242Z"
+    },
+    "llm-task-9fb3f2efb0731613b0f3d20ed989a6e5640aac68": {
+      "id": "llm-task-9fb3f2efb0731613b0f3d20ed989a6e5640aac68",
+      "title": "next_training_run",
+      "description": "Create a new training run with updated hyperparameters based on the best results from this experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:34:36.396Z",
+      "updated_at": "2026-02-23T11:34:36.396Z"
+    },
+    "llm-task-3b71b7820ceb7c147a32f697499ea59d186be456": {
+      "id": "llm-task-3b71b7820ceb7c147a32f697499ea59d186be456",
+      "title": "Next experiment setup",
+      "description": "Prepare next iteration of training based on current findings.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:34:45.270Z",
+      "updated_at": "2026-02-23T11:34:45.270Z"
+    },
+    "llm-task-5fe713415eb60418690cec386218a06f93c5158c": {
+      "id": "llm-task-5fe713415eb60418690cec386218a06f93c5158c",
+      "title": "Review Negative Mutation ROI",
+      "description": "Analyze and document the negative mutation ROI effect.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:34:53.637Z",
+      "updated_at": "2026-02-23T11:34:53.637Z"
+    },
+    "llm-task-788a468470b3c4b8c22e24d7d3361baad168cb62": {
+      "id": "llm-task-788a468470b3c4b8c22e24d7d3361baad168cb62",
+      "title": "Monitor Arena Entropy",
+      "description": "Regularly check and adjust strategies based on the high entropy level to maintain stable performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:00.572Z",
+      "updated_at": "2026-02-23T11:35:00.572Z"
+    },
+    "llm-task-4553f2012d6e62962ad2516fe5561e09ed2a0ca5": {
+      "id": "llm-task-4553f2012d6e62962ad2516fe5561e09ed2a0ca5",
+      "title": "Review Campaign Impact on Negative Mutation ROI",
+      "description": "Analyze campaigns impacted by negative mutation ROI trends, consider adjustments if necessary.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:09.745Z",
+      "updated_at": "2026-02-23T11:35:09.745Z"
+    },
+    "llm-task-3f20f0edd999fcf9ba76a18c0b9a14023d36574a": {
+      "id": "llm-task-3f20f0edd999fcf9ba76a18c0b9a14023d36574a",
+      "title": "Analyze negative mutation ROI impact on system performance",
+      "description": "Identify root causes of low mutation ROI and suggest mitigation strategies.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:22.134Z",
+      "updated_at": "2026-02-23T11:35:22.134Z"
+    },
+    "llm-task-568c4e5ebc26d0f3906e28cc16da4b9f02d0e80d": {
+      "id": "llm-task-568c4e5ebc26d0f3906e28cc16da4b9f02d0e80d",
+      "title": "review_high_risk_domains",
+      "description": "Evaluate and adjust domains with high risk levels.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:30.738Z",
+      "updated_at": "2026-02-23T11:35:30.738Z"
+    },
+    "llm-task-08fbb44942f7539c86ebc113fd310d89035add0e": {
+      "id": "llm-task-08fbb44942f7539c86ebc113fd310d89035add0e",
+      "title": "Analyze negative mutation ROI impact",
+      "description": "Investigate and report on the effects of negative mutation ROI",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:37.890Z",
+      "updated_at": "2026-02-23T11:35:37.890Z"
+    },
+    "llm-task-3a177323c273c7db4f3e8f77de32cff6d8793a3f": {
+      "id": "llm-task-3a177323c273c7db4f3e8f77de32cff6d8793a3f",
+      "title": "Monitor and adjust for negative ROI and high entropy",
+      "description": "Continuously monitor the metrics and take actions as necessary, focusing on improving ROI and reducing entropy.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:45.146Z",
+      "updated_at": "2026-02-23T11:35:45.146Z"
+    },
+    "llm-task-917d5994ec156fa567f8f3dfd9f54bf5b0665eb6": {
+      "id": "llm-task-917d5994ec156fa567f8f3dfd9f54bf5b0665eb6",
+      "title": "gather_initial_data",
+      "description": "Collect baseline data for analysis",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:35:51.760Z",
+      "updated_at": "2026-02-23T11:35:51.760Z"
+    },
+    "llm-task-583eff582248b61bb342d50614f82aab48722b60": {
+      "id": "llm-task-583eff582248b61bb342d50614f82aab48722b60",
+      "title": "Review domain complexity and resource allocation",
+      "description": "Examine current domain profile for possible adjustments or optimizations based on recent data.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:36:01.428Z",
+      "updated_at": "2026-02-23T11:36:01.428Z"
+    },
+    "llm-task-fa74ab70417195124d072dc373c52e47a03a6a2b": {
+      "id": "llm-task-fa74ab70417195124d072dc373c52e47a03a6a2b",
+      "title": "Review exploration efficiency and propose enhancements",
+      "description": "Analyze why exploration_efficiency is low and suggest actions to improve it.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:36:11.511Z",
+      "updated_at": "2026-02-23T11:36:11.511Z"
+    },
+    "llm-task-1650e4551f94ef605962c2e5705e916e340aab31": {
+      "id": "llm-task-1650e4551f94ef605962c2e5705e916e340aab31",
+      "title": "next_experiment_run",
+      "description": "Create the next experiment run ID for further analysis and optimization.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:36:36.271Z",
+      "updated_at": "2026-02-23T11:36:36.271Z"
+    },
+    "llm-task-76ec48dda277045551ddc78e0e356c3a302eb4f6": {
+      "id": "llm-task-76ec48dda277045551ddc78e0e356c3a302eb4f6",
+      "title": "Evaluate next experiment parameters",
+      "description": "Adjust parameters based on the best run results for future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:36:44.674Z",
+      "updated_at": "2026-02-23T11:36:44.674Z"
+    },
+    "llm-task-8b250852799caeac976283e1ace819943c63450e": {
+      "id": "llm-task-8b250852799caeac976283e1ace819943c63450e",
+      "title": "Next experiment setup",
+      "description": "Plan the next experiment based on the results of exp_854cfdf4-d968-461f-9006-f73fee788e66.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:36:56.417Z",
+      "updated_at": "2026-02-23T11:36:56.417Z"
+    },
+    "llm-task-aa9cbdee431ac915fc8056eae0d602e607e2c3ac": {
+      "id": "llm-task-aa9cbdee431ac915fc8056eae0d602e607e2c3ac",
+      "title": "next_experiment",
+      "description": "Create a new experiment with adjusted parameters based on current results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:37:04.810Z",
+      "updated_at": "2026-02-23T11:37:04.810Z"
+    },
+    "llm-task-edbcee0ee0680bbb5f6065cd5707d3ca7c014c05": {
+      "id": "llm-task-edbcee0ee0680bbb5f6065cd5707d3ca7c014c05",
+      "title": "Monitor Future Experiments",
+      "description": "Create a task to monitor future experiments for similar metrics and conditions.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:37:24.266Z",
+      "updated_at": "2026-02-23T11:37:24.266Z"
+    },
+    "llm-task-99feaaede745eaf6b25423ebbfca53c2ac81f145": {
+      "id": "llm-task-99feaaede745eaf6b25423ebbfca53c2ac81f145",
+      "title": "Analyze experiment results",
+      "description": "Review the extracted metrics and propose insights for further analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:37:33.251Z",
+      "updated_at": "2026-02-23T11:37:33.251Z"
+    },
+    "llm-task-b762006bfce6a186c70caf6a983cbef36c6d2967": {
+      "id": "llm-task-b762006bfce6a186c70caf6a983cbef36c6d2967",
+      "title": "Evaluate next experiment phase",
+      "description": "Proceed to evaluate the next phase based on current run's performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:37:42.076Z",
+      "updated_at": "2026-02-23T11:37:42.076Z"
+    },
+    "llm-task-0b2581b4f15c9704ae1abde612ff1084d8451129": {
+      "id": "llm-task-0b2581b4f15c9704ae1abde612ff1084d8451129",
+      "title": "Analyze search strategy for potential improvements",
+      "description": "Evaluate if the current search strategy is efficient and consider adjustments based on recent metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:37:56.982Z",
+      "updated_at": "2026-02-23T11:37:56.982Z"
+    },
+    "llm-task-9159894c5ba8e378cbe326b1aec32eb86f8596a3": {
+      "id": "llm-task-9159894c5ba8e378cbe326b1aec32eb86f8596a3",
+      "title": "Evaluate next search strategy",
+      "description": "Assess new adaptive search strategies for better performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:38:03.546Z",
+      "updated_at": "2026-02-23T11:38:03.546Z"
+    },
+    "llm-task-5d264547f5ea3d31ac390e871cb731383e3929e8": {
+      "id": "llm-task-5d264547f5ea3d31ac390e871cb731383e3929e8",
+      "title": "Monitor next experiment",
+      "description": "Start monitoring and logging data for the next experiment after a short delay.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:38:14.143Z",
+      "updated_at": "2026-02-23T11:38:14.143Z"
+    },
+    "llm-task-2e814fbf6c54b42c2318b35c35ac51bdbc62902b": {
+      "id": "llm-task-2e814fbf6c54b42c2318b35c35ac51bdbc62902b",
+      "title": "Evaluate next experiment design",
+      "description": "Consider adjusting parameters to improve the score further.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:38:33.575Z",
+      "updated_at": "2026-02-23T11:38:33.575Z"
+    },
+    "llm-task-94a5b96c60d297e780b259e409353668803e75f3": {
+      "id": "llm-task-94a5b96c60d297e780b259e409353668803e75f3",
+      "title": "Review experiment performance",
+      "description": "Analyze the score and impact of the current run for future optimizations",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:38:44.282Z",
+      "updated_at": "2026-02-23T11:38:44.282Z"
+    },
+    "llm-task-865f4c1e8ffb448f53301feba1f6b3406198a5b1": {
+      "id": "llm-task-865f4c1e8ffb448f53301feba1f6b3406198a5b1",
+      "title": "Evaluate next similar scenario",
+      "description": "Create a new task with similar parameters for further evaluation.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:38:55.659Z",
+      "updated_at": "2026-02-23T11:38:55.659Z"
+    },
+    "llm-task-483a92aa59a559db287915d4c2a7132554d59aa0": {
+      "id": "llm-task-483a92aa59a559db287915d4c2a7132554d59aa0",
+      "title": "Analyze impact and fitness results",
+      "description": "Review how research impact and fitness influenced the experiment's outcome.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:38:55.671Z",
+      "updated_at": "2026-02-23T11:38:55.671Z"
+    },
+    "llm-task-fa6b46305b5682e57c9f25b7a93613537b62bfbe": {
+      "id": "llm-task-fa6b46305b5682e57c9f25b7a93613537b62bfbe",
+      "title": "Execute winner strategy stg_62305a90-a6e9-4a65-b1f7-51de4010267a.",
+      "description": "Assign execution of the selected strategy to ensure experiment progresses.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:19.858Z",
+      "updated_at": "2026-02-23T11:39:19.858Z"
+    },
+    "llm-task-732f6cf06ed2389f7367e712dc47c256a946bd84": {
+      "id": "llm-task-732f6cf06ed2389f7367e712dc47c256a946bd84",
+      "title": "score_analysis",
+      "description": "Analyze the extracted score to assess experiment performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:29.030Z",
+      "updated_at": "2026-02-23T11:39:29.030Z"
+    },
+    "llm-task-8a7478dbd434ce5b62df64fcccffa957b4cee117": {
+      "id": "llm-task-8a7478dbd434ce5b62df64fcccffa957b4cee117",
+      "title": "Next experiment planning",
+      "description": "Plan the next experiment based on the results of this run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:30.761Z",
+      "updated_at": "2026-02-23T11:39:30.761Z"
+    },
+    "llm-task-08fda1a7b5aa6ca7f4a1c20ed87c8527516b40c8": {
+      "id": "llm-task-08fda1a7b5aa6ca7f4a1c20ed87c8527516b40c8",
+      "title": "Evaluate next experiment score",
+      "description": "Check if the new adjusted threshold leads to a better experiment selection.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:41.789Z",
+      "updated_at": "2026-02-23T11:39:41.789Z"
+    },
+    "llm-task-d13135d2f8f16d4a7fee8334d59719379a799788": {
+      "id": "llm-task-d13135d2f8f16d4a7fee8334d59719379a799788",
+      "title": "Schedule next experiment run",
+      "description": "Plan for the next experiment run with updated parameters or random variations.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:44.260Z",
+      "updated_at": "2026-02-23T11:39:44.260Z"
+    },
+    "llm-task-3081d6d24a32ec2416a48b8f563bd335ed7ce13b": {
+      "id": "llm-task-3081d6d24a32ec2416a48b8f563bd335ed7ce13b",
+      "title": "metric_analysis",
+      "description": "Analyze metric score from the latest run for potential improvements or insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:55.554Z",
+      "updated_at": "2026-02-23T11:39:55.554Z"
+    },
+    "llm-task-c299bd448cc0535005a68ae34e9b4c57e62a46e9": {
+      "id": "llm-task-c299bd448cc0535005a68ae34e9b4c57e62a46e9",
+      "title": "Evaluate experiment impact and fitness",
+      "description": "Review the impact and fitness of the experiment with id exp_6a614f29-a28b-4bdb-98a7-23556b5c55fd.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:39:58.240Z",
+      "updated_at": "2026-02-23T11:39:58.240Z"
+    },
+    "llm-task-09402668614f011a55b9335cca7706ed66e2e997": {
+      "id": "llm-task-09402668614f011a55b9335cca7706ed66e2e997",
+      "title": "Review experiment performance",
+      "description": "Examine the performance metrics and decide on next steps.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:40:03.180Z",
+      "updated_at": "2026-02-23T11:40:03.180Z"
+    },
+    "llm-task-0ecc78059b89659f7041fbf870561aa9d70f7949": {
+      "id": "llm-task-0ecc78059b89659f7041fbf870561aa9d70f7949",
+      "title": "Monitor next experiment start time",
+      "description": "Set up a task to monitor when the next experiment is scheduled to start.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:40:13.056Z",
+      "updated_at": "2026-02-23T11:40:13.056Z"
+    },
+    "llm-task-9db394b05926e7b9c177f39c92dbcc707bfe410f": {
+      "id": "llm-task-9db394b05926e7b9c177f39c92dbcc707bfe410f",
+      "title": "Review experiment for further analysis",
+      "description": "Analyze the results and prepare a report on the experiment performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:40:22.214Z",
+      "updated_at": "2026-02-23T11:40:22.214Z"
+    },
+    "llm-task-5ac95d5e0e581c8b1754e608f149b2003f304dc7": {
+      "id": "llm-task-5ac95d5e0e581c8b1754e608f149b2003f304dc7",
+      "title": "Analyze experiment performance",
+      "description": "Evaluate the performance of the experiment and compare it with previous runs for insights into effectiveness.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:40:31.892Z",
+      "updated_at": "2026-02-23T11:40:31.892Z"
+    },
+    "llm-task-8d110a03e9b061df9fff38de5c31505345eb3423": {
+      "id": "llm-task-8d110a03e9b061df9fff38de5c31505345eb3423",
+      "title": "review_experiment",
+      "description": "Review the experiment for further analysis and insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:40:44.848Z",
+      "updated_at": "2026-02-23T11:40:44.848Z"
+    },
+    "llm-task-2bc178fb5a7d6fbe0504971bc4fbaeb60f6d9d2a": {
+      "id": "llm-task-2bc178fb5a7d6fbe0504971bc4fbaeb60f6d9d2a",
+      "title": "Evaluate next experiment",
+      "description": "Create a new task to evaluate the performance of the next experiment based on its results and impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:45:51.561Z",
+      "updated_at": "2026-02-23T11:45:51.561Z"
+    },
+    "llm-task-7bc6d152d4240eeea170ba37d8316327a321b9e2": {
+      "id": "llm-task-7bc6d152d4240eeea170ba37d8316327a321b9e2",
+      "title": "Convergence Check and Strategy Refinement",
+      "description": "Check if the experiment has converged and refine strategy if necessary based on current data.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:47:22.700Z",
+      "updated_at": "2026-02-23T11:47:22.700Z"
+    },
+    "llm-task-2c421913b768cc019620d7a747ca64e340510c5e": {
+      "id": "llm-task-2c421913b768cc019620d7a747ca64e340510c5e",
+      "title": "Analyze search complexity",
+      "description": "Evaluate the current search complexity of exp_12ff185c-5c59-4883-9a0a-8816b48c2542 and consider adjusting if necessary.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:47:34.568Z",
+      "updated_at": "2026-02-23T11:47:34.568Z"
+    },
+    "llm-task-d71dae5e4fad12d112f02470cb30042bbb07c63d": {
+      "id": "llm-task-d71dae5e4fad12d112f02470cb30042bbb07c63d",
+      "title": "Monitor exp_12ff185c-5c59-4883-9a0a-8816b48c2542 for unexpected fitness spikes.",
+      "description": "Keep an eye out for any sudden changes in fitness metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:47:56.282Z",
+      "updated_at": "2026-02-23T11:47:56.282Z"
+    },
+    "llm-task-02d20089068bd93edd45faf08874ff7e55872e8a": {
+      "id": "llm-task-02d20089068bd93edd45faf08874ff7e55872e8a",
+      "title": "Evaluate experiments based on score distribution",
+      "description": "Analyze the score distribution to assess performance and identify areas for improvement.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:48:05.729Z",
+      "updated_at": "2026-02-23T11:48:05.729Z"
+    },
+    "llm-task-4d6ea66432836bbad9c89aac3820a8dd6ddca55b": {
+      "id": "llm-task-4d6ea66432836bbad9c89aac3820a8dd6ddca55b",
+      "title": "Monitor next experiment attempts",
+      "description": "Start monitoring the next experiments' attempt statuses to ensure continuous improvement in performance metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:48:16.704Z",
+      "updated_at": "2026-02-23T11:48:16.704Z"
+    },
+    "llm-task-a7a3c2ad734c2da4889b3bd964bacad1528d4b3c": {
+      "id": "llm-task-a7a3c2ad734c2da4889b3bd964bacad1528d4b3c",
+      "title": "Review experiment exp_12ff185c-5c59-4883-9a0a-8816b48c2542 for next iterations.",
+      "description": "Check if the current results are repeatable and need further analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:48:31.087Z",
+      "updated_at": "2026-02-23T11:48:31.087Z"
+    },
+    "llm-task-68a29e87919745be3530c10c899c2d2fafdb2464": {
+      "id": "llm-task-68a29e87919745be3530c10c899c2d2fafdb2464",
+      "title": "Review run_9416a774-a4f1-4590-9585-cc7af3e461e6 for further analysis.",
+      "description": "Analyze the extracted metrics and compare with previous runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:48:42.937Z",
+      "updated_at": "2026-02-23T11:48:42.937Z"
+    },
+    "llm-task-2190ef5b2ddadc0fd05481e6f774ac30e23dcfc8": {
+      "id": "llm-task-2190ef5b2ddadc0fd05481e6f774ac30e23dcfc8",
+      "title": "Evaluate new candidate model",
+      "description": "Run a new model with updated parameters and assess its performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:48:52.325Z",
+      "updated_at": "2026-02-23T11:48:52.325Z"
+    },
+    "llm-task-84ab78ebd2b2707f64caa3028b2a1bb323ec1343": {
+      "id": "llm-task-84ab78ebd2b2707f64caa3028b2a1bb323ec1343",
+      "title": "Evaluate next experiment design",
+      "description": "Plan for further experiments with a slight adjustment to improve expected results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:49:19.560Z",
+      "updated_at": "2026-02-23T11:49:19.560Z"
+    },
+    "llm-task-d317c6e517907620cf17023d4fbe851ad1225185": {
+      "id": "llm-task-d317c6e517907620cf17023d4fbe851ad1225185",
+      "title": "Monitor experiment impact.",
+      "description": "Check if the research_impact_applied flag has been updated and ensure proper evaluation of the arena after applying impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:49:30.967Z",
+      "updated_at": "2026-02-23T11:49:30.967Z"
+    },
+    "llm-task-306fc824860769bd83fa0538f2407b7386c6e4ec": {
+      "id": "llm-task-306fc824860769bd83fa0538f2407b7386c6e4ec",
+      "title": "Evaluate next experiment's performance",
+      "description": "Create a task to evaluate the performance of the next experiment based on its metrics and research impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:49:41.492Z",
+      "updated_at": "2026-02-23T11:49:41.492Z"
+    },
+    "llm-task-2cc96733d33366949c52b73e22cf07a010aa8369": {
+      "id": "llm-task-2cc96733d33366949c52b73e22cf07a010aa8369",
+      "title": "score_analysis",
+      "description": "Analyze the extracted score from the experiment for further research insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:49:52.579Z",
+      "updated_at": "2026-02-23T11:49:52.579Z"
+    },
+    "llm-task-60998aba9038826be9b0af27bc6fae29b016974d": {
+      "id": "llm-task-60998aba9038826be9b0af27bc6fae29b016974d",
+      "title": "Review experiment performance based on scores",
+      "description": "Analyze the score extracted from runs to understand their impact and refine future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:50:06.069Z",
+      "updated_at": "2026-02-23T11:50:06.069Z"
+    },
+    "llm-task-2063b2bbd13ae93e9939134ac7798d6f4c8598cd": {
+      "id": "llm-task-2063b2bbd13ae93e9939134ac7798d6f4c8598cd",
+      "title": "Calculate cumulative scores for all runs in the experiment",
+      "description": "Summarize and visualize the performance of all experiments linked to this one.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:50:06.077Z",
+      "updated_at": "2026-02-23T11:50:06.077Z"
+    },
+    "llm-task-62cc1f2589e8f91cbd12de6dc80cb885b25d6540": {
+      "id": "llm-task-62cc1f2589e8f91cbd12de6dc80cb885b25d6540",
+      "title": "Monitor_next_experiments",
+      "description": "Create a task to monitor and log metrics from next experiment runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:50:17.900Z",
+      "updated_at": "2026-02-23T11:50:17.900Z"
+    },
+    "llm-task-5b981e7838da3d2d80f12324fe180b73efaa7ed3": {
+      "id": "llm-task-5b981e7838da3d2d80f12324fe180b73efaa7ed3",
+      "title": "review_experiment_metrics_task",
+      "description": "Review the extracted metrics and determine next steps for analysis or further experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:50:30.284Z",
+      "updated_at": "2026-02-23T11:50:30.284Z"
+    },
+    "llm-task-61153e72ce80cda3e2bdca2ea220e826490c5c8c": {
+      "id": "llm-task-61153e72ce80cda3e2bdca2ea220e826490c5c8c",
+      "title": "Entropy Analysis",
+      "description": "Analyze high entropy and propose measures to reduce it.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:50:40.185Z",
+      "updated_at": "2026-02-23T11:50:40.185Z"
+    },
+    "llm-task-b3c03471a2f260179501ad97e40819a42c3f9a76": {
+      "id": "llm-task-b3c03471a2f260179501ad97e40819a42c3f9a76",
+      "title": "Monitor domain status",
+      "description": "Regularly check and report on stress levels of domains.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:50:55.781Z",
+      "updated_at": "2026-02-23T11:50:55.781Z"
+    },
+    "llm-task-931ee818603d78852953d83ef98bf7815e5fdf91": {
+      "id": "llm-task-931ee818603d78852953d83ef98bf7815e5fdf91",
+      "title": "Gather additional data points.",
+      "description": "Collect more samples or observations to improve decision-making accuracy.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:51:19.651Z",
+      "updated_at": "2026-02-23T11:51:19.651Z"
+    },
+    "llm-task-760d76e19bbf76688d98a5308a2f9c582ea0ee02": {
+      "id": "llm-task-760d76e19bbf76688d98a5308a2f9c582ea0ee02",
+      "title": "Monitor for convergence indicators",
+      "description": "Watch for signs of model convergence or stagnation during the experiment execution phase.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:51:32.662Z",
+      "updated_at": "2026-02-23T11:51:32.662Z"
+    },
+    "llm-task-fb072aec0f01b6644c6effa88cc1752d0ee3db29": {
+      "id": "llm-task-fb072aec0f01b6644c6effa88cc1752d0ee3db29",
+      "title": "Analyze current experiment for potential bottlenecks",
+      "description": "Identify the reasons behind no improvement and non-convergence in the experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:51:42.248Z",
+      "updated_at": "2026-02-23T11:51:42.248Z"
+    },
+    "llm-task-5130e4ab364ac9b557c7527813bb46b13b86bf35": {
+      "id": "llm-task-5130e4ab364ac9b557c7527813bb46b13b86bf35",
+      "title": "score_analysis",
+      "description": "Analyze the extracted score to determine if it meets expected performance standards.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:51:59.491Z",
+      "updated_at": "2026-02-23T11:51:59.491Z"
+    },
+    "llm-task-58047056ed39d44c860d9eab067c020c05f2274e": {
+      "id": "llm-task-58047056ed39d44c860d9eab067c020c05f2274e",
+      "title": "Evaluate next experiment based on best_run_id",
+      "description": "Create a new task to evaluate experiments linked to the run_d44a73c5-b898-440f-8fec-ec7b6f554695.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:52:22.570Z",
+      "updated_at": "2026-02-23T11:52:22.570Z"
+    },
+    "llm-task-05dcc061f1873d50a6212e3d0c059c482804e0eb": {
+      "id": "llm-task-05dcc061f1873d50a6212e3d0c059c482804e0eb",
+      "title": "review_metrics",
+      "description": "Review the extracted metrics from the experiment run_ae79326b-85a7-4153-987b-9d4d73ee3dd1.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:52:37.461Z",
+      "updated_at": "2026-02-23T11:52:37.461Z"
+    },
+    "llm-task-66954a91ef740481a028357b156971f85362b86f": {
+      "id": "llm-task-66954a91ef740481a028357b156971f85362b86f",
+      "title": "Review task performance",
+      "description": "Evaluate the impact and fitness of the task based on the extracted metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:52:58.737Z",
+      "updated_at": "2026-02-23T11:52:58.737Z"
+    },
+    "llm-task-ec78b7cd2909a5bd95818ae1c64fc3d1ffabeed7": {
+      "id": "llm-task-ec78b7cd2909a5bd95818ae1c64fc3d1ffabeed7",
+      "title": "Score Analysis",
+      "description": "Analyze the extracted score to assess the performance of the experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:53:15.905Z",
+      "updated_at": "2026-02-23T11:53:15.905Z"
+    },
+    "llm-task-5035e8930bb0e0b04ad1c7b5f6e2f94960c59f76": {
+      "id": "llm-task-5035e8930bb0e0b04ad1c7b5f6e2f94960c59f76",
+      "title": "Monitor task performance for future runs",
+      "description": "Set up a monitoring script to observe the task's performance over multiple iterations.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:53:38.897Z",
+      "updated_at": "2026-02-23T11:53:38.897Z"
+    },
+    "llm-task-dd3cb77dfcfb6e6fbd5325710fff73abf418023f": {
+      "id": "llm-task-dd3cb77dfcfb6e6fbd5325710fff73abf418023f",
+      "title": "Evaluate next experiment's performance",
+      "description": "Assess the next experiment to ensure improvement over this one.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:53:49.575Z",
+      "updated_at": "2026-02-23T11:53:49.575Z"
+    },
+    "llm-task-160f9cf0593b3ad58786a9085ba5508d24d6f785": {
+      "id": "llm-task-160f9cf0593b3ad58786a9085ba5508d24d6f785",
+      "title": "Analyze impact and fitness of run_f468cb21-b20d-4094-b319-01a35f0b5a97",
+      "description": "Evaluate the research impact and fitness based on current metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:53:52.119Z",
+      "updated_at": "2026-02-23T11:53:52.119Z"
+    },
+    "llm-task-c04740511397d306ddc167f1c9864fc7badfca32": {
+      "id": "llm-task-c04740511397d306ddc167f1c9864fc7badfca32",
+      "title": "Review experiment results",
+      "description": "Analyze the obtained score and compare with previous runs for insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:54:02.201Z",
+      "updated_at": "2026-02-23T11:54:02.201Z"
+    },
+    "llm-task-636f9e9f54125c405b431a2a456ffcd80d1c7120": {
+      "id": "llm-task-636f9e9f54125c405b431a2a456ffcd80d1c7120",
+      "title": "review_next_experiment",
+      "description": "Create a task to review the next experiment based on the outcome of exp_b3d3b2ed-d2c9-47bb-a5fc-e67cb3d8f05c.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:54:13.784Z",
+      "updated_at": "2026-02-23T11:54:13.784Z"
+    },
+    "llm-task-db328d7fe9e570e69080fbcfe988169f4a000812": {
+      "id": "llm-task-db328d7fe9e570e69080fbcfe988169f4a000812",
+      "title": "Review experiment results",
+      "description": "Evaluate the outcome of exp_b3d3b2ed-d2c9-47bb-a5fc-e67cb3d8f05c run_id:run_615c3e7d-7535-4d5f-a085-554e2ad5feac",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:54:26.686Z",
+      "updated_at": "2026-02-23T11:54:26.686Z"
+    },
+    "llm-task-59e1b138a4822d278f838367eb1372fb2713786f": {
+      "id": "llm-task-59e1b138a4822d278f838367eb1372fb2713786f",
+      "title": "Review and Update Campaigns",
+      "description": "Check all running campaigns for updates and ensure null values are handled appropriately.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:54:36.971Z",
+      "updated_at": "2026-02-23T11:54:36.971Z"
+    },
+    "llm-task-75431db9623442ffe850061ef93b2b207e668675": {
+      "id": "llm-task-75431db9623442ffe850061ef93b2b207e668675",
+      "title": "Evaluate new patch impact on arena performance",
+      "description": "Assess changes for potential improvements or risks.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:54:45.575Z",
+      "updated_at": "2026-02-23T11:54:45.575Z"
+    },
+    "llm-task-1eb26135121830a4415fa569422af072fa195434": {
+      "id": "llm-task-1eb26135121830a4415fa569422af072fa195434",
+      "title": "Analyze metrics and adjust research parameters",
+      "description": "Review the extracted metric to refine future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:03.615Z",
+      "updated_at": "2026-02-23T11:55:03.615Z"
+    },
+    "llm-task-75c664bf22e4ef72c96afd024fb460da5b9b2711": {
+      "id": "llm-task-75c664bf22e4ef72c96afd024fb460da5b9b2711",
+      "title": "Next Experiment Selection",
+      "description": "Select the next experiment for execution based on current metrics and impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:05.993Z",
+      "updated_at": "2026-02-23T11:55:05.993Z"
+    },
+    "llm-task-ae66dc46c0870cb5a14489875d049785f798bf5c": {
+      "id": "llm-task-ae66dc46c0870cb5a14489875d049785f798bf5c",
+      "title": "Monitor Experiment Progress",
+      "description": "Keep track of experiment's progress and performance metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:23.205Z",
+      "updated_at": "2026-02-23T11:55:23.205Z"
+    },
+    "llm-task-8005804eda79df4dc6dc3576c689816523b8447c": {
+      "id": "llm-task-8005804eda79df4dc6dc3576c689816523b8447c",
+      "title": "Continue Experiment Monitoring",
+      "description": "Monitor experiment progress and gather more data for better analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:25.420Z",
+      "updated_at": "2026-02-23T11:55:25.420Z"
+    },
+    "llm-task-580150ef51da8eab4d33e91b16e4896a806f4d5b": {
+      "id": "llm-task-580150ef51da8eab4d33e91b16e4896a806f4d5b",
+      "title": "Monitor Experiment Progress",
+      "description": "Keep tracking the completion of remaining runs for this experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:35.121Z",
+      "updated_at": "2026-02-23T11:55:35.121Z"
+    },
+    "llm-task-13715ebaa83be8b7bd95215d6f4718d43e4e1447": {
+      "id": "llm-task-13715ebaa83be8b7bd95215d6f4718d43e4e1447",
+      "title": "Update research agent version",
+      "description": "Update the experiment's research agent to a more recent version (e.g., 7) to improve fitness and overall performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:42.846Z",
+      "updated_at": "2026-02-23T11:55:42.846Z"
+    },
+    "llm-task-62668476ee36c813500b8da54f62a905ee6aa2d3": {
+      "id": "llm-task-62668476ee36c813500b8da54f62a905ee6aa2d3",
+      "title": "Review experiment results",
+      "description": "Examine the experiment's outcome and metrics for insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:45.637Z",
+      "updated_at": "2026-02-23T11:55:45.637Z"
+    },
+    "llm-task-42101025f1a929469abcc6ade7081546fc2ee800": {
+      "id": "llm-task-42101025f1a929469abcc6ade7081546fc2ee800",
+      "title": "Review_experiment_performance",
+      "description": "Review the performance metrics of the experiment to ensure they meet expected standards.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:45.777Z",
+      "updated_at": "2026-02-23T11:55:45.777Z"
+    },
+    "llm-task-21d5e930e7282e8e22d9cc2889763b768a35d08a": {
+      "id": "llm-task-21d5e930e7282e8e22d9cc2889763b768a35d08a",
+      "title": "Initial Data Collection",
+      "description": "Start collecting initial data points for better experiment insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:54.546Z",
+      "updated_at": "2026-02-23T11:55:54.546Z"
+    },
+    "llm-task-7711e071f91a608a1810235192b1fd622af994df": {
+      "id": "llm-task-7711e071f91a608a1810235192b1fd622af994df",
+      "title": "Review experiment performance",
+      "description": "Analyze the metrics and compare with previous runs to determine if improvements can be made for future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:56.747Z",
+      "updated_at": "2026-02-23T11:55:56.747Z"
+    },
+    "llm-task-3b218b8dd65afec18b6af69aa9ae3970c4e9ba19": {
+      "id": "llm-task-3b218b8dd65afec18b6af69aa9ae3970c4e9ba19",
+      "title": "Monitor resource usage",
+      "description": "Keep track of CPU, memory and storage utilization to ensure resources are not exceeded.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:55:56.764Z",
+      "updated_at": "2026-02-23T11:55:56.764Z"
+    },
+    "llm-task-816a3a0b402f7fef11935af275830e7c2ffaefb4": {
+      "id": "llm-task-816a3a0b402f7fef11935af275830e7c2ffaefb4",
+      "title": "calculate_fitness",
+      "description": "Calculate research fitness based on new data.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:06.600Z",
+      "updated_at": "2026-02-23T11:56:06.600Z"
+    },
+    "llm-task-4635a54b0609c5f6c6df8ef66afa617c0138be2d": {
+      "id": "llm-task-4635a54b0609c5f6c6df8ef66afa617c0138be2d",
+      "title": "Next experiment scheduling",
+      "description": "Schedule a new task based on current results for further analysis or training.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:08.329Z",
+      "updated_at": "2026-02-23T11:56:08.329Z"
+    },
+    "llm-task-289e4d98482b8e0e13f65398d3618f84e1239c73": {
+      "id": "llm-task-289e4d98482b8e0e13f65398d3618f84e1239c73",
+      "title": "Review experiment outcomes",
+      "description": "Examine results of exp_e3886581-0475-4d7a-b5cb-939b9b5f5205.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:19.752Z",
+      "updated_at": "2026-02-23T11:56:19.752Z"
+    },
+    "llm-task-ae7dfbeedeadaa310a56ce5e3972b69889d6ef26": {
+      "id": "llm-task-ae7dfbeedeadaa310a56ce5e3972b69889d6ef26",
+      "title": "Analyze experiment performance",
+      "description": "Evaluate the results of exp_e3886581-0475-4d7a-b5cb-939b9b5f5205 and determine if adjustments are needed.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:39.326Z",
+      "updated_at": "2026-02-23T11:56:39.326Z"
+    },
+    "llm-task-cef9b55e77e0b3866b4ed264f51fc58edb5a78a7": {
+      "id": "llm-task-cef9b55e77e0b3866b4ed264f51fc58edb5a78a7",
+      "title": "Monitor experiment progress closely for convergence signs",
+      "description": "Keep an eye on best score trend and variance stability as they are both at 0, indicating early stage behavior.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:41.540Z",
+      "updated_at": "2026-02-23T11:56:41.540Z"
+    },
+    "llm-task-959f2ee9d335e7869eb3abafb0c7fcd2129209bc": {
+      "id": "llm-task-959f2ee9d335e7869eb3abafb0c7fcd2129209bc",
+      "title": "Transfer Context Initialization",
+      "description": "Initiate transfer context initialization as it is pending.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:52.081Z",
+      "updated_at": "2026-02-23T11:56:52.081Z"
+    },
+    "llm-task-5b6b0b7f87afef29e772537fc5a3c28cc43f456f": {
+      "id": "llm-task-5b6b0b7f87afef29e772537fc5a3c28cc43f456f",
+      "title": "Evaluate search strategy for small domain complexity",
+      "description": "Adaptive search strategy performed well in this scenario. Investigate how to apply similar strategies in other domains.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:54.160Z",
+      "updated_at": "2026-02-23T11:56:54.160Z"
+    },
+    "llm-task-b404f2a96949c1df875d8654c0a55703af26f83b": {
+      "id": "llm-task-b404f2a96949c1df875d8654c0a55703af26f83b",
+      "title": "Prepare transfer context documentation",
+      "description": "Document how to initialize the transfer context for similar experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:54.172Z",
+      "updated_at": "2026-02-23T11:56:54.172Z"
+    },
+    "llm-task-2a94703031b94f4005f786818c9d351bb8bfae3f": {
+      "id": "llm-task-2a94703031b94f4005f786818c9d351bb8bfae3f",
+      "title": "Initialize_transfer_context",
+      "description": "Ensure transfer context is correctly initialized for future experiments to improve performance based on prior knowledge.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:56:54.253Z",
+      "updated_at": "2026-02-23T11:56:54.253Z"
+    },
+    "llm-task-18f2f7b44f1227c695930d633cace1da33578554": {
+      "id": "llm-task-18f2f7b44f1227c695930d633cace1da33578554",
+      "title": "Monitor experiment performance over time.",
+      "description": "To ensure the system's ability to predict future scores accurately.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:05.420Z",
+      "updated_at": "2026-02-23T11:57:05.420Z"
+    },
+    "llm-task-92f1b8c2d16d5f8d1e3be34f0ed124736a8abbd9": {
+      "id": "llm-task-92f1b8c2d16d5f8d1e3be34f0ed124736a8abbd9",
+      "title": "Review experiment performance",
+      "description": "Analyze the experiment's performance and potential improvements based on the extracted metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:07.595Z",
+      "updated_at": "2026-02-23T11:57:07.595Z"
+    },
+    "llm-task-d6fa7e6b60dab9214a541ca820209508687dc165": {
+      "id": "llm-task-d6fa7e6b60dab9214a541ca820209508687dc165",
+      "title": "Document experiment findings",
+      "description": "Create a summary of the experiment, including its performance and any insights gained from the metrics extraction.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:07.605Z",
+      "updated_at": "2026-02-23T11:57:07.605Z"
+    },
+    "llm-task-f1ef271543a735ee3f7aa75fc8ffbe29780987aa": {
+      "id": "llm-task-f1ef271543a735ee3f7aa75fc8ffbe29780987aa",
+      "title": "Analyze domain_complexity_factor",
+      "description": "Evaluate the impact of domain_complexity_factor on experiment performance and consider adjusting if necessary.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:07.713Z",
+      "updated_at": "2026-02-23T11:57:07.713Z"
+    },
+    "llm-task-0faa51cbc96ebb5fb3c57ef45fd03949e6126291": {
+      "id": "llm-task-0faa51cbc96ebb5fb3c57ef45fd03949e6126291",
+      "title": "Review experiment exp_b348f2bd-77a0-4233-8fd4-59be5dd5532e for convergence issues.",
+      "description": "Analyze and address potential too fast convergence.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:17.859Z",
+      "updated_at": "2026-02-23T11:57:17.859Z"
+    },
+    "llm-task-8a14acc1e2c403fb0904cffe7e3a3799d73d7f40": {
+      "id": "llm-task-8a14acc1e2c403fb0904cffe7e3a3799d73d7f40",
+      "title": "Review convergence speed for exp_b348f2bd-77a0-4233-8fd4-59be5dd5532e",
+      "description": "Examine if the too fast convergence anomaly is a false positive or requires action.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:23.491Z",
+      "updated_at": "2026-02-23T11:57:23.491Z"
+    },
+    "llm-task-5e2963182186cc85eb05f8d00d92f57113b7b1a0": {
+      "id": "llm-task-5e2963182186cc85eb05f8d00d92f57113b7b1a0",
+      "title": "Review experiment results",
+      "description": "Examine the metrics and outcomes of the experiment for any anomalies or insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:34.306Z",
+      "updated_at": "2026-02-23T11:57:34.306Z"
+    },
+    "llm-task-02934138f06b5d0d8fb2f24a6cfaaed5574e79ba": {
+      "id": "llm-task-02934138f06b5d0d8fb2f24a6cfaaed5574e79ba",
+      "title": "score_monitoring_setup",
+      "description": "Setup task to monitor the performance of experiments with similar parameters.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:36.758Z",
+      "updated_at": "2026-02-23T11:57:36.758Z"
+    },
+    "llm-task-d02e0d24fd1614a3e3d9ced1b5dd4ac6a471f874": {
+      "id": "llm-task-d02e0d24fd1614a3e3d9ced1b5dd4ac6a471f874",
+      "title": "Analyze experiment impact",
+      "description": "Evaluate and document the impact of this experiment based on its score and metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:51.859Z",
+      "updated_at": "2026-02-23T11:57:51.859Z"
+    },
+    "llm-task-f00533a989add658a8bb4dd95d3ce09e04b14dd2": {
+      "id": "llm-task-f00533a989add658a8bb4dd95d3ce09e04b14dd2",
+      "title": "Update model documentation with new score",
+      "description": "Add the latest experiment's score to the model documentation for reference.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:57:59.883Z",
+      "updated_at": "2026-02-23T11:57:59.883Z"
+    },
+    "llm-task-371660901e1c4b58e18c3a90576e3bd86ab96002": {
+      "id": "llm-task-371660901e1c4b58e18c3a90576e3bd86ab96002",
+      "title": "Analyze Experiment Performance",
+      "description": "Review the performance metrics and suggest improvements for future runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:02.756Z",
+      "updated_at": "2026-02-23T11:58:02.756Z"
+    },
+    "llm-task-90d6369ded766b366c3d3076dfa9c4f4fb314b40": {
+      "id": "llm-task-90d6369ded766b366c3d3076dfa9c4f4fb314b40",
+      "title": "Document Best Practices",
+      "description": "Create a document outlining best practices based on the successful experiment run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:02.769Z",
+      "updated_at": "2026-02-23T11:58:02.769Z"
+    },
+    "llm-task-743caf102bdde04658e819614027be303b924c2a": {
+      "id": "llm-task-743caf102bdde04658e819614027be303b924c2a",
+      "title": "Monitor experiment performance",
+      "description": "Track future runs for comparison with current best run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:02.881Z",
+      "updated_at": "2026-02-23T11:58:02.881Z"
+    },
+    "llm-task-aa4e96f99f88b643d67c7979a06a516ec3110bba": {
+      "id": "llm-task-aa4e96f99f88b643d67c7979a06a516ec3110bba",
+      "title": "Evaluate experiment impact",
+      "description": "Assess how the experiment's findings can be applied in other projects.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:02.890Z",
+      "updated_at": "2026-02-23T11:58:02.890Z"
+    },
+    "llm-task-907a5a02cfa48a74bc5600fbf9dd37f5bb724483": {
+      "id": "llm-task-907a5a02cfa48a74bc5600fbf9dd37f5bb724483",
+      "title": "data_collection_plan",
+      "description": "Develop a plan to collect necessary experiment data.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:13.932Z",
+      "updated_at": "2026-02-23T11:58:13.932Z"
+    },
+    "llm-task-14d2e16936dd8da757ceec6f6ed1005eeceda753": {
+      "id": "llm-task-14d2e16936dd8da757ceec6f6ed1005eeceda753",
+      "title": "Review task performance metrics",
+      "description": "Analyze the extracted metrics and assess the task's effectiveness.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:28.321Z",
+      "updated_at": "2026-02-23T11:58:28.321Z"
+    },
+    "llm-task-1698f867efee6098a2ff060d2113a2e98c81928f": {
+      "id": "llm-task-1698f867efee6098a2ff060d2113a2e98c81928f",
+      "title": "Review task for next experiment",
+      "description": "Create a new task to analyze the results and prepare for the next experiment iteration.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:28.349Z",
+      "updated_at": "2026-02-23T11:58:28.349Z"
+    },
+    "llm-task-5c02fe05453ef0c5006217281a822094967a3bdf": {
+      "id": "llm-task-5c02fe05453ef0c5006217281a822094967a3bdf",
+      "title": "next_experiment_setup",
+      "description": "Plan next experiment setup based on current results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:40.109Z",
+      "updated_at": "2026-02-23T11:58:40.109Z"
+    },
+    "llm-task-661348b24caa61c33418a4a7fdbf136b92a5d824": {
+      "id": "llm-task-661348b24caa61c33418a4a7fdbf136b92a5d824",
+      "title": "Review experiment performance",
+      "description": "Evaluate the experiment's outcome and consider adjustments for future runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:45.681Z",
+      "updated_at": "2026-02-23T11:58:45.681Z"
+    },
+    "llm-task-ff0dbb75effb8b7a4466ec84ef2639f0ff3cc783": {
+      "id": "llm-task-ff0dbb75effb8b7a4466ec84ef2639f0ff3cc783",
+      "title": "Document experiment findings",
+      "description": "Record the results and insights gained from this experiment for future reference.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:58:45.694Z",
+      "updated_at": "2026-02-23T11:58:45.694Z"
+    },
+    "llm-task-adf779414fa6c0ba9e69da7ac0cdfbfa526d9604": {
+      "id": "llm-task-adf779414fa6c0ba9e69da7ac0cdfbfa526d9604",
+      "title": "Review experiment outcomes",
+      "description": "Check if the experiment's results need further analysis or improvement.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:59:08.489Z",
+      "updated_at": "2026-02-23T11:59:08.489Z"
+    },
+    "llm-task-05a9ce62ef8e20fe403652345cf8df4f3c11bc05": {
+      "id": "llm-task-05a9ce62ef8e20fe403652345cf8df4f3c11bc05",
+      "title": "next_experiment_setup",
+      "description": "Set up next experiment to continue improving results based on current insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:59:14.351Z",
+      "updated_at": "2026-02-23T11:59:14.351Z"
+    },
+    "llm-task-159b2520f1b40b6ba19c9e7f6f725051d66a9985": {
+      "id": "llm-task-159b2520f1b40b6ba19c9e7f6f725051d66a9985",
+      "title": "Analyze experiment results",
+      "description": "Review the experiment's outcome, metrics, and apply research impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:59:27.861Z",
+      "updated_at": "2026-02-23T11:59:27.861Z"
+    },
+    "llm-task-aa9e25d1af036b40c9a939eb7ab04c1cb323a8ac": {
+      "id": "llm-task-aa9e25d1af036b40c9a939eb7ab04c1cb323a8ac",
+      "title": "Next experiment planning",
+      "description": "Plan the next experiment based on successful completion and current parameters.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:59:42.896Z",
+      "updated_at": "2026-02-23T11:59:42.896Z"
+    },
+    "llm-task-6f7164ceb3e02a15c01e8ce85374604e92ac0254": {
+      "id": "llm-task-6f7164ceb3e02a15c01e8ce85374604e92ac0254",
+      "title": "Review experiment outcomes for exp_e3886581-0475-4d7a-b5cb-939b9b5f5205",
+      "description": "Examine the extracted metrics and research impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:59:45.290Z",
+      "updated_at": "2026-02-23T11:59:45.290Z"
+    },
+    "llm-task-10afdcec9f4c210c16ffe977aaa0f9b7a86131e3": {
+      "id": "llm-task-10afdcec9f4c210c16ffe977aaa0f9b7a86131e3",
+      "title": "score_improvement_plan",
+      "description": "Develop a plan to improve the score by at least 0.05 in subsequent experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T11:59:58.061Z",
+      "updated_at": "2026-02-23T11:59:58.061Z"
+    },
+    "llm-task-05c2b73dba5eb15b3bd2b6a653ed089f60414b65": {
+      "id": "llm-task-05c2b73dba5eb15b3bd2b6a653ed089f60414b65",
+      "title": "Next experiment configuration",
+      "description": "Generate next set of parameters to improve score",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:07.736Z",
+      "updated_at": "2026-02-23T12:00:07.736Z"
+    },
+    "llm-task-6a77615f6eaeff015564ce17fa3ff25fed3353fe": {
+      "id": "llm-task-6a77615f6eaeff015564ce17fa3ff25fed3353fe",
+      "title": "Evaluate next set of experiments",
+      "description": "Initiate evaluation for new sets of experiments based on current results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:26.928Z",
+      "updated_at": "2026-02-23T12:00:26.928Z"
+    },
+    "llm-task-c556943f2e7072d10a45481f9ab2bc24de8be42a": {
+      "id": "llm-task-c556943f2e7072d10a45481f9ab2bc24de8be42a",
+      "title": "Review experiment results",
+      "description": "Analyze the metrics and assess the research impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:32.826Z",
+      "updated_at": "2026-02-23T12:00:32.826Z"
+    },
+    "llm-task-72a8638eb886eb3ee3501d444e5015233addf11f": {
+      "id": "llm-task-72a8638eb886eb3ee3501d444e5015233addf11f",
+      "title": "Evaluate next experiment scenario",
+      "description": "Create a new task to evaluate the scenario following this successful run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:32.963Z",
+      "updated_at": "2026-02-23T12:00:32.963Z"
+    },
+    "llm-task-9e83afa981e997c7d8af5462b08e682d0461e05f": {
+      "id": "llm-task-9e83afa981e997c7d8af5462b08e682d0461e05f",
+      "title": "Monitor next experiment",
+      "description": "Create task to monitor the next experiment based on the current metrics and impact applied.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:43.667Z",
+      "updated_at": "2026-02-23T12:00:43.667Z"
+    },
+    "llm-task-0f2130c5edcbefec7f34ffcd616b2c8373acb904": {
+      "id": "llm-task-0f2130c5edcbefec7f34ffcd616b2c8373acb904",
+      "title": "next_experiment_setup",
+      "description": "Set up the next experiment based on the current findings.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:51.935Z",
+      "updated_at": "2026-02-23T12:00:51.935Z"
+    },
+    "llm-task-03f4b325bce1b2a4a94d3e0897d4d135bdee92bb": {
+      "id": "llm-task-03f4b325bce1b2a4a94d3e0897d4d135bdee92bb",
+      "title": "Review experiment performance metrics",
+      "description": "Evaluate if the observed score is within expected range or if adjustments are needed",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:00:54.166Z",
+      "updated_at": "2026-02-23T12:00:54.166Z"
+    },
+    "llm-task-72f0f40511918bd8ed2903b15137d7d5e753c9fb": {
+      "id": "llm-task-72f0f40511918bd8ed2903b15137d7d5e753c9fb",
+      "title": "Monitor domain performance over time",
+      "description": "Check if the simple approach continues to be effective as we move forward.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:13.438Z",
+      "updated_at": "2026-02-23T12:01:13.438Z"
+    },
+    "llm-task-254a3491d9f775ccb833f6945695d0b46bffa3ff": {
+      "id": "llm-task-254a3491d9f775ccb833f6945695d0b46bffa3ff",
+      "title": "Update evidence gate for new domain signature",
+      "description": "Prepare the evidence gate to handle the updated domain profile.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:13.451Z",
+      "updated_at": "2026-02-23T12:01:13.451Z"
+    },
+    "llm-task-b3569b76f2e225140319829c4753a145426161da": {
+      "id": "llm-task-b3569b76f2e225140319829c4753a145426161da",
+      "title": "Complete remaining runs in the experiment",
+      "description": "Ensure all planned runs are executed to gather more data and improve model accuracy.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:15.377Z",
+      "updated_at": "2026-02-23T12:01:15.377Z"
+    },
+    "llm-task-4ad644543c5e95ec79638a719356d04cd3115c40": {
+      "id": "llm-task-4ad644543c5e95ec79638a719356d04cd3115c40",
+      "title": "Monitor experiment progress",
+      "description": "Regularly check and record the status of the experiment to ensure it progresses as expected.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:25.292Z",
+      "updated_at": "2026-02-23T12:01:25.292Z"
+    },
+    "llm-task-39404402485f7a0dc95e34f547dbda7b8ee47fc3": {
+      "id": "llm-task-39404402485f7a0dc95e34f547dbda7b8ee47fc3",
+      "title": "Monitor Experiment Progress",
+      "description": "Regularly check the progress and performance trends of the experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:27.627Z",
+      "updated_at": "2026-02-23T12:01:27.627Z"
+    },
+    "llm-task-10c69c5b02fa600cb6d8818ccd63aa5a96289bba": {
+      "id": "llm-task-10c69c5b02fa600cb6d8818ccd63aa5a96289bba",
+      "title": "Analyze extracted metrics",
+      "description": "Evaluate the extracted metric score for analysis purposes.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:37.693Z",
+      "updated_at": "2026-02-23T12:01:37.693Z"
+    },
+    "llm-task-bced2f899ec63aa442110a1fe75a849f4e9602ac": {
+      "id": "llm-task-bced2f899ec63aa442110a1fe75a849f4e9602ac",
+      "title": "metric_extraction_note",
+      "description": "Note on metric extraction and impact application for experiment exp_089b0027-30c0-440d-adf5-0ac7e944d3a2.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:42.245Z",
+      "updated_at": "2026-02-23T12:01:42.245Z"
+    },
+    "llm-task-9cb483dff8f3c14e2c661f03ea2fbac6fa38b868": {
+      "id": "llm-task-9cb483dff8f3c14e2c661f03ea2fbac6fa38b868",
+      "title": "Evaluate the impact of new parameters on score distribution.",
+      "description": "Analyze how changes in eb and nf affect the scores.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:55.427Z",
+      "updated_at": "2026-02-23T12:01:55.427Z"
+    },
+    "llm-task-f6e838d8f99a6da45808643e009d7c9675d1ea85": {
+      "id": "llm-task-f6e838d8f99a6da45808643e009d7c9675d1ea85",
+      "title": "monitor_new_experiments",
+      "description": "Monitor new experiments to ensure they are progressing as expected.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:58.169Z",
+      "updated_at": "2026-02-23T12:01:58.169Z"
+    },
+    "llm-task-6640b63f8c9809ca615d100f9f2b6821d940b9d4": {
+      "id": "llm-task-6640b63f8c9809ca615d100f9f2b6821d940b9d4",
+      "title": "Review experiments with similar parameters",
+      "description": "Perform a review for experiments that have similar parameter settings to this one, focusing on anomalies in scores and other metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:01:58.282Z",
+      "updated_at": "2026-02-23T12:01:58.282Z"
+    },
+    "llm-task-a5ee3c42a3009f9f2c780facd283cae9881e0097": {
+      "id": "llm-task-a5ee3c42a3009f9f2c780facd283cae9881e0097",
+      "title": "Evaluate next experiment",
+      "description": "Proceed with evaluating another set of experiments based on the current results and parameters.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:02:06.150Z",
+      "updated_at": "2026-02-23T12:02:06.150Z"
+    },
+    "llm-task-be4540a41f6c1962688a4ffdf3b966b67282cb65": {
+      "id": "llm-task-be4540a41f6c1962688a4ffdf3b966b67282cb65",
+      "title": "monitor_experiment_progress",
+      "description": "Monitor the experiment progress and make initial decision based on current performance metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:02:15.713Z",
+      "updated_at": "2026-02-23T12:02:15.713Z"
+    },
+    "llm-task-85753e5ac0e225ade6d015ecd0d79bd2cbe2166d": {
+      "id": "llm-task-85753e5ac0e225ade6d015ecd0d79bd2cbe2166d",
+      "title": "Review experiment performance",
+      "description": "Examine the results to determine if they meet expectations or require further investigation.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:02:28.044Z",
+      "updated_at": "2026-02-23T12:02:28.044Z"
+    },
+    "llm-task-c99f54adb5493e57c601f42c7c70963a5fd9e001": {
+      "id": "llm-task-c99f54adb5493e57c601f42c7c70963a5fd9e001",
+      "title": "Evaluate impact on research",
+      "description": "Check if the experiment's metric contributed to the overall research impact and update accordingly.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:02:38.003Z",
+      "updated_at": "2026-02-23T12:02:38.003Z"
+    },
+    "llm-task-4ae987c2ac6dd3878952281dbf4cc60f4d0e77ef": {
+      "id": "llm-task-4ae987c2ac6dd3878952281dbf4cc60f4d0e77ef",
+      "title": "Evaluate performance metrics",
+      "description": "Review scores from multiple runs for pattern identification.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:02:51.647Z",
+      "updated_at": "2026-02-23T12:02:51.647Z"
+    },
+    "llm-task-91f074cb8ad9811763019c9c09f90f47e3e94088": {
+      "id": "llm-task-91f074cb8ad9811763019c9c09f90f47e3e94088",
+      "title": "Evaluate next experiment design",
+      "description": "Prepare to evaluate and possibly adjust the experiment design based on current outcomes.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:02:58.654Z",
+      "updated_at": "2026-02-23T12:02:58.654Z"
+    },
+    "llm-task-cddfbb610272e7de444764b4953b167732e0a451": {
+      "id": "llm-task-cddfbb610272e7de444764b4953b167732e0a451",
+      "title": "Analyze extracted score data for further insights",
+      "description": "Review the score of 0.9521 and consider its implications on the experiment's performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:03:20.284Z",
+      "updated_at": "2026-02-23T12:03:20.284Z"
+    },
+    "llm-task-f9aefe40f5f4b628ac803a2cdd6b42acad40c2ea": {
+      "id": "llm-task-f9aefe40f5f4b628ac803a2cdd6b42acad40c2ea",
+      "title": "Score validation",
+      "description": "Validate if the achieved score is within expected range for future runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:03:30.203Z",
+      "updated_at": "2026-02-23T12:03:30.203Z"
+    },
+    "llm-task-3f73cd49d8573f81e94555a21933cf3ae02c3599": {
+      "id": "llm-task-3f73cd49d8573f81e94555a21933cf3ae02c3599",
+      "title": "Analyze the experiment outcome",
+      "description": "Review the experiment performance and extract insights from the score extracted metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:03:40.171Z",
+      "updated_at": "2026-02-23T12:03:40.171Z"
+    },
+    "llm-task-23bab3f9c7c3589a0fa2a268c5ad6a9bd83fb4eb": {
+      "id": "llm-task-23bab3f9c7c3589a0fa2a268c5ad6a9bd83fb4eb",
+      "title": "monitor_impact",
+      "description": "Monitor the impact of applied research and its fitness over time.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:03:50.616Z",
+      "updated_at": "2026-02-23T12:03:50.616Z"
+    },
+    "llm-task-5b19dd68c2aacc22643a4031ae0d704729ac23f3": {
+      "id": "llm-task-5b19dd68c2aacc22643a4031ae0d704729ac23f3",
+      "title": "Monitor future runs for potential improvements",
+      "description": "Review upcoming runs of similar experiments to identify areas for improvement in score calculation or model adjustments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:04:13.510Z",
+      "updated_at": "2026-02-23T12:04:13.510Z"
+    },
+    "llm-task-aeaa304a9d9a12ad932cee40de2cd5cdfcd1efcc": {
+      "id": "llm-task-aeaa304a9d9a12ad932cee40de2cd5cdfcd1efcc",
+      "title": "Next experiment configuration",
+      "description": "Design and execute the next iteration of the experiment based on current results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:04:25.042Z",
+      "updated_at": "2026-02-23T12:04:25.042Z"
+    },
+    "llm-task-725441fb49c15ed7b2d2f19b65dab80dc760d35e": {
+      "id": "llm-task-725441fb49c15ed7b2d2f19b65dab80dc760d35e",
+      "title": "Analyze Ingested Data",
+      "description": "Review data from exp_75b48f04-2ac7-4f53-8d46-208311a30c4f to identify potential issues.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:04:40.352Z",
+      "updated_at": "2026-02-23T12:04:40.352Z"
+    },
+    "llm-task-0f170a3a91f26d0872289d463f1b63a35f36adfd": {
+      "id": "llm-task-0f170a3a91f26d0872289d463f1b63a35f36adfd",
+      "title": "Evaluate exploration strategies",
+      "description": "Review and potentially switch to a different search strategy due to low efficiency observed.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:04:48.929Z",
+      "updated_at": "2026-02-23T12:04:48.929Z"
+    },
+    "llm-task-b998c79f26d32dce6848b0bad5de888454043fed": {
+      "id": "llm-task-b998c79f26d32dce6848b0bad5de888454043fed",
+      "title": "Review experiment for potential optimizations",
+      "description": "Examine the current parameters and strategy for future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:04:58.524Z",
+      "updated_at": "2026-02-23T12:04:58.524Z"
+    },
+    "llm-task-eaa6ed7e8f8694a709ea4f9d950b6a245debc713": {
+      "id": "llm-task-eaa6ed7e8f8694a709ea4f9d950b6a245debc713",
+      "title": "Evaluate research impact",
+      "description": "Assess the applied research impact and prepare for further analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:05:22.850Z",
+      "updated_at": "2026-02-23T12:05:22.850Z"
+    },
+    "llm-task-2da9518f0d41c800d42626cfb0420898731c654b": {
+      "id": "llm-task-2da9518f0d41c800d42626cfb0420898731c654b",
+      "title": "Start collecting data from the experiment.",
+      "description": "Collecting initial data points to observe system behavior in low-resource settings.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:05:30.778Z",
+      "updated_at": "2026-02-23T12:05:30.778Z"
+    },
+    "llm-task-03e0da2880d6458741187d8eae9a2e9831e35919": {
+      "id": "llm-task-03e0da2880d6458741187d8eae9a2e9831e35919",
+      "title": "Next experiment setup",
+      "description": "Setup next iteration of experiments based on the latest data and research fitness scores.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:05:50.763Z",
+      "updated_at": "2026-02-23T12:05:50.763Z"
+    },
+    "llm-task-585f09b30138e3c35a359ffdf2a6217f32836152": {
+      "id": "llm-task-585f09b30138e3c35a359ffdf2a6217f32836152",
+      "title": "Review experiment results",
+      "description": "Evaluate the metrics and consider applying governance adjustments if necessary.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:06:09.602Z",
+      "updated_at": "2026-02-23T12:06:09.602Z"
+    },
+    "llm-task-6134be1f2f573813e4e81ece9dab46146f89ac1d": {
+      "id": "llm-task-6134be1f2f573813e4e81ece9dab46146f89ac1d",
+      "title": "Review high-score runs",
+      "description": "Analyze the best run ID (run_201eba04-b3b1-461b-b3c1-7be28cae0cc3) for insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:06:21.293Z",
+      "updated_at": "2026-02-23T12:06:21.293Z"
+    },
+    "llm-task-31635776f899a64242356a390514868b1b76047f": {
+      "id": "llm-task-31635776f899a64242356a390514868b1b76047f",
+      "title": "Review Experiment Performance",
+      "description": "Evaluate the experiment's performance and discuss potential improvements or next steps.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:06:45.140Z",
+      "updated_at": "2026-02-23T12:06:45.140Z"
+    },
+    "llm-task-790f76bbdc7e44bff2e351e24cbd1f4d73af0d8a": {
+      "id": "llm-task-790f76bbdc7e44bff2e351e24cbd1f4d73af0d8a",
+      "title": "Next experiment planning",
+      "description": "Plan the next experiment based on the results of exp_75b48f04-2ac7-4f53-8d46-208311a30c4f.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:06:53.682Z",
+      "updated_at": "2026-02-23T12:06:53.682Z"
+    },
+    "llm-task-f692537c5cb8308964fc4670d51ff4dd2d9295ce": {
+      "id": "llm-task-f692537c5cb8308964fc4670d51ff4dd2d9295ce",
+      "title": "Evaluate Results",
+      "description": "Assess the extracted metrics (score) in the context of experiment goals.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:07:12.393Z",
+      "updated_at": "2026-02-23T12:07:12.393Z"
+    },
+    "llm-task-b5ff6b763d69ca3adbcbbd25ce9a2048204d17bb": {
+      "id": "llm-task-b5ff6b763d69ca3adbcbbd25ce9a2048204d17bb",
+      "title": "Evaluate initial performance metrics for exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf",
+      "description": "Check if the experiment's convergence can be improved with new data or strategies.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:07:38.414Z",
+      "updated_at": "2026-02-23T12:07:38.414Z"
+    },
+    "llm-task-666161513c353c042144684b651e69532aeb809c": {
+      "id": "llm-task-666161513c353c042144684b651e69532aeb809c",
+      "title": "Investigate domain profile for exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf",
+      "description": "Understand the current limitations of the small size category and low noise level.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:07:38.422Z",
+      "updated_at": "2026-02-23T12:07:38.422Z"
+    },
+    "llm-task-82babf869a51c16fb610352514a842a4f0a1c25f": {
+      "id": "llm-task-82babf869a51c16fb610352514a842a4f0a1c25f",
+      "title": "metric_analysis_task",
+      "description": "Analyze the score metric from run_3b642845-4fc3-4232-97fb-791344fff381 to determine its impact on experiment performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:07:52.028Z",
+      "updated_at": "2026-02-23T12:07:52.028Z"
+    },
+    "llm-task-b401c490cc70de00959826804afe795364638cfb": {
+      "id": "llm-task-b401c490cc70de00959826804afe795364638cfb",
+      "title": "Review convergence speed for exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf",
+      "description": "Examine the fast convergence issue in experiment exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:08:01.010Z",
+      "updated_at": "2026-02-23T12:08:01.010Z"
+    },
+    "llm-task-3e0ebd26d7ed1aa76b5944f093747a0a0fb4071e": {
+      "id": "llm-task-3e0ebd26d7ed1aa76b5944f093747a0a0fb4071e",
+      "title": "Analyze results and document findings",
+      "description": "Review metrics and discuss implications for future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:08:09.522Z",
+      "updated_at": "2026-02-23T12:08:09.522Z"
+    },
+    "llm-task-c3402904325ade12ade59ac6e4df70514876930a": {
+      "id": "llm-task-c3402904325ade12ade59ac6e4df70514876930a",
+      "title": "Evaluate next similar experiment",
+      "description": "Consider running an experiment with slightly modified parameters to see if the score can be improved further.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:08:18.624Z",
+      "updated_at": "2026-02-23T12:08:18.624Z"
+    },
+    "llm-task-19272bb8c600d76e9181c9943dab7c0ea6488953": {
+      "id": "llm-task-19272bb8c600d76e9181c9943dab7c0ea6488953",
+      "title": "Next experiment planning",
+      "description": "Plan the next experiment based on current outcomes and metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:08:34.713Z",
+      "updated_at": "2026-02-23T12:08:34.713Z"
+    },
+    "llm-task-d994419f41641fa01a9f5f528e120107c7c6c5c5": {
+      "id": "llm-task-d994419f41641fa01a9f5f528e120107c7c6c5c5",
+      "title": "Evaluate next experiment based on impact results",
+      "description": "Consider the impact of current experiments for future selection criteria.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:08:57.393Z",
+      "updated_at": "2026-02-23T12:08:57.393Z"
+    },
+    "llm-task-2d8a301fb35385b4a2b2dc39cadb6e0f28a26d23": {
+      "id": "llm-task-2d8a301fb35385b4a2b2dc39cadb6e0f28a26d23",
+      "title": "next_experiment_selection",
+      "description": "Select next experiment to run based on the current best results and impacts.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:09.268Z",
+      "updated_at": "2026-02-23T12:09:09.268Z"
+    },
+    "llm-task-d71af6beccdc09cfac705869224afa3af28c99af": {
+      "id": "llm-task-d71af6beccdc09cfac705869224afa3af28c99af",
+      "title": "Check stability of constant values in experiments",
+      "description": "Review the script for potential issues with constant values and their impact on outcomes.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:18.618Z",
+      "updated_at": "2026-02-23T12:09:18.618Z"
+    },
+    "llm-task-9b8346a7db564ba73970b89ccf4225a10727d691": {
+      "id": "llm-task-9b8346a7db564ba73970b89ccf4225a10727d691",
+      "title": "Review experiment results",
+      "description": "Evaluate the performance and consider any necessary adjustments for future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:29.909Z",
+      "updated_at": "2026-02-23T12:09:29.909Z"
+    },
+    "llm-task-c4af0a35a8873d576712f1078114334a385d8996": {
+      "id": "llm-task-c4af0a35a8873d576712f1078114334a385d8996",
+      "title": "Analyze metric extraction warnings",
+      "description": "Investigate and resolve any potential issues with metric extraction.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:29.917Z",
+      "updated_at": "2026-02-23T12:09:29.917Z"
+    },
+    "llm-task-74d79254258ced716edbb65fd516ab708ce69fec": {
+      "id": "llm-task-74d79254258ced716edbb65fd516ab708ce69fec",
+      "title": "exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf_decision_monitoring",
+      "description": "Monitor and track decisions for experiment_id exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:41.321Z",
+      "updated_at": "2026-02-23T12:09:41.321Z"
+    },
+    "llm-task-630d98d4faa4257da6695fd05da8f6df75e9b571": {
+      "id": "llm-task-630d98d4faa4257da6695fd05da8f6df75e9b571",
+      "title": "Next experiment planning",
+      "description": "Plan the next iteration of experiments based on current data and improvements.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:50.350Z",
+      "updated_at": "2026-02-23T12:09:50.350Z"
+    },
+    "llm-task-0bb0f2b48fc4b4ba8a4d042077fea132c97420ea": {
+      "id": "llm-task-0bb0f2b48fc4b4ba8a4d042077fea132c97420ea",
+      "title": "Review experiment performance",
+      "description": "Evaluate the results of exp_374ddc84-48bf-4bbd-8254-86e6b58f8abf for insights.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:09:59.792Z",
+      "updated_at": "2026-02-23T12:09:59.792Z"
+    },
+    "llm-task-e46d32e9464a841740c35608b98514754d6bffbe": {
+      "id": "llm-task-e46d32e9464a841740c35608b98514754d6bffbe",
+      "title": "Analyze domain risks",
+      "description": "Evaluate the risks associated with the 'small|low|low|p2' signature.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:10:17.280Z",
+      "updated_at": "2026-02-23T12:10:17.280Z"
+    },
+    "llm-task-0264cf24772f2d76cc70a15ebdc7c67f7d4fc787": {
+      "id": "llm-task-0264cf24772f2d76cc70a15ebdc7c67f7d4fc787",
+      "title": "Monitor_Variance_Stability",
+      "description": "Continuously monitor the variance stability and explore strategies to improve it as needed.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:10:28.829Z",
+      "updated_at": "2026-02-23T12:10:28.829Z"
+    },
+    "llm-task-0b40157df2a400eaf922f4808e440906696ff9b6": {
+      "id": "llm-task-0b40157df2a400eaf922f4808e440906696ff9b6",
+      "title": "Monitor Experiment Progress",
+      "description": "Check for any significant changes or anomalies in the next run of the experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:10:36.785Z",
+      "updated_at": "2026-02-23T12:10:36.785Z"
+    },
+    "llm-task-a510c0af4099c116b9129438c09ec8d746c54909": {
+      "id": "llm-task-a510c0af4099c116b9129438c09ec8d746c54909",
+      "title": "Review_experiment_for_improvement",
+      "description": "Evaluate if improvements can be made based on this high-scoring experiment run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:10:47.163Z",
+      "updated_at": "2026-02-23T12:10:47.163Z"
+    },
+    "llm-task-16c60ea1baa8ad6b94e80f1e44c7a857c082f1e9": {
+      "id": "llm-task-16c60ea1baa8ad6b94e80f1e44c7a857c082f1e9",
+      "title": "Monitor performance for next experiment",
+      "description": "Continue monitoring to ensure consistent results and improvements in future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:10:55.740Z",
+      "updated_at": "2026-02-23T12:10:55.740Z"
+    },
+    "llm-task-89d4040921044b52fd2aeb48c1ad29c4d1e04830": {
+      "id": "llm-task-89d4040921044b52fd2aeb48c1ad29c4d1e04830",
+      "title": "score_monitoring",
+      "description": "Monitor the experiment scores to identify trends and improvements.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:11:19.443Z",
+      "updated_at": "2026-02-23T12:11:19.443Z"
+    },
+    "llm-task-88bdea992e1308a7132b6d4d319f7ca48b1989b5": {
+      "id": "llm-task-88bdea992e1308a7132b6d4d319f7ca48b1989b5",
+      "title": "next_experiment_trigger",
+      "description": "Trigger next experiment based on current results and configurations.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:11:45.776Z",
+      "updated_at": "2026-02-23T12:11:45.776Z"
+    },
+    "llm-task-895dc94c2c02d433e57d0a9cd525f76cf21f8fdd": {
+      "id": "llm-task-895dc94c2c02d433e57d0a9cd525f76cf21f8fdd",
+      "title": "Evaluate performance metrics for future experiments",
+      "description": "Analyze the current experiment's results to identify potential areas for improvement in future runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:11:55.524Z",
+      "updated_at": "2026-02-23T12:11:55.524Z"
+    },
+    "llm-task-acd49c9ccf9731a5505b3c43f8d410a973e32ee0": {
+      "id": "llm-task-acd49c9ccf9731a5505b3c43f8d410a973e32ee0",
+      "title": "Evaluate performance against baseline",
+      "description": "Compare the current score with expected or known baselines to assess effectiveness.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:12:12.288Z",
+      "updated_at": "2026-02-23T12:12:12.288Z"
+    },
+    "llm-task-421859e8b7782c566c8dd31fcf016a451d8fe0a8": {
+      "id": "llm-task-421859e8b7782c566c8dd31fcf016a451d8fe0a8",
+      "title": "Next experiment setup",
+      "description": "Prepare the next set of experiments based on the latest results and metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:12:23.886Z",
+      "updated_at": "2026-02-23T12:12:23.886Z"
+    },
+    "llm-task-385f3f3f8f7b3662f65aacc1a0d3a0075b5c24b8": {
+      "id": "llm-task-385f3f3f8f7b3662f65aacc1a0d3a0075b5c24b8",
+      "title": "Monitor experiment progress closely",
+      "description": "Keep an eye on the remaining runs to ensure progression towards convergence.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:12:36.446Z",
+      "updated_at": "2026-02-23T12:12:36.446Z"
+    },
+    "llm-task-c01dbc68077977bfcbea7b08f1b333c1bcd29437": {
+      "id": "llm-task-c01dbc68077977bfcbea7b08f1b333c1bcd29437",
+      "title": "Monitor and Improve Exploration",
+      "description": "Regularly monitor the current strategy to improve exploration efficiency and stabilize variance stability.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:12:43.952Z",
+      "updated_at": "2026-02-23T12:12:43.952Z"
+    },
+    "llm-task-49fa0140c97899970010568e59aaa69fe40e62c3": {
+      "id": "llm-task-49fa0140c97899970010568e59aaa69fe40e62c3",
+      "title": "Evaluate next experiment",
+      "description": "Identify and set up the next experiment based on current results",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:12:55.631Z",
+      "updated_at": "2026-02-23T12:12:55.631Z"
+    },
+    "llm-task-176711a6bf26a089f2d16095d7a125cd11cb7407": {
+      "id": "llm-task-176711a6bf26a089f2d16095d7a125cd11cb7407",
+      "title": "Monitor impact after evaluation",
+      "description": "Evaluate if research impact has been applied correctly in future experiments",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:13:14.196Z",
+      "updated_at": "2026-02-23T12:13:14.196Z"
+    },
+    "llm-task-784aa83f4fd5a6fede1e9218bfeacd711a9fb1bd": {
+      "id": "llm-task-784aa83f4fd5a6fede1e9218bfeacd711a9fb1bd",
+      "title": "review_metrics",
+      "description": "Review the extracted metrics from the experiment to identify areas for improvement or replication.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:13:29.581Z",
+      "updated_at": "2026-02-23T12:13:29.581Z"
+    },
+    "llm-task-8bddff5b2f2106de47c22caff9bdd6e9290e6a47": {
+      "id": "llm-task-8bddff5b2f2106de47c22caff9bdd6e9290e6a47",
+      "title": "Evaluate next experiment",
+      "description": "Start evaluating experiments to find improvement opportunities.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:13:38.746Z",
+      "updated_at": "2026-02-23T12:13:38.746Z"
+    },
+    "llm-task-86e70dd634d8ac8e43df305c1306516260fd0399": {
+      "id": "llm-task-86e70dd634d8ac8e43df305c1306516260fd0399",
+      "title": "data_collection_task",
+      "description": "Collect additional relevant data to improve decision-making accuracy.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:13:46.143Z",
+      "updated_at": "2026-02-23T12:13:46.143Z"
+    },
+    "llm-task-ebfb2be960a9b35f20617c98ce9d27693be50036": {
+      "id": "llm-task-ebfb2be960a9b35f20617c98ce9d27693be50036",
+      "title": "Next experiment setup",
+      "description": "Create a task to set up the next experiment iteration based on current findings.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:13:53.324Z",
+      "updated_at": "2026-02-23T12:13:53.324Z"
+    },
+    "llm-task-527189a41cad41500450d1b073cc2b6c53d7fb36": {
+      "id": "llm-task-527189a41cad41500450d1b073cc2b6c53d7fb36",
+      "title": "Evaluate next experiment",
+      "description": "Create a new task to evaluate the next experiment in the sequence.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:14:06.812Z",
+      "updated_at": "2026-02-23T12:14:06.812Z"
+    },
+    "llm-task-bafff1ac7078cef0da8c8dadb7a0593b426349f8": {
+      "id": "llm-task-bafff1ac7078cef0da8c8dadb7a0593b426349f8",
+      "title": "next_experiment_task",
+      "description": "Create a task to start the next experiment iteration.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:14:16.613Z",
+      "updated_at": "2026-02-23T12:14:16.613Z"
+    },
+    "llm-task-ff7e00f1aa083781b989c6431de843b631f79ff0": {
+      "id": "llm-task-ff7e00f1aa083781b989c6431de843b631f79ff0",
+      "title": "Evaluate experiment performance",
+      "description": "Assess the experimental results to guide future research directions.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:14:28.328Z",
+      "updated_at": "2026-02-23T12:14:28.328Z"
+    },
+    "llm-task-c0b581e9f5ee018b17a5d89d35762ad9ea7bb2f2": {
+      "id": "llm-task-c0b581e9f5ee018b17a5d89d35762ad9ea7bb2f2",
+      "title": "Evaluate next experiment scenario",
+      "description": "Prepare for the evaluation of the next experiment based on the current successful run metrics and settings.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:14:45.217Z",
+      "updated_at": "2026-02-23T12:14:45.217Z"
+    },
+    "llm-task-e8b1465bcacf2b200f091a415f74d59dcf8d7a5c": {
+      "id": "llm-task-e8b1465bcacf2b200f091a415f74d59dcf8d7a5c",
+      "title": "Update research impact metrics",
+      "description": "Calculate and update the research impact for the current run.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:14:45.229Z",
+      "updated_at": "2026-02-23T12:14:45.229Z"
+    },
+    "llm-task-779539ea69e791dedc2e8fc537eeec8280b7d6c5": {
+      "id": "llm-task-779539ea69e791dedc2e8fc537eeec8280b7d6c5",
+      "title": "Next Experiment Setup",
+      "description": "Plan next experiment with adjusted parameters based on the learned score of 0.6565.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:14:54.844Z",
+      "updated_at": "2026-02-23T12:14:54.844Z"
+    },
+    "llm-task-9b1ab9fee0c0ffe04d66387486d1189606c6ff5e": {
+      "id": "llm-task-9b1ab9fee0c0ffe04d66387486d1189606c6ff5e",
+      "title": "Evaluate next related experiment",
+      "description": "Trigger evaluation of experiments similar to exp_7ae4a5c9-f559-469d-af35-1c4a6a2b3e71.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:15:04.580Z",
+      "updated_at": "2026-02-23T12:15:04.580Z"
+    },
+    "llm-task-288b87217cec7caea4696c00115e51344dabdc68": {
+      "id": "llm-task-288b87217cec7caea4696c00115e51344dabdc68",
+      "title": "Monitor domain signature impact on next tick",
+      "description": "Check if domain signature changes and its impact on micro candidate status.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:15:29.286Z",
+      "updated_at": "2026-02-23T12:15:29.286Z"
+    },
+    "llm-task-6df3e861327b5cc32a2bd9fdb07e3f282d14dcd5": {
+      "id": "llm-task-6df3e861327b5cc32a2bd9fdb07e3f282d14dcd5",
+      "title": "monitor_convergence",
+      "description": "Regularly check for convergence of the experiment.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:15:38.296Z",
+      "updated_at": "2026-02-23T12:15:38.296Z"
+    },
+    "llm-task-b21f0b06d3d329d393a9ad034d63c3ce3c70f390": {
+      "id": "llm-task-b21f0b06d3d329d393a9ad034d63c3ce3c70f390",
+      "title": "Review_high_score_run",
+      "description": "Review the run with high score for potential improvements and further analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:15:56.830Z",
+      "updated_at": "2026-02-23T12:15:56.830Z"
+    },
+    "llm-task-579dd4bd7eaf0a2a405ba0239ba67be95a9678bc": {
+      "id": "llm-task-579dd4bd7eaf0a2a405ba0239ba67be95a9678bc",
+      "title": "Review task metrics for future relevance",
+      "description": "Analyze extracted metrics from this run and decide if they should be used in future experiments or not.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:16:05.325Z",
+      "updated_at": "2026-02-23T12:16:05.325Z"
+    },
+    "llm-task-463368b874ed173c0e7ad1c5ff46828f38a0eadd": {
+      "id": "llm-task-463368b874ed173c0e7ad1c5ff46828f38a0eadd",
+      "title": "Evaluate Experiment for Initial Decisions",
+      "description": "Determine initial decisions based on the current state of experiment exp_2c7d9189-17ac-469f-9d39-26c63b947cd9.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:16:13.096Z",
+      "updated_at": "2026-02-23T12:16:13.096Z"
+    },
+    "llm-task-bb898b4f8b2af8d7271848a34500f59e767c631d": {
+      "id": "llm-task-bb898b4f8b2af8d7271848a34500f59e767c631d",
+      "title": "Review experiment performance",
+      "description": "Examine the performance metrics of 'exp_2c7d9189-17ac-469f-9d39-26c63b947cd9' and assess its impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:16:24.085Z",
+      "updated_at": "2026-02-23T12:16:24.085Z"
+    },
+    "llm-task-6bdfe0479031ce46ef2a37a4becefb4c0b131cb6": {
+      "id": "llm-task-6bdfe0479031ce46ef2a37a4becefb4c0b131cb6",
+      "title": "Review experiment metrics",
+      "description": "Evaluate the extracted metric (score) and research impact.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:16:52.255Z",
+      "updated_at": "2026-02-23T12:16:52.255Z"
+    },
+    "llm-task-da714bbcf584f76c172b0ce3426faa0f492e24ce": {
+      "id": "llm-task-da714bbcf584f76c172b0ce3426faa0f492e24ce",
+      "title": "Evaluate next experiment setup",
+      "description": "Prepare the configuration for the next iteration based on current results and impacts.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:17:06.732Z",
+      "updated_at": "2026-02-23T12:17:06.732Z"
+    },
+    "llm-task-a6085b0621bcf192725a5c1d0e86a211821d0983": {
+      "id": "llm-task-a6085b0621bcf192725a5c1d0e86a211821d0983",
+      "title": "Evaluate next experiment with adjusted parameters",
+      "description": "Consider adjusting parameters to improve research impact and fitness.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:17:17.049Z",
+      "updated_at": "2026-02-23T12:17:17.049Z"
+    },
+    "llm-task-867368adece6f9b259de663d4b898062df1c2c65": {
+      "id": "llm-task-867368adece6f9b259de663d4b898062df1c2c65",
+      "title": "Monitor score stability",
+      "description": "Continuously monitor the generated scores for consistency across runs.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:17:25.601Z",
+      "updated_at": "2026-02-23T12:17:25.601Z"
+    },
+    "llm-task-6886edd42bcb8a41655771637af53ed0b3b7e5ba": {
+      "id": "llm-task-6886edd42bcb8a41655771637af53ed0b3b7e5ba",
+      "title": "Analyze new generated data metrics",
+      "description": "Evaluate the impact of newly generated data on the model performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:17:34.438Z",
+      "updated_at": "2026-02-23T12:17:34.438Z"
+    },
+    "llm-task-25ed0656daa88c927170e165bdad1d643788b9e1": {
+      "id": "llm-task-25ed0656daa88c927170e165bdad1d643788b9e1",
+      "title": "Review metrics for next iteration",
+      "description": "Evaluate new score to make informed decisions on future experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:17:43.452Z",
+      "updated_at": "2026-02-23T12:17:43.452Z"
+    },
+    "llm-task-7ace5f3045c8c93545c28236c6098054e27a265b": {
+      "id": "llm-task-7ace5f3045c8c93545c28236c6098054e27a265b",
+      "title": "Analyze domain profile and adjust search complexity if necessary.",
+      "description": "Review the small size category with low metric noise and low search complexity. Consider adjusting based on current performance trends.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:17:55.735Z",
+      "updated_at": "2026-02-23T12:17:55.735Z"
+    },
+    "llm-task-251e3ecb5d52a0ddbfe0f16a753299cd7e38086b": {
+      "id": "llm-task-251e3ecb5d52a0ddbfe0f16a753299cd7e38086b",
+      "title": "Examine convergence patterns",
+      "description": "Analyze the stability and efficiency of exploration to determine next steps.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:18:04.333Z",
+      "updated_at": "2026-02-23T12:18:04.333Z"
+    },
+    "llm-task-a388b8596f24b2bec42fb871b69e0a82143823a2": {
+      "id": "llm-task-a388b8596f24b2bec42fb871b69e0a82143823a2",
+      "title": "Evaluate next experiment scenario",
+      "description": "Create a new task to evaluate different scenarios for future experiments based on this successful run's findings.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:18:15.883Z",
+      "updated_at": "2026-02-23T12:18:15.883Z"
+    },
+    "llm-task-2545fa08bf41b616683b8b8d0da904a1e0e284bf": {
+      "id": "llm-task-2545fa08bf41b616683b8b8d0da904a1e0e284bf",
+      "title": "Schedule next experiment run",
+      "description": "Plan to execute the same task with new parameters or data after a suitable delay.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:18:29.937Z",
+      "updated_at": "2026-02-23T12:18:29.937Z"
+    },
+    "llm-task-9672dfde99c7679145943f9f9b0d85919d6bbd7c": {
+      "id": "llm-task-9672dfde99c7679145943f9f9b0d85919d6bbd7c",
+      "title": "Review experiment details",
+      "description": "Check if the current parameters are optimal for this small, low, and low domain signature.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:18:36.792Z",
+      "updated_at": "2026-02-23T12:18:36.792Z"
+    },
+    "llm-task-feebde5b79fceed1c10d2365bb811b6cb32edc4a": {
+      "id": "llm-task-feebde5b79fceed1c10d2365bb811b6cb32edc4a",
+      "title": "Evaluate next experiment based on best performance so far",
+      "description": "Review the results from 'run_a9de3d02-8b92-4d95-9c45-4316b5b45bcb' and decide if a new experiment should be initiated.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:18:46.922Z",
+      "updated_at": "2026-02-23T12:18:46.922Z"
+    },
+    "llm-task-99def47bc7de2f7f9f5e87196c143ef189f12f69": {
+      "id": "llm-task-99def47bc7de2f7f9f5e87196c143ef189f12f69",
+      "title": "Review next experiment retry time",
+      "description": "Check if the next retry time needs to be set based on current status.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:18:57.460Z",
+      "updated_at": "2026-02-23T12:18:57.460Z"
+    },
+    "llm-task-036b6c164af4cacd26a2b7bc2ce28c84f5b66934": {
+      "id": "llm-task-036b6c164af4cacd26a2b7bc2ce28c84f5b66934",
+      "title": "Review experiment results",
+      "description": "Examine the extracted metrics and prepare a report for further analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:19:07.485Z",
+      "updated_at": "2026-02-23T12:19:07.485Z"
+    },
+    "llm-task-77afbb1d38aaedc846441de454832444af4693d2": {
+      "id": "llm-task-77afbb1d38aaedc846441de454832444af4693d2",
+      "title": "Review experiment results",
+      "description": "Analyze the experiment's outcome and score for future reference.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:19:17.870Z",
+      "updated_at": "2026-02-23T12:19:17.870Z"
+    },
+    "llm-task-c4f709f84c02f85f5123eff5888d2a5453b19e3b": {
+      "id": "llm-task-c4f709f84c02f85f5123eff5888d2a5453b19e3b",
+      "title": "Evaluate arena after applying impact",
+      "description": "Check if the research impact has positively evaluated the arena based on the new metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:19:35.313Z",
+      "updated_at": "2026-02-23T12:19:35.313Z"
+    },
+    "llm-task-5da5e7dfc4728a761ce0fed4e84c906522ff663f": {
+      "id": "llm-task-5da5e7dfc4728a761ce0fed4e84c906522ff663f",
+      "title": "Score analysis",
+      "description": "Analyze the extracted metric score from experiment exp_ab1048a9-5b20-4bae-ad8a-99689be7165b.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:19:47.784Z",
+      "updated_at": "2026-02-23T12:19:47.784Z"
+    },
+    "llm-task-63e439da665f20b426c73ee84811f85b15eba17b": {
+      "id": "llm-task-63e439da665f20b426c73ee84811f85b15eba17b",
+      "title": "Evaluate next experiment",
+      "description": "Schedule evaluation of experiments after a new iteration based on current findings and improvements.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:19:58.098Z",
+      "updated_at": "2026-02-23T12:19:58.098Z"
+    },
+    "llm-task-dc3f21305709d4f42438958f3b52dbae92d56854": {
+      "id": "llm-task-dc3f21305709d4f42438958f3b52dbae92d56854",
+      "title": "Evaluate next experiment variant",
+      "description": "Consider modifying the input parameters slightly and rerun experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:20:19.699Z",
+      "updated_at": "2026-02-23T12:20:19.699Z"
+    },
+    "llm-task-aef11ca74958d3cbe9cf50e49ee63dc4c656141a": {
+      "id": "llm-task-aef11ca74958d3cbe9cf50e49ee63dc4c656141a",
+      "title": "Review experiment results",
+      "description": "Review the outcome of run_e288514e-12ce-4884-b79a-c380e7db780e and prepare for next experiments.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:20:31.747Z",
+      "updated_at": "2026-02-23T12:20:31.747Z"
+    },
+    "llm-task-cb8c9302b77f25d87ad576ec3d001929e6e27f95": {
+      "id": "llm-task-cb8c9302b77f25d87ad576ec3d001929e6e27f95",
+      "title": "identify_winner_strategy",
+      "description": "determine the appropriate decision-making strategy for exp_122913ef-3bce-4aea-a443-a407f489c932",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:20:40.417Z",
+      "updated_at": "2026-02-23T12:20:40.417Z"
+    },
+    "llm-task-b114302c9da842d38ebdc2adfa41d8ab4a6500b4": {
+      "id": "llm-task-b114302c9da842d38ebdc2adfa41d8ab4a6500b4",
+      "title": "Monitor experiment progress and evaluate for potential bottlenecks or issues.",
+      "description": "Ensure the experiment continues to run without stopping unexpectedly. Check for any data anomalies or missing information that could affect the experiment's outcome.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:20:56.806Z",
+      "updated_at": "2026-02-23T12:20:56.806Z"
+    },
+    "llm-task-0c5adb3cba7cf0c9a4fea8aab46c668d40f67b07": {
+      "id": "llm-task-0c5adb3cba7cf0c9a4fea8aab46c668d40f67b07",
+      "title": "Monitor Experiment Progress",
+      "description": "Keep track of all metrics and observations for exp_122913ef-3bce-4aea-a443-a407f489c932.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:21:06.706Z",
+      "updated_at": "2026-02-23T12:21:06.706Z"
+    },
+    "llm-task-815a6961b84bce4d51b1b26cb19b9965dd6db75e": {
+      "id": "llm-task-815a6961b84bce4d51b1b26cb19b9965dd6db75e",
+      "title": "Evaluate next experiment variation",
+      "description": "Create a new task to evaluate the same script with slightly different parameters to further enhance fitness.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:21:18.961Z",
+      "updated_at": "2026-02-23T12:21:18.961Z"
+    },
+    "llm-task-204e04a409e9885c46496cf12fa4e2736a37c26b": {
+      "id": "llm-task-204e04a409e9885c46496cf12fa4e2736a37c26b",
+      "title": "Evaluate next experiment run",
+      "description": "Create a new task to evaluate the run_id for the next experiment in the series.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:21:46.967Z",
+      "updated_at": "2026-02-23T12:21:46.967Z"
+    },
+    "llm-task-8c33e9052c3898980aec7b2ef535de60d4c8377b": {
+      "id": "llm-task-8c33e9052c3898980aec7b2ef535de60d4c8377b",
+      "title": "Score analysis",
+      "description": "Analyze the extracted metrics and identify patterns or anomalies.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T12:22:04.825Z",
+      "updated_at": "2026-02-23T12:22:04.825Z"
+    },
+    "llm-task-5c57df6a3f2ef8d983907488ed3319996f5057b2": {
+      "id": "llm-task-5c57df6a3f2ef8d983907488ed3319996f5057b2",
+      "title": "Evaluate arena impact after research impact applied",
+      "description": "Trigger evaluation of whether the research impact affects the arena outcome.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:49:14.780Z",
+      "updated_at": "2026-02-23T14:49:14.780Z"
+    },
+    "llm-task-bb21bd97cace9a50821ae1cd81e24223eaec3be8": {
+      "id": "llm-task-bb21bd97cace9a50821ae1cd81e24223eaec3be8",
+      "title": "Analyze results and update research metrics",
+      "description": "Review experiment outcomes, apply impact if necessary, and update the research fitness score.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:49:25.207Z",
+      "updated_at": "2026-02-23T14:49:25.207Z"
+    },
+    "llm-task-ba4de98dd1b3701d7e17be1317d6264adf57b086": {
+      "id": "llm-task-ba4de98dd1b3701d7e17be1317d6264adf57b086",
+      "title": "next_experiment_plan",
+      "description": "Plan the next experiment based on outcomes and metrics analysis.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:49:34.752Z",
+      "updated_at": "2026-02-23T14:49:34.752Z"
+    },
+    "llm-task-7eca10ca31e6c2e9197d6971c64ae2c239c73152": {
+      "id": "llm-task-7eca10ca31e6c2e9197d6971c64ae2c239c73152",
+      "title": "Monitor experiment for convergence",
+      "description": "Check if the experiment has converged based on current metrics and thresholds.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:50:23.567Z",
+      "updated_at": "2026-02-23T14:50:23.567Z"
+    },
+    "llm-task-43f506c6675ed70aa9d2e70a30708201d14dbd82": {
+      "id": "llm-task-43f506c6675ed70aa9d2e70a30708201d14dbd82",
+      "title": "Initialize Transfer Context",
+      "description": "Initiate the transfer context to improve overall performance of the research agent.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:50:34.475Z",
+      "updated_at": "2026-02-23T14:50:34.475Z"
+    },
+    "llm-task-bc6a4be7fd3f7e9a4544c0dc5c58433607177d32": {
+      "id": "llm-task-bc6a4be7fd3f7e9a4544c0dc5c58433607177d32",
+      "title": "Monitor experiment performance over time",
+      "description": "Continuously track the score of experiments to identify trends and potential issues.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:50:44.322Z",
+      "updated_at": "2026-02-23T14:50:44.322Z"
+    },
+    "llm-task-bf788fa3e37bad11178e55d8667c8109edb50a41": {
+      "id": "llm-task-bf788fa3e37bad11178e55d8667c8109edb50a41",
+      "title": "metric_monitoring",
+      "description": "Monitor the extracted metrics for future runs to ensure consistent performance.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:50:54.537Z",
+      "updated_at": "2026-02-23T14:50:54.537Z"
+    },
+    "llm-task-1221a2f9e2abca775db07b0ecec30377b29a7029": {
+      "id": "llm-task-1221a2f9e2abca775db07b0ecec30377b29a7029",
+      "title": "Next experiment planning",
+      "description": "Plan next experiments based on current findings and metrics.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:51:03.085Z",
+      "updated_at": "2026-02-23T14:51:03.085Z"
+    },
+    "llm-task-3cc8cffea8c240be842a24c01919cff8fc6a0ba3": {
+      "id": "llm-task-3cc8cffea8c240be842a24c01919cff8fc6a0ba3",
+      "title": "Monitor next experiment for improvement.",
+      "description": "Check if the experiment's fitness can be improved further.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:52:47.840Z",
+      "updated_at": "2026-02-23T14:52:47.840Z"
+    },
+    "llm-task-48b6d21f3e314719082c33926643adc2986ddf5d": {
+      "id": "llm-task-48b6d21f3e314719082c33926643adc2986ddf5d",
+      "title": "Next experiment planning",
+      "description": "Plan and prepare for the next experiment based on current results.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-23T14:52:56.595Z",
+      "updated_at": "2026-02-23T14:52:56.595Z"
+    },
+    "llm-task-bf6df3f31ee8b8df5826db087803c2776bec2d00": {
+      "id": "llm-task-bf6df3f31ee8b8df5826db087803c2776bec2d00",
+      "title": "Review experiment metrics",
+      "description": "Evaluate the experiment's performance based on extracted scores.",
+      "status": "todo",
+      "labels": [
+        "llm",
+        "assistant",
+        "agenda"
+      ],
+      "created_at": "2026-02-24T05:50:23.234Z",
+      "updated_at": "2026-02-24T05:50:23.234Z"
+    },
+    "d38aef9a-329e-4d7e-8853-21249ff609fc": {
+      "id": "d38aef9a-329e-4d7e-8853-21249ff609fc",
+      "title": "Benchmark Task A (FAST) - Fix comment in README",
+      "description": "Small fix: update installation comment in README.md file. Simple text edit with no build/test required.",
+      "status": "todo",
+      "labels": [
+        "benchmark",
+        "fast",
+        "dev"
+      ],
+      "created_at": "2026-02-24T18:40:30.542Z",
+      "updated_at": "2026-02-24T18:40:30.542Z"
+    },
+    "57842c1f-18d4-4f47-8b3c-147042213960": {
+      "id": "57842c1f-18d4-4f47-8b3c-147042213960",
+      "title": "Benchmark Task B (FAST+) - Fix import statement",
+      "description": "Small code fix: correct import statement in src/config.ts. Fix one line of code with linter check.",
+      "status": "todo",
+      "labels": [
+        "benchmark",
+        "fast+",
+        "dev"
+      ],
+      "created_at": "2026-02-24T18:40:42.440Z",
+      "updated_at": "2026-02-24T18:40:42.440Z"
+    },
+    "a7cfd0fa-8aa3-48bd-af96-49d0569c158a": {
+      "id": "a7cfd0fa-8aa3-48bd-af96-49d0569c158a",
+      "title": "Benchmark Task C (DEEP) - Fix failing test",
+      "description": "Real bug fix: resolve failing unit test in tests/mcp.test.js. Requires test run before/after fix and build verification.",
+      "status": "todo",
+      "labels": [
+        "benchmark",
+        "deep",
+        "dev"
+      ],
+      "created_at": "2026-02-24T18:40:51.215Z",
+      "updated_at": "2026-02-24T18:40:51.215Z"
+    }
+  }
+}

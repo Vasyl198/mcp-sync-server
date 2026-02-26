@@ -1,0 +1,363 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7",
+    "goal": "VALIDATE: shadow_cap=0.18 TTL=6 for domain small|low|low|p2; measure entropy shift and GIHI stability over 6 ticks.",
+    "objective": "maximize score",
+    "constraints": {
+      "confidence_domains_targeted": [
+        "small|low|low|p2"
+      ],
+      "auto_advance": true,
+      "exec_command": "node -e \"const eb={exploration_bias};const nf={narrowing_factor};const s=1-Math.abs(eb-0.55)-Math.abs(nf-1)*0.35+(Math.random()*0.03);console.log('score='+s.toFixed(4));\""
+    },
+    "max_experiments": 24,
+    "stop_conditions": {
+      "convergence_detected": false,
+      "min_gihi": 0,
+      "max_experiments": 24,
+      "stagnation_rate_gt": 1,
+      "max_ticks": 6,
+      "gihi_grace_ticks": 0
+    },
+    "status": "completed",
+    "created_at": "2026-02-23T05:39:39.557Z",
+    "updated_at": "2026-02-23T05:40:53.934Z",
+    "started_at": "2026-02-23T05:39:59.950Z",
+    "completed_at": "2026-02-23T05:40:53.934Z",
+    "stop_reason": "max_experiments_reached",
+    "primary_experiment_id": "exp_29a74c03-bcb3-498c-beaf-b0194d1ef5d0",
+    "experiment_ids": [
+      "exp_41bd226f-e3ce-493f-94ff-5959b7411ef0",
+      "exp_29a74c03-bcb3-498c-beaf-b0194d1ef5d0"
+    ],
+    "tick_count": 5,
+    "experiments_run": 25,
+    "last_metrics": {
+      "gihi": 0.258749,
+      "transfer_success_rate": 0.236552,
+      "mutation_effectiveness_ratio": 0.666667,
+      "arena_domains": 0,
+      "stagnation_rate": 0.722216
+    },
+    "history": [
+      {
+        "ts": "2026-02-23T05:39:39.557Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 24,
+          "stop_conditions": {
+            "convergence_detected": false,
+            "min_gihi": 0,
+            "max_experiments": 24,
+            "stagnation_rate_gt": 1,
+            "max_ticks": 6,
+            "gihi_grace_ticks": 0
+          }
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:00.095Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_41bd226f-e3ce-493f-94ff-5959b7411ef0",
+          "exec_command_attached": true,
+          "exec_command_source": "inferred_from_experiment",
+          "exec_command_source_experiment_id": "exp_ca713a9a-6f39-4f5a-ae1e-f836f1a10f53"
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:08.104Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 1,
+          "tick_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7:1",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 9,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 1,
+          "exec_bind_queued": 1,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.258487,
+          "transfer_success_rate": 0.234873,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.721981,
+          "confidence_domains_targeted": [
+            "small|high|low|p5",
+            "small|low|low|p5"
+          ],
+          "confidence_domains_targeted_reasons": [
+            {
+              "domain_signature": "small|high|low|p5",
+              "reason": null
+            },
+            {
+              "domain_signature": "small|low|low|p5",
+              "reason": null
+            }
+          ],
+          "confidence_quota_hits": [],
+          "confidence_quota_diagnostics": [],
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:18.851Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 2,
+          "tick_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7:2",
+          "created_runs": 2,
+          "impacted_count": 0,
+          "pending_runs_scanned": 2,
+          "exec_tasks_created": 2,
+          "runs_linked_with_task_id": 2,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 2,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.258512,
+          "transfer_success_rate": 0.234797,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.721833,
+          "confidence_domains_targeted": [
+            "medium|high|low|p5",
+            "small|high|low|p5"
+          ],
+          "confidence_domains_targeted_reasons": [
+            {
+              "domain_signature": "medium|high|low|p5",
+              "reason": null
+            },
+            {
+              "domain_signature": "small|high|low|p5",
+              "reason": null
+            }
+          ],
+          "confidence_quota_hits": [],
+          "confidence_quota_diagnostics": [],
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:30.162Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 3,
+          "tick_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7:3",
+          "created_runs": 1,
+          "impacted_count": 0,
+          "pending_runs_scanned": 1,
+          "exec_tasks_created": 1,
+          "runs_linked_with_task_id": 1,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 2,
+          "orchestrated_activated": 1,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.258463,
+          "transfer_success_rate": 0.234568,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.722004,
+          "confidence_domains_targeted": [
+            "small|high|low|p5",
+            "small|low|low|p5"
+          ],
+          "confidence_domains_targeted_reasons": [
+            {
+              "domain_signature": "small|high|low|p5",
+              "reason": null
+            },
+            {
+              "domain_signature": "small|low|low|p5",
+              "reason": null
+            }
+          ],
+          "confidence_quota_hits": [
+            {
+              "experiment_id": "exp_41bd226f-e3ce-493f-94ff-5959b7411ef0",
+              "domain_signature": "small|high|low|p5",
+              "quota_min_runs": 1,
+              "created_runs": 1
+            }
+          ],
+          "confidence_quota_diagnostics": [],
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:35.164Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_29a74c03-bcb3-498c-beaf-b0194d1ef5d0",
+          "exec_command_attached": true,
+          "exec_command_source": "campaign_constraints",
+          "exec_command_source_experiment_id": null
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:42.358Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 4,
+          "tick_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7:4",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 9,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 1,
+          "exec_bind_queued": 1,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.258632,
+          "transfer_success_rate": 0.235809,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.722108,
+          "confidence_domains_targeted": [
+            "small|high|low|p5",
+            "small|low|low|p5"
+          ],
+          "confidence_domains_targeted_reasons": [
+            {
+              "domain_signature": "small|high|low|p5",
+              "reason": null
+            },
+            {
+              "domain_signature": "small|low|low|p5",
+              "reason": null
+            }
+          ],
+          "confidence_quota_hits": [],
+          "confidence_quota_diagnostics": [],
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-23T05:40:53.914Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 5,
+          "tick_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7:5",
+          "created_runs": 2,
+          "impacted_count": 0,
+          "pending_runs_scanned": 2,
+          "exec_tasks_created": 2,
+          "runs_linked_with_task_id": 2,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 2,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.258749,
+          "transfer_success_rate": 0.236552,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.722216,
+          "confidence_domains_targeted": [
+            "small|high|low|p5",
+            "small|low|low|p5"
+          ],
+          "confidence_domains_targeted_reasons": [
+            {
+              "domain_signature": "small|high|low|p5",
+              "reason": null
+            },
+            {
+              "domain_signature": "small|low|low|p5",
+              "reason": null
+            }
+          ],
+          "confidence_quota_hits": [],
+          "confidence_quota_diagnostics": [],
+          "status": "completed",
+          "stop_reason": "max_experiments_reached"
+        }
+      }
+    ]
+  },
+  "steps_requested": 1,
+  "steps_executed": 1,
+  "ticks": [
+    {
+      "step": 1,
+      "tick_index": 5,
+      "tick_id": "cmp_2840ea85-1a8a-41c6-838e-1d965f140cf7:5",
+      "created_runs": 2,
+      "impacted_count": 0,
+      "pending_runs_scanned": 2,
+      "exec_tasks_created": 2,
+      "runs_linked_with_task_id": 2,
+      "autobind_skipped_no_template": 0,
+      "autobind_skipped_has_task_id": 0,
+      "autobind_skipped_empty_command": 0,
+      "autobind_errors": 0,
+      "exec_bind_queued": 10,
+      "orchestrated_activated": 2,
+      "recovered_activated": 0,
+      "arena_evaluated": 0,
+      "evolved_created": 0,
+      "gihi": 0.258749,
+      "transfer_success_rate": 0.236552,
+      "mutation_effectiveness_ratio": 0.666667,
+      "stagnation_rate": 0.722216,
+      "confidence_domains_targeted": [
+        "small|high|low|p5",
+        "small|low|low|p5"
+      ],
+      "confidence_domains_targeted_reasons": [
+        {
+          "domain_signature": "small|high|low|p5",
+          "reason": null
+        },
+        {
+          "domain_signature": "small|low|low|p5",
+          "reason": null
+        }
+      ],
+      "confidence_quota_hits": [],
+      "confidence_quota_diagnostics": [],
+      "status": "completed",
+      "stop_reason": "max_experiments_reached",
+      "committed": true
+    }
+  ],
+  "auto_advance": null,
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 1\n\n**status:** completed\n",
+  "logs": "campaign_tick executed 1 steps"
+}

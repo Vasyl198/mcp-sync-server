@@ -1,8 +1,31 @@
-$uri = "http://localhost:3000/mcp"
+$uri = if ($env:MCP_SERVER_URL) { $env:MCP_SERVER_URL } else { "http://localhost:3000/mcp" }
 
 $headersBase = @{
   "Content-Type" = "application/json"
   "Accept" = "application/json, text/event-stream"
+}
+
+if ($env:MCP_SYNC_TOKEN) {
+  $headersBase["Authorization"] = "Bearer $($env:MCP_SYNC_TOKEN)"
+}
+
+function Convert-McpResponseToObject {
+  param(
+    [Parameter(Mandatory = $true)]
+    $Response
+  )
+
+  if ($Response -is [string]) {
+    $raw = [string]$Response
+    $dataLine = ($raw -split "`r?`n") | Where-Object { $_ -like "data: *" } | Select-Object -Last 1
+    if (-not $dataLine) {
+      throw "Failed to parse MCP SSE response: no data line found."
+    }
+    $json = $dataLine.Substring(6).Trim()
+    return ($json | ConvertFrom-Json)
+  }
+
+  return $Response
 }
 
 # Initialize session
@@ -39,10 +62,26 @@ $whoBodyObj = @{
 
 $whoBody = $whoBodyObj | ConvertTo-Json -Depth 10
 $whoResp = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $whoBody
+$whoObj = Convert-McpResponseToObject -Response $whoResp
 
 # Parse whoami response and extract tools list
-$whoamiText = $whoResp.result.content[0].text
+if ($whoObj.error) {
+  throw "MCP tools/call whoami failed: $($whoObj.error | ConvertTo-Json -Compress)"
+}
+
+if (-not $whoObj.result -or -not $whoObj.result.content -or $whoObj.result.content.Count -lt 1) {
+  throw "MCP whoami response has no result.content payload."
+}
+
+$whoamiText = $whoObj.result.content[0].text
+if (-not $whoamiText) {
+  throw "MCP whoami content[0].text is empty."
+}
+
 $whoamiObj = $whoamiText | ConvertFrom-Json
+if (-not $whoamiObj.tools) {
+  throw "Parsed whoami payload has no tools list."
+}
 
 $toolsSnapshot = @{
   timestamp = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssZ")
@@ -54,7 +93,7 @@ $toolsSnapshot = @{
 }
 
 # Write snapshot to file
-$snapshotPath = "C:\Users\anani\Projects\_sync\tools_snapshot.json"
+$snapshotPath = if ($env:TOOLS_SNAPSHOT_PATH) { $env:TOOLS_SNAPSHOT_PATH } else { ".\_sync\tools_snapshot.json" }
 $snapshotJson = $toolsSnapshot | ConvertTo-Json -Depth 10
 $snapshotJson | Out-File -FilePath $snapshotPath -Encoding UTF8
 

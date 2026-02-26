@@ -1,0 +1,39 @@
+{
+  "campaign_id": "cmp_044cc140-b217-4958-af7a-9dc7b788ea23",
+  "goal": "GIHI guard bootstrap test",
+  "objective": {
+    "metric": "score",
+    "mode": "maximize"
+  },
+  "max_experiments": 30,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 30,
+    "stagnation_rate_gt": 0.92,
+    "max_ticks": 10,
+    "gihi_grace_ticks": 2
+  },
+  "status": "draft",
+  "created_at": "2026-02-16T13:32:58.433Z",
+  "updated_at": "2026-02-25T12:09:56.216Z",
+  "experiment_ids": [],
+  "tick_count": 0,
+  "experiments_run": 0,
+  "history": [
+    {
+      "ts": "2026-02-16T13:32:58.433Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 30,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 30,
+          "stagnation_rate_gt": 0.92,
+          "max_ticks": 10
+        }
+      }
+    }
+  ]
+}

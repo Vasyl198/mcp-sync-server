@@ -1,0 +1,138 @@
+[
+  {
+    "run_id": "run_f5c8e15e-3bfa-4175-87f9-3c19e53457ed",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:13.039Z",
+    "updated_at": "2026-02-19T08:39:13.107Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "4c002a29-9e44-4e77-a834-16734848aa61"
+  },
+  {
+    "run_id": "run_d756d5e5-bd1d-43ab-8df0-88d83bec07a3",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:13.039Z",
+    "updated_at": "2026-02-19T08:39:13.173Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "47d07b2e-2a98-4a80-b362-8066bd752543"
+  },
+  {
+    "run_id": "run_cacbb808-077f-46b8-9daf-ccd695fbb3eb",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:13.039Z",
+    "updated_at": "2026-02-19T08:39:13.235Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "d363734f-67d4-4d1c-be78-8150b39daec5"
+  },
+  {
+    "run_id": "run_3b9bfae4-325e-4663-ab85-5b8d1d924548",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:13.040Z",
+    "updated_at": "2026-02-19T08:39:13.298Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "ec6f7580-bfc0-459f-aaab-7ba1e995f5d4"
+  },
+  {
+    "run_id": "run_c738af6b-9d7b-48b2-a296-e9ef1c5fc237",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:20.678Z",
+    "updated_at": "2026-02-19T08:50:31.251Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {
+      "score": 0.7969
+    },
+    "status": "completed",
+    "duration_ms": 65,
+    "score": 0.7969,
+    "task_id": "a7e179f5-ea72-4e49-8b85-4d67e886142b",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  },
+  {
+    "run_id": "run_418f31d8-5c4f-48b3-a305-135311821c9c",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:20.737Z",
+    "updated_at": "2026-02-19T08:50:32.148Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {
+      "score": 0.8302
+    },
+    "status": "completed",
+    "duration_ms": 151,
+    "score": 0.8302,
+    "task_id": "2c24d2e4-276f-4069-888b-814a5cc33545",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  },
+  {
+    "run_id": "run_a277c62e-4e77-479f-aa4d-6ff64a0457fa",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:20.752Z",
+    "updated_at": "2026-02-19T08:39:20.752Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null,
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  },
+  {
+    "run_id": "run_de6456c2-6527-41d8-adce-8739d01222d2",
+    "experiment_id": "exp_093f2249-87fe-47c0-95c9-569a9b02b6e5",
+    "created_at": "2026-02-19T08:39:20.767Z",
+    "updated_at": "2026-02-19T08:39:20.767Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": null,
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  }
+]

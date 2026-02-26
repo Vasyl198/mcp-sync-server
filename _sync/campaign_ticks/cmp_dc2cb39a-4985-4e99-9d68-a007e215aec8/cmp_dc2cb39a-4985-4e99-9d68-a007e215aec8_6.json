@@ -1,0 +1,55 @@
+{
+  "tick_id": "cmp_dc2cb39a-4985-4e99-9d68-a007e215aec8:6",
+  "tick_index": 6,
+  "ts": "2026-02-19T13:47:14.453Z",
+  "data": {
+    "step": 1,
+    "tick_index": 6,
+    "tick_id": "cmp_dc2cb39a-4985-4e99-9d68-a007e215aec8:6",
+    "created_runs": 4,
+    "impacted_count": 0,
+    "pending_runs_scanned": 4,
+    "exec_tasks_created": 4,
+    "runs_linked_with_task_id": 3,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 1,
+    "exec_bind_queued": 4,
+    "orchestrated_activated": 4,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.244544,
+    "transfer_success_rate": 0.185913,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.728485,
+    "confidence_domains_targeted": [
+      "small|low|low|p2"
+    ],
+    "confidence_quota_hits": [
+      {
+        "experiment_id": "exp_c76cb014-50d5-48a8-82c3-0a7b01029e9a",
+        "domain_signature": "small|low|low|p2",
+        "quota_min_runs": 4,
+        "created_runs": 4
+      }
+    ],
+    "confidence_quota_diagnostics": [
+      {
+        "experiment_id": "exp_c76cb014-50d5-48a8-82c3-0a7b01029e9a",
+        "domain_signature": "small|low|low|p2",
+        "quota_raw_runs": 4,
+        "quota_min_runs": 4,
+        "quota_requested_batch": 4,
+        "quota_created_after_search": 2,
+        "quota_available_before_materialize": 2,
+        "quota_materialized_runs": 2,
+        "quota_created_final": 4,
+        "quota_remaining": 0
+      }
+    ],
+    "status": "running",
+    "stop_reason": null
+  }
+}

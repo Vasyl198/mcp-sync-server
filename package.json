@@ -5,12 +5,19 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "tools:snapshot": "powershell -ExecutionPolicy Bypass -File ./create_tools_snapshot.ps1",
+    "tools:schemas": "node ./export_tool_schemas.mjs",
+    "tools:refresh-op": "powershell -ExecutionPolicy Bypass -File ./refresh_op_resources.ps1"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
+    "@types/node-fetch": "^2.6.13",
+    "@types/ws": "^8.18.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.19.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

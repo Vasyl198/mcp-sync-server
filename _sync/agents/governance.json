@@ -1,0 +1,14 @@
+{
+  "max_versions_per_role": 6,
+  "max_shadow_per_role": 1,
+  "evolution_cooldown_ms": 180000,
+  "min_replay_runs": 2,
+  "promotion_margin_min": 0.03,
+  "discard_on_instability": true,
+  "max_evolution_attempts_per_day": 4,
+  "stability_success_variance_max": 0.04,
+  "stability_completion_time_variance_max": 0.35,
+  "rollback_eval_runs": 3,
+  "rollback_failure_delta": 0.2,
+  "rollback_critic_delta": 0.15
+}

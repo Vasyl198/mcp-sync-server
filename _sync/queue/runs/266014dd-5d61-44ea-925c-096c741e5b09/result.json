@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "task_name": "execution_bind_tick",
+  "project_id": null,
+  "scanned": 1,
+  "queued": 1,
+  "bindings": [
+    {
+      "task_id": "7a3f44b3-8595-470d-8183-169b760fe1b4",
+      "job_id": "exec-bind-7a3f44b3-8595-470d-8183-169b760fe1b4",
+      "cmd": "cmd",
+      "args": [
+        "/c",
+        "exit",
+        "1"
+      ]
+    }
+  ],
+  "errors": [],
+  "report_md": "# Execution Bind Tick\n\n**queued:** 1\n\n**scanned:** 1\n",
+  "logs": "execution_bind_tick queued 1 exec jobs"
+}

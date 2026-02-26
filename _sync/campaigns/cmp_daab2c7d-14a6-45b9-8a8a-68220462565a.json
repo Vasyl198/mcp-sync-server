@@ -1,0 +1,200 @@
+{
+  "campaign_id": "cmp_daab2c7d-14a6-45b9-8a8a-68220462565a",
+  "goal": "Overlap Pressure B2 - noisy medium partially overlapping LR",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_overlap_B2",
+    "search_space": {
+      "lr": [
+        0.01,
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.1
+      ],
+      "layers": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "noise": [
+        0.08,
+        0.14,
+        0.2
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node -e \"const lr={lr};const layers={layers};const nz={noise};const target=0.045;const base=1-Math.abs(lr-target)*8-Math.abs(layers-3.5)*0.08;const noise=(Math.random()*nz)-(nz/2);console.log('score='+(base+noise).toFixed(4));\"",
+    "transfer_threshold": 0.09
+  },
+  "max_experiments": 45,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 45,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 10,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-16T14:56:23.541Z",
+  "updated_at": "2026-02-25T12:10:00.063Z",
+  "started_at": "2026-02-16T14:57:56.054Z",
+  "completed_at": "2026-02-16T15:00:37.711Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_61cccc9e-ed0a-4e86-a969-b46e9b955894",
+  "experiment_ids": [
+    "exp_61cccc9e-ed0a-4e86-a969-b46e9b955894"
+  ],
+  "tick_count": 3,
+  "experiments_run": 72,
+  "last_metrics": {
+    "gihi": 0.304027,
+    "transfer_success_rate": 0.977273,
+    "mutation_effectiveness_ratio": 0,
+    "arena_domains": 0,
+    "stagnation_rate": 0.739643
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T14:56:23.541Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 45,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 45,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 10,
+          "gihi_grace_ticks": 2
+        }
+      }
+    },
+    {
+      "ts": "2026-02-16T14:56:27.965Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_bb2c945f-4b37-4c49-923b-355360a05753",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-16T14:56:28.233Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "created_runs": 10,
+        "impacted_count": 0,
+        "pending_runs_scanned": 10,
+        "exec_tasks_created": 10,
+        "runs_linked_with_task_id": 10,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 0,
+        "orchestrated_activated": 10,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.268757,
+        "transfer_success_rate": 0.977273,
+        "mutation_effectiveness_ratio": 0,
+        "stagnation_rate": 0.739643,
+        "status": "running",
+        "stop_reason": null,
+        "tick_index": 1,
+        "tick_id": "cmp_daab2c7d-14a6-45b9-8a8a-68220462565a:1"
+      }
+    },
+    {
+      "ts": "2026-02-16T14:56:28.599Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 2,
+        "created_runs": 10,
+        "impacted_count": 0,
+        "pending_runs_scanned": 10,
+        "exec_tasks_created": 10,
+        "runs_linked_with_task_id": 10,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 10,
+        "orchestrated_activated": 10,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.268757,
+        "transfer_success_rate": 0.977273,
+        "mutation_effectiveness_ratio": 0,
+        "stagnation_rate": 0.739643,
+        "status": "running",
+        "stop_reason": null,
+        "tick_index": 2,
+        "tick_id": "cmp_daab2c7d-14a6-45b9-8a8a-68220462565a:2"
+      }
+    },
+    {
+      "ts": "2026-02-16T14:56:36.045Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_d323263d-f0ff-485f-850a-d8ebc3bf14a8",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-16T14:56:44.025Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_73b1594f-2cdf-4a68-8cfd-c9bca246410c",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-16T14:56:44.691Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "created_runs": 30,
+        "impacted_count": 0,
+        "pending_runs_scanned": 30,
+        "exec_tasks_created": 30,
+        "runs_linked_with_task_id": 30,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 7,
+        "orchestrated_activated": 40,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.268757,
+        "transfer_success_rate": 0.977273,
+        "mutation_effectiveness_ratio": 0,
+        "stagnation_rate": 0.739643,
+        "status": "running",
+        "stop_reason": null,
+        "tick_index": 3,
+        "tick_id": "cmp_daab2c7d-14a6-45b9-8a8a-68220462565a:3"
+      }
+    }
+  ]
+}

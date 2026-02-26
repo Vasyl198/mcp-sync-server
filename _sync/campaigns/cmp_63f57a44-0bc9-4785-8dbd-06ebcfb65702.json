@@ -1,0 +1,173 @@
+{
+  "campaign_id": "cmp_63f57a44-0bc9-4785-8dbd-06ebcfb65702",
+  "goal": "Stabilizer run: circuit-breaker on high-variance domains (3 ticks)",
+  "objective": "maximize accuracy",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "search_space": {
+      "lr": [
+        0.001,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "layers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exploration_bias": [
+        0.51,
+        0.71,
+        0.91,
+        1
+      ]
+    },
+    "transfer_threshold": 0
+  },
+  "max_experiments": 30,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 30,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 3,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-17T11:21:39.169Z",
+  "updated_at": "2026-02-25T12:09:55.499Z",
+  "started_at": "2026-02-17T11:24:07.269Z",
+  "completed_at": "2026-02-17T11:24:37.360Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_6c8c7357-f284-4b2c-80e5-113660b86d53",
+  "experiment_ids": [
+    "exp_6c8c7357-f284-4b2c-80e5-113660b86d53"
+  ],
+  "tick_count": 3,
+  "experiments_run": 30,
+  "last_metrics": {
+    "gihi": 0.310409,
+    "transfer_success_rate": 0.773759,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.876545
+  },
+  "history": [
+    {
+      "ts": "2026-02-17T11:21:39.169Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 30,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 30,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 3,
+          "gihi_grace_ticks": 2
+        }
+      }
+    },
+    {
+      "ts": "2026-02-17T11:24:07.309Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_6c8c7357-f284-4b2c-80e5-113660b86d53",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-17T11:24:08.839Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "tick_index": 1,
+        "tick_id": "cmp_63f57a44-0bc9-4785-8dbd-06ebcfb65702:1",
+        "created_runs": 10,
+        "impacted_count": 0,
+        "pending_runs_scanned": 10,
+        "exec_tasks_created": 10,
+        "runs_linked_with_task_id": 10,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 0,
+        "orchestrated_activated": 10,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.290576,
+        "transfer_success_rate": 0.779099,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.876054,
+        "status": "running",
+        "stop_reason": null
+      }
+    },
+    {
+      "ts": "2026-02-17T11:24:10.907Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 2,
+        "tick_index": 2,
+        "tick_id": "cmp_63f57a44-0bc9-4785-8dbd-06ebcfb65702:2",
+        "created_runs": 10,
+        "impacted_count": 0,
+        "pending_runs_scanned": 10,
+        "exec_tasks_created": 10,
+        "runs_linked_with_task_id": 10,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 10,
+        "orchestrated_activated": 10,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.311723,
+        "transfer_success_rate": 0.778438,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.87516,
+        "status": "running",
+        "stop_reason": null
+      }
+    },
+    {
+      "ts": "2026-02-17T11:24:37.350Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "tick_index": 3,
+        "tick_id": "cmp_63f57a44-0bc9-4785-8dbd-06ebcfb65702:3",
+        "created_runs": 10,
+        "impacted_count": 0,
+        "pending_runs_scanned": 10,
+        "exec_tasks_created": 10,
+        "runs_linked_with_task_id": 10,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 6,
+        "orchestrated_activated": 29,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.310409,
+        "transfer_success_rate": 0.773759,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.876545,
+        "status": "completed",
+        "stop_reason": "max_experiments_reached"
+      }
+    }
+  ]
+}

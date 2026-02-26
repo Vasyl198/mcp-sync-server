@@ -1,0 +1,392 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b",
+    "goal": "Stability burn-in (queue-only, 12 ticks)",
+    "objective": "maximize accuracy",
+    "constraints": {
+      "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+      "search_space": {
+        "lr": [
+          0.001,
+          0.005,
+          0.01,
+          0.02,
+          0.05,
+          0.1
+        ],
+        "layers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "exploration_bias": [
+          0.51,
+          0.71,
+          0.91,
+          1
+        ]
+      },
+      "transfer_threshold": 0
+    },
+    "max_experiments": 80,
+    "stop_conditions": {
+      "convergence_detected": false,
+      "min_gihi": 0.01,
+      "max_experiments": 80,
+      "stagnation_rate_gt": 1,
+      "max_ticks": 12,
+      "gihi_grace_ticks": 2
+    },
+    "status": "running",
+    "created_at": "2026-02-17T10:49:01.384Z",
+    "updated_at": "2026-02-17T10:52:48.297Z",
+    "started_at": "2026-02-17T10:49:10.942Z",
+    "primary_experiment_id": "exp_e39338f7-3e3f-4d21-a500-ea57f9cb9cfd",
+    "experiment_ids": [
+      "exp_336181a5-5413-4b35-9499-47b12d20ea84",
+      "exp_e39338f7-3e3f-4d21-a500-ea57f9cb9cfd"
+    ],
+    "tick_count": 9,
+    "experiments_run": 60,
+    "last_metrics": {
+      "gihi": 0.309319,
+      "transfer_success_rate": 0.760952,
+      "mutation_effectiveness_ratio": 0.666667,
+      "arena_domains": 0,
+      "stagnation_rate": 0.87477
+    },
+    "history": [
+      {
+        "ts": "2026-02-17T10:49:01.384Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 80,
+          "stop_conditions": {
+            "convergence_detected": false,
+            "min_gihi": 0.01,
+            "max_experiments": 80,
+            "stagnation_rate_gt": 1,
+            "max_ticks": 12,
+            "gihi_grace_ticks": 2
+          }
+        }
+      },
+      {
+        "ts": "2026-02-17T10:49:10.976Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_336181a5-5413-4b35-9499-47b12d20ea84",
+          "exec_command_attached": true,
+          "exec_command_source": "campaign_constraints",
+          "exec_command_source_experiment_id": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:49:12.562Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 1,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:1",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 4,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.321602,
+          "transfer_success_rate": 0.773307,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.884355,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:49:57.991Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 2,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:2",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.309531,
+          "transfer_success_rate": 0.773307,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.882686,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:50:36.658Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 3,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:3",
+          "created_runs": 0,
+          "impacted_count": 0,
+          "pending_runs_scanned": 0,
+          "exec_tasks_created": 0,
+          "runs_linked_with_task_id": 0,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 0,
+          "recovered_activated": 0,
+          "arena_evaluated": 1,
+          "evolved_created": 0,
+          "gihi": 0.309754,
+          "transfer_success_rate": 0.766764,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.877288,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:50:37.756Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 2,
+          "tick_index": 4,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:4",
+          "created_runs": 0,
+          "impacted_count": 0,
+          "pending_runs_scanned": 0,
+          "exec_tasks_created": 0,
+          "runs_linked_with_task_id": 0,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 0,
+          "orchestrated_activated": 0,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.393385,
+          "transfer_success_rate": 0.766764,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.877288,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:50:38.912Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 3,
+          "tick_index": 5,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:5",
+          "created_runs": 0,
+          "impacted_count": 0,
+          "pending_runs_scanned": 0,
+          "exec_tasks_created": 0,
+          "runs_linked_with_task_id": 0,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 0,
+          "orchestrated_activated": 0,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.309897,
+          "transfer_success_rate": 0.767216,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.877124,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:51:02.013Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_e39338f7-3e3f-4d21-a500-ea57f9cb9cfd",
+          "exec_command_attached": true,
+          "exec_command_source": "campaign_constraints",
+          "exec_command_source_experiment_id": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:51:03.436Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 6,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:6",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 0,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.310299,
+          "transfer_success_rate": 0.768269,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.876434,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:51:05.183Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 2,
+          "tick_index": 7,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:7",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.326903,
+          "transfer_success_rate": 0.768269,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.876434,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:51:26.807Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 8,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:8",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 8,
+          "orchestrated_activated": 20,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.310445,
+          "transfer_success_rate": 0.767531,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.875394,
+          "status": "running",
+          "stop_reason": null
+        }
+      },
+      {
+        "ts": "2026-02-17T10:52:48.239Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 9,
+          "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:9",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 0,
+          "orchestrated_activated": 20,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.309319,
+          "transfer_success_rate": 0.760952,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.87477,
+          "status": "running",
+          "stop_reason": null
+        }
+      }
+    ]
+  },
+  "steps_requested": 1,
+  "steps_executed": 1,
+  "ticks": [
+    {
+      "step": 1,
+      "tick_index": 9,
+      "tick_id": "cmp_53e2491a-d913-4276-90fe-a7a77a0b794b:9",
+      "created_runs": 10,
+      "impacted_count": 0,
+      "pending_runs_scanned": 10,
+      "exec_tasks_created": 10,
+      "runs_linked_with_task_id": 10,
+      "autobind_skipped_no_template": 0,
+      "autobind_skipped_has_task_id": 0,
+      "autobind_skipped_empty_command": 0,
+      "autobind_errors": 0,
+      "exec_bind_queued": 0,
+      "orchestrated_activated": 20,
+      "recovered_activated": 0,
+      "arena_evaluated": 0,
+      "evolved_created": 0,
+      "gihi": 0.309319,
+      "transfer_success_rate": 0.760952,
+      "mutation_effectiveness_ratio": 0.666667,
+      "stagnation_rate": 0.87477,
+      "status": "running",
+      "stop_reason": null,
+      "committed": true
+    }
+  ],
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 1\n\n**status:** running\n",
+  "logs": "campaign_tick executed 1 steps"
+}

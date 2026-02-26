@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "task_name": "meta_governance_tick",
+  "meta_snapshot": {
+    "generated_at": "2026-02-17T06:17:21.920Z",
+    "arena_entropy": 0.39974,
+    "domain_specialization_index": 0.000077,
+    "mutation_roi_trend": -0.040588,
+    "transfer_variance": 0.115556,
+    "gihi_slope": -0.003578,
+    "meta_state": "degenerating",
+    "windows": {
+      "mutation_window": 40,
+      "transfer_window": 60,
+      "gihi_window": 40
+    },
+    "counts": {
+      "domains": 5,
+      "mutation_events": 5,
+      "transfer_events": 60,
+      "gihi_points": 37
+    }
+  },
+  "reasons": [
+    "gihi_down_and_transfer_volatile",
+    "negative_mutation_roi"
+  ],
+  "scope": {
+    "campaign_id": "cmp_e4440a9a-500c-43c1-8183-35e6d3573958",
+    "apply_all_running": false,
+    "scoped_campaign_only": true
+  },
+  "guards": {
+    "cooldown_ms": 120000,
+    "ms_since_last_tick": 730223,
+    "min_state_streak": 2,
+    "observed_state_streak": 5,
+    "negative_gihi_slope_streak": 5,
+    "hysteresis_passed": true
+  },
+  "dry_run": false,
+  "applied": {
+    "research_profile": null,
+    "evolution_governance": null,
+    "arena_governance": null,
+    "campaigns": [
+      {
+        "campaign_id": "cmp_e4440a9a-500c-43c1-8183-35e6d3573958",
+        "constraints_patch": {
+          "transfer_threshold": 0,
+          "search_space": {
+            "lr": [
+              0.001,
+              0.005,
+              0.01,
+              0.02,
+              0.05,
+              0.1
+            ],
+            "layers": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "exploration_bias": [
+              0.32,
+              0.52,
+              0.72,
+              0.92
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "skipped": [
+    "scoped_campaign_only",
+    "research_profile_noop",
+    "evolution_governance_noop",
+    "arena_governance_noop"
+  ],
+  "report_md": "# Meta Governance Tick\n\n- reasons: gihi_down_and_transfer_volatile, negative_mutation_roi\n- meta_state: degenerating\n",
+  "logs": "meta_governance_tick reasons 2"
+}

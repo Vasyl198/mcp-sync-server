@@ -1,0 +1,81 @@
+{
+  "campaign_id": "cmp_99821151-a073-417b-bbea-c62b51f6f955",
+  "goal": "Post-restart safe cycle (4 ticks)",
+  "objective": "maximize accuracy",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "search_space": {
+      "lr": [
+        0.001,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "layers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exploration_bias": [
+        0.51,
+        0.71,
+        0.91,
+        1
+      ]
+    },
+    "transfer_threshold": 0
+  },
+  "max_experiments": 40,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 40,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 4,
+    "gihi_grace_ticks": 2
+  },
+  "status": "draft",
+  "created_at": "2026-02-17T10:30:58.450Z",
+  "updated_at": "2026-02-25T12:09:59.730Z",
+  "experiment_ids": [],
+  "tick_count": 0,
+  "experiments_run": 0,
+  "history": [
+    {
+      "ts": "2026-02-17T10:30:58.450Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 40,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 40,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 4,
+          "gihi_grace_ticks": 2
+        }
+      }
+    },
+    {
+      "ts": "2026-02-17T10:31:06.494Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_3cbcfa22-e425-4e3d-857e-af3d7f65c94b",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-17T10:32:09.959Z",
+      "type": "campaign.report.generated",
+      "data": {
+        "md_path": "C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\campaigns\\reports\\cmp_99821151-a073-417b-bbea-c62b51f6f955.md",
+        "json_path": "C:\\Users\\anani\\Projects\\mcp-sync-server\\_sync\\campaigns\\reports\\cmp_99821151-a073-417b-bbea-c62b51f6f955.json"
+      }
+    }
+  ]
+}

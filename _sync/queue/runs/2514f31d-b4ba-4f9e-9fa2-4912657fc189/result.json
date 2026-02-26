@@ -1,0 +1,115 @@
+{
+  "success": true,
+  "task": "task_graph",
+  "project_id": null,
+  "items": [
+    {
+      "task_id": "dad198fe-5f2c-4c15-8b11-bbf8ad1d31d5",
+      "project_id": "default",
+      "title": "exec: echo Autonomous Layer4 Task",
+      "description": "Auto-exec binding test task",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:15:32.759Z",
+      "updated_at": "2026-02-16T07:22:47.831Z",
+      "execution": {
+        "mode": "exec",
+        "command": "echo Autonomous Layer4 Task",
+        "job_id": "exec-bind-dad198fe-5f2c-4c15-8b11-bbf8ad1d31d5",
+        "queued_at": "2026-02-16T07:22:45.831Z",
+        "started_at": "2026-02-16T07:22:45.831Z",
+        "finished_at": "2026-02-16T07:22:47.831Z",
+        "exit_code": 0
+      }
+    },
+    {
+      "task_id": "843871cc-6c5b-4179-89e4-c02e68634579",
+      "project_id": "layer4_test",
+      "title": "exec: echo Autonomous Layer4 Task",
+      "description": "",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:20:31.438Z",
+      "updated_at": "2026-02-16T07:20:31.495Z",
+      "execution": {
+        "mode": "exec",
+        "command": "echo Autonomous Layer4 Task",
+        "job_id": "exec-bind-843871cc-6c5b-4179-89e4-c02e68634579",
+        "queued_at": "2026-02-16T07:20:31.451Z",
+        "started_at": "2026-02-16T07:20:31.451Z",
+        "finished_at": "2026-02-16T07:20:31.495Z",
+        "exit_code": 0
+      }
+    },
+    {
+      "task_id": "38be07fc-1da8-4849-83c0-22c00bcebe1d",
+      "project_id": "default",
+      "title": "Layer2 Child A",
+      "description": "First dependent task",
+      "status": "done",
+      "depends_on": [
+        "8ffada35-a8dc-41e2-a33f-ddae784b1050"
+      ],
+      "children": [],
+      "created_at": "2026-02-16T06:57:05.787Z",
+      "updated_at": "2026-02-16T07:12:34.356Z"
+    },
+    {
+      "task_id": "b479d321-d7c7-4280-9f0b-af25096f82ca",
+      "project_id": "orch_test",
+      "title": "child waits",
+      "description": "",
+      "status": "in_progress",
+      "depends_on": [
+        "76cb938b-7df7-4fef-898b-7f4a2a29c555"
+      ],
+      "children": [],
+      "created_at": "2026-02-16T07:09:35.974Z",
+      "updated_at": "2026-02-16T07:09:35.983Z"
+    },
+    {
+      "task_id": "76cb938b-7df7-4fef-898b-7f4a2a29c555",
+      "project_id": "orch_test",
+      "title": "root done",
+      "description": "",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:09:35.969Z",
+      "updated_at": "2026-02-16T07:09:35.979Z"
+    },
+    {
+      "task_id": "8ffada35-a8dc-41e2-a33f-ddae784b1050",
+      "project_id": "default",
+      "title": "Layer2 Root v2",
+      "description": "Integration test root task after payload normalization",
+      "status": "done",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T06:56:13.929Z",
+      "updated_at": "2026-02-16T07:06:10.907Z"
+    },
+    {
+      "task_id": "996e078b-7c3d-4ec7-b02a-4488e9fbb877",
+      "project_id": "default",
+      "title": "1. Complete Layer 2 integration",
+      "description": "Auto-generated from goal: Complete Layer 2 integration",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T06:57:36.816Z",
+      "updated_at": "2026-02-16T07:05:18.080Z"
+    }
+  ],
+  "counts": {
+    "open": 0,
+    "in_progress": 2,
+    "blocked": 0,
+    "done": 5,
+    "canceled": 0
+  },
+  "report_md": "# Task Graph\n\n**items:** 7\n",
+  "logs": "Fetched task graph (7 items)"
+}

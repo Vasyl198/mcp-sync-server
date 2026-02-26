@@ -1,0 +1,35 @@
+{
+  "tick_id": "cmp_4018bc9e-1712-4423-8271-917374597002:1",
+  "tick_index": 1,
+  "ts": "2026-02-17T17:37:04.665Z",
+  "data": {
+    "step": 1,
+    "tick_index": 1,
+    "tick_id": "cmp_4018bc9e-1712-4423-8271-917374597002:1",
+    "created_runs": 1,
+    "impacted_count": 0,
+    "pending_runs_scanned": 1,
+    "exec_tasks_created": 1,
+    "runs_linked_with_task_id": 1,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 0,
+    "exec_bind_queued": 4,
+    "orchestrated_activated": 1,
+    "recovered_activated": 0,
+    "arena_evaluated": 1,
+    "evolved_created": 0,
+    "gihi": 0.182397,
+    "transfer_success_rate": 0,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.802259,
+    "confidence_domains_targeted": [
+      "small|low|low|p2"
+    ],
+    "confidence_quota_hits": [],
+    "confidence_quota_diagnostics": [],
+    "status": "completed",
+    "stop_reason": "max_experiments_reached"
+  }
+}

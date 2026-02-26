@@ -1,0 +1,159 @@
+{
+  "success": true,
+  "task_name": "campaign_tick",
+  "campaign": {
+    "campaign_id": "cmp_65ca2461-0945-475c-8f27-d7c90c3948e1",
+    "goal": "Post-restart cooldown telemetry verification",
+    "objective": "maximize score",
+    "constraints": {
+      "objective": "maximize score",
+      "transfer_threshold": 0.09,
+      "auto_advance": true,
+      "search_space": {
+        "exploration_bias": [
+          0.26,
+          0.41,
+          0.56,
+          0.71
+        ],
+        "narrowing_factor": [
+          0.85,
+          1,
+          1.15
+        ]
+      },
+      "metric_schema": {
+        "score": {
+          "pattern": "score=([0-9.]+)",
+          "source": "stdout",
+          "type": "float"
+        }
+      },
+      "exec_command": "node -e \\\"const eb={exploration_bias};const nf={narrowing_factor};const s=1-Math.abs(eb-0.55)-Math.abs(nf-1)*0.35+(Math.random()*0.03);console.log('score='+s.toFixed(4));\\\""
+    },
+    "max_experiments": 32,
+    "stop_conditions": {
+      "convergence_detected": false,
+      "min_gihi": 0.15,
+      "max_experiments": 32,
+      "stagnation_rate_gt": 0.92,
+      "max_ticks": 4,
+      "gihi_grace_ticks": 2
+    },
+    "status": "running",
+    "created_at": "2026-02-19T05:56:25.643Z",
+    "updated_at": "2026-02-19T05:56:56.634Z",
+    "started_at": "2026-02-19T05:56:37.882Z",
+    "primary_experiment_id": "exp_2dadd92b-f557-4700-ad7c-305839f67906",
+    "experiment_ids": [
+      "exp_e06e2d85-e634-4c33-80d2-472e09f1f5b4",
+      "exp_2dadd92b-f557-4700-ad7c-305839f67906"
+    ],
+    "tick_count": 1,
+    "experiments_run": 10,
+    "history": [
+      {
+        "ts": "2026-02-19T05:56:25.643Z",
+        "type": "campaign.created",
+        "data": {
+          "max_experiments": 32,
+          "stop_conditions": {
+            "convergence_detected": false,
+            "min_gihi": 0.15,
+            "max_experiments": 32,
+            "stagnation_rate_gt": 0.92,
+            "max_ticks": 4,
+            "gihi_grace_ticks": 2
+          }
+        }
+      },
+      {
+        "ts": "2026-02-19T05:56:37.964Z",
+        "type": "campaign.primary_experiment.created",
+        "data": {
+          "experiment_id": "exp_e06e2d85-e634-4c33-80d2-472e09f1f5b4",
+          "exec_command_attached": true,
+          "exec_command_source": "campaign_constraints",
+          "exec_command_source_experiment_id": null
+        }
+      },
+      {
+        "ts": "2026-02-19T05:56:41.492Z",
+        "type": "campaign.tick",
+        "data": {
+          "step": 1,
+          "tick_index": 1,
+          "tick_id": "cmp_65ca2461-0945-475c-8f27-d7c90c3948e1:1",
+          "created_runs": 10,
+          "impacted_count": 0,
+          "pending_runs_scanned": 10,
+          "exec_tasks_created": 10,
+          "runs_linked_with_task_id": 10,
+          "autobind_skipped_no_template": 0,
+          "autobind_skipped_has_task_id": 0,
+          "autobind_skipped_empty_command": 0,
+          "autobind_errors": 0,
+          "exec_bind_queued": 10,
+          "orchestrated_activated": 10,
+          "recovered_activated": 0,
+          "arena_evaluated": 0,
+          "evolved_created": 0,
+          "gihi": 0.211651,
+          "transfer_success_rate": 0.074859,
+          "mutation_effectiveness_ratio": 0.666667,
+          "stagnation_rate": 0.758432,
+          "confidence_domains_targeted": [
+            "small|low|low|p2"
+          ],
+          "confidence_quota_hits": [],
+          "confidence_quota_diagnostics": [],
+          "status": "running",
+          "stop_reason": null
+        }
+      }
+    ]
+  },
+  "steps_requested": 1,
+  "steps_executed": 1,
+  "ticks": [
+    {
+      "step": 1,
+      "tick_index": 1,
+      "tick_id": "cmp_65ca2461-0945-475c-8f27-d7c90c3948e1:1",
+      "created_runs": 10,
+      "impacted_count": 0,
+      "pending_runs_scanned": 10,
+      "exec_tasks_created": 10,
+      "runs_linked_with_task_id": 10,
+      "autobind_skipped_no_template": 0,
+      "autobind_skipped_has_task_id": 0,
+      "autobind_skipped_empty_command": 0,
+      "autobind_errors": 0,
+      "exec_bind_queued": 4,
+      "orchestrated_activated": 10,
+      "recovered_activated": 0,
+      "arena_evaluated": 0,
+      "evolved_created": 0,
+      "gihi": 0.211672,
+      "transfer_success_rate": 0.074698,
+      "mutation_effectiveness_ratio": 0.666667,
+      "stagnation_rate": 0.758212,
+      "confidence_domains_targeted": [
+        "small|low|low|p2"
+      ],
+      "confidence_quota_hits": [],
+      "confidence_quota_diagnostics": [],
+      "status": "running",
+      "stop_reason": null,
+      "committed": false
+    }
+  ],
+  "auto_advance": {
+    "queued": true,
+    "job_id": "campaign-tick-cmp_65ca2461-0945-475c-8f27-d7c90c3948e1-auto-2",
+    "next_tick_index": 2,
+    "not_before_ts": "2026-02-19T05:56:59.096Z"
+  },
+  "report_md": "# Campaign Tick\n\n**steps_executed:** 1\n\n**status:** running\n",
+  "logs": "campaign_tick executed 1 steps"
+}

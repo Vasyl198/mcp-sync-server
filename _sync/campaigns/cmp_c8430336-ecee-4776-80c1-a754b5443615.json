@@ -1,0 +1,76 @@
+{
+  "campaign_id": "cmp_c8430336-ecee-4776-80c1-a754b5443615",
+  "goal": "D8 post-restart verification for exec_ingest min_fitness_to_store",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_d8_post_restart_verify",
+    "search_space": {
+      "lr": [
+        0.01,
+        0.02,
+        0.05,
+        0.08
+      ],
+      "layers": [
+        2,
+        3,
+        4
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "transfer_threshold": 0,
+    "domain": "p2 anti_conflict"
+  },
+  "max_experiments": 12,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 12,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 3,
+    "gihi_grace_ticks": 1
+  },
+  "status": "completed",
+  "created_at": "2026-02-16T18:32:56.025Z",
+  "updated_at": "2026-02-25T12:09:58.140Z",
+  "started_at": "2026-02-16T18:33:00.357Z",
+  "completed_at": "2026-02-16T18:33:01.563Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_aedf1b38-f7c8-4b4e-bf43-260d40ee709f",
+  "experiment_ids": [
+    "exp_aedf1b38-f7c8-4b4e-bf43-260d40ee709f"
+  ],
+  "tick_count": 0,
+  "experiments_run": 12,
+  "last_metrics": {
+    "gihi": 0.286675,
+    "transfer_success_rate": 0.62,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.800451
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T18:32:56.025Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 12,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 12,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 3,
+          "gihi_grace_ticks": 1
+        }
+      }
+    }
+  ]
+}

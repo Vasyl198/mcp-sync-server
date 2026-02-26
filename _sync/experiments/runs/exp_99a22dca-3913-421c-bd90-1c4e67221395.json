@@ -1,0 +1,162 @@
+[
+  {
+    "run_id": "run_4b30ec6a-7bae-4ca7-955c-88f8357b5739",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:47.035Z",
+    "params": {
+      "exploration_bias": 0.6,
+      "narrowing_factor": 0.8
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 57,
+    "score": null,
+    "task_id": "17d21126-d27e-4841-b349-36d2bf17efa4",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_5a2cda60-b414-4875-a28f-af762ffe0af8",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:47.225Z",
+    "params": {
+      "exploration_bias": 0.4,
+      "narrowing_factor": 1.2
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 53,
+    "score": null,
+    "task_id": "2e5bf6dd-bddf-4c74-9795-77f74e516361",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_541b0f59-e414-459b-83e1-1a469e109c11",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:47.611Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 49,
+    "score": null,
+    "task_id": "6d52bca6-97a2-46c0-86f6-037c7b806cfe",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_b1b2fa55-064a-4c2f-a59d-641c5b073fa3",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:47.917Z",
+    "params": {
+      "exploration_bias": 0.4,
+      "narrowing_factor": 0.8
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 50,
+    "score": null,
+    "task_id": "87241918-b8f7-4691-9681-65c833ccfb36",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_09f13fb8-3ede-4d60-9cca-b7b1bc9f15b8",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:48.090Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 52,
+    "score": null,
+    "task_id": "7169b130-8be2-43c8-83df-f6ad87b45210",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_6a0e0687-5fe5-404c-9233-3d77baf069b1",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:49.554Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 1.2
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 57,
+    "score": null,
+    "task_id": "cd7c9648-7e2e-4915-acf2-0099148276e5",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_a666cd69-f800-4ced-b52e-e80994d28bb1",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:49.725Z",
+    "params": {
+      "exploration_bias": 0.6,
+      "narrowing_factor": 1.2
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 52,
+    "score": null,
+    "task_id": "646ea6c3-e515-4c35-91c5-14fe492cadcd",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_cf83e201-b733-415d-80db-0c714c793300",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:49.898Z",
+    "params": {
+      "exploration_bias": 0.4,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 52,
+    "score": null,
+    "task_id": "2a806b74-92a6-4827-8748-deb1fd3b059b",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_932c9575-26fe-4d37-b0c1-442a87663040",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:50.214Z",
+    "params": {
+      "exploration_bias": 0.8,
+      "narrowing_factor": 0.8
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 51,
+    "score": null,
+    "task_id": "6678405f-243b-4640-8aab-a2ba2f7bbf9f",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  },
+  {
+    "run_id": "run_25f561af-f70c-48e0-8bd9-e643ad06b4a0",
+    "experiment_id": "exp_99a22dca-3913-421c-bd90-1c4e67221395",
+    "created_at": "2026-02-16T13:27:13.331Z",
+    "updated_at": "2026-02-16T13:35:50.393Z",
+    "params": {
+      "exploration_bias": 0.2,
+      "narrowing_factor": 0.8
+    },
+    "metrics": {},
+    "status": "running",
+    "duration_ms": 57,
+    "score": null,
+    "task_id": "7daa857f-175d-4312-b6ca-3b0ba9c1b3cc",
+    "notes": "node:internal/modules/cjs/loader:1404\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\anani\\Projects\\mcp-sync-server\\train.js'\r\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\r\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\r\n    at node:internal/main/run_main_module:36:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v22.16.0"
+  }
+]

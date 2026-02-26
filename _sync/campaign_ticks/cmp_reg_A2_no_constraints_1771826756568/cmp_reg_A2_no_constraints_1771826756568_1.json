@@ -1,0 +1,47 @@
+{
+  "tick_id": "cmp_reg_A2_no_constraints_1771826756568:1",
+  "tick_index": 1,
+  "ts": "2026-02-23T06:06:05.274Z",
+  "data": {
+    "step": 1,
+    "tick_index": 1,
+    "tick_id": "cmp_reg_A2_no_constraints_1771826756568:1",
+    "created_runs": 10,
+    "impacted_count": 0,
+    "pending_runs_scanned": 10,
+    "exec_tasks_created": 10,
+    "runs_linked_with_task_id": 10,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 0,
+    "exec_bind_queued": 4,
+    "orchestrated_activated": 10,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.262424,
+    "transfer_success_rate": 0.256386,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.723274,
+    "confidence_domains_targeted": [
+      "small|high|low|p5",
+      "small|low|low|p5"
+    ],
+    "confidence_domains_targeted_reasons": [
+      {
+        "domain_signature": "small|high|low|p5",
+        "reason": null
+      },
+      {
+        "domain_signature": "small|low|low|p5",
+        "reason": null
+      }
+    ],
+    "confidence_domains_targeted_constraint_violations": [],
+    "confidence_quota_hits": [],
+    "confidence_quota_diagnostics": [],
+    "status": "running",
+    "stop_reason": null
+  }
+}

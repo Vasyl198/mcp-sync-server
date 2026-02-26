@@ -1,0 +1,56 @@
+{
+  "campaign_id": "cmp_7213b095-9149-4503-a53f-133d526b4575",
+  "goal": "D3b fast-selection under relaxed arena governance",
+  "objective": "maximize score",
+  "constraints": {
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "transfer_threshold": 0,
+    "domain": "p2 anti_conflict",
+    "notes": "arena promotion_margin=0.02, window=3"
+  },
+  "max_experiments": 60,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 60,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 8,
+    "gihi_grace_ticks": 2
+  },
+  "status": "stopped",
+  "created_at": "2026-02-16T16:52:34.064Z",
+  "updated_at": "2026-02-25T12:09:59.632Z",
+  "started_at": "2026-02-16T16:52:39.938Z",
+  "completed_at": "2026-02-16T16:52:42.088Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_b1f1039f-5684-4b1f-a7cf-f5f4c0a8df30",
+  "experiment_ids": [
+    "exp_b1f1039f-5684-4b1f-a7cf-f5f4c0a8df30"
+  ],
+  "tick_count": 0,
+  "experiments_run": 12,
+  "last_metrics": {
+    "gihi": 0.302152,
+    "transfer_success_rate": 0.775,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.866612
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T16:52:34.064Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 60,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 60,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 8,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

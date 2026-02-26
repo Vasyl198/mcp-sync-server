@@ -1,0 +1,136 @@
+{
+  "campaign_id": "cmp_f190879c-7b42-4d1f-9934-3c22d76f50b8",
+  "goal": "schema v2 evidence gate smoke",
+  "objective": "maximize score",
+  "constraints": {
+    "exec_command": "node -e \"const s=0.7+Math.random()*0.2;console.log('score='+s.toFixed(4));\"",
+    "search_space": {
+      "exploration_bias": [
+        0.56
+      ],
+      "narrowing_factor": [
+        1
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    }
+  },
+  "max_experiments": 4,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.15,
+    "max_experiments": 4,
+    "stagnation_rate_gt": 0.92,
+    "max_ticks": 1,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-19T08:37:06.772Z",
+  "updated_at": "2026-02-25T12:09:55.544Z",
+  "started_at": "2026-02-19T08:37:10.191Z",
+  "completed_at": "2026-02-19T08:37:24.895Z",
+  "stop_reason": "max_ticks_reached",
+  "primary_experiment_id": "exp_a9a2ed9a-feb3-4221-aaa7-9c7787a446cc",
+  "experiment_ids": [
+    "exp_c1990ab3-2235-4aef-b7c8-c64f5619f9d5",
+    "exp_a9a2ed9a-feb3-4221-aaa7-9c7787a446cc"
+  ],
+  "tick_count": 1,
+  "experiments_run": 4,
+  "history": [
+    {
+      "ts": "2026-02-19T08:37:06.772Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 4,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.15,
+          "max_experiments": 4,
+          "stagnation_rate_gt": 0.92,
+          "max_ticks": 1,
+          "gihi_grace_ticks": 2
+        }
+      }
+    },
+    {
+      "ts": "2026-02-19T08:37:10.385Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_c1990ab3-2235-4aef-b7c8-c64f5619f9d5",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    },
+    {
+      "ts": "2026-02-19T08:37:20.361Z",
+      "type": "campaign.tick",
+      "data": {
+        "step": 1,
+        "tick_index": 1,
+        "tick_id": "cmp_f190879c-7b42-4d1f-9934-3c22d76f50b8:1",
+        "created_runs": 4,
+        "impacted_count": 0,
+        "pending_runs_scanned": 4,
+        "exec_tasks_created": 4,
+        "runs_linked_with_task_id": 4,
+        "autobind_skipped_no_template": 0,
+        "autobind_skipped_has_task_id": 0,
+        "autobind_skipped_empty_command": 0,
+        "autobind_errors": 0,
+        "exec_bind_queued": 1,
+        "orchestrated_activated": 4,
+        "recovered_activated": 0,
+        "arena_evaluated": 0,
+        "evolved_created": 0,
+        "gihi": 0.215145,
+        "transfer_success_rate": 0.075,
+        "mutation_effectiveness_ratio": 0.666667,
+        "stagnation_rate": 0.750814,
+        "confidence_domains_targeted": [
+          "small|low|low|p2"
+        ],
+        "confidence_quota_hits": [
+          {
+            "experiment_id": "exp_c1990ab3-2235-4aef-b7c8-c64f5619f9d5",
+            "domain_signature": "small|low|low|p2",
+            "quota_min_runs": 4,
+            "created_runs": 4
+          }
+        ],
+        "confidence_quota_diagnostics": [
+          {
+            "experiment_id": "exp_c1990ab3-2235-4aef-b7c8-c64f5619f9d5",
+            "domain_signature": "small|low|low|p2",
+            "quota_raw_runs": 4,
+            "quota_min_runs": 4,
+            "quota_requested_batch": 4,
+            "quota_created_after_search": 0,
+            "quota_available_before_materialize": 4,
+            "quota_materialized_runs": 4,
+            "quota_created_final": 4,
+            "quota_remaining": 0
+          }
+        ],
+        "status": "completed",
+        "stop_reason": "max_experiments_reached"
+      }
+    },
+    {
+      "ts": "2026-02-19T08:37:24.166Z",
+      "type": "campaign.primary_experiment.created",
+      "data": {
+        "experiment_id": "exp_a9a2ed9a-feb3-4221-aaa7-9c7787a446cc",
+        "exec_command_attached": true,
+        "exec_command_source": "campaign_constraints",
+        "exec_command_source_experiment_id": null
+      }
+    }
+  ]
+}

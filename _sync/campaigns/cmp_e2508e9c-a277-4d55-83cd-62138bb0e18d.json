@@ -1,0 +1,83 @@
+{
+  "campaign_id": "cmp_e2508e9c-a277-4d55-83cd-62138bb0e18d",
+  "goal": "Overlap Pressure B - noisy overlap LR with shifted optimum",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_overlap_B",
+    "search_space": {
+      "lr": [
+        0.01,
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.1
+      ],
+      "layers": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "noise": [
+        0.08,
+        0.14,
+        0.2
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node -e \"const lr={lr};const layers={layers};const n={noise};const base=1-Math.abs(lr-0.06)*10-Math.abs(layers-3.5)*0.08;const noise=((Math.random()-0.5)*(n||0.12));console.log('score='+(base+noise).toFixed(4));\"",
+    "transfer_threshold": 0.09
+  },
+  "max_experiments": 42,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 42,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 10,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-16T14:51:21.473Z",
+  "updated_at": "2026-02-25T12:09:58.984Z",
+  "started_at": "2026-02-16T14:51:26.540Z",
+  "completed_at": "2026-02-16T14:51:28.064Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_c39eb5f2-5cba-4e19-94b9-d99a22f51937",
+  "experiment_ids": [
+    "exp_c39eb5f2-5cba-4e19-94b9-d99a22f51937"
+  ],
+  "tick_count": 0,
+  "experiments_run": 50,
+  "last_metrics": {
+    "gihi": 0.291422,
+    "transfer_success_rate": 1,
+    "mutation_effectiveness_ratio": 0,
+    "arena_domains": 0,
+    "stagnation_rate": 0.765461
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T14:51:21.473Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 42,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 42,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 10,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

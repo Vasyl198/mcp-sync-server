@@ -1,5 +1,6 @@
 import fs from 'fs';
-const s = fs.readFileSync('src/index.ts.broken.ts', 'utf8');
+const sourcePath = fs.existsSync('src/index.ts') ? 'src/index.ts' : 'src/index.ts.broken.ts';
+const s = fs.readFileSync(sourcePath, 'utf8');
 const re = /server\.tool\(\s*['"]([^'"]+)['"]/g;
 const set = new Set();
 let m;

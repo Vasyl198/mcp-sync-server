@@ -1,0 +1,82 @@
+{
+  "campaign_id": "cmp_f1c0e40c-f7a5-492e-98f7-b5ab70e8c1c1",
+  "goal": "Parallel Campaign B2 - noisy medium domain with executable scoring",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_B2_noisy_exec",
+    "search_space": {
+      "lr": [
+        0.0005,
+        0.001,
+        0.003,
+        0.006,
+        0.01
+      ],
+      "layers": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "noise": [
+        0.05,
+        0.1,
+        0.15
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node -e \"const lr={lr};const layers={layers};const n={noise};const base=1-Math.abs(lr-0.004)*22-Math.abs(layers-3.5)*0.07;const noise=((Math.random()-0.5)*(n||0.1));console.log('score='+(base+noise).toFixed(4));\"",
+    "transfer_threshold": 0.09
+  },
+  "max_experiments": 35,
+  "stop_conditions": {
+    "convergence_detected": false,
+    "min_gihi": 0.01,
+    "max_experiments": 35,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 8,
+    "gihi_grace_ticks": 2
+  },
+  "status": "completed",
+  "created_at": "2026-02-16T14:34:30.031Z",
+  "updated_at": "2026-02-25T12:09:55.531Z",
+  "started_at": "2026-02-16T14:34:39.147Z",
+  "completed_at": "2026-02-16T14:34:40.309Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_765e6b17-58cc-4a55-b727-23559b8551f8",
+  "experiment_ids": [
+    "exp_765e6b17-58cc-4a55-b727-23559b8551f8"
+  ],
+  "tick_count": 0,
+  "experiments_run": 40,
+  "last_metrics": {
+    "gihi": 0.274609,
+    "transfer_success_rate": 1,
+    "mutation_effectiveness_ratio": 0,
+    "arena_domains": 0,
+    "stagnation_rate": 0.764987
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T14:34:30.031Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 35,
+        "stop_conditions": {
+          "convergence_detected": false,
+          "min_gihi": 0.01,
+          "max_experiments": 35,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 8,
+          "gihi_grace_ticks": 2
+        }
+      }
+    }
+  ]
+}

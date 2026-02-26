@@ -1,0 +1,35 @@
+{
+  "tick_id": "cmp_7b31e262-55c7-4ba7-a8c2-9066bb27ce8b:2",
+  "tick_index": 2,
+  "ts": "2026-02-19T12:30:47.434Z",
+  "data": {
+    "step": 1,
+    "tick_index": 2,
+    "tick_id": "cmp_7b31e262-55c7-4ba7-a8c2-9066bb27ce8b:2",
+    "created_runs": 10,
+    "impacted_count": 0,
+    "pending_runs_scanned": 10,
+    "exec_tasks_created": 9,
+    "runs_linked_with_task_id": 9,
+    "autobind_skipped_no_template": 0,
+    "autobind_skipped_has_task_id": 0,
+    "autobind_skipped_empty_command": 0,
+    "autobind_errors": 1,
+    "exec_bind_queued": 5,
+    "orchestrated_activated": 13,
+    "recovered_activated": 0,
+    "arena_evaluated": 0,
+    "evolved_created": 0,
+    "gihi": 0.175708,
+    "transfer_success_rate": 0.123404,
+    "mutation_effectiveness_ratio": 0.666667,
+    "stagnation_rate": 0.746227,
+    "confidence_domains_targeted": [
+      "small|low|low|p2"
+    ],
+    "confidence_quota_hits": [],
+    "confidence_quota_diagnostics": [],
+    "status": "running",
+    "stop_reason": null
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "task_name": "orchestrator_tick",
+  "project_id": null,
+  "activated": [
+    {
+      "task_id": "dad198fe-5f2c-4c15-8b11-bbf8ad1d31d5",
+      "project_id": "default",
+      "title": "exec: echo Autonomous Layer4 Task",
+      "description": "Auto-exec binding test task",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "created_at": "2026-02-16T07:15:32.759Z",
+      "updated_at": "2026-02-16T07:15:40.393Z"
+    }
+  ],
+  "scanned_open": 1,
+  "remaining_open": 0,
+  "report_md": "# Orchestrator Tick\n\n**activated:** 1\n\n**remaining_open:** 0\n",
+  "logs": "orchestrator_tick activated 1 tasks"
+}

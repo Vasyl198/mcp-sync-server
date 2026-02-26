@@ -1,0 +1,12 @@
+Starting MCP Sync Server...
+
+[WARN] Cloudflared Windows service is RUNNING. This script starts another cloudflared process.
+[WARN] To force single instance, stop service first:   sc stop Cloudflared
+[WARN] Or run this script as: set STOP_CLOUDFLARED_SERVICE=1 && launch_servers_named_tunnel.bat
+
+[WARN] Port 3000 is in use by PIDs: 10324
+Stopping PID 10324...
+ERROR: Input redirection is not supported, exiting the process immediately.
+Starting MCP Server on port 3000 from current directory...
+ERROR: Input redirection is not supported, exiting the process immediately.
+... was unexpected at this time.

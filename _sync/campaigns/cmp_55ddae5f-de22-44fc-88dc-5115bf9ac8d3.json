@@ -1,0 +1,82 @@
+{
+  "campaign_id": "cmp_55ddae5f-de22-44fc-88dc-5115bf9ac8d3",
+  "goal": "D7 verify arena evaluation after exec-ingest low-fitness updates",
+  "objective": "maximize score",
+  "constraints": {
+    "experiment_name": "campaign_d7_arena_unblock",
+    "search_space": {
+      "lr": [
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.03,
+        0.05,
+        0.08,
+        0.1
+      ],
+      "layers": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "metric_schema": {
+      "score": {
+        "pattern": "score=([0-9.]+)",
+        "source": "stdout",
+        "type": "float"
+      }
+    },
+    "exec_command": "node train.js --lr={lr} --layers={layers} --mode=anti_conflict",
+    "transfer_threshold": 0,
+    "domain": "p2 anti_conflict"
+  },
+  "max_experiments": 30,
+  "stop_conditions": {
+    "convergence_detected": true,
+    "min_gihi": 0.01,
+    "max_experiments": 30,
+    "stagnation_rate_gt": 1,
+    "max_ticks": 4,
+    "gihi_grace_ticks": 1
+  },
+  "status": "completed",
+  "created_at": "2026-02-16T18:22:29.996Z",
+  "updated_at": "2026-02-25T12:10:00.020Z",
+  "started_at": "2026-02-16T18:22:32.500Z",
+  "completed_at": "2026-02-16T18:22:34.439Z",
+  "stop_reason": "max_experiments_reached",
+  "primary_experiment_id": "exp_f0f1ce6b-873e-4570-9b92-b7d6ca53a717",
+  "experiment_ids": [
+    "exp_f0f1ce6b-873e-4570-9b92-b7d6ca53a717"
+  ],
+  "tick_count": 0,
+  "experiments_run": 30,
+  "last_metrics": {
+    "gihi": 0.294312,
+    "transfer_success_rate": 0.655589,
+    "mutation_effectiveness_ratio": 0.666667,
+    "arena_domains": 0,
+    "stagnation_rate": 0.814045
+  },
+  "history": [
+    {
+      "ts": "2026-02-16T18:22:29.996Z",
+      "type": "campaign.created",
+      "data": {
+        "max_experiments": 30,
+        "stop_conditions": {
+          "convergence_detected": true,
+          "min_gihi": 0.01,
+          "max_experiments": 30,
+          "stagnation_rate_gt": 1,
+          "max_ticks": 4,
+          "gihi_grace_ticks": 1
+        }
+      }
+    }
+  ]
+}

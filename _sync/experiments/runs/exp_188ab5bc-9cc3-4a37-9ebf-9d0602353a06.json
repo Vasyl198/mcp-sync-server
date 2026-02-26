@@ -1,0 +1,431 @@
+[
+  {
+    "run_id": "run_1a587b59-b424-4340-9de9-1fe80cc068fb",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:36.601Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.6817
+    },
+    "status": "completed",
+    "duration_ms": 50,
+    "score": 0.6817,
+    "task_id": "1c4f030e-3158-4084-b1df-b6afb76341e0"
+  },
+  {
+    "run_id": "run_6d8cb96c-803d-470f-b0ea-0b4feec92a82",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:40.533Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.6708
+    },
+    "status": "completed",
+    "duration_ms": 66,
+    "score": 0.6708,
+    "task_id": "858476f2-8cf8-4c88-8a2a-7aaa8e93a35a"
+  },
+  {
+    "run_id": "run_bfec189d-0c1c-43fc-91f8-0d0b4054f835",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:43.616Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.6917
+    },
+    "status": "completed",
+    "duration_ms": 49,
+    "score": 0.6917,
+    "task_id": "417859f6-39cd-4970-b62d-b4a04e7b9600"
+  },
+  {
+    "run_id": "run_f11fe8cd-a1a2-4e20-9e6a-cb280eee658f",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:46.043Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.9568
+    },
+    "status": "completed",
+    "duration_ms": 56,
+    "score": 0.9568,
+    "task_id": "66cfb6c8-51e6-42ee-a22d-21c7f5a3fc06"
+  },
+  {
+    "run_id": "run_2efcfc9e-7a39-4c04-8133-607a7200c8a6",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:51:05.933Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "8b0758ea-a213-4f47-ab67-bc9d462f99ce"
+  },
+  {
+    "run_id": "run_d69896c1-df5d-4ed0-9c08-1768aa298645",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:50.134Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.8302
+    },
+    "status": "completed",
+    "duration_ms": 71,
+    "score": 0.8302,
+    "task_id": "ddb8a7e0-856f-4d8d-aacd-c7ad06400dc0"
+  },
+  {
+    "run_id": "run_6e45c942-2e4b-410e-b6a6-8a08b12ebdad",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:52.303Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.7837
+    },
+    "status": "completed",
+    "duration_ms": 47,
+    "score": 0.7837,
+    "task_id": "719f3a15-c08b-4353-b6dd-3163015795bd"
+  },
+  {
+    "run_id": "run_c906df18-271a-468a-bb8f-c7b93e9e5231",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:53:56.246Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.975
+    },
+    "status": "completed",
+    "duration_ms": 56,
+    "score": 0.975,
+    "task_id": "4e62fc8d-da13-4d00-9a1a-1198127d2449"
+  },
+  {
+    "run_id": "run_85af57e0-545d-4d9a-85be-6e4a81a7878f",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:56.295Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.6256
+    },
+    "status": "completed",
+    "duration_ms": 48,
+    "score": 0.6256,
+    "task_id": "6c59c8ba-fd37-4ab7-9c16-2c7ad53f66e4"
+  },
+  {
+    "run_id": "run_2ccf56ac-5873-4682-b424-1ada33002640",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:05.537Z",
+    "updated_at": "2026-02-19T13:52:57.315Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.7861
+    },
+    "status": "completed",
+    "duration_ms": 46,
+    "score": 0.7861,
+    "task_id": "cc30d1d6-e2b0-474a-9dc7-d93160527a49"
+  },
+  {
+    "run_id": "run_ee791c05-9b85-4203-ad71-1fe3816f2946",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:24.738Z",
+    "updated_at": "2026-02-19T13:54:01.195Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.6952
+    },
+    "status": "completed",
+    "duration_ms": 47,
+    "score": 0.6952,
+    "task_id": "7108c3a3-aeb3-4669-b437-6dd8c9eea431"
+  },
+  {
+    "run_id": "run_c6baac6b-0cf8-489a-951b-24fc0e8c73e6",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:24.738Z",
+    "updated_at": "2026-02-19T13:54:03.135Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 1.0008
+    },
+    "status": "completed",
+    "duration_ms": 48,
+    "score": 1.0008,
+    "task_id": "e082f871-d242-48d6-b5f3-6eeace31622c"
+  },
+  {
+    "run_id": "run_cb08bcf0-18e1-4f7f-9549-7c00b2ae3a3e",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:24.738Z",
+    "updated_at": "2026-02-19T13:54:04.623Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {
+      "score": 0.8311
+    },
+    "status": "completed",
+    "duration_ms": 51,
+    "score": 0.8311,
+    "task_id": "3b43917d-9871-421c-91c7-2b3d1c0cc3ab"
+  },
+  {
+    "run_id": "run_4cf3111a-9147-48db-a428-546d3a74285a",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:24.738Z",
+    "updated_at": "2026-02-19T13:54:07.708Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {
+      "score": 0.7805
+    },
+    "status": "completed",
+    "duration_ms": 54,
+    "score": 0.7805,
+    "task_id": "e9d1c7eb-d48f-4df0-b61a-543fff6efc2a"
+  },
+  {
+    "run_id": "run_d6e68e88-e352-449e-b526-e939d353a1d1",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:40.358Z",
+    "updated_at": "2026-02-19T13:54:12.783Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1
+    },
+    "metrics": {
+      "score": 0.7233
+    },
+    "status": "completed",
+    "duration_ms": 49,
+    "score": 0.7233,
+    "task_id": "69daddde-6e21-4553-8920-7c55b1de6e64"
+  },
+  {
+    "run_id": "run_8caf210e-e741-4822-a29e-468fff196535",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:40.358Z",
+    "updated_at": "2026-02-19T13:54:13.640Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.9148
+    },
+    "status": "completed",
+    "duration_ms": 47,
+    "score": 0.9148,
+    "task_id": "9f522756-e45e-4961-9999-ba9285728167"
+  },
+  {
+    "run_id": "run_770d4b0f-9d8f-47c3-ae4c-555850312586",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:40.358Z",
+    "updated_at": "2026-02-19T13:54:15.000Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.623
+    },
+    "status": "completed",
+    "duration_ms": 55,
+    "score": 0.623,
+    "task_id": "91283540-3299-43cb-84e7-ec0b588f067e"
+  },
+  {
+    "run_id": "run_c1952c34-b372-42ef-8150-d4f6f6f7a6f2",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:51:40.358Z",
+    "updated_at": "2026-02-19T13:54:15.860Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {
+      "score": 0.677
+    },
+    "status": "completed",
+    "duration_ms": 47,
+    "score": 0.677,
+    "task_id": "7833deaf-f499-408f-a6c1-473c5ca46439"
+  },
+  {
+    "run_id": "run_0842c68f-a36b-404a-8d5e-58d765d913e2",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:02.681Z",
+    "updated_at": "2026-02-19T13:52:03.107Z",
+    "params": {
+      "exploration_bias": 0.56,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "bd99cfe8-6efe-420c-aa4c-e6708bdaa630"
+  },
+  {
+    "run_id": "run_5d41bbc8-bfb1-4541-998c-38dfbce26751",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:02.681Z",
+    "updated_at": "2026-02-19T13:52:03.188Z",
+    "params": {
+      "exploration_bias": 0.41,
+      "narrowing_factor": 1.1
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "5629deec-1362-4ede-8d7e-966bceb3ba53"
+  },
+  {
+    "run_id": "run_706112bc-d1b6-435e-8d06-abb6b269dcc6",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:02.681Z",
+    "updated_at": "2026-02-19T13:54:48.082Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {
+      "score": 0.6306
+    },
+    "status": "completed",
+    "duration_ms": 48,
+    "score": 0.6306,
+    "task_id": "96a22b2c-50b2-457e-bf29-2f5c61c61298"
+  },
+  {
+    "run_id": "run_b6d282b2-4e3e-44b0-86a8-5aaac11240f7",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:02.681Z",
+    "updated_at": "2026-02-19T13:52:03.347Z",
+    "params": {
+      "exploration_bias": 0.26,
+      "narrowing_factor": 0.75
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "162021a6-448a-4127-a42d-9e87a522a627"
+  },
+  {
+    "run_id": "run_1aa3f268-aa6b-44fe-bbdc-b79f873bcf63",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:39.681Z",
+    "updated_at": "2026-02-19T13:52:39.802Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 0.9
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "1341b5b6-5237-43bd-98e8-1039058be022"
+  },
+  {
+    "run_id": "run_76c8f5db-952f-47e9-9d80-c8b16aeb2ebf",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:39.682Z",
+    "updated_at": "2026-02-19T13:52:39.881Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 1
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "7692c351-b578-4222-b768-554d1aa0cfbd"
+  },
+  {
+    "run_id": "run_720432ae-89c0-48f9-9e9f-73089aac368c",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:39.682Z",
+    "updated_at": "2026-02-19T13:52:39.960Z",
+    "params": {
+      "exploration_bias": 0.71,
+      "narrowing_factor": 1.25
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "b2cd714f-4c42-4095-9651-acc646f9c223"
+  },
+  {
+    "run_id": "run_06285b32-4ac0-40e4-b8dd-ebfcff546e52",
+    "experiment_id": "exp_188ab5bc-9cc3-4a37-9ebf-9d0602353a06",
+    "created_at": "2026-02-19T13:52:39.717Z",
+    "updated_at": "2026-02-19T13:52:40.089Z",
+    "params": {
+      "exploration_bias": 0.86,
+      "narrowing_factor": 0.75,
+      "__transfer_eval": 1,
+      "__domain_signature": "small|low|low|p2"
+    },
+    "metrics": {},
+    "status": "pending",
+    "duration_ms": null,
+    "score": null,
+    "task_id": "f6cf72f6-0fb6-473e-9e6a-c2322ebe53e1",
+    "notes": "transfer_eval_quota:small|low|low|p2"
+  }
+]

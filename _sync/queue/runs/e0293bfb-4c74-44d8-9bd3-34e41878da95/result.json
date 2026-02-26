@@ -1,0 +1,42 @@
+{
+  "success": true,
+  "task_name": "recovery_tick",
+  "project_id": null,
+  "due_retry_count": 1,
+  "due_retry_task_ids": [
+    "7a3f44b3-8595-470d-8183-169b760fe1b4"
+  ],
+  "activated": [
+    {
+      "task_id": "7a3f44b3-8595-470d-8183-169b760fe1b4",
+      "project_id": "default",
+      "title": "exec: cmd /c exit 1",
+      "description": "Failure simulation task",
+      "status": "in_progress",
+      "depends_on": [],
+      "children": [],
+      "execution_policy": {
+        "max_attempts": 2,
+        "retry_delay_ms": 1000,
+        "backoff_multiplier": 1
+      },
+      "created_at": "2026-02-16T07:30:37.644Z",
+      "updated_at": "2026-02-16T07:31:37.694Z",
+      "execution": {
+        "mode": "exec",
+        "command": "cmd /c exit 1",
+        "attempts": 1,
+        "queued_at": "2026-02-16T07:30:53.458Z",
+        "started_at": "2026-02-16T07:30:53.458Z",
+        "finished_at": "2026-02-16T07:30:55.735Z",
+        "exit_code": 1,
+        "last_error": "",
+        "next_retry_at": "2026-02-16T07:30:56.735Z"
+      }
+    }
+  ],
+  "scanned_open": 1,
+  "remaining_open": 0,
+  "report_md": "# Recovery Tick\n\n**due_retry_count:** 1\n\n**activated:** 1\n",
+  "logs": "recovery_tick activated 1 tasks"
+}
