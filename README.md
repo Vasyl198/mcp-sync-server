@@ -121,6 +121,29 @@ Root-level test scripts were moved into `tests/` to keep repository root clean.
 4. Set `MCP_ALLOWED_ORIGINS` to client domain + localhost.
 5. Run security/token checks before release.
 
+## Offer: MCP + Security Gate Pilot (48h)
+
+Deliverables:
+- Working MCP workflow for the target repo/service.
+- Security + quality evidence report (JSON + short summary).
+- Runbook with remediation priorities and release gate verdict.
+
+Typical pilot goals:
+- reduce release risk,
+- detect critical security misconfigurations early,
+- enforce evidence-first GO/NO-GO.
+
+## Contact / Book Pilot
+
+- GitHub Issues: open a new issue with title `Pilot Request`
+- Email: `your-email@domain.com`
+- Optional intake template:
+  - target repository/service
+  - stack (Node/Python/etc.)
+  - required deadline
+  - compliance/security constraints
+  - expected outcome (GO/NO-GO, report, remediation plan)
+
 ## License
 
 MIT - see `LICENSE`.
