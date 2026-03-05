@@ -135,7 +135,10 @@ Typical pilot goals:
 
 ## Contact / Book Pilot
 
-- GitHub Issues: open a new issue with title `Pilot Request`
+- GitHub Issues:
+  - Pilot: `.github/ISSUE_TEMPLATE/pilot_request.md`
+  - Bug: `.github/ISSUE_TEMPLATE/bug_report.md`
+  - Feature: `.github/ISSUE_TEMPLATE/feature_request.md`
 - Email: `your-email@domain.com`
 - Optional intake template:
   - target repository/service
@@ -143,6 +146,9 @@ Typical pilot goals:
   - required deadline
   - compliance/security constraints
   - expected outcome (GO/NO-GO, report, remediation plan)
+
+Contributor starter tasks:
+- `docs/roadmap/GOOD_FIRST_TASKS.md`
 
 ## License
 
