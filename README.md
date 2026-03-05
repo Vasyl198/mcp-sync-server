@@ -153,7 +153,9 @@ Contributor starter tasks:
 Launch assets:
 - `docs/marketing/LAUNCH_DAY_CHECKLIST.md`
 - `docs/marketing/POST_PACK_WEEK1.md`
+- `docs/marketing/DAY2_POST_PACK.md`
 - `docs/marketing/LEADS_TRACKER_TEMPLATE.csv`
+- `ops/marketing/new_weekly_report.ps1`
 
 ## License
 
