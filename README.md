@@ -50,6 +50,16 @@ CI (`.github/workflows/ci.yml`) runs:
 3. `npm test`
 4. build artifact check (`dist/index.js`)
 
+## Analysis Snapshots
+
+![System Analysis](docs/assets/system-analysis.svg)
+![Security Analysis](docs/assets/security-analysis.svg)
+
+Example report artifacts:
+- `_sync/autogen_learning/quality_tick_latest.json`
+- `_sync/external_analysis/hook_probe_latest.json`
+- `_sync/external_analysis/security_mode_latest.json`
+
 ## Tests Layout
 
 Root-level test scripts were moved into `tests/` to keep repository root clean.

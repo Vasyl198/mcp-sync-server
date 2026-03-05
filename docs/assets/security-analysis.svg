@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-label="Security analysis summary">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="220" rx="14" fill="url(#bg2)"/>
+  <text x="28" y="42" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Security Analysis Snapshot</text>
+  <text x="28" y="72" fill="#9ca3af" font-family="Segoe UI, Arial, sans-serif" font-size="14">Token hygiene + scanner orchestration (example)</text>
+
+  <rect x="28" y="96" width="210" height="86" rx="10" fill="#0b1220" stroke="#374151"/>
+  <text x="44" y="124" fill="#fca5a5" font-family="Segoe UI, Arial, sans-serif" font-size="14">secret_scan</text>
+  <text x="44" y="150" fill="#e5e7eb" font-family="Consolas, monospace" font-size="16">findings: 0</text>
+
+  <rect x="258" y="96" width="210" height="86" rx="10" fill="#0b1220" stroke="#374151"/>
+  <text x="274" y="124" fill="#86efac" font-family="Segoe UI, Arial, sans-serif" font-size="14">dependency_scan</text>
+  <text x="274" y="150" fill="#e5e7eb" font-family="Consolas, monospace" font-size="16">critical: 0</text>
+
+  <rect x="488" y="96" width="190" height="86" rx="10" fill="#0b1220" stroke="#374151"/>
+  <text x="504" y="124" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="14">hook_probe</text>
+  <text x="504" y="150" fill="#e5e7eb" font-family="Consolas, monospace" font-size="16">coverage: info</text>
+
+  <rect x="698" y="96" width="194" height="86" rx="10" fill="#0b1220" stroke="#374151"/>
+  <text x="714" y="124" fill="#fcd34d" font-family="Segoe UI, Arial, sans-serif" font-size="14">release_gate</text>
+  <text x="714" y="150" fill="#e5e7eb" font-family="Consolas, monospace" font-size="16">policy: PASS</text>
+</svg>
