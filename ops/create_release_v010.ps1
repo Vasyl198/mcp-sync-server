@@ -14,9 +14,14 @@ if (!(Test-Path $NotesPath)) {
 
 $notes = Get-Content $NotesPath -Raw
 
-# Ensure tag exists remotely (create lightweight tag on target if missing)
-$tagExists = gh release view $Tag --repo $Repo --json tagName 2>$null
-if ($LASTEXITCODE -eq 0 -and $tagExists) {
+# If release already exists, exit cleanly.
+$existing = $null
+try {
+  $existing = gh release view $Tag --repo $Repo --json tagName 2>$null
+} catch {
+  $existing = $null
+}
+if ($existing) {
   Write-Host "Release already exists: $Tag"
   exit 0
 }
