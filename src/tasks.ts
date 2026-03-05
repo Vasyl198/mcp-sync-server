@@ -2,6 +2,7 @@ import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { randomUUID } from "node:crypto";
 import { acquireLock, releaseLock } from "./locks.js";
+import { safeAtomicWrite } from "./fs_atomic.js";
 
 export type TaskStatus = "todo" | "doing" | "done" | "blocked";
 
@@ -33,6 +34,23 @@ function locksDir(syncDir: string) {
   return path.join(syncDir, "queue", "locks");
 }
 
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function acquireTasksLockWithRetry(syncDir: string, attempts = 5): Promise<{ token: string }> {
+  const dir = locksDir(syncDir);
+  for (let i = 0; i < attempts; i += 1) {
+    const lock = await acquireLock({ locksDir: dir, name: "tasks", ttl_ms: 10_000 });
+    if (lock.ok && lock.token) return { token: lock.token };
+    if (i < attempts - 1) {
+      const delay = 50 + Math.floor(Math.random() * 101);
+      await sleep(delay);
+    }
+  }
+  throw new Error("tasks lock busy");
+}
+
 async function ensureStore(syncDir: string) {
   await fs.mkdir(syncDir, { recursive: true });
   const file = tasksFile(syncDir);
@@ -54,10 +72,13 @@ async function loadStore(syncDir: string): Promise<TasksStore> {
 
 async function saveStore(syncDir: string, store: TasksStore) {
   const file = tasksFile(syncDir);
-  const tmp = file + ".tmp";
   store.updated_at = isoNow();
-  await fs.writeFile(tmp, JSON.stringify(store, null, 2), "utf8");
-  await fs.rename(tmp, file);
+  await safeAtomicWrite({
+    targetPath: file,
+    content: JSON.stringify(store, null, 2),
+    retries: 6,
+    baseDelayMs: 30,
+  });
 }
 
 export async function tasksUpsert(opts: {
@@ -68,8 +89,7 @@ export async function tasksUpsert(opts: {
   status?: TaskStatus;
   labels?: string[];
 }): Promise<{ task: Task }> {
-  const lock = await acquireLock({ locksDir: locksDir(opts.syncDir), name: "tasks", ttl_ms: 10_000 });
-  if (!lock.ok || !lock.token) throw new Error("tasks lock busy");
+  const lock = await acquireTasksLockWithRetry(opts.syncDir);
 
   try {
     const store = await loadStore(opts.syncDir);
@@ -107,8 +127,7 @@ export async function tasksDelete(opts: {
   syncDir: string;
   id: string;
 }): Promise<{ ok: boolean; deleted: boolean }> {
-  const lock = await acquireLock({ locksDir: locksDir(opts.syncDir), name: "tasks", ttl_ms: 10_000 });
-  if (!lock.ok || !lock.token) throw new Error("tasks lock busy");
+  const lock = await acquireTasksLockWithRetry(opts.syncDir);
 
   try {
     const store = await loadStore(opts.syncDir);

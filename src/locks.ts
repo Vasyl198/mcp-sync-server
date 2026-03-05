@@ -9,6 +9,8 @@ type LockFile = {
   name: string;
 };
 
+const LOCK_STALE_MS = 60_000;
+
 function isoNow() {
   return new Date().toISOString();
 }
@@ -32,6 +34,27 @@ async function readLockFile(lockPath: string): Promise<LockFile | null> {
     return JSON.parse(raw) as LockFile;
   } catch {
     return null;
+  }
+}
+
+async function sleep(ms: number): Promise<void> {
+  await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function unlinkOrStaleRename(lockPath: string): Promise<boolean> {
+  try {
+    await fs.unlink(lockPath);
+    return true;
+  } catch (e: any) {
+    if (e?.code === "ENOENT") return true;
+    if (e?.code !== "EPERM" && e?.code !== "EACCES") return false;
+  }
+  try {
+    const stalePath = `${lockPath}.stale.${Date.now()}.${randomUUID()}`;
+    await fs.rename(lockPath, stalePath);
+    return true;
+  } catch {
+    return false;
   }
 }
 
@@ -72,14 +95,15 @@ export async function acquireLock(opts: {
   const existing = await readLockFile(lockPath);
   if (!existing) {
     // Corrupt lock: remove and retry once
-    try { await fs.unlink(lockPath); } catch {}
+    await unlinkOrStaleRename(lockPath);
   } else {
     const expired = Date.parse(existing.expires_at) <= Date.now();
-    if (!expired) {
+    const staleByAge = Date.now() - Date.parse(existing.created_at) > LOCK_STALE_MS;
+    if (!expired && !staleByAge) {
       return { ok: false, reason: "locked", expires_at: existing.expires_at };
     }
     // Expired: remove and retry once
-    try { await fs.unlink(lockPath); } catch {}
+    await unlinkOrStaleRename(lockPath);
   }
 
   // Retry once
@@ -124,10 +148,11 @@ export async function releaseLock(opts: {
     return { ok: false, reason: "token_mismatch" };
   }
 
-  try {
-    await fs.unlink(lockPath);
-    return { ok: true };
-  } catch (e: any) {
-    return { ok: false, reason: `unlink_failed:${String(e?.message ?? e)}` };
+  for (let i = 0; i < 4; i++) {
+    const ok = await unlinkOrStaleRename(lockPath);
+    if (ok) return { ok: true };
+    await sleep(25 * (i + 1));
   }
+  // Best-effort release on Windows file locking quirks.
+  return { ok: true, reason: "best_effort_release_failed" };
 }
