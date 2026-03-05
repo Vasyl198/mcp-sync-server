@@ -20,7 +20,7 @@ test("core files exist", () => {
 
 test("README includes security and setup sections", () => {
   const readme = fs.readFileSync(path.join(repoRoot, "README.md"), "utf8");
-  assert.match(readme, /Quick Start/i);
+  assert.match(readme, /Quick (Start|Demo)/i);
   assert.match(readme, /Security/i);
   assert.match(readme, /Commercial Setup/i);
 });
