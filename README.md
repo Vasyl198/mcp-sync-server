@@ -150,6 +150,11 @@ Typical pilot goals:
 Contributor starter tasks:
 - `docs/roadmap/GOOD_FIRST_TASKS.md`
 
+Launch assets:
+- `docs/marketing/LAUNCH_DAY_CHECKLIST.md`
+- `docs/marketing/POST_PACK_WEEK1.md`
+- `docs/marketing/LEADS_TRACKER_TEMPLATE.csv`
+
 ## License
 
 MIT - see `LICENSE`.
